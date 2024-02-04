@@ -46,8 +46,8 @@ def adjust_speed_based_on_json(translated_file_path, json_file_path, output_file
     else:
         print(f"Entry for '{translated_filename}' not found in the JSON file.")
 
-# Example usage with given paths:
-translated_file_path = "C:/Users/omwin/OneDrive/Documents/GitHub/3b1b-translations/Chinese/Chinese.mp3"
+# Example with absolute path:
+translated_file_path = "C:/Users/omwin/OneDrive/Documents/GitHub/3b1b-translations/Chinese/Chinese.mp3" 
 json_file_path = "C:/Users/omwin/OneDrive/Documents/GitHub/3b1b-translations/Chinese/sentence_translations.json"
 output_directory = "C:/Users/omwin/OneDrive/Documents/GitHub/3b1b-translations/Chinese"
 
