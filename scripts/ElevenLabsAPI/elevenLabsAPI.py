@@ -1,6 +1,7 @@
 import requests
 from typing import Union
 import json
+import os
 
 class elevenLabsAPI:
     """
@@ -52,6 +53,8 @@ class elevenLabsAPI:
             response.raise_for_status() # Raise an error if the status code is not 200
         except requests.exceptions.HTTPError as err:
             raise requests.exceptions.HTTPError("Error in making GET request for all voice_ids: ", err)
+        except requests.exceptions.ConnectionError as err:
+            raise requests.exceptions.ConnectionError("Error in connecting to the API, likely due to internet issues: ", err)
         except Exception as err:
             raise Exception("Unidentified error in getting audio: ", err)
 
@@ -140,6 +143,12 @@ class elevenLabsAPI:
                 "use_speaker_boost": True,
             },
         }
+
+        # Prefix directory of current_file to output_file if output_file is not an absolute path
+        if not os.path.isabs(output_file):
+            current_file = os.path.abspath(__file__) # Get the absolute path of the current file
+            current_directory = os.path.dirname(current_file) # Get the directory of the current file
+            output_file = os.path.join(current_directory, output_file) # Join the directory of the current file with the output_file
 
         if type(text) == str: # If text is a string, can be converted to a single file
             response = self.__get_audio(data, voice_id) # Get the audio response from private method
