@@ -1,6 +1,9 @@
 from elevenLabsAPI import elevenLabsAPI
+import dotenv
+import os
 
-api_key = "API_KEY_HERE" # Replace
+dotenv.load_dotenv()
+api_key = os.getenv("ELEVEN_LABS_API_KEY")
 tts = elevenLabsAPI(api_key)
 tts.get_voice_id("3b1b", inPlace=True)
 
