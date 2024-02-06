@@ -37,10 +37,10 @@ class elevenLabsAPI:
         Get the id of an ElevenLabs voice, given its name (i.e. "Rachel" or "John"). Voice can be custom trained. [Reference](https://elevenlabs.io/docs/api-reference/get-voices)
 
         #### Parameters:
-        - voice_name: ```str```\n
-            \tThe name of the voice to get the id
-        - inPlace: ```bool``` = ```False```\n
-            \tIf True, set the object's ```voice_id``` attribute to the voice_id found. If False, return the voice_id found
+        - voice_name: ```str```
+            The name of the voice to get the id
+        - inPlace: ```bool``` = ```False```
+            If True, set the object's ```voice_id``` attribute to the voice_id found. If False, return the voice_id found
 
         ### Raises:
         - ```ValueError```: If the voice with name voice_name is not found
@@ -83,10 +83,10 @@ class elevenLabsAPI:
         Get the audio from the ElevenLabs API, given the data (payload) and voice_id. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
 
         #### Parameters:
-        - data: ```dict```\n
-            \tThe payload to send to the API. Contains the text to convert to speech, as well as custom voice_settings.
-        - voice_id: ```str```\n
-            \tThe voice_id to use for the text-to-speech. Use the **get_voice_id** method to obtain the voice_id or pass it in manually
+        - data: ```dict```
+            The payload to send to the API. Contains the text to convert to speech, as well as custom voice_settings.
+        - voice_id: ```str```
+            The voice_id to use for the text-to-speech. Use the **get_voice_id** method to obtain the voice_id or pass it in manually
         """
 
         url = f"{self.base_url}/v1/text-to-speech/{voice_id}" # URL to send the request, formatted as f-string
@@ -108,20 +108,20 @@ class elevenLabsAPI:
         Get the audio from the ElevenLabs API and save it to a file(s), given the text(s) and output_file. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
 
         #### Parameters:
-        - text: ```str``` or ```list[str]```\n
-            \tThe text to convert to speech. Can be a string or a list of strings. If a list, each element will be converted to a separate audio file
-        - output_file: ```str```\n
-            \tThe path to save the audio file(s). If text is a list, the output_file string will be used as a prefix for each file
-        - CHUNK_SIZE: ```int``` = ```1024```\n
-            \tHow many bytes to write to the file at a time. Default is 1024
-        - voice_id: ```str``` = ```None```\n
-            \tThe voice_id to use for the text-to-speech. Use the **get_voice_id** method to obtain the voice_id or pass it in manually
-        - similarity_boost: ```float``` = ```0.55```, ```0.0 - 1.0```\n
-            \tHigher values boost the voice clarity but can introduce artifacts. Default is 0.55
-        - stability: ```float``` = ```0.45```, ```0.0 - 1.0```\n
-            \tA higher stability is more predictable but can be monotone, while a lower stability is more expressive but unstable. Default is 0.45
-        - style: ```float``` = ```0.55```, ```0.0 - 1.0```\n
-            \tHigher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.90
+        - text: ```str``` or ```list[str]```
+            The text to convert to speech. Can be a string or a list of strings. If a list, each element will be converted to a separate audio file
+        - output_file: ```str```
+            The path to save the audio file(s). If text is a list, the output_file string will be used as a prefix for each file
+        - CHUNK_SIZE: ```int``` = ```1024```
+            How many bytes to write to the file at a time. Default is 1024
+        - voice_id: ```str``` = ```None```
+            The voice_id to use for the text-to-speech. Use the **get_voice_id** method to obtain the voice_id or pass it in manually
+        - similarity_boost: ```float``` = ```0.55```, ```0.0 - 1.0```
+            Higher values boost the voice clarity but can introduce artifacts. Default is 0.55
+        - stability: ```float``` = ```0.45```, ```0.0 - 1.0```
+            A higher stability is more predictable but can be monotone, while a lower stability is more expressive but unstable. Default is 0.45
+        - style: ```float``` = ```0.55```, ```0.0 - 1.0```
+            Higher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.90
         
         ### Raises:
         - ```ValueError```: If text is not a string or a list of strings
