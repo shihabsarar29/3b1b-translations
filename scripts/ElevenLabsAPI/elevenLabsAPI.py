@@ -1,5 +1,6 @@
 import requests
 from typing import Union
+import json
 
 class elevenLabsAPI:
     """
@@ -38,12 +39,30 @@ class elevenLabsAPI:
         - voice_name: ```str```\n
             \tThe name of the voice to get the id
         - inPlace: ```bool``` = ```False```\n
-            \tIf True, set the voice_id attribute to the voice_id found. If False, return the voice_id found
+            \tIf True, set the object's ```voice_id``` attribute to the voice_id found. If False, return the voice_id found
+
+        ### Raises:
+        - ```ValueError```: If the voice with name voice_name is not found
         """
 
         url = f"{self.base_url}/v1/voices" # URL to send the request, formatted as f-string
-        response = requests.get(url, headers=self.headers) # Send the request and retrieve the response
-        voices = response.json()["voices"]
+
+        try:
+            response = requests.get(url, headers=self.headers) # Send the request and retrieve the response
+            response.raise_for_status() # Raise an error if the status code is not 200
+        except requests.exceptions.HTTPError as err:
+            raise requests.exceptions.HTTPError("Error in making GET request for all voice_ids: ", err)
+        except Exception as err:
+            raise Exception("Unidentified error in getting audio: ", err)
+
+        try:
+            voices = response.json()["voices"]
+        except json.decoder.JSONDecodeError as err:
+            raise json.decoder.JSONDecodeError("An error occurred while parsing the response as JSONN: ", err)
+        except KeyError as err:
+            raise KeyError("The JSON response does not contain a key 'voices': ", err)
+        except Exception as err:
+            raise Exception("Unidentified error in getting voice ID from JSON data: ", err)
 
         # Get element where name is voice_name 
         voice = next((voice for voice in voices if voice["name"] == voice_name), None) # Find the voice with the name voice_name
@@ -70,10 +89,17 @@ class elevenLabsAPI:
         url = f"{self.base_url}/v1/text-to-speech/{voice_id}" # URL to send the request, formatted as f-string
         payload = data # Payload to send to the API
 
-        response = requests.post(url, json=payload, headers=self.headers) # Send the request and retrieve the response
+        try:
+            response = requests.post(url, json=payload, headers=self.headers) # Send the request and retrieve the response
+            response.raise_for_status() # Raise an error if the status code is not 200
+        except requests.exceptions.HTTPError as err:
+            raise requests.exceptions.HTTPError("HTTPError in getting audio: ", err)
+        except Exception as err:
+            raise Exception("Unidentified error in getting audio: ", err)
+
         return response
 
-    def get_audio_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None) -> Union[str, list[str]]:
+    def get_audio_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None, similarity_boost: float = 0.55, stability: float = 0.45, style: float = 0.9) -> Union[str, list[str]]:
         """
         ### get_audio_to_file
         Get the audio from the ElevenLabs API and save it to a file(s), given the text(s) and output_file. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
@@ -87,6 +113,16 @@ class elevenLabsAPI:
             \tHow many bytes to write to the file at a time. Default is 1024
         - voice_id: ```str``` = ```None```\n
             \tThe voice_id to use for the text-to-speech. Use the **get_voice_id** method to obtain the voice_id or pass it in manually
+        - similarity_boost: ```float``` = ```0.55```, ```0.0 - 1.0```\n
+            \tHigher values boost the voice clarity but can introduce artifacts. Default is 0.55
+        - stability: ```float``` = ```0.45```, ```0.0 - 1.0```\n
+            \tA higher stability is more predictable but can be monotone, while a lower stability is more expressive but unstable. Default is 0.45
+        - style: ```float``` = ```0.55```, ```0.0 - 1.0```\n
+            \tHigher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.90
+        
+        ### Raises:
+        - ```ValueError```: If text is not a string or a list of strings
+        - ```ValueError```: If voice_id is not valid. Likely the user forgot to set it or pass it in manually
         """
 
         if not voice_id: # If voice_id is not passed, use the one in the object
@@ -96,10 +132,11 @@ class elevenLabsAPI:
         
         data = { # Payload
             "text": text,
+            "model_id": "eleven_multilingual_v2",
             "voice_settings": {
-                "similarity_boost": 0.45,
-                "stability": 0.55,
-                "style": 0.40,
+                "similarity_boost": similarity_boost,
+                "stability": stability,
+                "style": style,
                 "use_speaker_boost": True,
             },
         }
