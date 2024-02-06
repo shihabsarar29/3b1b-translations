@@ -1,6 +1,6 @@
 from elevenLabsAPI import elevenLabsAPI
 
-api_key = "223d1370f5f20fec5d15eb94e8deab50" # Replace
+api_key = "API_KEY_HERE" # Replace
 tts = elevenLabsAPI(api_key)
 tts.get_voice_id("3b1b", inPlace=True)
 
