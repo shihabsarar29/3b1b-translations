@@ -9,11 +9,11 @@ class elevenLabsAPI:
     Class/Wrapper for the ElevenLabs API
 
     ### Attributes:
-    - api_key: str
+    api_key: str
         The API key to use the ElevenLabs API
-    - base_url: str
+    base_url: str
         The base url of the API, default is "https://api.elevenlabs.io"
-    - voice_id: str
+    voice_id: str
         The voice_id to use for the text-to-speech, can be used to use a specific voice for TTS; Set manually or using the **get_voice_id** method    
     
     ### Methods:
@@ -37,9 +37,9 @@ class elevenLabsAPI:
         Get the id of an ElevenLabs voice, given its name (i.e. "Rachel" or "John"). Voice can be custom trained. [Reference](https://elevenlabs.io/docs/api-reference/get-voices)
 
         #### Parameters:
-        - voice_name: ```str```
+        voice_name: ```str```:
             The name of the voice to get the id
-        - inPlace: ```bool``` = ```False```
+        inPlace: ```bool``` = ```False```:
             If True, set the object's ```voice_id``` attribute to the voice_id found. If False, return the voice_id found
 
         ### Raises:
@@ -83,9 +83,9 @@ class elevenLabsAPI:
         Get the audio from the ElevenLabs API, given the data (payload) and voice_id. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
 
         #### Parameters:
-        - data: ```dict```
+        data: ```dict```
             The payload to send to the API. Contains the text to convert to speech, as well as custom voice_settings.
-        - voice_id: ```str```
+        voice_id: ```str```
             The voice_id to use for the text-to-speech. Use the **get_voice_id** method to obtain the voice_id or pass it in manually
         """
 
@@ -108,19 +108,19 @@ class elevenLabsAPI:
         Get the audio from the ElevenLabs API and save it to a file(s), given the text(s) and output_file. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
 
         #### Parameters:
-        - text: ```str``` or ```list[str]```
+        text: ```str``` or ```list[str]```
             The text to convert to speech. Can be a string or a list of strings. If a list, each element will be converted to a separate audio file
-        - output_file: ```str```
+        output_file: ```str```
             The path to save the audio file(s). If text is a list, the output_file string will be used as a prefix for each file
-        - CHUNK_SIZE: ```int``` = ```1024```
+        CHUNK_SIZE: ```int``` = ```1024```
             How many bytes to write to the file at a time. Default is 1024
-        - voice_id: ```str``` = ```None```
+        voice_id: ```str``` = ```None```
             The voice_id to use for the text-to-speech. Use the **get_voice_id** method to obtain the voice_id or pass it in manually
-        - similarity_boost: ```float``` = ```0.55```, ```0.0 - 1.0```
+        similarity_boost: ```float``` = ```0.55```, ```0.0 - 1.0```
             Higher values boost the voice clarity but can introduce artifacts. Default is 0.55
-        - stability: ```float``` = ```0.45```, ```0.0 - 1.0```
+        stability: ```float``` = ```0.45```, ```0.0 - 1.0```
             A higher stability is more predictable but can be monotone, while a lower stability is more expressive but unstable. Default is 0.45
-        - style: ```float``` = ```0.55```, ```0.0 - 1.0```
+        style: ```float``` = ```0.55```, ```0.0 - 1.0```
             Higher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.90
         
         ### Raises:
