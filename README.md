@@ -120,7 +120,7 @@ elevenLabs.get_voice_id('3b1b', inPlace=True)
 text = "Hello, World!"
 
 # Convert the text to speech
-elevenLabs.TTS_to_file("TTS_OUTPUT.mp3", text, voice_id='3b1b')
+elevenLabs.TTS_to_file("TTS_OUTPUT.mp3", text)
 
 # Infer the RVC Model, save the output to TTS_OUTPUT.mp3
 infer("sample_rvc.pth", "TTS_OUTPUT.mp3", "SAMPLE.mp3", "logs/sample_rvc/rvc_idx.index", 0, -2, "rmvpe", 160, 3, 0, 1, 0.95, 0.33)
