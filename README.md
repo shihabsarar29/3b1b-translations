@@ -14,7 +14,7 @@
     AI-Powered Translations for 3Blue1Brown's Youtube Channel<br>  <strong>20+ supported languages</strong> 
     <br />
     <br>
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="docs/"><strong>Explore the docs »</strong></a>
   </p>
 </div>
 
@@ -100,7 +100,7 @@ Ensure you have the following installed before moving onto installation.
    ```
 
 ### Example Usage
-A common use case involves converting text to speech using the [ElevenLabsWrapper](https://example.com/documentation/ElevenLabsWrapper), and making this speech more realistic using an [RVC Model](https://example.com/documentation/RVC). To create these realistic audios, make a new _IPYNB_ or _PY_ file in the project's root directory.
+A common use case involves converting text to speech using the [ElevenLabsWrapper](docs/ElevenLabsWrapper.md), and making this speech more realistic using an [RVC Model](docs/RVCWrapper.md). To create these realistic audios, make a new _IPYNB_ or _PY_ file in the project's root directory.
 ```Python
 from scripts.ElevenLabsAPI.elevenLabsAPI.py import elevenLabsAPI
 from scripts.RVCAPI.RVCAPI import infer
@@ -126,7 +126,7 @@ elevenLabs.TTS_to_file("TTS_OUTPUT.mp3", text)
 infer("sample_rvc.pth", "TTS_OUTPUT.mp3", "SAMPLE.mp3", "logs/sample_rvc/rvc_idx.index", 0, -2, "rmvpe", 160, 3, 0, 1, 0.95, 0.33)
 ```
 
-_For more information and code examples, please refer to the [Documentation](https://example.com)_
+_For more information and code examples, please refer to the [Documentation](docs/)_
 
 <!-- ROADMAP -->
 
