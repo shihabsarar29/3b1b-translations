@@ -40,7 +40,7 @@ def infer(pth_file: str, input_file: str, output_file: str, feature_index: str, 
         Whether to use Voiceless Consonant Preservation (Less Artifact): 0.33 (Smaller number = more protection. 0.50 means Dont Use.) Default is ```0.50```
     
     #### Returns:
-    ```str```: The path to the output file
+    - ```str```: The path to the output file
     """
 
     # Make list of all args, convert all args to strings
@@ -62,5 +62,5 @@ def infer(pth_file: str, input_file: str, output_file: str, feature_index: str, 
         # Raise an error if the inference data is not a string or tuple. This is an unidentified error
         raise ValueError("UNIDENTIFIED ERROR occured while performing inference. Full traceback: " + str(inference_data))
     
-
-infer("init-experiment-2.pth", "audios/someguy.mp3", "myTest.mp3", "logs/init-experiment-2/added_IVF4048_Flat_nprobe_1_init-experiment-2_v2.index", 0, -2, "rmvpe", 160, 3, 0, 1, 0.95, 0.33)
+# EXAMPLE USAGE:
+#infer("init-experiment-2.pth", "audios/someguy.mp3", "myTest.mp3", "logs/init-experiment-2/added_IVF4048_Flat_nprobe_1_init-experiment-2_v2.index", 0, -2, "rmvpe", 160, 3, 0, 1, 0.95, 0.33)
