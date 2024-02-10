@@ -4,6 +4,7 @@
 The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLabs API, particularly for text-to-speech functionalities. This class provides methods to facilitate the conversion of text to audio files using the ElevenLabs API.
 
 ## Attributes
+
 - `api_key`: **str**
     - The API key used to access the ElevenLabs API.
 - `base_url`: **str**
@@ -15,9 +16,9 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
 ##### get_voice_id
 - **Description**: Retrieves the ID of an ElevenLabs voice given its name.
 - **Parameters**:
-    - `voice_name`: str
+    - `voice_name`: **str**
         - The name of the voice to get the ID.
-    - `inPlace`: bool = False
+    - `inPlace`: **bool** (default: False)
         - If True, sets the object's `voice_id` attribute to the retrieved voice ID. If False, returns the voice ID.
 ###### **Returns**: 
 - ```str```: The voice ID of the given voice name.
