@@ -10,7 +10,7 @@ Project Shields
 
 <div align="center">
   <a href="https://github.com/shihabsarar29/3b1b-translations/">
-    <img src="ReadMe/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="docs/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">3Blue1Brown Translation Project</h3>
