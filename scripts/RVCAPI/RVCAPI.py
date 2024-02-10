@@ -5,6 +5,7 @@ Wrapper for MANGIO-RVC Library Inferencing
 from lib.infer import V2V_infer
 import os
 
+#NEED TO ADD "is_working_dir: bool" AS ARG
 def infer(pth_file: str, input_file: str, output_file: str, feature_index: str, speaker_id: int, transpoition: float, f0_method: str, crepe_hop: int, harvest_median_filter: int, post_sample_rate: int, mix_vol_envelope: float, feature_index_ratio: float, VCP: float) -> str:
     """
     ### infer
