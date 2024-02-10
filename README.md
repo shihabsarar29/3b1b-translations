@@ -10,7 +10,7 @@
 <h3 align="center">3Blue1Brown Translation Project</h3>
 
 <p align="center">
-    AI-Powered Translations 3Blue1Brown's Youtube Channel<br>  <strong>20+ supported languages</strong> 
+    AI-Powered Translations for 3Blue1Brown's Youtube Channel<br>  <strong>20+ supported languages</strong> 
     <br />
     <br>
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
