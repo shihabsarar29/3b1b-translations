@@ -1,5 +1,11 @@
 <a name="readme-top"></a>
 
+<!---
+Project Shields
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![VSCode][vscode-shield]][vscode-url]
+
 <!-- PROJECT LOGO -->
 
 <div align="center">
@@ -136,3 +142,9 @@ _For more information and code examples, please refer to the [Documentation](htt
   - [x] Audio Alignments
   - [ ] ElevenLabs RVC Integration
   - [ ] Testing
+
+<!-- Shields and URLs -->
+[contributors-shield]: https://img.shields.io/github/contributors/shihabsarar29/3b1b-translations.svg?style=for-the-badge
+[contributors-url]: https://github.com/shihabsarar29/3b1b-translations/graphs/contributors
+[vscode-shield]: https://img.shields.io/badge/Open%20in%20VS%20Code-open-blue.svg?logo=visual-studio-code
+[vscode-url]: https://github.dev/shihabsarar29/3b1b-translations
