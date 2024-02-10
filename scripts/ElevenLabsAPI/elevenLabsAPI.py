@@ -102,9 +102,9 @@ class elevenLabsAPI:
 
         return response
 
-    def get_audio_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None, similarity_boost: float = 0.55, stability: float = 0.45, style: float = 0.9) -> Union[str, list[str]]:
+    def TTS_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None, similarity_boost: float = 0.55, stability: float = 0.45, style: float = 0.9) -> Union[str, list[str]]:
         """
-        ### get_audio_to_file
+        ### TTS_to_file
         Get the audio from the ElevenLabs API and save it to a file(s), given the text(s) and output_file. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
 
         #### Parameters:
