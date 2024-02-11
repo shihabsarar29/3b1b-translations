@@ -7,6 +7,15 @@ api_key = os.getenv("ELEVEN_LABS_API_KEY")
 tts = elevenLabsAPI(api_key)
 tts.get_voice_id("3b1b", inPlace=True)
 
-text = "Hi, my name is Grant. I like dogs, cats, and Bayes Theorem."
-output_file = "outputs/output.mp3"
-tts.get_audio_to_file(text, output_file)
+texts = []
+import json
+
+with open("C:\\Users\\sapat\\Downloads\\3b1b\\API\\scripts\\ElevenLabsAPI\\sentence_translations.json", "r") as file:
+    data = json.load(file)
+    for item in data:
+        texts.append(item["translatedText"])
+
+print(texts)
+
+output_file = "outputs/output"
+tts.get_audio_to_file(texts, output_file, percentage=True)

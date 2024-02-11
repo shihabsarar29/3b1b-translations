@@ -52,7 +52,9 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
     - `stability`: **float** (default 0.45) (0.0 - 1.0)
         - A higher stability is more predictable but can be monotone, while a lower stability is more expressive but unstable. Default is 0.45.
     - `style`: **float** (default 0.9) (0.0 - 1.0)
-        - Higher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.90.
+        - Higher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.45.
+    - `percentage`: **bool** (default False)
+        - If True, the method will print the percentage of texts converted to audio on every iteration, if text is a list.
 ###### **Returns**: 
 - ```str```: The path to the saved audio file.
 - ```list[str]```: If text argument is a list of prompts, the method returns a list of paths to the saved audio files.
