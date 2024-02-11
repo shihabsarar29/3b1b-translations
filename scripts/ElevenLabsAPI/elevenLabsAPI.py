@@ -102,7 +102,7 @@ class elevenLabsAPI:
 
         return response
 
-    def get_audio_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None, similarity_boost: float = 0.55, stability: float = 0.45, style: float = 0.9) -> Union[str, list[str]]:
+    def get_audio_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None, similarity_boost: float = 0.55, stability: float = 0.45, style: float = 0.4, percentage = False) -> Union[str, list[str]]:
         """
         ### get_audio_to_file
         Get the audio from the ElevenLabs API and save it to a file(s), given the text(s) and output_file. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
@@ -120,8 +120,10 @@ class elevenLabsAPI:
             Higher values boost the voice clarity but can introduce artifacts. Default is 0.55
         stability: ```float``` = ```0.45```, ```0.0 - 1.0```
             A higher stability is more predictable but can be monotone, while a lower stability is more expressive but unstable. Default is 0.45
-        style: ```float``` = ```0.55```, ```0.0 - 1.0```
+        style: ```float``` = ```0.45```, ```0.0 - 1.0```
             Higher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.90
+        percentage: ```bool``` = ```False```
+            If True, print the percentage done for each file when text is a list
         
         ### Raises:
         - ```ValueError```: If text is not a string or a list of strings
@@ -168,6 +170,10 @@ class elevenLabsAPI:
                     for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
                         if chunk:
                             f.write(chunk)
+                
+                # Print percentage done
+                if percentage:
+                    print(f"Percentage done: {round((idx+1)/len(text)*100, 2)}%")
 
             output_files = [f"{output_file}_{idx}.mp3" for idx in range(len(text))] # Keep track of the file paths
 
