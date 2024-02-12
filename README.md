@@ -102,7 +102,7 @@ Ensure you have the following installed before moving onto installation.
 ### Example Usage
 A common use case involves converting text to speech using the [ElevenLabsWrapper](docs/ElevenLabsWrapper.md), and making this speech more realistic using an [RVC Model](docs/RVCWrapper.md). To create these realistic audios, make a new _IPYNB_ or _PY_ file in the project's root directory.
 ```Python
-from scripts.ElevenLabsAPI.elevenLabsAPI.py import elevenLabsAPI
+from scripts.ElevenLabsAPI.elevenLabsAPI import elevenLabsAPI
 from scripts.RVCAPI.RVCAPI import infer
 import dotenv
 
