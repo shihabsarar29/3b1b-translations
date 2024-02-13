@@ -72,7 +72,22 @@ class Parser:
             raise KeyError('The provided JSON object does not contain an "input" attribute.')
         return ' '.join(original_texts)
     
+    def get_start_timestamps(self):
+        '''
+        A method to get the start timestamps from the JSON object.
+
+        Inputs:
+            None
+
+        Outputs:
+            list[int]: A list containing the start timestamps.
+        '''
+        try:
+            return [item['time_range'][0] for item in self.json_list]
+        except KeyError:
+            raise KeyError('The provided JSON object does not contain a "start" attribute.')
+    
 # Example usage
-# file_path = '../Chinese/sentence_translations.json'
+# file_path = 'Chinese/sentence_translations.json'
 # translator = Parser(file_path)
-# print(translator.get_translated_texts())
+# print(translator.get_original_texts())

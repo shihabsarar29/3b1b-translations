@@ -95,8 +95,8 @@ class AudioManipulation:
         for i in range(1, len(start_timestamps)):
             segment_duration = start_timestamps[i] - start_timestamps[i - 1] - duration
             pause_audio = AudioSegment.silent(duration=segment_duration * 1000)  
-            output_file_path = os.path.join(output_directory, f"pause_{i}.wav")
-            pause_audio.export(output_file_path, format="mp3", codec="libmp3lame")
+            output_file_path = os.path.join(output_directory, f"pause_{i+1000}.wav")
+            pause_audio.export(output_file_path, format="wav")
 
     @staticmethod
     def join_audios(pause_audio_files: list[str], translated_audio_files: list[str], output_file_path: str):
@@ -125,4 +125,4 @@ class AudioManipulation:
             final_audio += pause_audio + translated_audio
 
         # Save the final audio file
-        final_audio.export(output_file_path, format="mp3")
+        final_audio.export(output_file_path, format="wav")
