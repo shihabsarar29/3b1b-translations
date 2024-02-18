@@ -2,10 +2,10 @@ import sys
 sys.path.insert(0, sys.path[0] + '/../../../')
 
 from scripts.Parser import Parser
-from scripts.GoogleCloudTTS import GoogleCloudTTS
+from scripts.OtherTTS.GoogleCloudTTS import GoogleCloudTTS
 from scripts.ElevenLabsAPI.elevenLabsAPI import elevenLabsAPI
 from scripts.AzureTTS import AzureTTS
-from scripts.OpenAITTS import OpenAITTS
+from scripts.OtherTTS.OpenAITTS import OpenAITTS
 import dotenv
 import os
 import time
