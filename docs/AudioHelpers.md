@@ -27,7 +27,7 @@ Creates pause audio files based on the given start timestamps and duration.
 - `output_directory` **str**: 
   - The directory where the pause audio files will be saved.
 - `duration` **float**: 
-  - The duration of the pauses.
+  - The duration of Grant's speaking time for the utterance.
 
 ###### Returns:
 - `None`
