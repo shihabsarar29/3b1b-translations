@@ -1,6 +1,7 @@
 import os
 import requests
 import xml.sax.saxutils as saxutils
+import time
 from dotenv import load_dotenv
 
 class AzureTTS:
@@ -17,7 +18,7 @@ class AzureTTS:
         except Exception as e:
             print(f"Failed to get Azure Cognitive Service Data. Error: {e}")
 
-    def convert_text_to_speech(self, text: str, voice_name: str="en-US-BrianNeural", filename: str="output-azure.mp3"):
+    def convert_text_to_speech(self, text: str, voice_name: str="en-US-AndrewMultilingualNeural", filename: str="output-azure.mp3", speed_rate: float=1.0):
         """
         A method to convert text to speech using Azure Cognitive Services Speech Service.
 
@@ -40,7 +41,9 @@ class AzureTTS:
             data = f'''
             <speak version='1.0' xml:lang='{lang}'>
                 <voice xml:lang='{lang}' xml:gender='Male' name='{voice_name}'>
-                    {escaped_text}
+                    <prosody rate='{speed_rate}'>
+                        {escaped_text}
+                    </prosody>
                 </voice>
             </speak>
             '''
@@ -50,6 +53,9 @@ class AzureTTS:
             with open(filename, 'wb') as audio:
                 audio.write(response.content)
                 print(f'Audio content written to file "{filename}"')
+
+            time.sleep(2)
+            
         except Exception as e:
             print(f"Exception occurred when converting text to speech. Error: {e}")
 

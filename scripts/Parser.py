@@ -34,10 +34,11 @@ class Parser:
             str: A string containing the translated texts.
         '''
         try:
-            translated_texts = [item['translatedText'] for item in self.json_list]
+            translated_texts = ' '.join([item['translatedText'] for item in self.json_list])
+            print(translated_texts)
         except KeyError:
             raise KeyError('The provided JSON object does not contain a "translatedText" attribute.')
-        return ' '.join(translated_texts)
+        return translated_texts
     
 
     def get_translated_texts_list(self):
