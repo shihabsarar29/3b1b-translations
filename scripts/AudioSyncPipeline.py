@@ -2,6 +2,7 @@ from scripts.Parser import Parser
 from scripts.AzureTTS import AzureTTS
 from scripts.AudioManipulation import AudioManipulation
 import os
+import pandas as pd
 
 class AudioSync:
     def __init__(self, json_path, main_dir, output_file_path):
@@ -40,6 +41,10 @@ class AudioSync:
         # Create pause audios and manipulate audio
         try:
             AudioManipulation.create_single_pause_audio(duration=start_timestamps[0], output_file=self.pause_audio_folder + "/pause_1000.wav")
+
+            # Dataframe to store the speedup rates
+            speedup_rates = pd.DataFrame(columns=["speedup_rate", "start_time", "end_time", "original_duration"])
+
             # Manipulate audio
             for i in range(len(start_timestamps)-1):
                 segment_duration = start_timestamps[i+1] - start_timestamps[i]
@@ -59,6 +64,14 @@ class AudioSync:
                     text = text_list[i]
                     output_file = self.translations_folder_path + f'/azure_{i+1000}.mp3'
                     azure_tts.convert_text_to_speech(text=text, filename=output_file, speed_rate=speed_rate)
+
+                    # Add information to speedup_rates dataframe via concatenation
+                    speedup_rates = pd.concat([speedup_rates, pd.DataFrame({
+                        "speedup_rate": speed_rate, # Speedup rate
+                        "start_time": start_timestamps[i], # Start time
+                        "end_time": start_timestamps[i+1], # End time
+                        "original_duration": translated_audio_length # How long the original audio was
+                    }, ignore_index=True)])
 
                     # Create pause audio file
                     AudioManipulation.create_single_pause_audio(
