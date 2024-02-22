@@ -13,10 +13,13 @@ import json
 import pydub
 import gc
 
-ROOT_DIR = r"" # REPLACE WITH \THE FOLDER YOU WANT TO GET CHARACTER AVERAGES FOR
+ROOT_DIR = r"captions/2016/cross-products" # REPLACE WITH \THE FOLDER YOU WANT TO GET CHARACTER AVERAGES FOR
 
 # List of folders in the root directory
 folders = [f for f in os.listdir(ROOT_DIR) if os.path.isdir(os.path.join(ROOT_DIR, f))]
+print(folders)
+
+all_languages_count = {}
 
 # Loop through each folder
 for idx in range(len(folders)):
@@ -45,8 +48,8 @@ for idx in range(len(folders)):
 
                 # Add to character_count_detailed
                 current_item = {
-                    "start": item["time_range"][0],
-                    "end": item["time_range"][1],
+                    "start": item["start"],
+                    "end": item["end"],
                     "character_count": character_count
                 }
 
@@ -65,6 +68,8 @@ for idx in range(len(folders)):
 
         # Calculate average number of translated characters per second
         character_counts["avg_translated"] = character_counts["total"] / audio_length
+        # character_counts["avg_translated"] = 500 / audio_length
+        all_languages_count[folder_name] = character_counts["avg_translated"]
 
         # Delete audio variable
         del audio
@@ -98,3 +103,6 @@ for idx in range(len(folders)):
 
     with open(os.path.join(full_path, "character_count_detailed.json"), "w", encoding="utf-8") as f:
         json.dump(character_count_detailed, f, ensure_ascii=False, indent=4)
+
+    with open(os.path.join(ROOT_DIR, "avg_chars_per_sec.json"), "w", encoding="utf-8") as f:    
+        json.dump(all_languages_count, f, ensure_ascii=False, indent=4)
