@@ -2,12 +2,13 @@ import json
 import os
 
 class Parser:
-    def __init__(self, file_path):
+    def __init__(self, file_path, json_encoding='utf-8'):
         '''
         The constructor for the Parser class.
 
         Inputs:
             file_path (str): The path to the JSON file to parse.
+            json_encoding (str): The encoding to use when reading the JSON file. Default is 'utf-8'.
 
         Outputs:
             None
@@ -15,10 +16,10 @@ class Parser:
         if not os.path.isfile(file_path):
             raise ValueError(f'The file at path {file_path} does not exist. Please provide a valid file path.')
         try:
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r', encoding=json_encoding) as file:
                 self.json_list = json.load(file)
-        except json.JSONDecodeError:
-            raise ValueError(f'The file at path {file_path} is not a valid JSON file.')
+        except json.JSONDecodeError as e:
+            raise ValueError(f'The file at path {file_path} is not a valid JSON file. {str(e)}')
         except Exception as e:
             raise Exception(f'An error occurred when attempting to read the file at path {file_path}: {str(e)}')
         
@@ -40,7 +41,7 @@ class Parser:
             raise KeyError('The provided JSON object does not contain a "translatedText" attribute.')
         return translated_texts
     
-
+    
     def get_translated_texts_list(self):
         '''
         A method to get the translated texts in list from the JSON object.
@@ -72,6 +73,22 @@ class Parser:
         except KeyError:
             raise KeyError('The provided JSON object does not contain an "input" attribute.')
         return ' '.join(original_texts)
+    
+    
+    def get_original_texts_list(self):
+        '''
+        A method to get the translated texts in list from the JSON object.
+
+        Inputs:
+            None
+
+        Outputs:
+            str: A list containing the original (non-translated) texts.
+        '''
+        try:
+            return [item['input'] for item in self.json_list]
+        except KeyError:
+            raise KeyError('The provided JSON object does not contain a "translatedText" attribute.')
     
     def get_start_timestamps(self):
         '''

@@ -1,8 +1,10 @@
-from scripts.Parser import Parser
-from scripts.AzureTTS import AzureTTS
-from scripts.AudioManipulation import AudioManipulation
+from Parser import Parser
+from AzureTTS import AzureTTS
+from AudioManipulation import AudioManipulation
 import os
 import pandas as pd
+import time
+import traceback
 
 class AudioSync:
     def __init__(self, json_path, main_dir, output_file_path):
@@ -19,16 +21,19 @@ class AudioSync:
 
         # Parse translations
         try:
-            translator = Parser(self.json_path)
+            translator = Parser(self.json_path, json_encoding="utf-8")
             text_list = translator.get_translated_texts_list()
+            original_text_list = translator.get_original_texts_list()
             start_timestamps = translator.get_start_timestamps()
             print(text_list, "\n\n")
         except Exception as e:
             print(f"Failed to parse file: {e}")
             return
 
+        # Get starting time
+        start_time = time.time()
+
         # Convert text to speech
-        print("Azure TTS")
         azure_tts = AzureTTS()
         try:
             for i, text in enumerate(text_list):
@@ -37,6 +42,12 @@ class AudioSync:
         except Exception as e:
             print(f"Failed to convert text to speech using Azure TTS: {e}")
             return
+        
+        # Get ending time
+        end_time = time.time()
+
+        # Print time elapsed
+        print(f"Time elapsed for Azure: {end_time - start_time} seconds")
 
         # Create pause audios and manipulate audio
         try:
@@ -70,14 +81,45 @@ class AudioSync:
                         "speedup_rate": speed_rate, # Speedup rate
                         "start_time": start_timestamps[i], # Start time
                         "end_time": start_timestamps[i+1], # End time
-                        "original_duration": translated_audio_length # How long the original audio was
-                    }, ignore_index=True)])
+                        "original_duration": translated_audio_length, # How long the original audio was
+                        "flag": speed_rate >= 1.25, # Flag if speed rate is greater than 1.25
+                        "character_count": len(text), # Number of characters in the text
+                        "original_character_count": len(original_text_list[i]), # Number of characters in the original text
+                        "translated_duration": translated_audio_length, # Duration of the translated audio
+                        "difference": abs(translated_audio_length - segment_duration) # Difference between the translated audio and the segment duration
+                    })])
+
+                    # Reset index
+                    speedup_rates = speedup_rates.reset_index(drop=True)
 
                     # Create pause audio file
                     AudioManipulation.create_single_pause_audio(
                         duration=0,
                         output_file=self.pause_audio_folder + "/pause_" + str(i+1001) + ".wav")
+                    
+                    # Save speedup rates to a csv file. 
+                    try:
+                        # Get file extension of output file
+                        try:
+                            file_extension = self.output_file_path.split('.')[-1]
+
+                            # Save speedup rates to a csv file, replacing the file extension with _speedup_rates.csv
+                            speedup_rates.to_csv(self.output_file_path.replace(file_extension, "_speedup_rates.csv"), index=False)
+
+                            # Print success message
+                            print(f"Speedup rates saved to {self.output_file_path.replace(file_extension, '_speedup_rates.csv')}")
+                        except IndexError:
+                            # No file extension
+                            speedup_rates.to_csv(self.output_file_path + "_speedup_rates.csv", index=False)
+
+                            # Print success message
+                            print(f"Speedup rates saved to {self.output_file_path + '_speedup_rates.csv'}")
+                    except Exception as e:
+                        print(f"Failed to save speedup rates to a csv file: {e}")
+                        print(traceback.format_exc())
+                        return
         except Exception as e:
+            print(traceback.format_exc())
             print(f"Failed to create pause audio files: {e}")
             return
 
@@ -90,6 +132,8 @@ class AudioSync:
         except Exception as e:
             print(f"Failed to join audios: {e}")
             return
+        
+        
     
         # Cleaning
         os.system(f'rm -rf {self.pause_audio_folder}')
@@ -97,7 +141,7 @@ class AudioSync:
 
 
 # Example usage
-# json_path = "path/to/json"
-# main_dir = "path/to/main_dir"
-# audio_sync = AudioSync(json_path, main_dir)
-# audio_sync.convert_text_to_audio()
+json_path = r"C:\Users\sapat\Downloads\3b1b\API\scripts\ElevenLabsAPI\sentence_translations.json"
+main_dir = r"C:\Users\sapat\Downloads\3b1b\CodeAnnouncement\experiments_output"
+audio_sync = AudioSync(r"C:\Users\sapat\Downloads\3b1b\API\scripts\ElevenLabsAPI\sentence_translations.json", r"C:\Users\sapat\Downloads\3b1b\API\experiments_output", r"C:\Users\sapat\Downloads\3b1b\API\experiments_output")
+audio_sync.convert_text_to_audio()
