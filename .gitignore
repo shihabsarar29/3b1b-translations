@@ -2,3 +2,6 @@
 __pycache__
 myenv
 googleSheetsDF.py
+experiments_outputtemp_audios
+experiments_outputtemp_pauses
+experiments_output
