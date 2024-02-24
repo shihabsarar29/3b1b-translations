@@ -11,8 +11,8 @@ class AudioSync:
     def __init__(self, json_path, main_dir, output_file_path, language_averages_path):
         self.json_path = json_path
         self.main_dir = main_dir
-        self.translations_folder_path = self.main_dir + "temp_audios"
-        self.pause_audio_folder = self.main_dir + "temp_pauses"
+        self.translations_folder_path = self.main_dir + "\\temp_audios"
+        self.pause_audio_folder = self.main_dir + "\\temp_pauses"
         self.output_file_path = output_file_path
         
         estimate = Estimate(language_averages_path)
