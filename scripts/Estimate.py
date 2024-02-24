@@ -84,8 +84,12 @@ class Estimate:
             # Get the language from the directory name
             language = os.path.basename(directory)
 
-            return language
-        elif text:
+            if language in list(self.language_averages.keys()):
+                return language
+            else:
+                print("Path does not contain a valid language code. Attempting to detect language from text.")
+        
+        if text:
             # Use the text to detect the language
             language = langdetect.detect(text)
 
@@ -97,15 +101,19 @@ class Estimate:
                 language_conversion = self._get_conversions()
 
             # Map the language to the correct language name
-            language = language_conversion[language]
+            try:
+                language = language_conversion[language]
+            except KeyError:
+                raise KeyError(f'Unable to decode a valid language from the text. Please provide a valid language code or language name. List of all supported languages: {list(self.language_averages.keys())}')
 
             # Give warning if confidence is not high
             if langdetect.detect_langs(text)[0].prob < 0.9:
                 print(f'Warning: Low confidence of {langdetect.detect_langs(text)[0].prob * 100}% detected for language {language}.')
 
             return language
-        else:
-            raise ValueError('Either text or path must be provided.')
+        
+        # Raise an error if neither text nor path is provided
+        raise ValueError('Both text and path have failed to provide a valid language. Please provide a valid text or path.')
     
     def _get_conversions(self) -> dict:
         """
