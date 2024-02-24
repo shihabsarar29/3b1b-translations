@@ -2,10 +2,11 @@ import openai
 from Parser import Parser
 from Estimate import Estimate
 import dotenv
+from typing import Union
 
 openai.api_key = dotenv.get_key(dotenv.find_dotenv(), "OPENAI_API_KEY")
 
-def adjust_sentences_based_on_characters_speed(file_path, language_averages_path):
+def adjust_sentences_based_on_characters_speed(file_path, language_averages_path, save=False, save_path=None) -> Union[dict, None]:
     """
     Adjusts sentences based on the specified average speed count.
 
@@ -55,6 +56,7 @@ def adjust_sentences_based_on_characters_speed(file_path, language_averages_path
         except Exception as e:
             print(f"An error occurred while adjusting sentence: {e}")
         
+        # TESTING ONLY (to save money and time):
         break
 
 # Example usage

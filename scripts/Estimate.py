@@ -2,6 +2,7 @@ import os
 import json
 import langdetect
 import difflib
+import warnings
 
 class Estimate:
     '''
@@ -108,7 +109,7 @@ class Estimate:
 
             # Give warning if confidence is not high
             if langdetect.detect_langs(text)[0].prob < 0.9:
-                print(f'Warning: Low confidence of {langdetect.detect_langs(text)[0].prob * 100}% detected for language {language}.')
+                warnings.warn(f'Warning: Low confidence of {langdetect.detect_langs(text)[0].prob * 100}% detected for language {language}.')
 
             return language
         

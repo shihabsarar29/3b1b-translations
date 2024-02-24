@@ -12,7 +12,7 @@ class AudioManipulation:
     """
     
     @staticmethod
-    def create_single_pause_audio(duration: float, output_file: str):
+    def create_single_pause_audio(duration: float, output_file: str) -> None:
         """
         ### create_single_pause_audio
         Creates a single pause audio file based on the given duration.
@@ -34,16 +34,16 @@ class AudioManipulation:
     
 
     @staticmethod
-    def join_audios(pause_audio_folder: str, translated_audio_folder: str, output_file_path: str):
+    def join_audios(pause_audio_folder: str, translated_audio_folder: str, output_file_path: str) -> None:
         """
         ### join_audios
         Joins pause audio files and translated audio files together.
         
         #### Args:
-            pause_audio_files ```list[str]```: 
-                The pause audio files to be joined.
-            translated_audio_files ```list[str]```: 
-                The translated audio files to be joined.
+            pause_audio_files ```str```: 
+                The folder to the pause audio files that will be joined with the translated audio files.
+            translated_audio_files ```str```: 
+                The folder to the translated audio files that will be joined with the pause audio files.
             output_file_path ```str```: 
                 The path where the final audio file will be saved.
             
@@ -72,7 +72,7 @@ class AudioManipulation:
 
 
     # @staticmethod
-    def get_audio_duration(audio_file: str, format: str="mp3"):
+    def get_audio_duration(audio_file: str, format: str="mp3") -> float:
         """
         ### get_audio_duration
         Gets the duration of an audio file.
