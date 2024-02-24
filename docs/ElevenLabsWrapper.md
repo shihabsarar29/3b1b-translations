@@ -13,18 +13,18 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
     - The voice ID used for text-to-speech. Can be set manually or retrieved using the `get_voice_id` method.
 
 ## Methods
-##### get_voice_id
+### get_voice_id
 - **Description**: Retrieves the ID of an ElevenLabs voice given its name.
 - **Parameters**:
     - `voice_name`: **str**
         - The name of the voice to get the ID.
     - `inPlace`: **bool** (default: **False**)
         - If True, sets the object's `voice_id` attribute to the retrieved voice ID. If False, returns the voice ID.
-###### **Returns**: 
+#### **Returns**: 
 - ```str```: The voice ID of the given voice name.
 - ```None```: If `inPlace` is True, the method returns None.
 
-###### **Exceptions**:
+#### **Exceptions**:
   - `ValueError`: 
     - If the voice with the given name is not found.
   - `requests.exceptions.HTTPError`: 
@@ -36,7 +36,7 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
   - `Exception`: 
     - A catch-all exception for unidentified errors.
 
-##### get_audio_to_file
+### get_audio_to_file
 - **Description**: Converts text to audio and saves the audio to a file or files.
 - **Parameters**:
     - `text`: (**str** / **list[str]**)
@@ -55,10 +55,10 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
         - Higher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.45.
     - `percentage`: **bool** (default **False**)
         - If True, the method will print the percentage of texts converted to audio on every iteration, if text is a list.
-###### **Returns**: 
+#### **Returns**: 
 - ```str```: The path to the saved audio file.
 - ```list[str]```: If text argument is a list of prompts, the method returns a list of paths to the saved audio files.
-###### **Exceptions**:
+#### **Exceptions**:
   - `ValueError`:
     - If text is not a string or a list of strings, or if voice_id is not valid.
   - `requests.exceptions.HTTPError`: 
@@ -69,7 +69,7 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
     - A catch-all exception for unidentified errors.
 
 ## Example Usage:
-##### Example 1: Basic, Single Prompt Usage
+### Example 1: Basic, Single Prompt Usage
 ```python
 from scripts.ElevenLabsAPI.elevenLabsAPI.py import elevenLabsAPI
 import dotenv
@@ -91,7 +91,7 @@ text = "Hello, World!"
 elevenLabs.TTS_to_file("TTS_OUTPUT.mp3", text) #  Output will be saved as TTS_OUTPUT.mp3
 ```
 
-##### Example 2: Advanced, Multi-Prompt Usage
+### Example 2: Advanced, Multi-Prompt Usage
 ```python
 from scripts.ElevenLabsAPI.elevenLabsAPI.py import elevenLabsAPI
 import dotenv
