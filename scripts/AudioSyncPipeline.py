@@ -41,9 +41,6 @@ class AudioSync:
         azure_tts = AzureTTS()
         try:
             for i, text in enumerate(text_list):
-                #TESTING PURPOSES:
-                break
-            
                 output_file = self.translations_folder_path + f'/azure_{i+1000}.mp3'
                 azure_tts.convert_text_to_speech(text=text, filename=output_file)
         except Exception as e:
@@ -200,10 +197,3 @@ class AudioSync:
 # output_path = "path/to/output.wav"
 # audio_sync = AudioSync(json_path, main_dir, output_path)
 # audio_sync.convert_text_to_audio()
-        
-json_path = r"C:\Users\sapat\Downloads\3b1b\API\256-bit-security\chinese\sentence_translations.json"
-main_dir = r"C:\Users\sapat\Downloads\3b1b\API\experiments_output"
-output_path = r"C:\Users\sapat\Downloads\3b1b\API\experiments_output\output.wav"
-lang_avgs_path = r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json"
-audio_sync = AudioSync(json_path, main_dir, output_path, lang_avgs_path)
-audio_sync.convert_text_to_audio()
