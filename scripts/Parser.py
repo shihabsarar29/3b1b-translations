@@ -104,6 +104,7 @@ class Parser:
             return [item['time_range'][0] for item in self.json_list]
         except KeyError:
             raise KeyError('The provided JSON object does not contain a "start" attribute.')
+
     
 # Example usage
 # file_path = 'Chinese/sentence_translations.json'
