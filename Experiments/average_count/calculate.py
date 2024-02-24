@@ -13,7 +13,7 @@ import json
 import pydub
 import gc
 
-ROOT_DIR = r"captions/2016/cross-products" # REPLACE WITH \THE FOLDER YOU WANT TO GET CHARACTER AVERAGES FOR
+ROOT_DIR = r"" # REPLACE WITH THE FOLDER YOU WANT TO GET CHARACTER AVERAGES FOR
 
 # List of folders in the root directory
 folders = [f for f in os.listdir(ROOT_DIR) if os.path.isdir(os.path.join(ROOT_DIR, f))]
