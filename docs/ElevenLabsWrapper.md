@@ -18,7 +18,7 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
 - **Parameters**:
     - `voice_name`: **str**
         - The name of the voice to get the ID.
-    - `inPlace`: **bool** (default: False)
+    - `inPlace`: **bool** (default: **False**)
         - If True, sets the object's `voice_id` attribute to the retrieved voice ID. If False, returns the voice ID.
 ###### **Returns**: 
 - ```str```: The voice ID of the given voice name.
@@ -43,17 +43,17 @@ The `elevenLabsAPI` class serves as a wrapper for interacting with the ElevenLab
         - The text to convert to speech. Can be a string or a list of strings. If a list, each element will be converted to a separate audio file.
     - `output_file`: **str**
         - The path to save the audio file(s). If text is a list, the output_file string will be used as a prefix for each file.
-    - `CHUNK_SIZE`: **int** (default 1024)
+    - `CHUNK_SIZE`: **int** (default **1024**)
         - How many bytes to write to the file at a time. Default is 1024.
-    - `voice_id`: **str** (default None)
+    - `voice_id`: **str** (default **None**)
         - The voice ID to use for the text-to-speech. Use the `get_voice_id` method to obtain the voice ID or pass it in manually.
-    - `similarity_boost`: **float** (default 0.55) (0.0 - 1.0)
+    - `similarity_boost`: **float** (default **0.55**) (0.0 - 1.0)
         - Higher values boost the voice clarity but can introduce artifacts. Default is 0.55.
-    - `stability`: **float** (default 0.45) (0.0 - 1.0)
+    - `stability`: **float** (default **0.45**) (0.0 - 1.0)
         - A higher stability is more predictable but can be monotone, while a lower stability is more expressive but unstable. Default is 0.45.
-    - `style`: **float** (default 0.9) (0.0 - 1.0)
+    - `style`: **float** (default **0.9**) (0.0 - 1.0)
         - Higher values are more "exaggerated" but also a lot more computationally expensive and take longer to generate. Default is 0.45.
-    - `percentage`: **bool** (default False)
+    - `percentage`: **bool** (default **False**)
         - If True, the method will print the percentage of texts converted to audio on every iteration, if text is a list.
 ###### **Returns**: 
 - ```str```: The path to the saved audio file.
