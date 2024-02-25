@@ -38,7 +38,7 @@ The `AudioSync` class contains methods to synchronize the translated text with t
 
 #### Outputs
 - The synced audio is saved to `output_file_path`.
-- A CSV file is saved to the same path as `output_file_path` with the name `.speedup_rates.csv`. This CSV contains the following information:
+- A CSV file is saved to the same path as `output_file_path` with the name `.speedup_rates.csv`. This CSV contains the following information (columns) for each transcript utterance (row):
     - `idx`: The index of the transcript utterance.
     - `speedup_rate`: How much the audio was sped up or slowed down, i.e. `1.25` means the audio was sped up by 25%.
     - `start_time`: The original start time of the utterance

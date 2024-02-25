@@ -1,7 +1,7 @@
 # GoogleCloudTTS Class Documentation
 
 ## Overview
-The `GoogleCloudTTS` class contains methods to generate audio data from text using Google Cloud's Text-to-Speech API.
+The `GoogleCloudTTS` class contains methods to generate audio data from text using [Google Cloud's Text-to-Speech API](https://cloud.google.com/text-to-speech?hl=en).
 
 ## Attributes
 - `api_key`: **str**:
