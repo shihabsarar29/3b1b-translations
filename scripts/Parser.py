@@ -117,6 +117,21 @@ class Parser:
             return [item['time_range'][0] for item in self.json_list]
         except KeyError:
             raise KeyError('The provided JSON object does not contain a "start" attribute.')
+        
+    def get_start_timestamps_direct(self):
+        '''
+        A method to get the start timestamps from the JSON object. Use this method if the JSON object does not contain a "time_range" attribute.
+
+        Inputs:
+            None
+
+        Outputs:
+            list[int]: A list containing the start timestamps.
+        '''
+        try:
+            return [item['start'] for item in self.json_list]
+        except KeyError:
+            raise KeyError('The provided JSON object does not contain a "start" attribute.')
 
     def get_end_timestamps(self):
         '''
@@ -131,7 +146,22 @@ class Parser:
         try:
             return [item['time_range'][1] for item in self.json_list]
         except KeyError:
-            raise KeyError('The provided JSON object does not contain a "start" attribute.')
+            raise KeyError('The provided JSON object does not contain a "end" attribute.')
+    
+    def get_end_timestamps_direct(self):
+        '''
+        A method to get the end timestamps from the JSON object. Use this method if the JSON object does not contain a "time_range" attribute.
+
+        Inputs:
+            None
+
+        Outputs:
+            list[int]: A list containing the end timestamps.
+        '''
+        try:
+            return [item['end'] for item in self.json_list]
+        except KeyError:
+            raise KeyError('The provided JSON object does not contain a "end" attribute.')
     
     def get_interval(self):
         '''
@@ -145,6 +175,26 @@ class Parser:
         '''
         start_times = self.get_start_timestamps()
         end_times = self.get_end_timestamps()
+
+        # Ensure there is a one-to-one correspondence between start and end times
+        if len(start_times) != len(end_times):
+            raise ValueError("The number of start timestamps does not match the number of end timestamps.")
+
+        durations = [end - start for start, end in zip(start_times, end_times)]
+        return durations
+    
+    def get_interval_direct(self):
+        '''
+        A method to calculate the durations between start and end timestamps. Use this method if the JSON object does not contain a "time_range" attribute.
+
+        Inputs:
+            None
+
+        Outputs:
+            list[int]: A list containing the durations (in seconds).
+        '''
+        start_times = self.get_start_timestamps_direct()
+        end_times = self.get_end_timestamps_direct()
 
         # Ensure there is a one-to-one correspondence between start and end times
         if len(start_times) != len(end_times):

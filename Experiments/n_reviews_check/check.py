@@ -1,9 +1,15 @@
 """ UPDATE DOCUMENTATION """
+import json
+import os
+import sys
+
+# Add parent directory to start of module search path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+# Import from scripts
 from scripts.FileUtils import FileUtils
 from scripts.Estimate import Estimate
 from scripts.Parser import Parser
-import json
-import os
 
 class Validate:
     """
@@ -57,7 +63,7 @@ class Validate:
         """
 
         # Get all JSON files in the root_directory
-        if self.target_directory is not None:
+        if self.fileUtils.target_directory is not None:
             json_files = self.fileUtils.get_json_files()
         else:
             json_files = self.fileUtils.get_json_files_root()
@@ -103,6 +109,12 @@ class Validate:
 
 
         print(f"{n_fulfilled} out of {n_total} JSON files fulfill the conditions. ({n_fulfilled/n_total*100:.2f}%)")
+
+        # Write the results to the output file if not InPlace
+        if not inPlace:
+            with open(output_file, 'w') as f:
+                json.dump(fulfillment_dict, f)
+
         return
     
     def check_fulfillment_single_file(self, input_file: str, output_file: str = None, inPlace: bool = False) -> tuple[int, bool, int, bool, bool, int]:
@@ -141,7 +153,10 @@ class Validate:
         translated = parser.get_translated_texts_list()
 
         # Get all the intervals
-        intervals = parser.get_interval()
+        try:
+            intervals = parser.get_interval()
+        except KeyError:
+            intervals = parser.get_interval_direct()
 
         # Get the number of reviews
         n_reviews = parser.get_reviews()
@@ -173,3 +188,9 @@ class Validate:
         
         # Return the results if not InPlace
         return n_reviews_fulfilled, n_reviews_fulfilled_bool, similar_durations_fulfilled, similar_durations_fulfilled_bool, len(intervals)
+
+# Usage:
+root_directory = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\barber-pole-1'
+language_averages_path = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json'
+validator = Validate(root_directory, language_averages_path)
+validator.check_fulfillment('fulfillment.json')
