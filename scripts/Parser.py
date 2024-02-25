@@ -117,6 +117,8 @@ class Parser:
             return [item['time_range'][0] for item in self.json_list]
         except KeyError:
             raise KeyError('The provided JSON object does not contain a "start" attribute.')
+        except IndexError:
+            raise IndexError('The provided JSON object does not contain a valid "time_range" attribute; Unable to get the start timestamps.')
         
     def get_start_timestamps_direct(self):
         '''
@@ -146,7 +148,9 @@ class Parser:
         try:
             return [item['time_range'][1] for item in self.json_list]
         except KeyError:
-            raise KeyError('The provided JSON object does not contain a "end" attribute.')
+            raise KeyError('The provided JSON object does not contain a "time_range" attribute.')
+        except IndexError:
+            raise IndexError('The provided JSON object does not contain a valid "time_range" attribute; Unable to get the end timestamps.')
     
     def get_end_timestamps_direct(self):
         '''
