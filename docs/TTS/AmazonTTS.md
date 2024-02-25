@@ -1,7 +1,7 @@
 # AmazonTTS (Polly) Class Documentation
 
 ## Overview
-The `PollyClient` is a class to interact with AWS Polly service, which is a cloud service that converts text to speech.
+The `PollyClient` is a class to interact with [AWS Polly service](https://aws.amazon.com/polly/), which is a cloud service that converts text to speech.
 
 ## Attributes
 - `polly_client` = **boto3.client**
