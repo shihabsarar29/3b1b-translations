@@ -1,3 +1,5 @@
+""" UPDATE DOCUMENTATION """
+
 import os
 import json
 import langdetect
@@ -43,7 +45,7 @@ class Estimate:
         language: ```str``` = ```None```:
             The language to use for the estimation. If not provided, the language will be detected from the text or path.
 
-        #### Outputs:
+        #### Returns:
         - ```float```: The estimated length of the translated text
         '''
 
@@ -62,6 +64,28 @@ class Estimate:
 
         # Estimate the length of the translated text
         return len(text) / average
+
+    def estimate_length_list(self, text_list: list, path: str = None, language: str = None) -> list[float]:
+        """
+        ### estimate_length_list
+        A method to estimate the length of a list of translated texts. Can use a specific language or the language detected from the JSON object.
+
+        #### Parameters:
+        text_list: ```list[str]```:
+            The list of texts to estimate the length of
+        path: ```str``` = ```None```:
+            The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
+        language: ```str``` = ```None```:
+            The language to use for the estimation. If not provided, the language will be detected from the text or path.
+        
+        #### Returns:
+        - ```list[float]```: The estimated length of the translated texts
+        """
+
+        if not language: # If language is not provided, detect the language from the text. Saves processing time to do it once here.
+            language = self._get_language(" ".join(text_list), path)
+
+        return [self.estimate_length(text, path, language) for text in text_list]
     
     def _get_language(self, text: str, path: str = None) -> str:
         '''
@@ -74,7 +98,7 @@ class Estimate:
         path: ```str``` = ```None```:
             The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
 
-        #### Outputs:
+        #### Returns:
         - ```str```: The detected language
         '''
 
@@ -90,6 +114,15 @@ class Estimate:
             else:
                 print("Path does not contain a valid language code. Attempting to detect language from text.")
         
+        # If text attribute not available, attempt to load the text from the path
+        if not text:
+            # Load the JSON file
+            with open(path, 'r') as f:
+                text = json.load(f)
+            
+            # Get the translated text from the JSON object
+            text = ' '.join([item['translatedText'] for item in text])
+
         if text:
             # Use the text to detect the language
             language = langdetect.detect(text)

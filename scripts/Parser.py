@@ -1,3 +1,5 @@
+""" UPDATE DOCUMENTATION """
+
 import json
 import os
 
@@ -23,6 +25,17 @@ class Parser:
         except Exception as e:
             raise Exception(f'An error occurred when attempting to read the file at path {file_path}: {str(e)}')
         
+    def load_json(self):
+        '''
+        A method to load the JSON object from the file.
+
+        Inputs:
+            None
+
+        Outputs:
+            list: A list containing the JSON object.
+        '''
+        return self.json_list
 
     def get_translated_texts(self):
         '''
@@ -139,6 +152,21 @@ class Parser:
 
         durations = [end - start for start, end in zip(start_times, end_times)]
         return durations
+    
+    def get_reviews(self):
+        '''
+        A method to get a list of the number of reviews for each item in the JSON object.
+
+        Inputs:
+            None
+
+        Outputs:
+            list[int]: A list containing the reviews.
+        '''
+        try:
+            return [item['n_reviews'] for item in self.json_list]
+        except KeyError:
+            raise KeyError('The provided JSON object does not contain a "n_reviews" attribute.')
 
     
 # Example usage
