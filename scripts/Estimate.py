@@ -212,5 +212,5 @@ class Estimate:
         }
 
 # TESTING:
-# estimate = Estimate(r'C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json')
-# print(estimate.estimate_length("Hola, ¿cómo estás?", language="spanish"))
+estimate = Estimate(r'C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json')
+print(estimate.estimate_length("Hola, ¿cómo estás?", language="spanish"))

@@ -1,10 +1,15 @@
 import openai
+from openai import OpenAI
 from Parser import Parser
 from Estimate import Estimate
 import dotenv
 from typing import Union
 
 openai.api_key = dotenv.get_key(dotenv.find_dotenv(), "OPENAI_API_KEY")
+
+client = OpenAI (
+    
+)
 
 def adjust_sentences_based_on_characters_speed(file_path, language_averages_path, save=False, save_path=None) -> Union[dict, None]:
     """
@@ -38,7 +43,7 @@ def adjust_sentences_based_on_characters_speed(file_path, language_averages_path
         try:
             # Generate the prompt and request sentence adjustment from the model
             prompt = f"Rewrite the following sentence to be {prompt_percentage}% or less of its original length, while mainting the same meaning of the sentence and prioritizing accuracy:\n\n{sentence}"
-            response = openai.completions.create(
+            response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
                 prompt=prompt,
                 temperature=0.5,

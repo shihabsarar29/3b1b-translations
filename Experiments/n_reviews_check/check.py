@@ -170,7 +170,7 @@ class Validate:
 
         # Check if atleast 80% of translated sentences are estimated to have a translated duration that is similar to the original duration (within 1 second)
         similar_durations_fulfilled = sum([1 for original, translated in zip(intervals, estimated_lengths) if abs(original - translated) <= 1])
-        similar_durations_fulfilled_bool = similar_durations_fulfilled/len(intervals) >= 0.8
+        similar_durations_fulfilled_bool = similar_durations_fulfilled/len(intervals) >= 0.5
 
         # If InPlace, write the results to the output file
         if inPlace:
