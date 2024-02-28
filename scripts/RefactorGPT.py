@@ -1,70 +1,132 @@
-import openai
 from openai import OpenAI
 from Parser import Parser
 from Estimate import Estimate
 import dotenv
 from typing import Union
+import json
+import os
 
-openai.api_key = dotenv.get_key(dotenv.find_dotenv(), "OPENAI_API_KEY")
+class RefactorGPT:
+    def __init__(self, api_key: str = None):
+        if api_key:
+            self.api_key = api_key
+        else:
+            self.api_key = dotenv.get_key(dotenv.find_dotenv(), "OPENAI_API_KEY")
 
-client = OpenAI (
-    
-)
+        client = OpenAI (
+            api_key=self.api_key
+        )
 
-def adjust_sentences_based_on_characters_speed(file_path, language_averages_path, save=False, save_path=None) -> Union[dict, None]:
-    """
-    Adjusts sentences based on the specified average speed count.
-
-    Args:
-        file_path (str): The file path to the transcript data in JSON format.
-        language_averages_path (str): The file path to the language averages data in JSON format.
-    """
-    # Initialize the Parser with the json sentence data
-    parser = Parser(file_path)
-
-    # Retrieve list of sentence durations from the Parser
-    durations = parser.get_interval()
-
-    # Retrieve list of translated texts from the Parser
-    translated_texts_list = parser.get_translated_texts_list()
-
-    # Initialize Estimate class
-    estimate = Estimate(language_averages_path=language_averages_path)
-
-    # Iterate through the translated texts and durations
-    for sentence, duration in zip(translated_texts_list, durations):
-        # Estimate the length of the sentence using character averages
-        length = estimate.estimate_length(sentence, path=file_path)
-
-        # Calculate the adjustment factor and prompt percentage
-        adjustment_factor = length / duration
-        prompt_percentage = int(adjustment_factor * 100)
-
-        try:
-            # Generate the prompt and request sentence adjustment from the model
-            prompt = f"Rewrite the following sentence to be {prompt_percentage}% or less of its original length, while mainting the same meaning of the sentence and prioritizing accuracy:\n\n{sentence}"
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
-                prompt=prompt,
-                temperature=0.5,
-                max_tokens=100
-            )
-            adjusted_sentence = response.choices[0].text.strip()
-            print(f"Original: {sentence}\nAdjusted: {adjusted_sentence}\n")
-
-            # Estimate the length of the adjusted sentence
-            adjusted_length = estimate.estimate_length(adjusted_sentence, path=file_path)
-
-            # Print the results (TEMPORARY - for testing purposes only)
-            print(f"Original Length: {duration}")
-            print(f"Adjusted Length: {adjusted_length}")
-        except Exception as e:
-            print(f"An error occurred while adjusting sentence: {e}")
+        self.client = client
         
-        # TESTING ONLY (to save money and time):
-        break
+    def adjust_sentences_based_on_characters_speed(self, file_path, language_averages_path, output_file="adjusted_sentences.json", percent_threshold: int = 20, all = False, save=False, inPlace=False, ) -> Union[None, list]:
+        """
+        Adjusts sentences based on the specified average speed count.
+
+        Args:
+            file_path (str): The file path to the transcript data in JSON format.
+            language_averages_path (str): The file path to the language averages data in JSON format.
+        """
+        # Initialize the Parser with the json sentence data
+        parser = Parser(file_path)
+
+        # Retrieve list of sentence durations from the Parser
+        durations = parser.get_interval()
+
+        # Retrieve list of translated texts from the Parser
+        translated_texts_list = parser.get_translated_texts_list()
+
+        # Initialize Estimate class
+        estimate = Estimate(language_averages_path=language_averages_path)
+
+        # Initialize the adjusted_transcript list
+        adjusted_transcript = []
+
+        # Iterate through the translated texts and durations
+        for sentence, duration in zip(translated_texts_list, durations):
+            # Estimate the length of the sentence using character averages
+            length = estimate.estimate_length(sentence, path=file_path)
+
+            # Calculate the adjustment factor and prompt percentage
+            adjustment_factor = length / duration
+            prompt_percentage = int(adjustment_factor * 100)
+
+            # Create adjusted_utterance dictionary for storing information
+            adjusted_utterance = {
+
+            }
+
+            # If the adjustment factor is less than the threshold, adjust the sentence
+            if abs(prompt_percentage - 100) < percent_threshold and not all:
+                # Set default values
+                adjusted_utterance["is_adjusted"] = False
+                adjusted_utterance["original"] = sentence
+                adjusted_utterance["adjusted"] = None
+                adjusted_utterance["original_translated_length"] = duration
+                adjusted_utterance["adjusted_translated_length"] = None
+                adjusted_utterance["target_length"] = length
+
+                # Append the adjusted_utterance to the adjusted_transcript list
+                adjusted_transcript.append(adjusted_utterance)
+
+                continue
+
+            try:
+                # Generate the prompt and request sentence adjustment from the model
+                prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while mainting the same meaning of the sentence and prioritizing accuracy:\n\n{sentence}"
+                response = self.client.chat.completions.create(
+                    model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
+                    messages=[{"role": "system", "content": prompt}, {"role": "user", "content": sentence}],
+                )
+                adjusted_sentence = response.choices[0].message.content
+                print(f"Original: {sentence}\nAdjusted: {adjusted_sentence}\n")
+
+                # Estimate the length of the adjusted sentence
+                adjusted_length = estimate.estimate_length(adjusted_sentence, path=file_path)
+
+                # Print the results (TEMPORARY - for testing purposes only)
+                print(f"Original Length: {duration}")
+                print(f"Adjusted Length: {adjusted_length}")
+
+                # Add the original and adjusted sentences to the adjusted_transcript dictionary
+                adjusted_utterance["is_adjusted"] = True
+                adjusted_utterance["original"] = sentence
+                adjusted_utterance["adjusted"] = adjusted_sentence
+                adjusted_utterance["original_translated_length"] = duration
+                adjusted_utterance["adjusted_translated_length"] = adjusted_length
+                adjusted_utterance["target_length"] = length
+
+                # Append the adjusted_utterance to the adjusted_transcript list
+                adjusted_transcript.append(adjusted_utterance)
+            except Exception as e:
+                print(f"An error occurred while adjusting sentence: {e}")
+            
+            # TESTING ONLY (to save money and time):
+            break
+
+        print(adjusted_transcript)
+        print(prompt)
+
+        # Write to json file (if save is True)
+        if save:
+            if inPlace:
+                # Wtite to the same directory as the input file (inPlace)
+                output_path = os.path.join(os.path.dirname(file_path), output_file)
+                with open(output_path, "w", encoding="utf-8") as f:
+                    json.dump(adjusted_transcript, f, indent=4, ensure_ascii=False)
+            else:
+                # Write directly to the specified output file path (not inPlace)
+                with open(output_file, "w", encoding="utf-8") as f:
+                    json.dump(adjusted_transcript, f, indent=4, ensure_ascii=False)
+        else:
+            # Return the adjusted_transcript list
+            return adjusted_transcript
+
 
 # Example usage
 file_path = r'C:\Users\sapat\Downloads\3b1b\API\256-bit-security\bengali\sentence_translations.json' #File Path
 language_averages_path = r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json"
-adjust_sentences_based_on_characters_speed(file_path, language_averages_path)
+
+refactor = RefactorGPT()
+
+refactor.adjust_sentences_based_on_characters_speed(file_path, language_averages_path, save=True)

@@ -1,0 +1,18 @@
+[
+    {
+        "is_adjusted": false,
+        "original": "ক্রিপ্টোকারেন্সির মূল ভিডিওতে, আমি এমন পরিস্থিতিতে দুটি উল্লেখ করেছি যেখানে একটি প্রদত্ত সুরক্ষা ভাঙ্গার জন্য, আপনাকে 256 বিটের একটি নির্দিষ্ট স্ট্রিং অনুমান করতে হবে।",
+        "adjusted": null,
+        "original_translated_length": 10.859999999999996,
+        "adjusted_translated_length": null,
+        "target_length": 10.3521698630137
+    },
+    {
+        "is_adjusted": true,
+        "original": "এর মধ্যে একটি ছিল ডিজিটাল স্বাক্ষরের প্রেক্ষাপটে এবং অন্যটি একটি ক্রিপ্টোগ্রাফিক হ্যাশ ফাংশনের প্রেক্ষাপটে।",
+        "adjusted": "One of them appeared in the form of a digital signature, while the other appeared in the form of a cryptographic hash function.",
+        "original_translated_length": 5.119999999999999,
+        "adjusted_translated_length": 7.872608219178083,
+        "target_length": 6.632827397260275
+    }
+]
