@@ -33,14 +33,15 @@ class Validate:
         An instance of the Estimate class to use for estimating the length of translated texts. Initialized with the language_averages_path.
     """
 
-    def __init__(self, root_directory: str, language_averages_path: str, json_filename='sentence_translations.json', target_directory: str = None):
-        # Create FileUtils object
-        self.fileUtils = FileUtils(root_directory, target_directory, json_filename)
+    def __init__(self, language_averages_path: str, json_filename='sentence_translations.json', target_directory: str = None):
+        self.target_directory = target_directory
+        self.json_filename = json_filename
+
 
         # Create Estimate object
         self.estimate = Estimate(language_averages_path)
 
-    def check_fulfillment(self, output_file: str, inPlace: bool = False) -> None:
+    def check_fulfillment(self, root_directory: str, output_file: str, inPlace: bool = False) -> None:
         """
         ### check_fulfillment
         Check if all JSON files in the root_directory are fulfill all conditions to be considered as fulfilled.
@@ -62,11 +63,14 @@ class Validate:
         This function assumes that the parent directory of the JSON files is the language name. It uses this as the key when writing the results to the output file. If the parent directory is not a language name, the function will try to detect the language from the text itself. This may be less accurate. Refer to the [language detection documentation](https://github.com/shihabsarar29/3b1b-translations/blob/main/docs/Manipulation/Calculation/Estimate.md) for more information.
         """
 
+        # test
+        fileUtils = FileUtils(root_directory, self.target_directory, self.json_filename)
+
         # Get all JSON files in the root_directory
-        if self.fileUtils.target_directory is not None:
-            json_files = self.fileUtils.get_json_files()
+        if fileUtils.target_directory is not None:
+            json_files = fileUtils.get_json_files()
         else:
-            json_files = self.fileUtils.get_json_files_root()
+            json_files = fileUtils.get_json_files_root()
         
         # Counters for the total number of JSON files and the number of JSON files that fulfill the conditions
         n_total = len(json_files)
@@ -108,6 +112,7 @@ class Validate:
             if results[3] and results[1]: n_fulfilled += 1
 
 
+        print(json_files)
         print(f"{n_fulfilled} out of {n_total} JSON files fulfill the conditions. ({n_fulfilled/n_total*100:.2f}%)")
 
         # Write the results to the output file if not InPlace
@@ -188,9 +193,21 @@ class Validate:
         
         # Return the results if not InPlace
         return n_reviews_fulfilled, n_reviews_fulfilled_bool, similar_durations_fulfilled, similar_durations_fulfilled_bool, len(intervals)
+    
+    def check_fulfillment_full_dir(self, current_path: str, target_path: str = "chinese") -> None:
+        """Output"""
+        # For each subfolder, go down one level
+        if (not (target_path in os.listdir(current_path))):
+            for subfolder in os.listdir(current_path):
+                subfolder_path = os.path.join(current_path, subfolder)
+                if os.path.isdir(subfolder_path):
+                    self.check_fulfillment_full_dir(subfolder_path, target_path=target_path)
+        else:
+            self.check_fulfillment(current_path, output_file="fulfillment.json", inPlace=True)
 
 # Usage:
 root_directory = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\barber-pole-1'
 language_averages_path = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json'
-validator = Validate(root_directory, language_averages_path)
-validator.check_fulfillment('fulfillment.json')
+validator = Validate(language_averages_path)
+#validator.check_fulfillment('fulfillment.json')
+validator.check_fulfillment_full_dir(r"C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\2024")

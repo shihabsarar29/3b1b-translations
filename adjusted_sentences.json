@@ -8,11 +8,27 @@
         "target_length": 10.3521698630137
     },
     {
-        "is_adjusted": true,
+        "is_adjusted": false,
         "original": "এর মধ্যে একটি ছিল ডিজিটাল স্বাক্ষরের প্রেক্ষাপটে এবং অন্যটি একটি ক্রিপ্টোগ্রাফিক হ্যাশ ফাংশনের প্রেক্ষাপটে।",
-        "adjusted": "One of them appeared in the form of a digital signature, while the other appeared in the form of a cryptographic hash function.",
+        "adjusted": null,
         "original_translated_length": 5.119999999999999,
-        "adjusted_translated_length": 7.872608219178083,
+        "adjusted_translated_length": null,
         "target_length": 6.632827397260275
+    },
+    {
+        "is_adjusted": false,
+        "original": "উদাহরণস্বরূপ, আপনি যদি এমন একটি বার্তা খুঁজে পেতে চান যার SHA-256 হ্যাশটি 256 বিটের কিছু নির্দিষ্ট স্ট্রিং, আপনার কাছে কেবল অনুমান করা এবং এলোমেলো বার্তাগুলি পরীক্ষা করার চেয়ে ভাল পদ্ধতি নেই।",
+        "adjusted": null,
+        "original_translated_length": 11.779999999999998,
+        "adjusted_translated_length": null,
+        "target_length": 11.90189589041096
+    },
+    {
+        "is_adjusted": true,
+        "original": "এবং এর জন্য প্রয়োজন হবে গড়ে, 2 থেকে 256টি অনুমান।",
+        "adjusted": "গড়ে অনুমান করার জন্য 2 থেকে 256 টি আবারণ প্রয়োজন।",
+        "original_translated_length": 3.9200000000000017,
+        "adjusted_translated_length": 3.1614410958904116,
+        "target_length": 3.1614410958904116
     }
 ]

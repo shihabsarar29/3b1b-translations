@@ -19,7 +19,7 @@ class RefactorGPT:
 
         self.client = client
         
-    def adjust_sentences_based_on_characters_speed(self, file_path, language_averages_path, output_file="adjusted_sentences.json", percent_threshold: int = 20, all = False, save=False, inPlace=False, ) -> Union[None, list]:
+    def adjust_sentences_based_on_characters_speed(self, file_path, language_averages_path, output_file="adjusted_sentences.json", percent_threshold: int = 80, all = False, save=False, inPlace=False) -> Union[None, list]:
         """
         Adjusts sentences based on the specified average speed count.
 
@@ -57,7 +57,7 @@ class RefactorGPT:
             }
 
             # If the adjustment factor is less than the threshold, adjust the sentence
-            if abs(prompt_percentage - 100) < percent_threshold and not all:
+            if prompt_percentage > percent_threshold and not all:
                 # Set default values
                 adjusted_utterance["is_adjusted"] = False
                 adjusted_utterance["original"] = sentence
@@ -70,10 +70,14 @@ class RefactorGPT:
                 adjusted_transcript.append(adjusted_utterance)
 
                 continue
+            else:
+                print(f"PROMPT PERCENTAGE: {prompt_percentage}")
+                print(f"PERCENT THRESHOLD: {percent_threshold}")
+                print(f"ALL: {all}")
 
             try:
                 # Generate the prompt and request sentence adjustment from the model
-                prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while mainting the same meaning of the sentence and prioritizing accuracy:\n\n{sentence}"
+                prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in the same language as the input sentence."
                 response = self.client.chat.completions.create(
                     model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
                     messages=[{"role": "system", "content": prompt}, {"role": "user", "content": sentence}],
