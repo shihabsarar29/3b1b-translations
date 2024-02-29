@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:02,800
+This is a footnote to the main video on Bayes' Theorem.
+
+2
+00:00:03,480 --> 00:00:07,806
+If your goal is simply to understand why it's true from a mathematical standpoint, 
+
+3
+00:00:07,806 --> 00:00:11,038
+there's actually a very quick way to see it based on breaking 
+
+4
+00:00:11,038 --> 00:00:13,280
+down how the word AND works in probability.
+
+5
+00:00:14,380 --> 00:00:17,040
+Let's say there are two events, A and B.
+
+6
+00:00:17,280 --> 00:00:19,520
+What's the probability that both of them happen?
+
+7
+00:00:20,120 --> 00:00:24,291
+On the one hand, you could start by thinking of the probability of A, 
+
+8
+00:00:24,291 --> 00:00:27,449
+the proportion of all possibilities where A is true, 
+
+9
+00:00:27,449 --> 00:00:31,799
+then multiply it by the proportion of those events where B is also true, 
+
+10
+00:00:31,799 --> 00:00:34,600
+which is known as the probability of B given A.
+
+11
+00:00:35,320 --> 00:00:38,680
+But it's strange for the formula to look asymmetric in A and B.
+
+12
+00:00:39,140 --> 00:00:43,410
+Presumably, we should also be able to think of it as the proportion 
+
+13
+00:00:43,410 --> 00:00:46,613
+of cases where B is true, among all possibilities, 
+
+14
+00:00:46,613 --> 00:00:51,700
+times the proportion of those where A is also true, the probability of A given B.
+
+15
+00:00:52,360 --> 00:00:57,524
+These are both the same, and the fact that they're both the same gives us a way 
+
+16
+00:00:57,524 --> 00:01:02,560
+to express P of A given B in terms of P of B given A, or the other way around.
+
+17
+00:01:05,480 --> 00:01:09,586
+So when one of these conditions is easier to put numbers to than the other, 
+
+18
+00:01:09,586 --> 00:01:14,017
+say when it's easier to think about the probability of seeing some evidence given 
+
+19
+00:01:14,017 --> 00:01:18,880
+a hypothesis rather than the other way around, this simple identity becomes a useful tool.
+
+20
+00:01:19,900 --> 00:01:24,685
+Nevertheless, even if this is somehow a more pure or quick way to understand the formula, 
+
+21
+00:01:24,685 --> 00:01:28,567
+the reason I chose to frame everything in terms of updating beliefs with 
+
+22
+00:01:28,567 --> 00:01:32,714
+evidence in the main video is to help with that third level of understanding, 
+
+23
+00:01:32,714 --> 00:01:36,489
+being able to recognize when this formula, among the wide landscape of 
+
+24
+00:01:36,489 --> 00:01:39,680
+available tools in math, happens to be the right one to use.
+
+25
+00:01:40,540 --> 00:01:44,180
+Otherwise, it's kind of easy to just look at it, nod along, and promptly forget.
+
+26
+00:01:45,320 --> 00:01:49,278
+And you know, while we're here, it's worth highlighting a common 
+
+27
+00:01:49,278 --> 00:01:53,480
+misconception that the probability of A and B is P of A times P of B.
+
+28
+00:01:53,480 --> 00:01:57,421
+For example, if you hear that 1 in 4 people die of heart disease, 
+
+29
+00:01:57,421 --> 00:02:01,721
+it's really tempting to think that that means the probability that both 
+
+30
+00:02:01,721 --> 00:02:06,320
+you and your brother die of heart disease is 1 in 4 times 1 in 4, or 1 in 16.
+
+31
+00:02:07,080 --> 00:02:12,381
+After all, the probability of two successive coin flips yielding tails is ½ times ½, 
+
+32
+00:02:12,381 --> 00:02:17,620
+and the probability of rolling two 1s on a pair of dice is 1 6th times 1 6th, right?
+
+33
+00:02:19,180 --> 00:02:21,220
+The issue is correlation.
+
+34
+00:02:21,780 --> 00:02:26,089
+If your brother dies of heart disease, and considering certain genetic and lifestyle 
+
+35
+00:02:26,089 --> 00:02:30,500
+links that are at play here, your chances of dying from a similar condition are higher.
+
+36
+00:02:31,120 --> 00:02:35,540
+A formula like this, as tempting and clean as it looks, is just flat out wrong.
+
+37
+00:02:38,960 --> 00:02:42,142
+What's going on with cases like flipping coins or rolling 
+
+38
+00:02:42,142 --> 00:02:45,160
+two dice is that each event is independent of the last.
+
+39
+00:02:45,840 --> 00:02:50,000
+So the probability of B given A is the same as the probability of B.
+
+40
+00:02:50,000 --> 00:02:52,380
+What happens to A does not affect B.
+
+41
+00:02:52,640 --> 00:02:54,380
+This is the definition of independence.
+
+42
+00:02:55,580 --> 00:03:00,899
+Keep in mind, many introductory probability examples are given in very gamified contexts, 
+
+43
+00:03:00,899 --> 00:03:04,563
+things with dice and coins, where genuine independence holds, 
+
+44
+00:03:04,563 --> 00:03:07,400
+but all those examples can skew your intuitions.
+
+45
+00:03:07,920 --> 00:03:11,794
+The irony is that some of the most interesting applications of probability, 
+
+46
+00:03:11,794 --> 00:03:16,229
+presumably the whole motivation for the kind of courses using these gamified examples, 
+
+47
+00:03:16,229 --> 00:03:18,880
+are only substantive when events aren't independent.
+
+48
+00:03:18,880 --> 00:03:23,239
+Bayes' theorem, which measures exactly how much one variable depends on another, 
+
+49
+00:03:23,239 --> 00:03:24,800
+is a perfect example of this.
+

@@ -1,0 +1,328 @@
+1
+00:00:04,000 --> 00:00:08,000
+Sometimes, math and physics conspire in ways that just feel too good to be true.
+
+2
+00:00:08,640 --> 00:00:10,780
+Let's play a strange sort of mathematical croquet.
+
+3
+00:00:11,280 --> 00:00:13,540
+We're going to have two sliding blocks and a wall.
+
+4
+00:00:14,080 --> 00:00:17,221
+The first block starts by coming in at some velocity from the right, 
+
+5
+00:00:17,221 --> 00:00:19,180
+while the second one starts out stationary.
+
+6
+00:00:19,920 --> 00:00:23,796
+Being overly idealistic physicists, let's assume there's no friction and 
+
+7
+00:00:23,796 --> 00:00:27,780
+all of the collisions are perfectly elastic, which means no energy is lost.
+
+8
+00:00:28,400 --> 00:00:32,308
+The astute among you might complain that such collisions would make no sound, 
+
+9
+00:00:32,308 --> 00:00:35,465
+but your goal here is to count how many collisions take place, 
+
+10
+00:00:35,465 --> 00:00:39,976
+so in slight conflict with that assumption I want to leave a little clack sound to better 
+
+11
+00:00:39,976 --> 00:00:41,680
+draw your attention to that count.
+
+12
+00:00:42,320 --> 00:00:44,920
+The simplest case is when both blocks have the same mass.
+
+13
+00:00:45,380 --> 00:00:48,615
+The first block hits the second, transferring all of its momentum, 
+
+14
+00:00:48,615 --> 00:00:51,899
+then the second one bounces off the wall, and then transfers all of 
+
+15
+00:00:51,899 --> 00:00:55,280
+its momentum back to the first, which then sails off towards infinity.
+
+16
+00:00:55,860 --> 00:00:56,800
+Three total clacks.
+
+17
+00:00:57,440 --> 00:01:01,180
+What about if the first block was 100 times the mass of the second one?
+
+18
+00:01:01,840 --> 00:01:05,061
+I promise I will explain to you all the relevant physics in due course, 
+
+19
+00:01:05,061 --> 00:01:08,058
+it's not entirely obvious how you would predict the dynamics here, 
+
+20
+00:01:08,058 --> 00:01:11,280
+but in the spirit of getting to the punchline, let's watch what happens.
+
+21
+00:01:11,900 --> 00:01:16,228
+The second one will keep bouncing back and forth between the wall and the first block, 
+
+22
+00:01:16,228 --> 00:01:19,014
+100 times its mass, like a satisfying game of Breakout, 
+
+23
+00:01:19,014 --> 00:01:22,894
+slowly and discreetly redirecting that first block's momentum to point in the 
+
+24
+00:01:22,894 --> 00:01:23,840
+opposite direction.
+
+25
+00:01:23,840 --> 00:01:29,087
+In total, there will be 31 collisions before each block is sliding off towards infinity, 
+
+26
+00:01:29,087 --> 00:01:30,620
+never to be touched again.
+
+27
+00:01:31,580 --> 00:01:35,180
+What if the first block was 10,000 times the mass of the second one?
+
+28
+00:01:35,860 --> 00:01:40,708
+In that case, there would be quite a few more clacks, 
+
+29
+00:01:40,708 --> 00:01:48,160
+all happening very rapidly at one point, adding up and all to 313 total collisions.
+
+30
+00:01:48,920 --> 00:01:50,040
+Well, actually, hang on.
+
+31
+00:01:50,660 --> 00:01:50,040
+Wait for it.
+
+32
+00:01:50,660 --> 00:01:54,280
+Wait for it.
+
+33
+00:01:56,980 --> 00:01:58,480
+Okay, 314 clacks.
+
+34
+00:01:59,300 --> 00:02:03,800
+If the first block was 1,000,000 times the mass of the other, then again, 
+
+35
+00:02:03,800 --> 00:02:08,057
+with all of our crazy idealistic conditions, almost all of the clacks 
+
+36
+00:02:08,057 --> 00:02:12,680
+happen in one big burst, this time resulting in a total of 3,141 collisions.
+
+37
+00:02:13,760 --> 00:02:17,096
+Perhaps you see the pattern here, though it's forgivable if you don't, 
+
+38
+00:02:17,096 --> 00:02:18,600
+since it defies all expectation.
+
+39
+00:02:18,600 --> 00:02:23,711
+When the mass of that first block is some power of 100 times the mass of the second, 
+
+40
+00:02:23,711 --> 00:02:27,200
+the total number of collisions have the same digits as pi.
+
+41
+00:02:28,240 --> 00:02:31,260
+This absolutely blew my mind when it was first shared with me.
+
+42
+00:02:31,660 --> 00:02:35,391
+Credit to the viewer Henry Cavill for introducing me to this fact, 
+
+43
+00:02:35,391 --> 00:02:39,957
+which was originally discovered by the mathematician Gregory Galperin in 1995 and 
+
+44
+00:02:39,957 --> 00:02:40,960
+published in 2003.
+
+45
+00:02:41,920 --> 00:02:45,733
+Part of what I love about this is that if ever there were Olympic games 
+
+46
+00:02:45,733 --> 00:02:49,493
+for algorithms that compute pi, this one would have to win medals both 
+
+47
+00:02:49,493 --> 00:02:53,360
+for being the most elegant, and for being the most comically inefficient.
+
+48
+00:02:54,060 --> 00:02:56,220
+I mean, think about the actual algorithm here.
+
+49
+00:02:56,520 --> 00:02:58,420
+Step 1, implement a physics engine.
+
+50
+00:02:58,880 --> 00:03:03,000
+Step 2, choose the number of digits d of pi you'd like to compute.
+
+51
+00:03:03,680 --> 00:03:07,803
+Step 3, set the mass of one of the blocks to be 100 to the power d-1, 
+
+52
+00:03:07,803 --> 00:03:12,280
+then send it travelling on a frictionless surface towards a block of mass 1.
+
+53
+00:03:12,820 --> 00:03:14,980
+Step 4, count all of the collisions.
+
+54
+00:03:16,420 --> 00:03:21,213
+For example, to calculate only 20 digits of pi, which fits so cleanly on this screen, 
+
+55
+00:03:21,213 --> 00:03:25,839
+one block would have to have 100 billion billion billion billion times the mass of 
+
+56
+00:03:25,839 --> 00:03:28,793
+the other, which if that small block was 1 kilogram, 
+
+57
+00:03:28,793 --> 00:03:33,419
+means the big one has a mass about 10 times that of the supermassive black hole at 
+
+58
+00:03:33,419 --> 00:03:34,980
+the center of the Milky Way.
+
+59
+00:03:35,640 --> 00:03:38,920
+That means you would need to count 31 billion billion collisions.
+
+60
+00:03:38,920 --> 00:03:42,515
+At one point in this virtual process, the frequency of clacks would 
+
+61
+00:03:42,515 --> 00:03:45,900
+be around 100 billion billion billion billion clacks per second.
+
+62
+00:03:46,380 --> 00:03:50,063
+So let's just say you would need very good numerical precision to get this working 
+
+63
+00:03:50,063 --> 00:03:53,480
+accurately, and it would take a very long time for the algorithm to complete.
+
+64
+00:03:54,300 --> 00:03:57,314
+I'll emphasize again that this process is way over-idealized, 
+
+65
+00:03:57,314 --> 00:04:00,960
+quickly departing from anything that could possibly happen in real physics.
+
+66
+00:04:01,760 --> 00:04:05,252
+But of course, you all know this is not interesting because of its potential 
+
+67
+00:04:05,252 --> 00:04:08,700
+as an actual pi computing algorithm or as a pragmatic physics demonstration.
+
+68
+00:04:09,120 --> 00:04:14,440
+It's mind-boggling because why on earth would pi show up here?
+
+69
+00:04:14,920 --> 00:04:17,380
+And it's in such a weird way too.
+
+70
+00:04:17,459 --> 00:04:20,777
+Its decimal digits are counting something, but usually pi shows 
+
+71
+00:04:20,777 --> 00:04:23,940
+up when its precise value is describing something continuous.
+
+72
+00:04:24,800 --> 00:04:26,200
+I will show you why this is true.
+
+73
+00:04:26,580 --> 00:04:29,226
+Where there is pi, there is a hidden circle, and in this case, 
+
+74
+00:04:29,226 --> 00:04:31,620
+that hidden circle comes from the conservation of energy.
+
+75
+00:04:32,060 --> 00:04:34,482
+In fact, you're going to see two separate methods, 
+
+76
+00:04:34,482 --> 00:04:37,380
+which are each as stunning and surprising as the fact itself.
+
+77
+00:04:38,160 --> 00:04:40,157
+Delaying gratification though, I will make you 
+
+78
+00:04:40,157 --> 00:04:42,240
+wait until the next video to see what's going on.
+
+79
+00:04:42,520 --> 00:04:46,387
+In the meantime, I highly encourage you to take a stab at it yourself, 
+
+80
+00:04:46,387 --> 00:04:47,640
+and be social about it.
+
+81
+00:04:47,720 --> 00:04:51,640
+It's a hard puzzle, so it never hurts to recruit some other smart minds to the task.
+
+82
+00:05:01,620 --> 00:05:12,240
+Thank you.
+

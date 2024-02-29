@@ -1,0 +1,1420 @@
+1
+00:00:02,560 --> 00:00:04,640
+Ismeritek Henryt a MinutePhysicsből, ugye?
+
+2
+00:00:04,960 --> 00:00:08,270
+Nos, ő és én most készítettünk egy videót egy bizonyos kvantummechanikai témáról, 
+
+3
+00:00:08,270 --> 00:00:09,360
+a Bell-egyenlőtlenségekről.
+
+4
+00:00:09,800 --> 00:00:14,977
+Ez egy igazán észbontó téma, amiről nem tudnak elegen, és bár kvantumos dologról van szó, 
+
+5
+00:00:14,977 --> 00:00:19,120
+meglepően egyszerű matematikán alapul, és mindenképpen érdemes megnézni.
+
+6
+00:00:19,880 --> 00:00:21,868
+Ebben a videóban azokat a nézőket tartjuk szem előtt, 
+
+7
+00:00:21,868 --> 00:00:24,520
+akik valóban szeretnének mélyebben megismerni egy kis kvantummechanikát.
+
+8
+00:00:24,920 --> 00:00:29,289
+És nyilvánvalóan ez egy hatalmas téma, ami közel sem fér el egyetlen videó terjedelmében, 
+
+9
+00:00:29,289 --> 00:00:32,979
+de a kérdés, amit feltettünk, az volt, hogy milyen témát tudnánk bemutatni, 
+
+10
+00:00:32,979 --> 00:00:35,796
+ami nem valami szemet gyönyörködtető kvantumos furcsaság, 
+
+11
+00:00:35,796 --> 00:00:38,806
+hanem ami valójában hasznos alapokat fektet le bárki számára, 
+
+12
+00:00:38,806 --> 00:00:40,700
+aki meg akarja tanulni ezt a területet?
+
+13
+00:00:41,320 --> 00:00:43,920
+Milyen téma adná meg a megfelelő intuíciót valakinek, 
+
+14
+00:00:43,920 --> 00:00:46,520
+mielőtt belevetné magát mondjuk a Feynman-előadásokba?
+
+15
+00:00:47,400 --> 00:00:51,540
+Nos, a természetes kiindulópont, ahonnan maga a kvantummechanika indult, a fény.
+
+16
+00:00:51,880 --> 00:00:55,419
+Konkrétan, ha kvantumot akarsz tanulni, meg kell értened a hullámokat és azt, 
+
+17
+00:00:55,419 --> 00:00:57,280
+hogy hogyan írják le őket matematikailag.
+
+18
+00:00:57,720 --> 00:01:01,817
+Amire pedig itt szeretnénk építeni, az a kapcsolat egy tisztán klasszikus 
+
+19
+00:01:01,817 --> 00:01:05,860
+hullám energiája és a kvantum viselkedést irányító valószínűségek között.
+
+20
+00:01:06,700 --> 00:01:10,783
+Valójában az idő nagy részét a fény kvantum előtti értelmezésével fogjuk tölteni, 
+
+21
+00:01:10,783 --> 00:01:13,920
+mivel ez határozza meg a vonatkozó hullámmechanika nagy részét.
+
+22
+00:01:14,420 --> 00:01:16,536
+Az a helyzet, hogy a kvantummechanika számos ötlete, 
+
+23
+00:01:16,536 --> 00:01:19,332
+például az állapotok különböző amplitúdókkal és fázisokkal rendelkező 
+
+24
+00:01:19,332 --> 00:01:22,526
+szuperpozícióként való leírása a klasszikus hullámok kontextusában jelenik meg, 
+
+25
+00:01:22,526 --> 00:01:25,402
+olyan módon, amely nem tartalmaz semmilyen olyan kvantumos furcsaságot, 
+
+26
+00:01:25,402 --> 00:01:26,840
+amelyet az emberek esetleg ismernek.
+
+27
+00:01:27,120 --> 00:01:30,276
+Ez segít annak megértésében is, hogy mi az, ami valójában más a kvantummechanikában, 
+
+28
+00:01:30,276 --> 00:01:32,207
+nevezetesen bizonyos korlátozások arra vonatkozóan, 
+
+29
+00:01:32,207 --> 00:01:35,400
+hogy mekkora energiával rendelkezhetnek ezek a hullámok, hogyan viselkednek méréskor, 
+
+30
+00:01:35,400 --> 00:01:38,520
+és a kvantum összefonódás, bár ebben a videóban nem foglalkozunk az összefonódással.
+
+31
+00:01:38,840 --> 00:01:41,341
+Kezdjük tehát az 1800-as évek végi felfogással, 
+
+32
+00:01:41,341 --> 00:01:44,520
+amely a fényt az elektromágneses mező hullámaiként értelmezi.
+
+33
+00:01:45,000 --> 00:01:46,320
+Tessék, bontsuk ezt le egy kicsit.
+
+34
+00:01:46,520 --> 00:01:49,302
+Az elektromos mező vektormező, ami azt jelenti, 
+
+35
+00:01:49,302 --> 00:01:54,520
+hogy a tér minden pontjához egy nyíl kapcsolódik, amely a mező irányát és erősségét jelzi.
+
+36
+00:01:55,200 --> 00:02:00,189
+A nyilak fizikai jelentése az, hogy ha van egy töltött részecske a térben, 
+
+37
+00:02:00,189 --> 00:02:03,648
+akkor a részecskére a nyíl irányában erő fog hatni, 
+
+38
+00:02:03,648 --> 00:02:07,440
+amely arányos a nyíl hosszával és a részecske töltésével.
+
+39
+00:02:08,240 --> 00:02:11,696
+Hasonlóképpen, a mágneses mező is egy másik vektormező, 
+
+40
+00:02:11,696 --> 00:02:14,659
+ahol most az egyes nyilak fizikai jelentése az, 
+
+41
+00:02:14,659 --> 00:02:19,103
+hogy amikor egy töltött részecske mozog a térben, akkor egy erő hat rá, 
+
+42
+00:02:19,103 --> 00:02:23,423
+amely merőleges mind a mozgásirányára, mind a mágneses mező irányára, 
+
+43
+00:02:23,423 --> 00:02:27,312
+és ennek az erőnek az erőssége arányos a részecske töltésével, 
+
+44
+00:02:27,312 --> 00:02:30,460
+sebességével és a mágneses mező nyilának hosszával.
+
+45
+00:02:30,960 --> 00:02:33,821
+Például egy mágnes melletti, mozgó töltésáramot 
+
+46
+00:02:33,821 --> 00:02:37,220
+tartalmazó drótot a mágneses mező vagy tolja, vagy húzza.
+
+47
+00:02:37,700 --> 00:02:42,762
+A 19. századi fizika e két mező működésének egyfajta betetőzése a Maxwell-egyenletek, 
+
+48
+00:02:42,762 --> 00:02:48,060
+amelyek többek között leírják, hogy az egyes mezők hogyan okozhatnak változást a másikban.
+
+49
+00:02:48,660 --> 00:02:51,700
+Pontosabban, a Maxwell-egyenletek azt mondják, 
+
+50
+00:02:51,700 --> 00:02:57,069
+hogy amikor az elektromos mező nyilai látszólag hurkot alkotnak egy terület körül, 
+
+51
+00:02:57,069 --> 00:03:01,791
+a mágneses mező a hurok síkjára merőlegesen növekszik a területen belül, 
+
+52
+00:03:01,791 --> 00:03:06,707
+és szimmetrikusan a mágneses mező ilyen hurokja megfelel az elektromos mező 
+
+53
+00:03:06,707 --> 00:03:09,360
+változásának a hurok síkjára merőlegesen.
+
+54
+00:03:10,060 --> 00:03:13,792
+Nos, a részletek, hogy pontosan hogyan működnek ezek az egyenletek, 
+
+55
+00:03:13,792 --> 00:03:18,018
+nagyon szépek és megérnek egy teljes videót, de most csak annyit kell tudni, 
+
+56
+00:03:18,018 --> 00:03:22,135
+hogy az egyik természetes következménye ennek a kölcsönös kölcsönhatásnak, 
+
+57
+00:03:22,135 --> 00:03:26,636
+ahogyan az egyik mező változása változást okoz a másikban a szomszédos régiókban, 
+
+58
+00:03:26,636 --> 00:03:31,246
+hogy olyan terjedő hullámokat kapunk, ahol az elektromos és mágneses mezők egymásra 
+
+59
+00:03:31,246 --> 00:03:34,540
+merőlegesen és a terjedési irányra merőlegesen oszcillálnak.
+
+60
+00:03:35,120 --> 00:03:38,098
+Amikor az elektromágneses sugárzás kifejezést hallod, 
+
+61
+00:03:38,098 --> 00:03:41,793
+amely olyan dolgokra utal, mint a rádióhullámok és a látható fény, 
+
+62
+00:03:41,793 --> 00:03:46,040
+akkor erről van szó, az elektromos és a mágneses mezőben terjedő hullámokról.
+
+63
+00:03:47,040 --> 00:03:49,336
+Természetesen ma már szinte általánosnak számít, 
+
+64
+00:03:49,336 --> 00:03:52,710
+hogy a fényt elektromágneses sugárzásként ismerjük, de jó belegondolni, 
+
+65
+00:03:52,710 --> 00:03:56,131
+hogy Maxwell idejében ez mennyire meglepő volt, hogy ezeknek a mezőknek, 
+
+66
+00:03:56,131 --> 00:03:59,505
+amelyeknek a töltött részecskékre és mágnesekre ható erőkkel van közük, 
+
+67
+00:03:59,505 --> 00:04:02,645
+nemcsak a fényhez van közük, hanem hogy a fény egy terjedő hullám, 
+
+68
+00:04:02,645 --> 00:04:06,629
+mivel ez a két mező táncol egymással, ami a növekvő és csökkenő térerősség kölcsönös 
+
+69
+00:04:06,629 --> 00:04:07,660
+oszcillációját okozza.
+
+70
+00:04:08,240 --> 00:04:10,382
+Ezzel a szemléltető példával álljunk meg egy pillanatra, 
+
+71
+00:04:10,382 --> 00:04:12,600
+hogy lefektessük a hullámok leírására használt matematikát.
+
+72
+00:04:13,160 --> 00:04:17,013
+Ez még mindig tisztán klasszikus lesz, de a kvantummechanika központi elemei, 
+
+73
+00:04:17,013 --> 00:04:19,384
+mint a szuperpozíció, az amplitúdók, a fázisok, 
+
+74
+00:04:19,384 --> 00:04:23,829
+mindezek ebben a kontextusban jelennek meg, és azt állítom, hogy világosabb motivációval, 
+
+75
+00:04:23,829 --> 00:04:25,460
+hogy mit is jelentenek valójában.
+
+76
+00:04:26,380 --> 00:04:29,717
+Fogd ezt a hullámot, és gondolj rá úgy, mintha egyenesen a képernyőből indulna ki, 
+
+77
+00:04:29,717 --> 00:04:30,280
+az arcod felé.
+
+78
+00:04:30,940 --> 00:04:33,240
+És most hagyjuk figyelmen kívül a mágneses mezőt, 
+
+79
+00:04:33,240 --> 00:04:35,680
+csak azt nézzük, hogyan oszcillál az elektromos mező.
+
+80
+00:04:35,680 --> 00:04:38,555
+És csak az egyik vektorra fogunk koncentrálni, 
+
+81
+00:04:38,555 --> 00:04:42,960
+amely a képernyő síkjában oszcillál, amit az xy-síknak fogunk tekinteni.
+
+82
+00:04:43,580 --> 00:04:46,444
+Ha vízszintesen oszcillál, mint ez, akkor azt mondjuk, 
+
+83
+00:04:46,444 --> 00:04:48,320
+hogy a fény vízszintesen polarizált.
+
+84
+00:04:49,080 --> 00:04:53,588
+Tehát ennek az elektromos mezőnek az y komponense mindig 0, 
+
+85
+00:04:53,588 --> 00:04:58,397
+és az x komponenst úgy írhatjuk le, mint 2 pi x ft koszinuszát, 
+
+86
+00:04:58,397 --> 00:05:02,380
+ahol f valamilyen frekvenciát jelöl, t pedig az időt.
+
+87
+00:05:03,000 --> 00:05:06,944
+Tehát ha f például 1, akkor ez azt jelenti, hogy pontosan 1 másodpercbe telik, 
+
+88
+00:05:06,944 --> 00:05:10,040
+amíg ez a koszinuszfüggvény egy teljes cikluson keresztülmegy.
+
+89
+00:05:12,520 --> 00:05:16,052
+Alacsonyabb frekvencia esetén ez azt jelenti, hogy a koszinusznak több időbe telik, 
+
+90
+00:05:16,052 --> 00:05:17,440
+amíg végigmegy a teljes ciklusán.
+
+91
+00:05:18,020 --> 00:05:23,400
+A t érték növekedésével a koszinuszfüggvény belseje lassabban nő.
+
+92
+00:05:24,460 --> 00:05:28,520
+Itt egy másik kifejezést is be fogunk illeszteni, phi-t, amit fáziseltolódásnak nevezünk, 
+
+93
+00:05:28,520 --> 00:05:32,400
+és amely megmondja, hogy ez a vektor hol van a ciklusában a t egyenlő 0-ás időpontban.
+
+94
+00:05:32,920 --> 00:05:34,480
+Mindjárt meglátod, hogy ez miért fontos.
+
+95
+00:05:35,220 --> 00:05:39,248
+Alapértelmezés szerint a koszinusz csak a negatív 1 és 1 között oszcillál, 
+
+96
+00:05:39,248 --> 00:05:43,760
+ezért tegyünk elé egy másik kifejezést, az a-t, amely megadja a hullám amplitúdóját.
+
+97
+00:05:44,580 --> 00:05:48,277
+Még egy dolog, hogy a dolgok egy kicsit jobban hasonlítsanak a kvantummechanikában 
+
+98
+00:05:48,277 --> 00:05:51,306
+megszokottakhoz, ahelyett, hogy oszlopvektorként írnám le, mint ez, 
+
+99
+00:05:51,306 --> 00:05:53,444
+két különböző összetevőre fogom szétválasztani, 
+
+100
+00:05:53,444 --> 00:05:55,360
+ezeket a kets nevű szimbólumokat használva.
+
+101
+00:05:55,900 --> 00:06:00,442
+Ez a ket itt egy vízszintes irányú egységvektort jelöl, 
+
+102
+00:06:00,442 --> 00:06:04,580
+ez a ket pedig egy függőleges irányú egységvektort.
+
+103
+00:06:06,940 --> 00:06:12,212
+Ha a fény függőlegesen polarizált, vagyis az elektromos mező tisztán felfelé és lefelé 
+
+104
+00:06:12,212 --> 00:06:16,758
+hullámzik, az egyenlete így nézhet ki, ahol a vízszintes komponens most 0, 
+
+105
+00:06:16,758 --> 00:06:20,879
+a függőleges komponens pedig egy koszinusz, bizonyos frekvenciával, 
+
+106
+00:06:20,879 --> 00:06:22,940
+amplitúdóval és fáziseltolódással.
+
+107
+00:06:23,640 --> 00:06:27,893
+Ha van két különböző hullámunk, kétféle módon hullámzik a térben az idő folyamán, 
+
+108
+00:06:27,893 --> 00:06:31,523
+amelyek megoldják a Maxwell-egyenleteket, akkor a kettő összeadásával 
+
+109
+00:06:31,523 --> 00:06:34,480
+egy másik érvényes hullámot kapunk, legalábbis vákuumban.
+
+110
+00:06:35,160 --> 00:06:40,020
+Vagyis minden egyes időpontban adjuk össze ezt a két vektort, hogy egy új vektort kapjunk.
+
+111
+00:06:40,620 --> 00:06:44,246
+Ha ezt a tér minden pontján és az idő minden pontján elvégezzük, akkor új, 
+
+112
+00:06:44,246 --> 00:06:48,260
+érvényes megoldást kapunk a Maxwell-egyenletekre, legalábbis vákuumban mindez igaz.
+
+113
+00:06:48,760 --> 00:06:53,060
+Ez azért van, mert a Maxwell-egyenletek vákuumban úgynevezett lineáris egyenletek.
+
+114
+00:06:53,460 --> 00:06:58,050
+Ezek lényegében az elektromos és mágneses mezőkre ható deriváltak kombinációja, 
+
+115
+00:06:58,050 --> 00:07:02,296
+amelyek 0-t adnak, tehát ha az egyik f1 mező kielégíti ezt az egyenletet, 
+
+116
+00:07:02,296 --> 00:07:07,058
+és egy másik f2 mező kielégíti, akkor az összegük, f1 plusz f2, szintén kielégíti, 
+
+117
+00:07:07,058 --> 00:07:08,780
+mivel a deriváltak lineárisak.
+
+118
+00:07:09,200 --> 00:07:12,451
+Tehát a Maxwell-egyenletek két vagy több megoldásának 
+
+119
+00:07:12,451 --> 00:07:14,980
+összege is a Maxwell-egyenletek megoldása.
+
+120
+00:07:16,420 --> 00:07:20,540
+Ezt az új hullámot az első kettő szuperpozíciójának nevezzük.
+
+121
+00:07:20,740 --> 00:07:23,526
+És itt a szuperpozíció lényegében csak összeget jelent, 
+
+122
+00:07:23,526 --> 00:07:25,865
+vagy bizonyos kontextusban súlyozott összeget, 
+
+123
+00:07:25,865 --> 00:07:30,344
+mivel ha minden egyes komponensbe beleszámítunk valamilyen amplitúdó- és fáziseltolódást, 
+
+124
+00:07:30,344 --> 00:07:33,380
+akkor is a két eredeti vektor szuperpozíciójának nevezhetjük.
+
+125
+00:07:34,300 --> 00:07:38,692
+Most az eredményül kapott szuperpozíció egy átlós irányban hullámzó hullám, 
+
+126
+00:07:38,692 --> 00:07:43,258
+de ha a vízszintes és függőleges komponensek fázison kívül lennének egymással, 
+
+127
+00:07:43,258 --> 00:07:46,784
+ami megtörténhet, ha növeljük a fáziseltolódást az egyikben, 
+
+128
+00:07:46,784 --> 00:07:51,466
+akkor az összegük inkább valamiféle ellipszist rajzolna ki, és abban az esetben, 
+
+129
+00:07:51,466 --> 00:07:56,552
+ha a fázisok pontosan 90 fokban eltérnek egymástól, és az amplitúdók mindkettő egyenlő, 
+
+130
+00:07:56,552 --> 00:07:59,500
+akkor ezt nevezzük cirkulárisan polarizált fénynek.
+
+131
+00:08:00,180 --> 00:08:04,770
+Egyébként ezért fontos, hogy ne csak az amplitúdót figyeljük mindkét irányban, 
+
+132
+00:08:04,770 --> 00:08:09,360
+hanem a fázist is, mert ez befolyásolja, hogy a két hullám hogyan adódik össze.
+
+133
+00:08:12,660 --> 00:08:14,988
+Ez egy fontos gondolat, amely áttevődik a kvantumra is, 
+
+134
+00:08:14,988 --> 00:08:17,940
+és néhány olyan dolog hátterében áll, amelyek elsőre zavarosnak tűnnek.
+
+135
+00:08:18,720 --> 00:08:21,872
+És itt egy másik fontos gondolat: a hullámokat a vízszintes 
+
+136
+00:08:21,872 --> 00:08:24,499
+és függőleges komponensek összeadásával írjuk le, 
+
+137
+00:08:24,499 --> 00:08:28,440
+de úgy is dönthetünk, hogy mindent különböző irányok tekintetében írunk le.
+
+138
+00:08:29,020 --> 00:08:31,840
+Úgy értem, a hullámokat úgy is leírhatnánk, mint az 
+
+139
+00:08:31,840 --> 00:08:34,659
+átlós és az antidiagonális irányok szuperpozícióját.
+
+140
+00:08:35,200 --> 00:08:39,788
+Ebben az esetben a függőlegesen polarizált fény valójában e két átlós hullámirány 
+
+141
+00:08:39,788 --> 00:08:44,656
+szuperpozíciója lenne, legalábbis akkor, ha mindkettő fázisban van egymással és azonos 
+
+142
+00:08:44,656 --> 00:08:45,160
+nagyságú.
+
+143
+00:08:46,340 --> 00:08:50,088
+Azt, hogy milyen irányok szerint írjuk le a dolgokat, bázisnak nevezzük, 
+
+144
+00:08:50,088 --> 00:08:53,990
+és hogy melyik bázissal a legszebb dolgozni, nos, ez jellemzően attól függ, 
+
+145
+00:08:53,990 --> 00:08:55,480
+hogy mit csinálunk a fénnyel.
+
+146
+00:08:55,880 --> 00:09:00,750
+Ha például van egy polarizációs szűrő, például egy polarizált napszemüveg, 
+
+147
+00:09:00,750 --> 00:09:06,075
+akkor ezek úgy működnek, hogy elnyelik az elektromágneses rezgések energiáját egy 
+
+148
+00:09:06,075 --> 00:09:07,180
+bizonyos irányba.
+
+149
+00:09:07,880 --> 00:09:12,906
+Egy függőlegesen orientált polarizátor például elnyelné a hullámok összes energiáját 
+
+150
+00:09:12,906 --> 00:09:17,400
+a vízszintes irányok mentén, legalábbis klasszikusan így gondolhatnánk erre.
+
+151
+00:09:17,840 --> 00:09:21,498
+Tehát, ha fényt elemezünk, és az egy ilyen szűrőn halad át, 
+
+152
+00:09:21,498 --> 00:09:25,400
+jó, ha a vízszintes és függőleges irányok tekintetében írjuk le.
+
+153
+00:09:25,860 --> 00:09:29,828
+Így azt mondhatjuk, hogy bármennyi fény is halad át a szűrőn, 
+
+154
+00:09:29,828 --> 00:09:32,900
+az csak az eredeti hullám függőleges komponense.
+
+155
+00:09:36,820 --> 00:09:39,969
+De ha lenne egy szűrő, mondjuk, átlósan tájolt, nos, 
+
+156
+00:09:39,969 --> 00:09:45,019
+akkor kényelmes lenne a dolgokat az átlós irány és az arra merőleges anti-diagonális 
+
+157
+00:09:45,019 --> 00:09:46,980
+irány szuperpozíciójaként leírni.
+
+158
+00:09:49,080 --> 00:09:53,200
+Ezek a gondolatok szinte szóról szóra átvihetők a kvantumügyre.
+
+159
+00:09:53,840 --> 00:09:57,376
+A kvantumállapotokat, hasonlóan a hullámunknak ehhez a hullámirányú hullámmozgásához, 
+
+160
+00:09:57,376 --> 00:10:01,078
+több alapállapot szuperpozíciójaként írják le, ahol sok választási lehetőségünk van arra, 
+
+161
+00:10:01,078 --> 00:10:02,600
+hogy melyik alapállapotot használjuk.
+
+162
+00:10:03,060 --> 00:10:05,504
+És akárcsak a klasszikus hullámok esetében, az ilyen 
+
+163
+00:10:05,504 --> 00:10:08,640
+szuperpozíció összetevőinek is van valamilyen amplitúdója és fázisa.
+
+164
+00:10:09,320 --> 00:10:11,898
+És egyébként, azok, akik többet olvasnak a kvantummechanikáról, 
+
+165
+00:10:11,898 --> 00:10:14,597
+meg fogják találni, hogy ezeket az összetevőket valójában egyetlen 
+
+166
+00:10:14,597 --> 00:10:17,860
+komplex számmal adják meg, nem pedig egy ilyen koszinuszos kifejezéssel, mint ez.
+
+167
+00:10:18,320 --> 00:10:21,991
+Ezt úgy is elképzelhetjük, hogy a komplex számok csak egy nagyon kényelmes és természetes 
+
+168
+00:10:21,991 --> 00:10:25,540
+matematikai módja annak, hogy egy amplitúdót és egy fázist egyetlen értékkel kódoljunk.
+
+169
+00:10:26,260 --> 00:10:30,792
+Ez kissé zavarossá teheti a dolgokat, mert nehéz elképzelni egy komplex számpárt, 
+
+170
+00:10:30,792 --> 00:10:33,280
+ami két alapállapot szuperpozícióját írná le.
+
+171
+00:10:33,700 --> 00:10:36,820
+De gondolhatsz a komplex számok használatára a kvantummechanika egészében, 
+
+172
+00:10:36,820 --> 00:10:39,649
+ami a mögöttes hullámos természetéből adódik, és ebből az igényből, 
+
+173
+00:10:39,649 --> 00:10:42,520
+hogy minden irányhoz az amplitúdót és a fázist is meg kell határozni.
+
+174
+00:10:43,900 --> 00:10:46,260
+Oké, csak egy gyors megjegyzés, mielőtt belemennénk a kvantumba.
+
+175
+00:10:46,760 --> 00:10:50,105
+Nézzük meg az egyik ilyen hullámot, és csak az elektromos mezőre koncentráljunk, 
+
+176
+00:10:50,105 --> 00:10:51,220
+ahogyan az előbb is tettük.
+
+177
+00:10:51,820 --> 00:10:57,340
+Klasszikusan egy ilyen hullám energiáját az amplitúdó négyzetével arányosnak tekintjük.
+
+178
+00:10:58,180 --> 00:11:01,280
+És szeretném, ha észrevennétek, hogy ez milyen jól illeszkedik a Pitagorasz-tételhez.
+
+179
+00:11:01,940 --> 00:11:06,500
+Ha ezt a hullámot egy Ax amplitúdójú vízszintes komponens és 
+
+180
+00:11:06,500 --> 00:11:11,807
+egy Ay amplitúdójú függőleges komponens szuperpozíciójaként írnánk le, 
+
+181
+00:11:11,807 --> 00:11:15,620
+akkor az energiasűrűsége arányos Ax2 plusz Ay2-vel.
+
+182
+00:11:16,220 --> 00:11:18,060
+Erre kétféleképpen is gondolhatsz.
+
+183
+00:11:18,060 --> 00:11:22,790
+Vagy azért, mert a szuperpozícióban az egyes komponensek energiáit összeadod, 
+
+184
+00:11:22,790 --> 00:11:27,885
+vagy csak azért, mert az új amplitúdót a Pitagorasz-tétel segítségével számolod ki, 
+
+185
+00:11:27,885 --> 00:11:29,220
+és a négyzetét veszed.
+
+186
+00:11:29,820 --> 00:11:30,400
+Hát nem szép?
+
+187
+00:11:31,260 --> 00:11:34,903
+A fény klasszikus felfogása szerint ezt az energiát a hullám amplitúdójának 
+
+188
+00:11:34,903 --> 00:11:38,500
+változtatásával folyamatosan fel- és letárcsázhatjuk, ahogyan csak akarjuk.
+
+189
+00:11:38,680 --> 00:11:42,706
+A fizikusok azonban a 19. század végén és a 20. század elején kezdték észrevenni, 
+
+190
+00:11:42,706 --> 00:11:45,800
+hogy ez az energia valójában diszkrét mennyiségben jelenik meg.
+
+191
+00:11:46,320 --> 00:11:48,634
+Konkrétan, úgy tűnik, hogy az elektromágneses hullámok 
+
+192
+00:11:48,634 --> 00:11:51,118
+egyikének energiája mindig az adott hullám frekvenciájának 
+
+193
+00:11:51,118 --> 00:11:53,980
+egész számú többszöröse egy adott konstans szorzataként jelenik meg.
+
+194
+00:11:54,340 --> 00:11:58,600
+Ezt az állandót Planck-állandónak nevezzük, és általában h betűvel jelöljük.
+
+195
+00:11:59,180 --> 00:12:03,203
+Fizikailag ez azt jelenti, hogy amikor ez a hullám energiát cserél valami mással, 
+
+196
+00:12:03,203 --> 00:12:06,245
+például egy elektronnal, akkor az energia mennyisége mindig a 
+
+197
+00:12:06,245 --> 00:12:08,600
+frekvencia h-szorosának egész számú többszöröse.
+
+198
+00:12:09,340 --> 00:12:12,360
+Fontos, hogy ez azt jelenti, hogy egy adott hf frekvenciájú 
+
+199
+00:12:12,360 --> 00:12:15,180
+hullámoknak van egy minimális, nem nulla energiaszintje.
+
+200
+00:12:15,500 --> 00:12:18,848
+Ha van egy elektromágneses hullám, amelynek ilyen frekvenciája és energiája van, 
+
+201
+00:12:18,848 --> 00:12:21,700
+akkor nem lehet kisebbé tenni anélkül, hogy teljesen ki ne iktatnánk.
+
+202
+00:12:22,360 --> 00:12:26,760
+Ez furcsa érzés, amikor a hullám fogalma egy szép, folyamatosan oszcilláló vektormező.
+
+203
+00:12:27,140 --> 00:12:29,242
+De a világegyetem nem így működik, amint azt a 19. 
+
+204
+00:12:29,242 --> 00:12:31,880
+század végi és a 20. század eleji kísérletek elkezdték felfedni.
+
+205
+00:12:32,480 --> 00:12:35,340
+Valójában készítettem erről egy videót, melynek címe: A kvantummechanika eredete.
+
+206
+00:12:36,460 --> 00:12:39,880
+Érdemes azonban megjegyezni, hogy ez a jelenség valójában gyakori a hullámoknál, 
+
+207
+00:12:39,880 --> 00:12:42,710
+amikor azok bizonyos módon korlátozottak, mint például a csöveknél 
+
+208
+00:12:42,710 --> 00:12:45,160
+vagy a hangszerek húrjainál, és ezt harmonikusnak nevezik.
+
+209
+00:12:45,680 --> 00:12:49,094
+Az a furcsa, hogy az elektromágneses hullámok a szabad térben is ezt teszik, 
+
+210
+00:12:49,094 --> 00:12:50,780
+még akkor is, ha nincsenek korlátozva.
+
+211
+00:12:51,580 --> 00:12:55,020
+És hogyan nevezzük az ilyen minimális energiájú elektromágneses hullámot?
+
+212
+00:12:55,520 --> 00:12:56,100
+Egy foton.
+
+213
+00:12:56,860 --> 00:12:59,889
+De mint mondtam, a klasszikus elektromágneses hullámok 
+
+214
+00:12:59,889 --> 00:13:03,140
+leírására használt matematika átvihető a fotonok leírására.
+
+215
+00:13:03,700 --> 00:13:06,359
+Lehet, mondjuk, 45 fokos diagonális polarizációja, 
+
+216
+00:13:06,359 --> 00:13:10,687
+amely egy tisztán vízszintes és egy tisztán függőleges állapot szuperpozíciójaként 
+
+217
+00:13:10,687 --> 00:13:15,380
+írható le, ahol ezen komponensek mindegyike rendelkezik bizonyos amplitúdóval és fázissal.
+
+218
+00:13:16,220 --> 00:13:18,964
+És egy másik alap megválasztásával ugyanezt az állapotot 
+
+219
+00:13:18,964 --> 00:13:21,420
+két másik irány szuperpozíciójaként is leírhatnánk.
+
+220
+00:13:22,040 --> 00:13:25,800
+Mindezek olyan dolgok, amiket akkor látnátok, ha többet olvasnátok a kvantummechanikáról.
+
+221
+00:13:26,320 --> 00:13:31,400
+De ennek a szuperpozíciónak más értelmezése van, mint korábban, és kell is, hogy legyen.
+
+222
+00:13:31,880 --> 00:13:35,707
+Tegyük fel, hogy klasszikus módon gondolkodtál erről az átlósan polarizált fotonról, 
+
+223
+00:13:35,707 --> 00:13:39,580
+és azt mondtad, hogy amplitúdója egy egységnyi valamilyen megfelelő egységrendszerben.
+
+224
+00:13:40,120 --> 00:13:42,886
+Ezáltal a vízszintes és függőleges komponensek 
+
+225
+00:13:42,886 --> 00:13:46,360
+feltételezett amplitúdói a felének négyzetgyökét tennék ki.
+
+226
+00:13:47,220 --> 00:13:49,360
+És ahogy Henry is mondta, a foton energiája a 
+
+227
+00:13:49,360 --> 00:13:51,920
+frekvenciája szorozva ezzel a különleges h konstanssal.
+
+228
+00:13:52,600 --> 00:13:57,907
+És mivel klasszikus értelemben az energia arányos e hullám amplitúdójának négyzetével, 
+
+229
+00:13:57,907 --> 00:14:02,178
+csábító úgy gondolni, hogy az energia fele a vízszintes komponensben, 
+
+230
+00:14:02,178 --> 00:14:04,680
+fele pedig a függőleges komponensben van.
+
+231
+00:14:05,180 --> 00:14:09,080
+Az ilyen frekvenciájú hullámok azonban nem rendelkezhetnek a fotonok energiájának felével.
+
+232
+00:14:09,820 --> 00:14:13,449
+Úgy értem, a kvantum egész újdonsága az, hogy az energia ilyen diszkrét, 
+
+233
+00:14:13,449 --> 00:14:15,040
+oszthatatlan darabokban érkezik.
+
+234
+00:14:15,620 --> 00:14:20,049
+Tehát ezek a komponensek, amelyek képzeletbeli amplitúdója egy a kettő négyzetgyökénél, 
+
+235
+00:14:20,049 --> 00:14:21,560
+nem létezhetnek elszigetelten.
+
+236
+00:14:22,220 --> 00:14:24,440
+És talán elgondolkodik azon, hogy pontosan mit is jelentenek.
+
+237
+00:14:25,420 --> 00:14:27,480
+Nos, kezdjünk el kísérletezni.
+
+238
+00:14:27,880 --> 00:14:32,847
+Mit gondolsz, mi történne, ha fognál egy függőlegesen tájolt polarizációs szűrőt, 
+
+239
+00:14:32,847 --> 00:14:36,240
+és ezt az átlósan polarizált fotont egyenesen belelőnéd?
+
+240
+00:14:37,800 --> 00:14:41,116
+Klasszikusan úgy értelmeznénk ezt a szuperpozíciót, 
+
+241
+00:14:41,116 --> 00:14:44,560
+hogy a vízszintes irányú energiájának fele elnyelődik.
+
+242
+00:14:45,100 --> 00:14:48,037
+De mivel az energia ezekben a diszkrét fotoncsomagokban érkezik, 
+
+243
+00:14:48,037 --> 00:14:52,060
+az energiának vagy át kell haladnia teljes energiájával, vagy teljesen el kell nyelődnie.
+
+244
+00:14:52,540 --> 00:14:56,338
+És ha valóban elvégeznéd ezt a kísérletet, akkor az esetek felében 
+
+245
+00:14:56,338 --> 00:15:00,080
+a foton teljesen átmegy, és az esetek felében teljesen elnyelődik.
+
+246
+00:15:00,080 --> 00:15:04,740
+És úgy tűnik, hogy véletlenszerű, hogy egy adott foton áthalad-e vagy sem.
+
+247
+00:15:05,760 --> 00:15:09,818
+Ha mégis átjut, akkor a döntés meghozatalára való kényszerítés valójában 
+
+248
+00:15:09,818 --> 00:15:14,100
+úgy változtatja meg, hogy a polarizációja a szűrő iránya mentén orientálódik.
+
+249
+00:15:14,940 --> 00:15:17,460
+Ez analóg a klasszikus Schrödinger macskájával.
+
+250
+00:15:17,740 --> 00:15:20,520
+Van valami, ami két állapot szuperpozíciójában van, 
+
+251
+00:15:20,520 --> 00:15:24,263
+de amint mérést végzünk ezen a szuperpozíción, és arra kényszerítjük, 
+
+252
+00:15:24,263 --> 00:15:27,257
+hogy kölcsönhatásba lépjen egy megfigyelővel oly módon, 
+
+253
+00:15:27,257 --> 00:15:31,641
+hogy a megfigyelő szemszögéből nézve a két állapot mindegyike másképp viselkedne, 
+
+254
+00:15:31,641 --> 00:15:35,598
+ez a szuperpozíció összeomlik, és teljesen az egyik vagy teljesen a másik 
+
+255
+00:15:35,598 --> 00:15:38,860
+állapotba kerül, halott vagy élő, vízszintes vagy függőleges.
+
+256
+00:15:40,180 --> 00:15:43,634
+Az egyik nagyon jó módja annak, hogy ezt működés közben is láthassuk, 
+
+257
+00:15:43,634 --> 00:15:45,953
+amiről Henry és én a másik videóban beszélünk, 
+
+258
+00:15:45,953 --> 00:15:49,852
+hogy fogunk néhány polarizált napszemüveget vagy másfajta polarizációs szűrőt, 
+
+259
+00:15:49,852 --> 00:15:52,320
+és kettőt közülük a fényforrás és köztünk tartunk.
+
+260
+00:15:52,820 --> 00:15:56,373
+Ha elforgatjuk őket úgy, hogy 90 fokban eltérjenek egymástól, 
+
+261
+00:15:56,373 --> 00:16:01,130
+a fényforrás teljesen elsötétül, vagy legalábbis tökéletes szűrőkkel ez így lenne, 
+
+262
+00:16:01,130 --> 00:16:04,625
+mert az elsőn áthaladó összes foton függőlegesen polarizált, 
+
+263
+00:16:04,625 --> 00:16:09,440
+így valójában 0% esélyük van arra, hogy áthaladjanak egy vízszintesen tájolt szűrőn.
+
+264
+00:16:10,280 --> 00:16:15,655
+Ha azonban egy harmadik szűrőt helyezünk be a kettő közé 45 fokos szögben, 
+
+265
+00:16:15,655 --> 00:16:18,020
+az valójában több fényt enged át.
+
+266
+00:16:18,640 --> 00:16:24,809
+Itt az történik, hogy a függőleges szűrőn áthaladó fotonok 50%-a átmegy az átlós szűrőn 
+
+267
+00:16:24,809 --> 00:16:29,858
+is, és ha ez megtörténik, akkor tisztán átlós polarizációjúvá változik, 
+
+268
+00:16:29,858 --> 00:16:34,695
+és ha már ebben az állapotban vannak, akkor 50-50% esélyük van arra, 
+
+269
+00:16:34,695 --> 00:16:37,220
+hogy áthaladjanak a 90 fokos szűrőn.
+
+270
+00:16:37,680 --> 00:16:42,228
+Tehát bár az első szűrőn áthaladó fotonok 0%-a áthaladna az utolsón, 
+
+271
+00:16:42,228 --> 00:16:47,371
+ha semmi sem lenne közte, egy másik szűrő bevezetésével 25%-uk most mindhárom 
+
+272
+00:16:47,371 --> 00:16:48,360
+szűrőn áthalad.
+
+273
+00:16:49,060 --> 00:16:51,963
+Ez olyasvalami, amit nem lehet megmagyarázni, hacsak a középső 
+
+274
+00:16:51,963 --> 00:16:54,820
+szűrő nem kényszeríti a fotonokat állapotuk megváltoztatására.
+
+275
+00:16:55,700 --> 00:16:59,066
+És ez a kísérlet egyébként még furcsábbá válik, 
+
+276
+00:16:59,066 --> 00:17:03,835
+ha a 0 és 45 fok közötti szögek konkrét valószínűségeit vizsgáljuk, 
+
+277
+00:17:03,835 --> 00:17:06,359
+és erről beszélünk a másik videóban.
+
+278
+00:17:06,980 --> 00:17:11,037
+Például az egyik konkrét érték, amelyre itt összpontosítunk, 
+
+279
+00:17:11,037 --> 00:17:14,630
+annak a valószínűsége, hogy egy olyan foton, amelynek 
+
+280
+00:17:14,630 --> 00:17:19,220
+polarizációja 22,5 fokkal eltér egy szűrő irányától, átmegy a szűrőn.
+
+281
+00:17:20,000 --> 00:17:26,205
+Ismét hasznos, ha úgy gondolunk erre a hullámra, mint amelynek amplitúdója 1, 
+
+282
+00:17:26,205 --> 00:17:32,012
+és a vízszintes komponens amplitúdója sin 22,5 fok, ami körülbelül 0,38, 
+
+283
+00:17:32,012 --> 00:17:37,740
+és a függőleges komponens amplitúdója cos 22,5 fok, ami körülbelül 0,92.
+
+284
+00:17:41,220 --> 00:17:45,406
+Klasszikusan úgy gondolhatnánk, hogy a vízszintes komponensének 
+
+285
+00:17:45,406 --> 00:17:49,200
+energiája arányos a 0,38 négyzetével, ami körülbelül 0,15.
+
+286
+00:17:49,820 --> 00:17:52,965
+Hasonlóképpen, a függőleges komponensre úgy is gondolhatunk, 
+
+287
+00:17:52,965 --> 00:17:57,400
+mint amelynek energiája arányos a 0,92 négyzetével, ami körülbelül 0,85-nek felel meg.
+
+288
+00:17:58,140 --> 00:18:00,960
+És mint már említettük, klasszikusan ez azt jelenti, 
+
+289
+00:18:00,960 --> 00:18:03,620
+hogy ha egy függőleges szűrőn keresztül vezetjük, 
+
+290
+00:18:03,620 --> 00:18:06,600
+akkor az energia 15%-a elnyelődik a vízszintes irányban.
+
+291
+00:18:07,260 --> 00:18:11,535
+De mivel a fény energiája ezekben a diszkrét kvantumokban érkezik, 
+
+292
+00:18:11,535 --> 00:18:15,555
+amelyeket nem lehet felosztani, ehelyett azt figyelhetjük meg, 
+
+293
+00:18:15,555 --> 00:18:20,980
+hogy a foton az idő 85%-ában teljesen áthalad, 15%-ában pedig teljesen blokkolva van.
+
+294
+00:18:25,840 --> 00:18:28,760
+Most szeretném hangsúlyozni, hogy a hullámegyenletek nem változnak.
+
+295
+00:18:29,040 --> 00:18:32,458
+A fotont továbbra is két rezgő komponens szuperpozíciójaként írják le, 
+
+296
+00:18:32,458 --> 00:18:35,636
+amelyek mindegyike bizonyos fázissal és amplitúdóval rendelkezik, 
+
+297
+00:18:35,636 --> 00:18:38,140
+és ezeket gyakran egyetlen komplex számmal kódolják.
+
+298
+00:18:38,600 --> 00:18:43,373
+A különbség az, hogy klasszikusan az egyes komponensek amplitúdóinak négyzete megmondja, 
+
+299
+00:18:43,373 --> 00:18:47,288
+hogy az adott hullám energiájának mekkora része van az egyes irányokban, 
+
+300
+00:18:47,288 --> 00:18:51,257
+de a kvantált fény esetében ezen a minimális, nem nulla energiaszinten az 
+
+301
+00:18:51,257 --> 00:18:55,816
+amplitúdók négyzete megmondja, hogy egy adott fotonnak mekkora a valószínűsége arra, 
+
+302
+00:18:55,816 --> 00:18:58,820
+hogy az összes energiája az egyik irányban van vagy sem.
+
+303
+00:18:58,820 --> 00:19:02,260
+Ezen kívül ezek az alkatrészek még mindig rendelkezhetnek valamilyen fáziskülönbséggel.
+
+304
+00:19:02,680 --> 00:19:06,537
+A klasszikus hullámokhoz hasonlóan a fotonok is lehetnek körkörösen polarizáltak, 
+
+305
+00:19:06,537 --> 00:19:09,642
+és léteznek olyan polarizációs szűrők, amelyek csak a körkörösen, 
+
+306
+00:19:09,642 --> 00:19:13,500
+mondjuk az óramutató járásával megegyező irányban polarizált fotonokat engedik át.
+
+307
+00:19:14,120 --> 00:19:17,231
+Vagy inkább valószínűségi alapon engedik át az összes fotont, 
+
+308
+00:19:17,231 --> 00:19:21,346
+ahol a valószínűségeket úgy határozzák meg, hogy minden egyes fotont az óramutató 
+
+309
+00:19:21,346 --> 00:19:25,410
+járásával megegyező és ellentétes irányú állapotok szuperpozíciójaként írnak le, 
+
+310
+00:19:25,410 --> 00:19:29,475
+majd az óramutató járásával megegyező komponens amplitúdójának négyzete adja meg 
+
+311
+00:19:29,475 --> 00:19:30,680
+a kívánt valószínűséget.
+
+312
+00:19:32,060 --> 00:19:34,344
+A fotonok természetesen csak egy kvantumjelenség, 
+
+313
+00:19:34,344 --> 00:19:37,999
+amelyet kezdetben hullámként értelmeztünk a Maxwell-egyenleteknek köszönhetően, 
+
+314
+00:19:37,999 --> 00:19:42,020
+majd pedig egyedi részecskékként vagy kvantumokként, innen a kvantummechanika elnevezés.
+
+315
+00:19:42,960 --> 00:19:46,278
+De mint azt sokan jól tudják, ennek van egy másik oldala is, ahol sok olyan dologról, 
+
+316
+00:19:46,278 --> 00:19:49,712
+amelyekről úgy tudták, hogy diszkrét kis csomagokban vannak, mint például az elektronok, 
+
+317
+00:19:49,712 --> 00:19:52,220
+kiderült, hogy hasonló, hullámzó kvantummechanika irányítja őket.
+
+318
+00:19:52,840 --> 00:19:56,419
+Ennél az egyfotonos polarizációs példánál sokkal általánosabb esetekben 
+
+319
+00:19:56,419 --> 00:20:00,347
+a kvantummechanikai állapotokat több alapállapot szuperpozíciójaként írják le, 
+
+320
+00:20:00,347 --> 00:20:03,380
+és a szuperpozíció attól függ, hogy milyen alapot választunk.
+
+321
+00:20:03,920 --> 00:20:07,907
+Ebben a szuperpozícióban minden komponensnek van egy amplitúdója és egy fázisa, 
+
+322
+00:20:07,907 --> 00:20:11,296
+gyakran egyetlen komplex számként kódolva, és a fázis szükségessége 
+
+323
+00:20:11,296 --> 00:20:13,440
+ezen objektumok hullámtermészetéből adódik.
+
+324
+00:20:14,020 --> 00:20:17,700
+A foton példájához hasonlóan, a mérés módjának megválasztása meghatározhat egy 
+
+325
+00:20:17,700 --> 00:20:19,889
+sor alapállapotot, ahol a valószínűsége annak, 
+
+326
+00:20:19,889 --> 00:20:23,196
+hogy egy részecske mérése során ezen alapállapotok valamelyikében van, 
+
+327
+00:20:23,196 --> 00:20:25,200
+arányos e számok amplitúdóinak négyzetével.
+
+328
+00:20:25,800 --> 00:20:29,700
+Vicces azonban belegondolni, hogy ha az elektronok és más részecskék hullámtermészetét 
+
+329
+00:20:29,700 --> 00:20:33,511
+fedezték volna fel először, akkor az egész témát harmonikus mechanikának vagy valami 
+
+330
+00:20:33,511 --> 00:20:36,022
+hasonlónak nevezhetnénk, hiszen a furcsaság ott nem az, 
+
+331
+00:20:36,022 --> 00:20:38,487
+hogy a hullámok diszkrét egységekben jönnek, hanem az, 
+
+332
+00:20:38,487 --> 00:20:40,640
+hogy a részecskéket hullámegyenletek irányítják.
+
+333
+00:20:42,620 --> 00:20:46,885
+Ezt a videót részben a Brilliant támogatta, és mint a csatorna nézői tudják, 
+
+334
+00:20:46,885 --> 00:20:51,760
+a Brilliantban azt szeretem, hogy remek kiegészítője a passzívan nézett oktatóvideóknak.
+
+335
+00:20:52,380 --> 00:20:54,330
+Itt mindannyian több matematikát, vagy fizikát, 
+
+336
+00:20:54,330 --> 00:20:57,905
+vagy a fizikára felkészítő matematikát szeretnétek tanulni, és az egyetlen módja annak, 
+
+337
+00:20:57,905 --> 00:21:00,098
+hogy ezeket a dolgokat ténylegesen megtanuljátok, az, 
+
+338
+00:21:00,098 --> 00:21:02,780
+hogy aktívan megküzdötök a rejtvényekkel és a problémamegoldással.
+
+339
+00:21:03,500 --> 00:21:06,250
+A Brilliant számos jól összeállított feladatsort kínál, 
+
+340
+00:21:06,250 --> 00:21:09,100
+amelyek segítenek mindenféle műszaki téma elsajátításában.
+
+341
+00:21:09,640 --> 00:21:11,641
+Nyilvánvalóan mindannyian szeretitek a fizikát, 
+
+342
+00:21:11,641 --> 00:21:14,476
+így szerintem élveznétek a klasszikus mechanikáról és a gravitációs 
+
+343
+00:21:14,476 --> 00:21:17,310
+fizikáról szóló kurzusaikat, és őszintén szólva a csoportelmélet is 
+
+344
+00:21:17,310 --> 00:21:18,520
+nagyon jó alapot adna nektek.
+
+345
+00:21:18,980 --> 00:21:21,980
+De sok más nagyszerű kurzus is van, különösen matematikából.
+
+346
+00:21:22,840 --> 00:21:27,020
+Ha a brilliant.org slash 3b1b oldalra mész, az tudatja velük, 
+
+347
+00:21:27,020 --> 00:21:31,402
+hogy innen jöttél, és az első 200 ember, aki erre a linkre megy, 
+
+348
+00:21:31,402 --> 00:21:35,380
+20% kedvezményt kap az éves Brilliant Premium előfizetésre.
+
+349
+00:21:36,080 --> 00:21:38,036
+Én ezt az előfizetést használom, és nagyon szórakoztató, 
+
+350
+00:21:38,036 --> 00:21:40,680
+hogy van egy bankunk, amely tartalmazza ezeket a rejtvényeket és problémákat.
+
+351
+00:21:41,660 --> 00:21:44,677
+De persze azok, akik passzívabb nézelődésre vágynak, ne feledjék, 
+
+352
+00:21:44,677 --> 00:21:48,700
+hogy Henry és én most tettünk közzé egy videót a Bell-egyenlőtlenségekről a percfizikán.
+
+353
+00:21:49,480 --> 00:21:52,236
+Ha valamiért nem követted a percfizikát mostanában, és nem tudom, 
+
+354
+00:21:52,236 --> 00:21:55,033
+miért ne követted volna, az ottani videók tényleg csúcsminőségűek, 
+
+355
+00:21:55,033 --> 00:21:58,500
+úgyhogy mindenképpen szánj rá egy percet, hogy körülnézz a csatornája többi részén.
+

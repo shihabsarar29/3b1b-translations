@@ -1,0 +1,636 @@
+1
+00:00:10,940 --> 00:00:13,301
+Ciao a tutti, da dove ci eravamo interrotti l'ultima volta, 
+
+2
+00:00:13,301 --> 00:00:16,031
+ho mostrato come appaiono le trasformazioni lineari e come rappresentarle 
+
+3
+00:00:16,031 --> 00:00:16,880
+utilizzando le matrici.
+
+4
+00:00:18,320 --> 00:00:20,863
+Vale la pena fare un breve riepilogo perché è davvero importante, 
+
+5
+00:00:20,863 --> 00:00:23,521
+ma ovviamente se ti sembra qualcosa di più di un semplice riepilogo, 
+
+6
+00:00:23,521 --> 00:00:25,140
+torna indietro e guarda il video completo.
+
+7
+00:00:25,779 --> 00:00:29,757
+In generale, le trasformazioni lineari sono funzioni con vettori come input e vettori 
+
+8
+00:00:29,757 --> 00:00:33,549
+come output, ma l'ultima volta ho mostrato come possiamo pensarle visivamente 
+
+9
+00:00:33,549 --> 00:00:37,480
+come se si muovessero nello spazio in modo tale che le linee della griglia rimangano 
+
+10
+00:00:37,480 --> 00:00:41,180
+parallele e uniformemente distanziate, e in modo che l'origine rimane fisso.
+
+11
+00:00:41,820 --> 00:00:45,010
+La conclusione fondamentale è che una trasformazione lineare 
+
+12
+00:00:45,010 --> 00:00:48,881
+è completamente determinata da dove prendono i vettori base dello spazio, 
+
+13
+00:00:48,881 --> 00:00:51,340
+che per due dimensioni significa i-hat e j-hat.
+
+14
+00:00:51,340 --> 00:00:54,109
+Questo perché qualsiasi altro vettore potrebbe essere 
+
+15
+00:00:54,109 --> 00:00:57,340
+descritto come una combinazione lineare di questi vettori base.
+
+16
+00:00:57,940 --> 00:01:02,340
+Un vettore con coordinate x, y è x per i-hat più y per j-hat.
+
+17
+00:01:03,460 --> 00:01:06,678
+Dopo aver attraversato la trasformazione, questa proprietà secondo cui le linee della 
+
+18
+00:01:06,678 --> 00:01:09,860
+griglia rimangono parallele e spaziate uniformemente ha una conseguenza meravigliosa.
+
+19
+00:01:10,500 --> 00:01:14,030
+Il luogo in cui atterrerà il tuo vettore sarà x volte la versione 
+
+20
+00:01:14,030 --> 00:01:17,560
+trasformata di i-hat più y volte la versione trasformata di j-hat.
+
+21
+00:01:18,240 --> 00:01:22,880
+Ciò significa che se tieni un registro delle coordinate dove atterra i-hat e delle 
+
+22
+00:01:22,880 --> 00:01:27,241
+coordinate dove atterra j-hat, puoi calcolare che un vettore che inizia da x, 
+
+23
+00:01:27,241 --> 00:01:32,216
+y deve atterrare su x volte le nuove coordinate di i-hat più y volte le nuove coordinate 
+
+24
+00:01:32,216 --> 00:01:32,720
+di j-hat.
+
+25
+00:01:33,560 --> 00:01:37,302
+La convenzione è di registrare le coordinate di dove si trovano i-hat e 
+
+26
+00:01:37,302 --> 00:01:41,253
+j-hat come colonne di una matrice e di definire questa somma delle versioni 
+
+27
+00:01:41,253 --> 00:01:45,360
+scalate di quelle colonne per x e y come moltiplicazione di vettori di matrice.
+
+28
+00:01:46,050 --> 00:01:49,875
+In questo modo, una matrice rappresenta una trasformazione lineare specifica 
+
+29
+00:01:49,875 --> 00:01:53,005
+e moltiplicare una matrice per un vettore è ciò che significa, 
+
+30
+00:01:53,005 --> 00:01:57,080
+dal punto di vista computazionale, applicare quella trasformazione a quel vettore.
+
+31
+00:01:58,800 --> 00:02:00,880
+Va bene, ricapitoliamo, passiamo alle novità.
+
+32
+00:02:01,600 --> 00:02:03,900
+Spesso ti ritrovi a voler descrivere gli effetti 
+
+33
+00:02:03,900 --> 00:02:07,000
+dell'applicazione di una trasformazione e poi di un'altra.
+
+34
+00:02:07,620 --> 00:02:10,888
+Ad esempio, potresti voler descrivere cosa succede quando ruoti per la 
+
+35
+00:02:10,888 --> 00:02:14,480
+prima volta il piano di 90 gradi in senso antiorario e poi applichi un taglio.
+
+36
+00:02:15,260 --> 00:02:18,069
+L'effetto complessivo qui, dall'inizio alla fine, 
+
+37
+00:02:18,069 --> 00:02:21,800
+è un'altra trasformazione lineare, distinta dalla rotazione e dal taglio.
+
+38
+00:02:22,280 --> 00:02:25,091
+Questa nuova trasformazione lineare è comunemente chiamata la 
+
+39
+00:02:25,091 --> 00:02:28,220
+composizione delle due trasformazioni separate che abbiamo applicato.
+
+40
+00:02:28,920 --> 00:02:32,426
+E come ogni trasformazione lineare, può essere descritta 
+
+41
+00:02:32,426 --> 00:02:35,440
+con una matrice tutta sua seguendo i-hat e j-hat.
+
+42
+00:02:36,020 --> 00:02:40,070
+In questo esempio, il punto di destinazione finale per i-hat dopo entrambe 
+
+43
+00:02:40,070 --> 00:02:44,120
+le trasformazioni è 1,1, quindi rendiamolo la prima colonna di una matrice.
+
+44
+00:02:44,960 --> 00:02:48,966
+Allo stesso modo, j-hat alla fine finisce nella posizione negativa 1,0, 
+
+45
+00:02:48,966 --> 00:02:51,860
+quindi la rendiamo la seconda colonna della matrice.
+
+46
+00:02:52,680 --> 00:02:56,878
+Questa nuova matrice cattura l'effetto complessivo dell'applicazione di 
+
+47
+00:02:56,878 --> 00:03:01,340
+una rotazione e poi di un taglio, ma come una singola azione, anziché due successive.
+
+48
+00:03:03,040 --> 00:03:04,880
+Ecco un modo di pensare a quella nuova matrice.
+
+49
+00:03:05,420 --> 00:03:08,616
+Se dovessi prendere un vettore e pomparlo attraverso la rotazione, 
+
+50
+00:03:08,616 --> 00:03:11,575
+quindi il taglio, la strada più lunga per calcolare dove va a 
+
+51
+00:03:11,575 --> 00:03:14,820
+finire è moltiplicarlo prima a sinistra per la matrice di rotazione.
+
+52
+00:03:15,320 --> 00:03:19,800
+Quindi prendi quello che ottieni e moltiplica quello a sinistra per la matrice di taglio.
+
+53
+00:03:20,460 --> 00:03:23,083
+Questo è, numericamente parlando, ciò che significa 
+
+54
+00:03:23,083 --> 00:03:26,060
+applicare una rotazione e poi un taglio ad un dato vettore.
+
+55
+00:03:26,800 --> 00:03:30,345
+Ma qualunque cosa ottieni dovrebbe essere uguale all'applicazione di questa 
+
+56
+00:03:30,345 --> 00:03:33,890
+nuova matrice di composizione che abbiamo appena trovato con lo stesso vettore, 
+
+57
+00:03:33,890 --> 00:03:37,213
+non importa quale vettore hai scelto, poiché questa nuova matrice dovrebbe 
+
+58
+00:03:37,213 --> 00:03:40,980
+catturare lo stesso effetto complessivo dell'azione di rotazione e poi di taglio.
+
+59
+00:03:42,480 --> 00:03:46,066
+Basandosi su come sono scritte le cose qui, penso che sia ragionevole chiamare 
+
+60
+00:03:46,066 --> 00:03:49,380
+questa nuova matrice il prodotto delle due matrici originali, non è vero?
+
+61
+00:03:50,420 --> 00:03:54,099
+Possiamo pensare a come calcolare quel prodotto più in generale in un attimo, 
+
+62
+00:03:54,099 --> 00:03:56,600
+ma è troppo facile perdersi nella foresta dei numeri.
+
+63
+00:03:56,600 --> 00:04:00,153
+Ricorda sempre che moltiplicare due matrici come questa ha il 
+
+64
+00:04:00,153 --> 00:04:04,280
+significato geometrico di applicare una trasformazione poi un'altra.
+
+65
+00:04:05,860 --> 00:04:09,660
+Una cosa un po' strana qui è che ci fa leggere da destra a sinistra.
+
+66
+00:04:10,040 --> 00:04:13,333
+Prima applichi la trasformazione rappresentata dalla matrice a destra, 
+
+67
+00:04:13,333 --> 00:04:16,720
+quindi applichi la trasformazione rappresentata dalla matrice a sinistra.
+
+68
+00:04:17,399 --> 00:04:20,130
+Ciò deriva dalla notazione delle funzioni, poiché scriviamo le 
+
+69
+00:04:20,130 --> 00:04:23,640
+funzioni a sinistra delle variabili, quindi ogni volta che componi due funzioni, 
+
+70
+00:04:23,640 --> 00:04:25,460
+devi sempre leggerle da destra a sinistra.
+
+71
+00:04:25,920 --> 00:04:28,980
+Buone notizie per i lettori ebrei, cattive notizie per il resto di noi.
+
+72
+00:04:29,880 --> 00:04:31,100
+Diamo un'occhiata a un altro esempio.
+
+73
+00:04:31,760 --> 00:04:34,605
+Prendi la matrice con le colonne 1,1 e negativo 2,0, 
+
+74
+00:04:34,605 --> 00:04:36,860
+la cui trasformazione assomiglia a questa.
+
+75
+00:04:37,980 --> 00:04:39,060
+E chiamiamolo m1.
+
+76
+00:04:40,100 --> 00:04:43,416
+Successivamente, prendi la matrice con le colonne 0,1 e 2,0, 
+
+77
+00:04:43,416 --> 00:04:45,700
+la cui trasformazione assomiglia a questa.
+
+78
+00:04:47,520 --> 00:04:49,240
+E chiamiamo quel ragazzo m2.
+
+79
+00:04:49,920 --> 00:04:52,753
+L'effetto totale dell'applicazione di m1 e poi di m2 
+
+80
+00:04:52,753 --> 00:04:55,680
+ci dà una nuova trasformazione, quindi troviamo la sua matrice.
+
+81
+00:04:56,280 --> 00:05:00,292
+Ma questa volta vediamo se possiamo farlo senza guardare le animazioni, 
+
+82
+00:05:00,292 --> 00:05:03,860
+e utilizzando invece solo le voci numeriche in ciascuna matrice.
+
+83
+00:05:04,740 --> 00:05:07,140
+Per prima cosa dobbiamo capire dove va a finire l'i-hat.
+
+84
+00:05:08,040 --> 00:05:11,525
+Dopo aver applicato m1, le nuove coordinate di i-hat, 
+
+85
+00:05:11,525 --> 00:05:15,980
+per definizione, sono date da quella prima colonna di m1, ovvero 1,1.
+
+86
+00:05:16,780 --> 00:05:20,071
+Per vedere cosa succede dopo aver applicato m2, 
+
+87
+00:05:20,071 --> 00:05:23,500
+moltiplica la matrice per m2 per quel vettore 1,1.
+
+88
+00:05:25,300 --> 00:05:29,880
+Elaborandolo, nel modo in cui ho descritto l'ultimo video, otterrai il vettore 2,1.
+
+89
+00:05:30,700 --> 00:05:33,100
+Questa sarà la prima colonna della matrice di composizione.
+
+90
+00:05:34,520 --> 00:05:37,380
+Allo stesso modo, per seguire j-hat, la seconda 
+
+91
+00:05:37,380 --> 00:05:40,540
+colonna di m1 ci dice che prima si ferma su meno 2,0.
+
+92
+00:05:42,700 --> 00:05:46,888
+Quindi, quando applichiamo m2 a quel vettore, puoi calcolare il 
+
+93
+00:05:46,888 --> 00:05:50,749
+prodotto del vettore della matrice per ottenere 0, meno 2, 
+
+94
+00:05:50,749 --> 00:05:55,200
+che diventa la seconda colonna della nostra matrice di composizione.
+
+95
+00:05:56,640 --> 00:05:58,751
+Lasciatemi parlare di nuovo dello stesso processo, 
+
+96
+00:05:58,751 --> 00:06:01,400
+ma questa volta mostrerò le voci variabili in ciascuna matrice, 
+
+97
+00:06:01,400 --> 00:06:04,920
+solo per mostrare che la stessa linea di ragionamento funziona per qualsiasi matrice.
+
+98
+00:06:05,540 --> 00:06:08,384
+Questo è più ricco di simboli e richiederà un po' più di spazio, 
+
+99
+00:06:08,384 --> 00:06:10,980
+ma dovrebbe essere abbastanza soddisfacente per chiunque abbia 
+
+100
+00:06:10,980 --> 00:06:13,660
+già imparato la moltiplicazione di matrici in modo più meccanico.
+
+101
+00:06:14,460 --> 00:06:18,775
+Per seguire dove va i-hat, inizia guardando la prima colonna della matrice a destra, 
+
+102
+00:06:18,775 --> 00:06:21,060
+poiché è qui che inizialmente si ferma i-hat.
+
+103
+00:06:22,000 --> 00:06:25,973
+Moltiplicando quella colonna per la matrice a sinistra è come puoi sapere dove 
+
+104
+00:06:25,973 --> 00:06:30,300
+finisce la versione intermedia di i-hat dopo aver applicato la seconda trasformazione.
+
+105
+00:06:31,620 --> 00:06:34,860
+Quindi la prima colonna della matrice di composizione sarà sempre uguale alla 
+
+106
+00:06:34,860 --> 00:06:38,100
+matrice di sinistra moltiplicata per la prima colonna della matrice di destra.
+
+107
+00:06:42,160 --> 00:06:44,849
+Allo stesso modo, j-hat atterrerà sempre inizialmente 
+
+108
+00:06:44,849 --> 00:06:47,140
+sulla seconda colonna della matrice di destra.
+
+109
+00:06:48,940 --> 00:06:52,731
+Quindi moltiplicando la matrice di sinistra per questa seconda colonna si otterrà la sua 
+
+110
+00:06:52,731 --> 00:06:56,480
+posizione finale, e quindi quella sarà la seconda colonna della matrice di composizione.
+
+111
+00:06:56,480 --> 00:07:02,724
+Nota che ci sono molti simboli qui, ed è normale che questa formula venga insegnata come 
+
+112
+00:07:02,724 --> 00:07:09,040
+qualcosa da memorizzare, insieme a un certo processo algoritmico per aiutare a ricordarla.
+
+113
+00:07:09,160 --> 00:07:12,036
+Ma penso davvero che prima di memorizzare quel processo, 
+
+114
+00:07:12,036 --> 00:07:16,528
+dovresti abituarti a pensare a cosa rappresenta realmente la moltiplicazione di matrici, 
+
+115
+00:07:16,528 --> 00:07:18,900
+applicando una trasformazione dopo l'altra.
+
+116
+00:07:19,620 --> 00:07:22,916
+Credimi, questo ti fornirà un quadro concettuale molto migliore che renderà 
+
+117
+00:07:22,916 --> 00:07:26,300
+le proprietà della moltiplicazione di matrici molto più facili da comprendere.
+
+118
+00:07:27,060 --> 00:07:28,360
+Ad esempio, ecco una domanda.
+
+119
+00:07:28,880 --> 00:07:32,840
+È importante l'ordine in cui inseriamo le due matrici quando le moltiplichiamo?
+
+120
+00:07:33,620 --> 00:07:37,000
+Bene, riflettiamo su un semplice esempio, come quello di prima.
+
+121
+00:07:37,640 --> 00:07:41,369
+Prendi un taglio, che fissa l'i-hat e spinge il j-hat verso destra, 
+
+122
+00:07:41,369 --> 00:07:42,820
+e una rotazione di 90 gradi.
+
+123
+00:07:43,600 --> 00:07:47,418
+Se prima esegui il taglio e poi ruoti, possiamo vedere 
+
+124
+00:07:47,418 --> 00:07:50,960
+che i-hat finisce a 0,1 e j-hat finisce a meno 1,1.
+
+125
+00:07:51,320 --> 00:07:53,060
+Entrambi generalmente puntano vicini.
+
+126
+00:07:53,860 --> 00:07:59,560
+Se prima ruoti, poi esegui il taglio, i-hat finisce a 1,1 e j-hat 
+
+127
+00:07:59,560 --> 00:08:05,520
+si sposta in una direzione diversa a meno 1,0 e puntano più distanti.
+
+128
+00:08:06,380 --> 00:08:09,181
+L’effetto complessivo qui è chiaramente diverso, 
+
+129
+00:08:09,181 --> 00:08:12,440
+quindi evidentemente l’ordine ha tutta la sua importanza.
+
+130
+00:08:12,700 --> 00:08:14,773
+Nota che pensando in termini di trasformazioni, 
+
+131
+00:08:14,773 --> 00:08:17,840
+questo è il genere di cose che puoi fare nella tua testa visualizzando.
+
+132
+00:08:18,220 --> 00:08:19,900
+Nessuna moltiplicazione di matrici necessaria.
+
+133
+00:08:21,480 --> 00:08:24,527
+Ricordo che quando ho studiato per la prima volta l'algebra lineare, 
+
+134
+00:08:24,527 --> 00:08:27,116
+c'era questo compito a casa che ci chiedeva di dimostrare 
+
+135
+00:08:27,116 --> 00:08:29,120
+che la moltiplicazione di matrici è associativa.
+
+136
+00:08:29,560 --> 00:08:34,392
+Ciò significa che se hai tre matrici, A, B e C, e le moltiplichi tutte insieme, 
+
+137
+00:08:34,392 --> 00:08:39,527
+non dovrebbe importare se prima calcoli A per B, poi moltiplichi il risultato per C, 
+
+138
+00:08:39,527 --> 00:08:44,360
+o se prima moltiplichi B per C, quindi moltiplica il risultato per A a sinistra.
+
+139
+00:08:44,940 --> 00:08:47,400
+In altre parole, non importa dove metti le parentesi.
+
+140
+00:08:48,380 --> 00:08:51,992
+Ora, se provi a elaborare questo numericamente, come ho fatto allora, 
+
+141
+00:08:51,992 --> 00:08:55,760
+è orribile, semplicemente orribile e poco illuminante per quella materia.
+
+142
+00:08:55,760 --> 00:08:59,247
+Ma se si pensa alla moltiplicazione di matrici come all'applicazione di 
+
+143
+00:08:59,247 --> 00:09:02,780
+una trasformazione dopo l'altra, questa proprietà è semplicemente banale.
+
+144
+00:09:03,300 --> 00:09:04,000
+Riesci a vedere perché?
+
+145
+00:09:04,860 --> 00:09:09,246
+Quello che sta dicendo è che se applichi prima C poi B, 
+
+146
+00:09:09,246 --> 00:09:12,380
+poi A, è come applicare C, poi B, poi A.
+
+147
+00:09:12,820 --> 00:09:14,853
+Voglio dire, non c'è niente da dimostrare, 
+
+148
+00:09:14,853 --> 00:09:18,660
+stai solo applicando le stesse tre cose una dopo l'altra, tutte nello stesso ordine.
+
+149
+00:09:19,460 --> 00:09:21,540
+Potrebbe sembrare un imbroglio, ma non lo è.
+
+150
+00:09:21,540 --> 00:09:25,900
+Questa è una prova onesta che la moltiplicazione di matrici è associativa.
+
+151
+00:09:25,900 --> 00:09:28,121
+E, ancora meglio, è una buona spiegazione del 
+
+152
+00:09:28,121 --> 00:09:30,680
+motivo per cui quella proprietà dovrebbe essere vera.
+
+153
+00:09:31,560 --> 00:09:34,290
+Ti incoraggio davvero a giocare di più con questa idea, 
+
+154
+00:09:34,290 --> 00:09:37,751
+immaginando due diverse trasformazioni, pensando a cosa succede quando 
+
+155
+00:09:37,751 --> 00:09:42,140
+ne applichi una dopo l'altra e poi elaborando numericamente il prodotto della matrice.
+
+156
+00:09:42,600 --> 00:09:46,440
+Credimi, questo è il tipo di momento di gioco che fa davvero affondare l'idea.
+
+157
+00:09:47,200 --> 00:09:49,201
+Nel prossimo video inizierò a parlare di come 
+
+158
+00:09:49,201 --> 00:09:51,420
+estendere queste idee oltre le sole due dimensioni.
+
+159
+00:09:52,020 --> 00:09:52,180
+Ci vediamo!
+

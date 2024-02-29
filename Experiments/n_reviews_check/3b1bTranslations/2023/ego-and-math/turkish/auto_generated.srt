@@ -1,0 +1,740 @@
+1
+00:00:00,000 --> 00:00:03,514
+Burada olmak açıkçası bir onur.
+
+2
+00:00:03,514 --> 00:00:08,200
+Beni de dahil eden hocalarıma çok teşekkür ederim.
+
+3
+00:00:08,200 --> 00:00:11,492
+Gelebilen tüm velilere ve arkadaşlara hoş geldiniz 
+
+4
+00:00:11,492 --> 00:00:14,785
+ve her şeyden önemlisi 2023 sınıfını tebrik ederiz.
+
+5
+00:00:14,785 --> 00:00:18,552
+Yaklaşık sekiz yıl önce aslında sizin şu anda bulunduğunuz yerde oturuyordum.
+
+6
+00:00:18,552 --> 00:00:22,795
+Ben de aynı dereceyi alıyordum ve o zamandan bu yana kendimi esas olarak YouTube 
+
+7
+00:00:22,795 --> 00:00:27,194
+aracılığıyla ve aynı zamanda başka kanallar aracılığıyla da başkalarıyla matematiği 
+
+8
+00:00:27,194 --> 00:00:31,227
+paylaşmaya adadım ve bugün sizinle matematikle olan ilişkimin küçük bir yolu 
+
+9
+00:00:31,227 --> 00:00:35,680
+hakkında konuşmak istiyorum. bu süre zarfında değişti ve umarım değişmeye devam eder.
+
+10
+00:00:35,680 --> 00:00:38,903
+Değişiklik kişiseldir ancak bu sadece sizin için de geçerli olabilecek bir 
+
+11
+00:00:38,903 --> 00:00:42,384
+şeydir ve eğer öyleyse, aslında geleceğinizi şekillendirmenize yardımcı olabilir.
+
+12
+00:00:42,384 --> 00:00:47,240
+Bugünden önce beni bu konuya çeken şeyin ne olduğunu düşünüyordum.
+
+13
+00:00:47,240 --> 00:00:49,504
+Neden bu konuya aşık oldum?
+
+14
+00:00:49,504 --> 00:00:52,096
+Buradayken neden bu alanda uzmanlaşmayı seçtim?
+
+15
+00:00:52,096 --> 00:00:55,163
+Neden son sekiz yılımı bu tür garip, alışılmışın dışında bir 
+
+16
+00:00:55,163 --> 00:00:58,129
+kariyer yolunda bunu çevrimiçi olarak açıklamakla geçirdim?
+
+17
+00:00:58,129 --> 00:01:02,803
+Ve görüyorsunuz ki, çoğumuzun anlattığını düşündüğüm bir hikaye var ve bu hikaye, 
+
+18
+00:01:02,803 --> 00:01:07,760
+konunun kaçınılmaz güzelliği ya da sadece fizik ve bilgisayar bilimlerine ne kadar iyi 
+
+19
+00:01:07,760 --> 00:01:11,351
+uygulandığının çok etkileyici olması gibi şeylere odaklanıyor. 
+
+20
+00:01:11,351 --> 00:01:13,516
+ama çok sayıda farklı teknik alan var.
+
+21
+00:01:13,516 --> 00:01:17,495
+Ancak bu hikaye, en azından benim için, aynı derecede etkili olabilecek ancak 
+
+22
+00:01:17,495 --> 00:01:21,627
+hakkında konuşulması çok daha garip olan başka bir faktörün üzerini kapatacaktır.
+
+23
+00:01:21,627 --> 00:01:21,877
+Benlik.
+
+24
+00:01:21,877 --> 00:01:25,363
+Çocuk olmanın nasıl bir şey olduğunu hatırlıyor musun bilmiyorum.
+
+25
+00:01:25,363 --> 00:01:30,204
+Hatırlarsanız belki ilkokulda nasıldı ve karşımıza nasıl çıktı.
+
+26
+00:01:30,204 --> 00:01:32,872
+Matematikle ilgili en eski anılarıma baktığımda çok şanslı 
+
+27
+00:01:32,872 --> 00:01:35,630
+olduğumu düşünüyorum çünkü bana bir oyun gibi geldi ve bunun 
+
+28
+00:01:35,630 --> 00:01:38,480
+babamın onu bana nasıl sunacağıyla ilgili olduğunu düşünüyorum.
+
+29
+00:01:38,480 --> 00:01:41,692
+Ancak okul bağlamında çok farklı bir karaktere sahipti.
+
+30
+00:01:41,692 --> 00:01:42,768
+Rekabetçi hissettim.
+
+31
+00:01:42,768 --> 00:01:45,037
+Öğretmenlerin niyetinin bu olduğunu düşünmüyorum.
+
+32
+00:01:45,037 --> 00:01:47,446
+Etraftaki yetişkinlerin hiçbirinin niyetinin bu olduğunu sanmıyorum.
+
+33
+00:01:47,446 --> 00:01:52,510
+Ancak konunun zor olduğuna dair söylenmemiş bir varsayım vardı.
+
+34
+00:01:52,510 --> 00:01:55,060
+Birçoğumuz bununla mücadele edecektik.
+
+35
+00:01:55,060 --> 00:01:58,173
+Ve şüphesiz babamla oynadığım oyunlar sayesinde bunu 
+
+36
+00:01:58,173 --> 00:02:01,169
+biraz daha kolay bulan şanslılardan biri de bendim.
+
+37
+00:02:01,169 --> 00:02:04,967
+Ve biraz daha kolay bulduğum için sanırım konuyu sevmeye başladım, 
+
+38
+00:02:04,967 --> 00:02:07,858
+güzel olduğu için ya da faydalı olduğu için değil, 
+
+39
+00:02:07,858 --> 00:02:12,053
+hatta eğlenceli olduğu için de değil ama açıkçası senin gibi hissetmekten 
+
+40
+00:02:12,053 --> 00:02:15,000
+kaynaklanan o çocukça kendini beğenmişlik yüzünden. 
+
+41
+00:02:15,000 --> 00:02:19,309
+Yetişkinlerin sana iyi yapman gerektiğini söylediği bir şeyi iyi yapıyorsun.
+
+42
+00:02:19,309 --> 00:02:23,045
+Ve okulda uzun bir süre boyunca bu, olumlu bir geri bildirim döngüsünü başlattı.
+
+43
+00:02:23,045 --> 00:02:25,807
+Konuyu çok sevdiğim için bu konuyla çok vakit geçirdim.
+
+44
+00:02:25,807 --> 00:02:27,712
+Bu hoşuma gitti çünkü kendimi iyi hissettim.
+
+45
+00:02:27,712 --> 00:02:31,857
+Ve aslında bunda pek iyi olmamamın nedeni onunla çok fazla zaman geçirmemdi.
+
+46
+00:02:31,857 --> 00:02:34,561
+Ve bunun matematiği seven herkes için geçerli olduğunu öne 
+
+47
+00:02:34,561 --> 00:02:37,449
+sürmek istemiyorum ve aynı zamanda bunun, içinde mücadelelerin 
+
+48
+00:02:37,449 --> 00:02:40,428
+yer almadığı türden bir döngü olduğunu da öne sürmek istemiyorum.
+
+49
+00:02:40,428 --> 00:02:43,223
+Çünkü matematiği öğrenmenin her türlü yolunda mutlaka zorluklar vardır.
+
+50
+00:02:43,223 --> 00:02:48,053
+Daha da fazlası, dürüst olmak gerekirse, bazı mücadelelerin üstesinden gelmemi sağlayan, 
+
+51
+00:02:48,053 --> 00:02:52,611
+zaman ve pratik yapmamı sağlayan güçler ve konuda daha iyi olmak için gereken çaba, 
+
+52
+00:02:52,611 --> 00:02:56,681
+en azından kısmen görülme arzusundan kaynaklanıyordu. bunda iyi olmak gibi.
+
+53
+00:02:56,681 --> 00:02:59,587
+Ve biliyorsunuz ben ergenlik çağındaydım, birazcık egodan 
+
+54
+00:02:59,587 --> 00:03:02,793
+kaçmak zordur ama ego hakkında konuşmak tuhaf bir motivasyondur.
+
+55
+00:03:02,793 --> 00:03:06,357
+Ve eğer adil olursam, uygulamadaki güzellik gerçekten de bir rol oynadı.
+
+56
+00:03:06,357 --> 00:03:09,764
+Hiç orada değillerdi ama çok sonra geldiler.
+
+57
+00:03:09,764 --> 00:03:12,471
+Bu olumlu geri bildirim döngüsü nedeniyle bu konuda vakit geçiriyordum 
+
+58
+00:03:12,471 --> 00:03:14,758
+ve okuldan sonra öğretmenlerimle bu konuda sohbet ediyordum.
+
+59
+00:03:14,758 --> 00:03:16,508
+Yerel matematik çevrelerinin etkinliklerine giderdim.
+
+60
+00:03:16,508 --> 00:03:18,305
+Matematikçinin ne olduğunu öğrendim.
+
+61
+00:03:18,305 --> 00:03:20,361
+Problem çözmeye yönelik kitaplar okurdum.
+
+62
+00:03:20,361 --> 00:03:25,511
+Ve bu tür bir sürüklenmenin içinde konunun gerçek güzelliğine aşık olmamak elde değil.
+
+63
+00:03:25,511 --> 00:03:30,831
+Yani bu biraz daha ben-merkezli ve biraz daha çocuksu sebeplere tutku başlasa bile, 
+
+64
+00:03:30,831 --> 00:03:34,061
+biraz daha saf, daha çok estetik duygusuna benzer, 
+
+65
+00:03:34,061 --> 00:03:37,290
+biraz daha dışa dönük bir şeye yer vermeye başladı.
+
+66
+00:03:37,290 --> 00:03:41,362
+Bu, organik moleküllerin yavaş yavaş yerini, sonuna kadar orada kalacak daha uzun 
+
+67
+00:03:41,362 --> 00:03:45,583
+vadeli daha sağlam bir minerale bırakmaya başladığını bildiğiniz bir fosile benziyor.
+
+68
+00:03:45,583 --> 00:03:47,971
+Benim için mesele algılanan başarıdan biraz daha az, 
+
+69
+00:03:47,971 --> 00:03:50,720
+konunun kendisi hakkında ise biraz daha fazla olmaya başladı.
+
+70
+00:03:50,720 --> 00:03:54,396
+Ama aslında sizinle konuşmak istediğim değişiklik bu değil.
+
+71
+00:03:54,396 --> 00:03:57,950
+Motivasyondaki bu değişim (fosilleşme süreci) muhtemelen lisenin 
+
+72
+00:03:57,950 --> 00:04:02,105
+sonlarına doğru burada Stanford'da geçirdiğim zamanı başlatmış olabilir.
+
+73
+00:04:02,105 --> 00:04:06,193
+Ancak benim bahsetmek istediğim şey, fosildeki yeni minerallerin 
+
+74
+00:04:06,193 --> 00:04:10,281
+orijinal kemikle aynı genel şekli almasına ne kadar benzediğidir.
+
+75
+00:04:10,281 --> 00:04:13,594
+Konuyla ilgili daha az saf orijinal motivasyonlarla ilişkili 
+
+76
+00:04:13,594 --> 00:04:16,582
+bazı kalıcı sonradan etkiler olabileceğini düşünüyorum.
+
+77
+00:04:16,582 --> 00:04:19,016
+Bakın, ben Stanford'dayken pek çok meslektaşımın 
+
+78
+00:04:19,016 --> 00:04:21,037
+ilginç kelimesini kullandığını hatırlıyorum.
+
+79
+00:04:21,037 --> 00:04:23,826
+Peki neden bu yaz yaptığınız staja gitmeyi seçtiniz ya 
+
+80
+00:04:23,826 --> 00:04:26,514
+da neden bu yaptığınız profesörle çalışmayı seçtiniz?
+
+81
+00:04:26,514 --> 00:04:29,257
+Ah, çok ilginç problemler üzerinde çalışıyorlarmış gibi görünüyordu.
+
+82
+00:04:29,257 --> 00:04:32,342
+Peki ilginç kelimesi ne anlama geliyor?
+
+83
+00:04:32,342 --> 00:04:33,885
+Kime göre ilginç?
+
+84
+00:04:33,885 --> 00:04:38,273
+Sanırım geriye dönüp kendime ve bu kelimeyi nasıl kullandığıma baktığımda, 
+
+85
+00:04:38,273 --> 00:04:42,777
+bununla kastettiğim şeyin en azından bir kısmı, bir sorunun zor görünmesiydi.
+
+86
+00:04:42,777 --> 00:04:45,249
+Anlaşılır derecede zor görünüyordu ama dişlerimi 
+
+87
+00:04:45,249 --> 00:04:48,023
+biraz olsun içine geçiremeyeceğim kadar da zor değildi.
+
+88
+00:04:48,023 --> 00:04:50,590
+Yardımcı program benim için tuhaf bir arka koltuğa 
+
+89
+00:04:50,590 --> 00:04:53,610
+sahipti ve bu gerçekten başlı başına bir zorlukla ilgiliydi.
+
+90
+00:04:53,610 --> 00:04:55,647
+Ve bunun sadece bende olduğunu düşünmüyorum.
+
+91
+00:04:55,647 --> 00:05:00,487
+Uzun süredir YouTube videoları hazırladığım zamana kadar hızlı ileri saracak olursak, 
+
+92
+00:05:00,487 --> 00:05:04,878
+kanaldaki en popüler videolardan biri, en zorlu testte en zor sorun başlığına 
+
+93
+00:05:04,878 --> 00:05:08,142
+sahip olan ve kuşkusuz bariz tıklama tuzağı olan videoydu.
+
+94
+00:05:08,142 --> 00:05:11,895
+Ve bu Putnam'dan kaynaklanan bir sorunla ilgiliydi ve aramızda kalsın, 
+
+95
+00:05:11,895 --> 00:05:15,997
+Putnam'ın bugüne kadar gösterdiği en zor sorun değildi ama altıncı sırada yer 
+
+96
+00:05:15,997 --> 00:05:16,448
+alıyordu.
+
+97
+00:05:16,448 --> 00:05:20,254
+Ancak bunun tıklama tuzağı olduğu gerçeğini düşünürsek bu neden işe yarasın ki?
+
+98
+00:05:20,254 --> 00:05:25,021
+Neden her zamanki abone tabanının dışındaki yaklaşık 10 milyon kişi bir konuya 
+
+99
+00:05:25,021 --> 00:05:29,305
+tıklamayı merak ediyordu, güzel olduğu için ya da olmadığı için değil, 
+
+100
+00:05:29,305 --> 00:05:34,254
+yararlı bir şey vaat ettiği için değil, sadece zorlayıcı bir şey vaat ettiği için.
+
+101
+00:05:34,254 --> 00:05:37,688
+Adil olmak gerekirse, bazen zorluk yararlı bir şeye karşılık gelir, 
+
+102
+00:05:37,688 --> 00:05:41,729
+belki de kimsenin nasıl çözeceğini bilmediği bir bulmaca tarafından engellenmiş 
+
+103
+00:05:41,729 --> 00:05:44,204
+bir alan vardır ve eğer birisi bunu çözebilirse, 
+
+104
+00:05:44,204 --> 00:05:46,578
+o alanda daha fazla faydanın kilidini açabilir.
+
+105
+00:05:46,578 --> 00:05:50,912
+Ancak sorun, sorunu önemsemenin nedeninin temelde bu faydayla mı ilgili olduğu, 
+
+106
+00:05:50,912 --> 00:05:54,868
+yoksa sorunun yaygın olarak zorlayıcı olduğunun kabul edilmesi ve bunun, 
+
+107
+00:05:54,868 --> 00:05:59,528
+sorunu çözen kişi için ne anlama gelebileceği ve nasıl çözülebileceği ile ilgili olup 
+
+108
+00:05:59,528 --> 00:06:00,774
+olmadığıdır. algılandı.
+
+109
+00:06:00,774 --> 00:06:04,445
+Bu nedenle, matematik için biraz daha genç ve rekabetçi ruhlu bir 
+
+110
+00:06:04,445 --> 00:06:08,505
+motivasyonun kökenlerinin, motivasyon artık baskın olmasa bile bu kalıcı 
+
+111
+00:06:08,505 --> 00:06:12,621
+sonradan etkilere sahip olabileceğini bildiğiniz bir örnek daha vereceğim.
+
+112
+00:06:12,621 --> 00:06:16,707
+Matematikle ilgili videolar yapmaya başladığımda aslında Stanford'da son sınıf 
+
+113
+00:06:16,707 --> 00:06:20,694
+öğrencisiydim, ilk başladığımda bunları üç mavi ve kahverengi gibi çok garip bir 
+
+114
+00:06:20,694 --> 00:06:24,829
+isim verdiğim bir kanala yüklüyordum ve o zamanlar bu videoların matematikle ilgili 
+
+115
+00:06:24,829 --> 00:06:28,768
+olmasına çok önem veriyordum. içerik geleneksel derslerden çok farklı görünüyor.
+
+116
+00:06:28,768 --> 00:06:33,917
+Öğrencilerin okulun olağan doğrusal akışında göremeyeceği bir şeyi göstermesini çok 
+
+117
+00:06:33,917 --> 00:06:38,883
+önemsiyordum ve sanırım özgün ve farklı bir şey sağlıyormuş gibi algılanmayı çok 
+
+118
+00:06:38,883 --> 00:06:39,680
+önemsiyordum.
+
+119
+00:06:39,680 --> 00:06:42,721
+Şimdi bunu karşılaştırırsak, mezun olduktan sonra Khan Academy'de 
+
+120
+00:06:42,721 --> 00:06:45,415
+çalışarak zaman geçirdim ve oradaki amaç çok açık bir şekilde 
+
+121
+00:06:45,415 --> 00:06:48,500
+öğrencileri o sırada bulundukları yerde buluşturan içerik oluşturmaktı.
+
+122
+00:06:48,500 --> 00:06:52,843
+Çoğunluğu çok değişkenli analize odaklanan birkaç yüz parça içerik hazırladım ve 
+
+123
+00:06:52,843 --> 00:06:57,401
+konuları özgünlüğe veya öne çıkma arzusuna dayalı olmayan her şeyden çok seçiyordum, 
+
+124
+00:06:57,401 --> 00:07:01,691
+konuları sırf öğrencilerin bilmek istediği şeyler listesinde yer aldıkları için 
+
+125
+00:07:01,691 --> 00:07:05,873
+seçiyordum bilmeleri gerekenler ve bu videoların her iki kategorisindeki geri 
+
+126
+00:07:05,873 --> 00:07:10,377
+bildirimler olumluydu ancak farklı bir karaktere sahipti ve bunlardan biri çok daha 
+
+127
+00:07:10,377 --> 00:07:10,806
+derindi.
+
+128
+00:07:10,806 --> 00:07:14,941
+İlk üç mavi ve kahverengi olanlar, hepimizin birlikte izlemekten keyif aldığı 
+
+129
+00:07:14,941 --> 00:07:17,645
+ortak bir sporu izleyen insanlar gibi hissettiler, 
+
+130
+00:07:17,645 --> 00:07:21,726
+ancak Khan Academy'dekilerin çok farklı bir tadı vardı ve her şeyden çok 
+
+131
+00:07:21,726 --> 00:07:23,475
+minnettarlıkla nitelendirildiler.
+
+132
+00:07:23,475 --> 00:07:25,702
+İnsanlara gerçekten yardım ettiğimi ve onların da 
+
+133
+00:07:25,702 --> 00:07:27,839
+onları gerçekten faydalı bulduklarını hissettim.
+
+134
+00:07:27,839 --> 00:07:30,419
+Daha sonra üç mavi ve kahverengide öğrencileri bulundukları 
+
+135
+00:07:30,419 --> 00:07:32,611
+yerde buluşturan derslere öncelik vermeye başladım.
+
+136
+00:07:32,611 --> 00:07:35,598
+Doğrusal cebirle ilgili bir dizi yaptım Matematikle ilgili bir dizi yaptım, 
+
+137
+00:07:35,598 --> 00:07:38,270
+insanlar Fourier dönüşümünün ne olduğunu veya sinir ağlarının nasıl 
+
+138
+00:07:38,270 --> 00:07:41,177
+çalıştığını açıklayıp açıklayamayacağımı sordular ve ben de mecbur kaldım.
+
+139
+00:07:41,177 --> 00:07:45,823
+Konular orijinal değildi, biliyorsunuz çevrimiçi olarak bunları açıklayan çok 
+
+140
+00:07:45,823 --> 00:07:48,622
+sayıda başka video ve içerik var ancak bunlar, 
+
+141
+00:07:48,622 --> 00:07:53,863
+o dönemde açık ara en çok şükran alan ve benim elde ettiğim başarının sebebi olanlardı. 
+
+142
+00:07:53,863 --> 00:07:55,590
+' O zamandan beri buldum.
+
+143
+00:07:55,590 --> 00:08:00,136
+Bir konu seçildikten sonra belirli bir yaklaşımda her zaman yeniliğe yer vardır, 
+
+144
+00:08:00,136 --> 00:08:04,289
+ancak gerçekten özümsenmesi uzun zaman alan dersi gerçekten öğrenmem için 
+
+145
+00:08:04,289 --> 00:08:08,555
+utanç verici derecede uzun zaman alan şey, konuların öncelikli olarak nasıl 
+
+146
+00:08:08,555 --> 00:08:12,820
+seçildiği nedeniyle seçilmesidir. İnsanlara yardımcı olacağım ve yenilik ve 
+
+147
+00:08:12,820 --> 00:08:16,076
+özgünlük ve bir şeyin önemli olup olmadığı gibi kaygılar, 
+
+148
+00:08:16,076 --> 00:08:20,341
+yalnızca bir öğrenciyle bulunduğu yerde tanışma hedefine yardımcı oldukları 
+
+149
+00:08:20,341 --> 00:08:21,352
+sürece geçerlidir.
+
+150
+00:08:21,352 --> 00:08:24,566
+İşte o zaman erişim gerçekten anlamlı geliyor ve ne olursa olsun, 
+
+151
+00:08:24,566 --> 00:08:28,073
+videoların bir hobi olması ile videoların bir kariyer olması arasındaki 
+
+152
+00:08:28,073 --> 00:08:31,434
+farkı yaratan şeyin muhtemelen odaktaki değişim olduğunu düşünüyorum.
+
+153
+00:08:31,434 --> 00:08:34,203
+Şimdi, şu anda burada oturan her biriniz için, 
+
+154
+00:08:34,203 --> 00:08:39,034
+burada öğrendiğiniz matematik ve burada öğrendiğiniz diğer becerilerle ilerlemeyi 
+
+155
+00:08:39,034 --> 00:08:43,512
+seçtiğiniz her ne ise, bu çalışmadan elde edeceğiniz gelecekteki tatmindir. 
+
+156
+00:08:43,512 --> 00:08:46,399
+masaya getirdiğiniz güçlü yönlerle olduğu kadar, 
+
+157
+00:08:46,399 --> 00:08:50,817
+üzerinde çalışmaya değer olanı nasıl değerlendirdiğinizle de ilgisi olacak.
+
+158
+00:08:50,817 --> 00:08:54,560
+Çalışmanızın dünyada bıraktığı gelecek işareti, diğer her şey kadar, 
+
+159
+00:08:54,560 --> 00:08:58,520
+üzerinde çalıştığınız şeyi nasıl değerlendirdiğinizle de ilgilidir ve şu 
+
+160
+00:08:58,520 --> 00:09:02,316
+anda size tavsiyem, hayatınızın bu çok önemli noktasındasınız. Hayat, 
+
+161
+00:09:02,316 --> 00:09:06,927
+bu değerlendirme fonksiyonunun nereden geldiği konusunda özellikle dikkatli olmaktır.
+
+162
+00:09:06,927 --> 00:09:09,480
+Bugünden sonra endüstriye girecekseniz, nerede 
+
+163
+00:09:09,480 --> 00:09:12,685
+çalışacağınızı nasıl seçeceğinizi kendinize sorabilirsiniz.
+
+164
+00:09:12,685 --> 00:09:14,500
+Kiminle çalışacağınızı nasıl seçtiniz?
+
+165
+00:09:14,500 --> 00:09:16,236
+Ne inşa edeceğinizi nasıl seçiyorsunuz?
+
+166
+00:09:16,236 --> 00:09:19,426
+Eğer akademiye girecekseniz kendinize bunun doğru nedenlerle olup olmadığını 
+
+167
+00:09:19,426 --> 00:09:22,285
+ve hangi problemler üzerinde çalışacağınızı nasıl seçeceğinizi sorun.
+
+168
+00:09:22,285 --> 00:09:26,372
+Bunun ne kadarı sorunları çözme konusunda nasıl algılanacağınıza, 
+
+169
+00:09:26,372 --> 00:09:30,025
+ne kadarı diğer insanların bundan bulacağı değere bağlıdır.
+
+170
+00:09:30,025 --> 00:09:32,476
+Şimdi, eğer öğretmenlik yapacaksanız, dürüst olmak gerekirse, 
+
+171
+00:09:32,476 --> 00:09:35,363
+eğer öğretmenlik yapacaksanız muhtemelen hepimizden daha akıllısınızdır, 
+
+172
+00:09:35,363 --> 00:09:36,984
+dolayısıyla söyleyecek pek bir şeyim yok.
+
+173
+00:09:36,984 --> 00:09:41,632
+Bakın, son sekiz yılda kendi değerlendirme fonksiyonumda bir değişiklik hissettim.
+
+174
+00:09:41,632 --> 00:09:44,810
+Kendi başına sertliği kesmez.
+
+175
+00:09:44,810 --> 00:09:48,749
+Özgünlüğün kendisi boştur ve matematiğin hala kendine özgü bir güzelliği vardır, 
+
+176
+00:09:48,749 --> 00:09:52,396
+ancak dürüst olmak gerekirse, bu günlerde, görünürde gerçekten yararlı bir 
+
+177
+00:09:52,396 --> 00:09:56,044
+şeyin en azından bir fısıltısı varsa, güzellik çok daha güçlü hale geliyor.
+
+178
+00:09:56,044 --> 00:09:59,772
+Sizin için doğru değerlendirme fonksiyonunun ne olduğunu size söyleyemem.
+
+179
+00:09:59,772 --> 00:10:03,944
+Kendinize daha az bağlı olduğunuzda ve başkalarına ve onlar için ne yaptığınıza biraz 
+
+180
+00:10:03,944 --> 00:10:07,923
+daha fazla bağlı olduğunda bunun muhtemelen daha önemli olacağını söyleyebilirim, 
+
+181
+00:10:07,923 --> 00:10:10,203
+ancak eminim ki, bugün şu anda harcanan zaman, 
+
+182
+00:10:10,203 --> 00:10:13,793
+değerlendirmenin nerede olduğunu ciddi şekilde yeniden değerlendirmektir. 
+
+183
+00:10:13,793 --> 00:10:16,946
+geleceğinizi daha zengin kılmak için stantlardan gelen fonksiyon.
+
+184
+00:10:16,946 --> 00:10:19,642
+Bu yüzden bir kez daha tebrikler, buradaki hepimiz, 
+
+185
+00:10:19,642 --> 00:10:22,960
+her biriniz için geleceğin nasıl olacağını endişeyle bekliyoruz.
+

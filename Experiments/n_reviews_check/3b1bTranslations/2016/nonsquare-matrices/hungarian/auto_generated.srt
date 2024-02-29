@@ -1,0 +1,252 @@
+1
+00:00:10,620 --> 00:00:14,580
+Sziasztok, van egy újabb gyors lábjegyzetem a mai fejezetek között.
+
+2
+00:00:15,240 --> 00:00:18,281
+Amikor eddig a lineáris transzformációkról beszéltem, 
+
+3
+00:00:18,281 --> 00:00:22,166
+csak a 2x2-es mátrixokkal ábrázolt 2D vektorokból más 2D vektorokba, 
+
+4
+00:00:22,166 --> 00:00:26,446
+vagy a 3x3-as mátrixokkal ábrázolt 3D vektorokból más 3D vektorokba történő 
+
+5
+00:00:26,446 --> 00:00:28,080
+transzformációkról beszéltem.
+
+6
+00:00:28,780 --> 00:00:31,828
+De több hozzászóló is kérdezett a nem négyzet alakú mátrixokról, ezért gondoltam, 
+
+7
+00:00:31,828 --> 00:00:34,580
+hogy egy pillanatra megmutatom, mit jelentenek ezek geometriai értelemben.
+
+8
+00:00:35,380 --> 00:00:37,774
+A sorozatban mostanra már a legtöbb háttérismerettel rendelkezel, 
+
+9
+00:00:37,774 --> 00:00:40,567
+amire szükséged van ahhoz, hogy egy ilyen kérdésen önállóan is elgondolkodj, 
+
+10
+00:00:40,567 --> 00:00:43,180
+de azért elkezdek beszélni róla, hogy adjak egy kis mentális lendületet.
+
+11
+00:00:44,020 --> 00:00:47,622
+Teljesen ésszerű a dimenziók közötti transzformációkról beszélni, 
+
+12
+00:00:47,622 --> 00:00:51,280
+például olyanokról, amelyek 2D vektorokat 3D vektorokká alakítanak.
+
+13
+00:00:51,920 --> 00:00:55,635
+Ismétlem, az egyiket az teszi lineárissá, hogy a rácsvonalak párhuzamosak 
+
+14
+00:00:55,635 --> 00:00:59,100
+és egyenletes távolságban maradnak, és hogy az origó az origóra esik.
+
+15
+00:01:00,020 --> 00:01:03,639
+A képen a bal oldalon a bemeneti tér látható, ami csak 2D tér, 
+
+16
+00:01:03,639 --> 00:01:06,340
+a jobb oldalon pedig a transzformáció kimenete.
+
+17
+00:01:07,000 --> 00:01:10,498
+Az ok, amiért nem mutatom meg, hogy a bemenetek átkerülnek a kimenetekre, 
+
+18
+00:01:10,498 --> 00:01:14,091
+ahogy általában szoktam, nem csak animációs lustaság, érdemes hangsúlyozni, 
+
+19
+00:01:14,091 --> 00:01:18,346
+hogy a 2D vektoros bemenetek nagyon különböző állatok, mint ezek a 3D vektoros kimenetek, 
+
+20
+00:01:18,346 --> 00:01:20,900
+teljesen különálló, összekapcsolhatatlan térben élnek.
+
+21
+00:01:21,860 --> 00:01:25,250
+Az egyik ilyen transzformáció mátrixszal történő kódolása tulajdonképpen ugyanaz, 
+
+22
+00:01:25,250 --> 00:01:26,780
+mint amit már korábban is csináltunk.
+
+23
+00:01:27,380 --> 00:01:30,020
+Megnézzük, hogy az egyes bázisvektorok hol landolnak, 
+
+24
+00:01:30,020 --> 00:01:33,100
+és a landolási pontok koordinátáit egy mátrix oszlopaiba írjuk.
+
+25
+00:01:33,760 --> 00:01:39,561
+Például, amit itt látsz, az egy olyan transzformáció kimenete, amely az i-hat-ot a 2, 
+
+26
+00:01:39,561 --> 00:01:45,160
+negatív 1, negatív 2 koordinátákra, a j-hat-ot pedig a 0, 1, 1 koordinátákra viszi.
+
+27
+00:01:47,680 --> 00:01:51,984
+Vegyük észre, hogy ez azt jelenti, hogy a transzformációnkat kódoló mátrix három 
+
+28
+00:01:51,984 --> 00:01:56,660
+sorból és két oszlopból áll, ami a szokásos terminológiával élve 3x2-es mátrixot jelent.
+
+29
+00:01:57,880 --> 00:02:02,360
+Az utolsó videó nyelvén szólva, ennek a mátrixnak az oszloptere, az a hely, 
+
+30
+00:02:02,360 --> 00:02:06,900
+ahol az összes vektor landol, egy 2D-sík, amely a 3D-s tér origóját szeli át.
+
+31
+00:02:07,360 --> 00:02:11,449
+A mátrix azonban még mindig teljes rangú, mivel ennek az oszloptérnek 
+
+32
+00:02:11,449 --> 00:02:15,480
+a dimenzióinak száma megegyezik a bemeneti tér dimenzióinak számával.
+
+33
+00:02:17,140 --> 00:02:20,822
+Ha tehát egy 3x2-es mátrixot lát a szabadban, akkor tudhatja, 
+
+34
+00:02:20,822 --> 00:02:25,752
+hogy geometriai értelmezése szerint két dimenzió három dimenzióra való leképezése, 
+
+35
+00:02:25,752 --> 00:02:30,623
+mivel a két oszlop azt jelzi, hogy a bemeneti tér két bázisvektorral rendelkezik, 
+
+36
+00:02:30,623 --> 00:02:35,256
+a három sor pedig azt, hogy az egyes bázisvektorok leszállóhelyei három külön 
+
+37
+00:02:35,256 --> 00:02:36,920
+koordinátával vannak leírva.
+
+38
+00:02:37,900 --> 00:02:41,613
+Hasonlóképpen, ha egy 2x3-as mátrixot látsz két sorral és három oszloppal, 
+
+39
+00:02:41,613 --> 00:02:43,000
+mit gondolsz, mit jelent ez?
+
+40
+00:02:43,660 --> 00:02:47,125
+Nos, a három oszlop azt jelzi, hogy egy olyan térben kezdünk, 
+
+41
+00:02:47,125 --> 00:02:51,204
+amely három bázisvektorral rendelkezik, tehát három dimenzióban kezdünk, 
+
+42
+00:02:51,204 --> 00:02:54,893
+a két sor pedig azt jelzi, hogy a három bázisvektor mindegyikének 
+
+43
+00:02:54,893 --> 00:02:59,700
+leszállóhelyét csak két koordinátával írjuk le, tehát két dimenzióban kell landolniuk.
+
+44
+00:03:00,520 --> 00:03:04,839
+Tehát ez egy transzformáció a 3D térből a 2D síkba, egy olyan transzformáció, 
+
+45
+00:03:04,839 --> 00:03:09,380
+amelyet nagyon kellemetlennek kell éreznünk, ha elképzeljük, hogy átmegyünk rajta.
+
+46
+00:03:13,480 --> 00:03:17,080
+Két dimenzióból egy dimenzióba történő transzformáció is lehetséges.
+
+47
+00:03:17,720 --> 00:03:21,391
+Az egydimenziós tér valójában csak a számsor, így egy ilyen 
+
+48
+00:03:21,391 --> 00:03:24,880
+transzformáció 2D vektorokat vesz fel, és számokat ad ki.
+
+49
+00:03:25,840 --> 00:03:30,105
+A párhuzamos és egyenletes távolságban maradó rácsvonalakra való gondolkodás egy kicsit 
+
+50
+00:03:30,105 --> 00:03:34,225
+zavaros az itt zajló összenyomódás miatt, így ebben az esetben a linearitás vizuális 
+
+51
+00:03:34,225 --> 00:03:38,296
+értelmezése azt jelenti, hogy ha van egy egyenletes távolságban lévő pontokból álló 
+
+52
+00:03:38,296 --> 00:03:42,320
+vonalad, akkor az egyenletes távolságban marad, miután leképezted őket a számsorra.
+
+53
+00:03:43,380 --> 00:03:46,870
+Az egyik ilyen transzformációt egy 1x2-es mátrix kódolja, 
+
+54
+00:03:46,870 --> 00:03:50,180
+amelynek mindkét oszlopában csak egy-egy bejegyzés van.
+
+55
+00:03:50,860 --> 00:03:53,634
+A két oszlop azt jelöli, hogy hol landolnak az alapvektorok, 
+
+56
+00:03:53,634 --> 00:03:56,682
+és mindegyik oszlophoz csak egy számra van szükség, arra a számra, 
+
+57
+00:03:56,682 --> 00:03:58,320
+amelyen az adott alapvektor landolt.
+
+58
+00:03:59,240 --> 00:04:01,622
+Ez valójában egy meglepően értelmes transzformáció, 
+
+59
+00:04:01,622 --> 00:04:05,700
+amely szorosan kapcsolódik a ponttermékhez, és erről a következő videóban fogok beszélni.
+
+60
+00:04:06,400 --> 00:04:09,714
+Addig is arra bátorítom, hogy játszadozzon ezzel az ötlettel, 
+
+61
+00:04:09,714 --> 00:04:12,226
+és gondolkodjon el az olyan dolgok jelentésén, 
+
+62
+00:04:12,226 --> 00:04:16,288
+mint a mátrixszorzás és a lineáris egyenletrendszerek a különböző dimenziók 
+
+63
+00:04:16,288 --> 00:04:18,320
+közötti transzformációk kontextusában.
+

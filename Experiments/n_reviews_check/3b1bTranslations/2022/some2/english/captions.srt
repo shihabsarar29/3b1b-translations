@@ -1,0 +1,192 @@
+1
+00:00:00,000 --> 00:00:09,324
+I've got that wanderlust, I'm gonna walk the scene We will get back to this buddy at the 
+
+2
+00:00:09,324 --> 00:00:18,544
+end of the video But before that I want to tell you about the Summer of Math Exposition 
+
+3
+00:00:18,544 --> 00:00:27,973
+number 2 So last year we did the Summer of Math Exposition number 1 Which was essentially 
+
+4
+00:00:27,973 --> 00:00:36,774
+an open invitation for people to make explanatory math content That they might have 
+
+5
+00:00:36,774 --> 00:00:45,994
+thought about making before But just get an excuse for us to all do it at the same time 
+
+6
+00:00:45,994 --> 00:00:54,375
+and together The way we did it is we framed it as a contest So we had different 
+
+7
+00:00:54,375 --> 00:01:03,386
+participants, a lot of them were videos, not all of them were videos We had a process 
+
+8
+00:01:03,386 --> 00:01:12,501
+for selecting winners And aside from the competition aspect of it Which is really just 
+
+9
+00:01:12,501 --> 00:01:21,825
+an excuse to have a deadline and have that little extra push to try to make something as 
+
+10
+00:01:21,825 --> 00:01:31,045
+good as you can The most exciting part was just how many really solid pieces of content 
+
+11
+00:01:31,045 --> 00:01:40,370
+came out of that In fact I was curious the other day and I went to look at the analytics 
+
+12
+00:01:40,370 --> 00:01:49,590
+and just looking at the video content Mainly because that's where it's easiest to count 
+
+13
+00:01:49,590 --> 00:01:58,600
+the total number of hits on it Of all of the video submissions to the first Summer of 
+
+14
+00:01:58,600 --> 00:02:07,820
+Math Exposition If we count up all the views that they accumulated It's over 15 million 
+
+15
+00:02:07,820 --> 00:02:17,144
+total views there So we want to do it again If you have some kind of math explainer that 
+
+16
+00:02:17,144 --> 00:02:26,259
+you've been thinking about making and posting online in some capacity Whatever that is 
+
+17
+00:02:26,259 --> 00:02:35,374
+And if you want to use the Summer as an excuse to make it happen There are really just 
+
+18
+00:02:35,374 --> 00:02:44,699
+three main bits of logistics Number 1, subscribe to the official mailing list that we're 
+
+19
+00:02:44,699 --> 00:02:53,395
+going to use for it All of the official communication about things like timelines, 
+
+20
+00:02:53,395 --> 00:03:02,510
+rules for submissions, answers to any questions that people might have had All of it's 
+
+21
+00:03:02,510 --> 00:03:11,520
+going to live there Secondly, the submission deadline is August 15th So try to finish 
+
+22
+00:03:11,520 --> 00:03:20,950
+whatever you're making maybe 5 days before that Because we have to be immovable with some 
+
+23
+00:03:20,950 --> 00:03:30,379
+kind of line And August 15th is going to be that line And then if you want to engage with 
+
+24
+00:03:30,379 --> 00:03:39,389
+other people who are also participating in the event Maybe share some of your work or 
+
+25
+00:03:39,389 --> 00:03:48,504
+get some feedback or just chat about math in general There's a Discord for it And last 
+
+26
+00:03:48,504 --> 00:03:55,733
+year the Discord was really the lifeblood of the whole event I mean, 
+
+27
+00:03:55,733 --> 00:04:05,163
+we had the announcement, we had the choosing of the winners But all of the real community 
+
+28
+00:04:05,163 --> 00:04:14,487
+components of it happened on that Discord in between But with this year I also wanted to 
+
+29
+00:04:14,487 --> 00:04:23,707
+add one tiny little twist to the whole event So I've always thought it might be nice to 
+
+30
+00:04:23,707 --> 00:04:32,927
+somehow play matchmaker between domain experts People like mathematicians or professors 
+
+31
+00:04:32,927 --> 00:04:41,833
+of other kinds Or teachers or professionals The people who have the know-how and the 
+
+32
+00:04:41,833 --> 00:04:50,948
+experience with respect to some technical topic They know the best stories to tell But 
+
+33
+00:04:50,948 --> 00:05:00,063
+maybe they don't have the time to actually put together a video Or they don't have the 
+
+34
+00:05:00,063 --> 00:05:09,387
+video-making skills and content creation skills And then pair them together with content 
+
+35
+00:05:09,387 --> 00:05:17,350
+producers Whether that's people who are really interested in making videos, 
+
+36
+00:05:17,350 --> 00:05:26,360
+video editing, animation Or maybe web developers interested in interactive blog posts 
+
+37
+00:05:26,360 --> 00:05:35,580
+Game developers, artists, whatever the form of content creation might be Because if you 
+
+38
+00:05:35,580 --> 00:05:44,800
+limit your scope to the world of online educational content creation by individuals You 
+
+39
+00:05:44,800 --> 00:05:53,915
+have to live in this little intersection here Between the people who have good lessons 
+
+40
+00:05:53,915 --> 00:06:03,030
+to teach And then the people who have the time and the interest And then the technical 
+
+41
+00:06:03,030 --> 00:06:12,250
+know-how to put together that content But with well-organized collaboration You can get 
+
+42
+00:06:12,250 --> 00:06:20,422
+a lot of good content out of the union of those two sets Rather than just the 
+
+43
+00:06:20,422 --> 00:06:29,432
+intersection And I think a shining example of this would be the entire channel number 
+
+44
+00:06:29,432 --> 00:06:38,547
+file Where you've got Brady, who's a very talented journalist and interviewer and film 
+
+45
+00:06:38,547 --> 00:06:47,872
+creator, videographer And he goes and interviews the various experts out there And a lot 
+
+46
+00:06:47,872 --> 00:06:56,882
+of the experts wouldn't be making their own videos But by pairing together with Brady 
+
+47
+00:06:56,882 --> 00:07:06,102
+they get a really polished and well-thought-out product from it all Another interesting 
+
+48
+00:07:06,102 --> 00:07:13,960
+example of a collaboration like this one is Let me see, what was it called?
+

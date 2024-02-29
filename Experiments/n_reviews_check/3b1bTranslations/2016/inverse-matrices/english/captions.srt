@@ -1,0 +1,704 @@
+1
+00:00:10,240 --> 00:00:14,958
+As you can probably tell by now, the bulk of this series is on understanding matrix 
+
+2
+00:00:14,958 --> 00:00:19,340
+and vector operations through that more visual lens of linear transformations.
+
+3
+00:00:19,980 --> 00:00:24,348
+This video is no exception, describing the concepts of inverse matrices, 
+
+4
+00:00:24,348 --> 00:00:27,520
+column space, rank, and null space through that lens.
+
+5
+00:00:27,520 --> 00:00:30,902
+A forewarning though, I'm not going to talk about the methods for actually 
+
+6
+00:00:30,902 --> 00:00:34,240
+computing these things, and some would argue that that's pretty important.
+
+7
+00:00:34,840 --> 00:00:39,353
+There are a lot of very good resources for learning those methods outside this series, 
+
+8
+00:00:39,353 --> 00:00:42,000
+keywords Gaussian elimination and row echelon form.
+
+9
+00:00:42,540 --> 00:00:46,340
+I think most of the value that I actually have to add here is on the intuition half.
+
+10
+00:00:46,900 --> 00:00:50,480
+Plus, in practice, we usually get software to compute this stuff for us anyway.
+
+11
+00:00:51,500 --> 00:00:53,920
+First, a few words on the usefulness of linear algebra.
+
+12
+00:00:54,300 --> 00:00:57,845
+By now, you already have a hint for how it's used in describing the manipulation 
+
+13
+00:00:57,845 --> 00:01:01,040
+of space, which is useful for things like computer graphics and robotics.
+
+14
+00:01:01,500 --> 00:01:04,256
+But one of the main reasons that linear algebra is more 
+
+15
+00:01:04,256 --> 00:01:07,259
+broadly applicable and required for just about any technical 
+
+16
+00:01:07,259 --> 00:01:10,460
+discipline is that it lets us solve certain systems of equations.
+
+17
+00:01:11,380 --> 00:01:14,766
+When I say system of equations, I mean you have a list of variables, 
+
+18
+00:01:14,766 --> 00:01:17,760
+things you don't know, and a list of equations relating them.
+
+19
+00:01:18,340 --> 00:01:21,600
+In a lot of situations, those equations can get very complicated.
+
+20
+00:01:22,120 --> 00:01:25,300
+But, if you're lucky, they might take on a certain special form.
+
+21
+00:01:26,440 --> 00:01:29,920
+Within each equation, the only thing happening to each variable is 
+
+22
+00:01:29,920 --> 00:01:33,399
+that it's scaled by some constant, and the only thing happening to 
+
+23
+00:01:33,399 --> 00:01:36,880
+each of those scaled variables is that they're added to each other.
+
+24
+00:01:37,540 --> 00:01:41,394
+So no exponents or fancy functions or multiplying two variables together, 
+
+25
+00:01:41,394 --> 00:01:42,280
+things like that.
+
+26
+00:01:43,420 --> 00:01:47,612
+The typical way to organize this sort of special system of equations is to 
+
+27
+00:01:47,612 --> 00:01:52,140
+throw all the variables on the left and put any lingering constants on the right.
+
+28
+00:01:53,600 --> 00:01:56,231
+It's also nice to vertically line up the common variables, 
+
+29
+00:01:56,231 --> 00:01:59,174
+and to do that, you might need to throw in some zero coefficients 
+
+30
+00:01:59,174 --> 00:02:01,940
+whenever the variable doesn't show up in one of the equations.
+
+31
+00:02:04,540 --> 00:02:07,240
+This is called a linear system of equations.
+
+32
+00:02:08,100 --> 00:02:11,180
+You might notice that this looks a lot like matrix-vector multiplication.
+
+33
+00:02:11,820 --> 00:02:15,629
+In fact, you can package all of the equations together into a single 
+
+34
+00:02:15,629 --> 00:02:19,161
+vector equation where you have the matrix containing all of the 
+
+35
+00:02:19,161 --> 00:02:22,915
+constant coefficients and a vector containing all of the variables, 
+
+36
+00:02:22,915 --> 00:02:26,780
+and their matrix-vector product equals some different constant vector.
+
+37
+00:02:28,640 --> 00:02:33,060
+Let's name that constant matrix A, denote the vector holding the variables 
+
+38
+00:02:33,060 --> 00:02:37,480
+with a bold-faced X, and call the constant vector on the right-hand side V.
+
+39
+00:02:38,860 --> 00:02:41,030
+This is more than just a notational trick to get 
+
+40
+00:02:41,030 --> 00:02:42,980
+our system of equations written on one line.
+
+41
+00:02:43,340 --> 00:02:46,780
+It sheds light on a pretty cool geometric interpretation for the problem.
+
+42
+00:02:47,620 --> 00:02:51,134
+The matrix A corresponds with some linear transformation, 
+
+43
+00:02:51,134 --> 00:02:55,132
+so solving Ax equals V means we're looking for a vector X, which, 
+
+44
+00:02:55,132 --> 00:02:57,920
+after applying the transformation, lands on V.
+
+45
+00:02:59,940 --> 00:03:01,780
+Think about what's happening here for a moment.
+
+46
+00:03:02,060 --> 00:03:05,299
+You can hold in your head this really complicated idea of multiple 
+
+47
+00:03:05,299 --> 00:03:08,538
+variables all intermingling with each other just by thinking about 
+
+48
+00:03:08,538 --> 00:03:12,600
+squishing and morphing space and trying to figure out which vector lands on another.
+
+49
+00:03:13,160 --> 00:03:13,760
+Cool, right?
+
+50
+00:03:14,600 --> 00:03:18,680
+To start simple, let's say you have a system with two equations and two unknowns.
+
+51
+00:03:19,000 --> 00:03:23,960
+This means the matrix A is a 2x2 matrix, and V and X are each two-dimensional vectors.
+
+52
+00:03:25,600 --> 00:03:29,620
+Now, how we think about the solutions to this equation depends on whether the 
+
+53
+00:03:29,620 --> 00:03:33,693
+transformation associated with A squishes all of space into a lower dimension, 
+
+54
+00:03:33,693 --> 00:03:38,023
+like a line or a point, or if it leaves everything spanning the full two dimensions 
+
+55
+00:03:38,023 --> 00:03:38,900
+where it started.
+
+56
+00:03:40,320 --> 00:03:44,180
+In the language of the last video, we subdivide into the cases where 
+
+57
+00:03:44,180 --> 00:03:48,040
+A has zero determinant and the case where A has non-zero determinant.
+
+58
+00:03:51,300 --> 00:03:54,845
+Let's start with the most likely case, where the determinant is non-zero, 
+
+59
+00:03:54,845 --> 00:03:57,720
+meaning space does not get squished into a zero-area region.
+
+60
+00:03:58,600 --> 00:04:02,793
+In this case, there will always be one and only one vector that lands on V, 
+
+61
+00:04:02,793 --> 00:04:06,160
+and you can find it by playing the transformation in reverse.
+
+62
+00:04:06,700 --> 00:04:10,141
+Following where V goes as we rewind the tape like this, 
+
+63
+00:04:10,141 --> 00:04:13,460
+you'll find the vector x such that A times x equals V.
+
+64
+00:04:15,400 --> 00:04:19,930
+When you play the transformation in reverse, it actually corresponds to a separate 
+
+65
+00:04:19,930 --> 00:04:24,680
+linear transformation, commonly called the inverse of A, denoted A to the negative one.
+
+66
+00:04:25,360 --> 00:04:29,031
+For example, if A was a counterclockwise rotation by 90 degrees, 
+
+67
+00:04:29,031 --> 00:04:32,760
+then the inverse of A would be a clockwise rotation by 90 degrees.
+
+68
+00:04:34,320 --> 00:04:38,019
+If A was a rightward shear that pushes j-hat one unit to the right, 
+
+69
+00:04:38,019 --> 00:04:42,480
+the inverse of A would be a leftward shear that pushes j-hat one unit to the left.
+
+70
+00:04:44,100 --> 00:04:48,633
+In general, A inverse is the unique transformation with the property that if you first 
+
+71
+00:04:48,633 --> 00:04:51,708
+apply A, then follow it with the transformation A inverse, 
+
+72
+00:04:51,708 --> 00:04:53,480
+you end up back where you started.
+
+73
+00:04:54,540 --> 00:04:58,638
+Applying one transformation after another is captured algebraically with 
+
+74
+00:04:58,638 --> 00:05:02,961
+matrix multiplication, so the core property of this transformation A inverse 
+
+75
+00:05:02,961 --> 00:05:07,340
+is that A inverse times A equals the matrix that corresponds to doing nothing.
+
+76
+00:05:08,200 --> 00:05:11,320
+The transformation that does nothing is called the identity transformation.
+
+77
+00:05:11,780 --> 00:05:18,080
+It leaves i-hat and j-hat each where they are, unmoved, so its columns are 1,0 and 0,1.
+
+78
+00:05:19,980 --> 00:05:23,960
+Once you find this inverse, which in practice you'd do with a computer, 
+
+79
+00:05:23,960 --> 00:05:27,720
+you can solve your equation by multiplying this inverse matrix by v.
+
+80
+00:05:29,960 --> 00:05:33,258
+And again, what this means geometrically is that you're 
+
+81
+00:05:33,258 --> 00:05:36,440
+playing the transformation in reverse and following v.
+
+82
+00:05:40,200 --> 00:05:44,316
+This non-zero determinant case, which for a random choice of matrix is by far the 
+
+83
+00:05:44,316 --> 00:05:48,383
+most likely one, corresponds with the idea that if you have two unknowns and two 
+
+84
+00:05:48,383 --> 00:05:52,400
+equations, it's almost certainly the case that there's a single unique solution.
+
+85
+00:05:53,680 --> 00:05:56,184
+This idea also makes sense in higher dimensions, 
+
+86
+00:05:56,184 --> 00:05:59,200
+when the number of equations equals the number of unknowns.
+
+87
+00:05:59,380 --> 00:06:04,045
+Again, the system of equations can be translated to the geometric 
+
+88
+00:06:04,045 --> 00:06:09,064
+interpretation where you have some transformation A and some vector v, 
+
+89
+00:06:09,064 --> 00:06:12,740
+and you're looking for the vector x that lands on v.
+
+90
+00:06:15,740 --> 00:06:20,535
+As long as the transformation A doesn't squish all of space into a lower dimension, 
+
+91
+00:06:20,535 --> 00:06:25,559
+meaning its determinant is non-zero, there will be an inverse transformation A inverse, 
+
+92
+00:06:25,559 --> 00:06:29,270
+with the property that if you first do A, then you do A inverse, 
+
+93
+00:06:29,270 --> 00:06:31,040
+it's the same as doing nothing.
+
+94
+00:06:33,540 --> 00:06:36,574
+And to solve your equation, you just have to multiply 
+
+95
+00:06:36,574 --> 00:06:39,440
+that reverse transformation matrix by the vector v.
+
+96
+00:06:43,500 --> 00:06:47,671
+But when the determinant is zero, and the transformation associated with the 
+
+97
+00:06:47,671 --> 00:06:52,060
+system of equations squishes space into a smaller dimension, there is no inverse.
+
+98
+00:06:52,480 --> 00:06:55,460
+You cannot unsquish a line to turn it into a plane.
+
+99
+00:06:55,980 --> 00:06:58,060
+At least that's not something that a function can do.
+
+100
+00:06:58,360 --> 00:07:02,980
+That would require transforming each individual vector into a whole line full of vectors.
+
+101
+00:07:03,740 --> 00:07:06,740
+But functions can only take a single input to a single output.
+
+102
+00:07:08,400 --> 00:07:11,208
+Similarly, for three equations and three unknowns, 
+
+103
+00:07:11,208 --> 00:07:14,568
+there will be no inverse if the corresponding transformation 
+
+104
+00:07:14,568 --> 00:07:19,140
+squishes 3D space onto the plane, or even if it squishes it onto a line or a point.
+
+105
+00:07:19,920 --> 00:07:22,200
+Those all correspond to a determinant of zero, 
+
+106
+00:07:22,200 --> 00:07:25,160
+since any region is squished into something with zero volume.
+
+107
+00:07:26,700 --> 00:07:30,640
+It's still possible that a solution exists even when there is no inverse.
+
+108
+00:07:30,720 --> 00:07:35,020
+It's just that when your transformation squishes space onto, say, a line, 
+
+109
+00:07:35,020 --> 00:07:39,380
+you have to be lucky enough that the vector v lives somewhere on that line.
+
+110
+00:07:43,300 --> 00:07:45,976
+You might notice that some of these zero determinant 
+
+111
+00:07:45,976 --> 00:07:48,300
+cases feel a lot more restrictive than others.
+
+112
+00:07:48,840 --> 00:07:52,621
+Given a 3x3 matrix, for example, it seems a lot harder for a solution 
+
+113
+00:07:52,621 --> 00:07:56,566
+to exist when it squishes space onto a line compared to when it squishes 
+
+114
+00:07:56,566 --> 00:08:00,240
+things onto a plane, even though both of those are zero determinant.
+
+115
+00:08:02,600 --> 00:08:06,100
+We have some language that's a bit more specific than just saying zero determinant.
+
+116
+00:08:06,520 --> 00:08:09,231
+When the output of a transformation is a line, 
+
+117
+00:08:09,231 --> 00:08:13,500
+meaning it's one-dimensional, we say the transformation has a rank of one.
+
+118
+00:08:15,140 --> 00:08:18,073
+If all the vectors land on some two-dimensional plane, 
+
+119
+00:08:18,073 --> 00:08:20,420
+we say the transformation has a rank of two.
+
+120
+00:08:22,920 --> 00:08:27,480
+So the word rank means the number of dimensions in the output of a transformation.
+
+121
+00:08:28,400 --> 00:08:32,720
+For instance, in the case of 2x2 matrices, rank two is the best that it can be.
+
+122
+00:08:33,080 --> 00:08:37,292
+It means the basis vectors continue to span the full two dimensions of space, 
+
+123
+00:08:37,292 --> 00:08:39,020
+and the determinant is not zero.
+
+124
+00:08:39,419 --> 00:08:42,639
+But for 3x3 matrices, rank two means that we've collapsed, 
+
+125
+00:08:42,639 --> 00:08:46,460
+but not as much as they would have collapsed for a rank one situation.
+
+126
+00:08:47,240 --> 00:08:52,076
+If a 3D transformation has a non-zero determinant and its output fills all of 3D space, 
+
+127
+00:08:52,076 --> 00:08:53,340
+it has a rank of three.
+
+128
+00:08:54,520 --> 00:08:58,620
+This set of all possible outputs for your matrix, whether it's a line, 
+
+129
+00:08:58,620 --> 00:09:02,720
+a plane, 3D space, whatever, is called the column space of your matrix.
+
+130
+00:09:04,140 --> 00:09:06,280
+You can probably guess where that name comes from.
+
+131
+00:09:06,560 --> 00:09:10,784
+The columns of your matrix tell you where the basis vectors land, 
+
+132
+00:09:10,784 --> 00:09:15,840
+and the span of those transformed basis vectors gives you all possible outputs.
+
+133
+00:09:16,360 --> 00:09:21,140
+In other words, the column space is the span of the columns of your matrix.
+
+134
+00:09:23,300 --> 00:09:26,147
+So a more precise definition of rank would be that 
+
+135
+00:09:26,147 --> 00:09:28,940
+it's the number of dimensions in the column space.
+
+136
+00:09:29,940 --> 00:09:34,490
+When this rank is as high as it can be, meaning it equals the number of columns, 
+
+137
+00:09:34,490 --> 00:09:36,120
+we call the matrix full rank.
+
+138
+00:09:38,540 --> 00:09:42,272
+Notice the zero vector will always be included in the column space, 
+
+139
+00:09:42,272 --> 00:09:45,840
+since linear transformations must keep the origin fixed in place.
+
+140
+00:09:46,900 --> 00:09:49,353
+For a full rank transformation, the only vector 
+
+141
+00:09:49,353 --> 00:09:51,960
+that lands at the origin is the zero vector itself.
+
+142
+00:09:52,460 --> 00:09:56,107
+But for matrices that aren't full rank, which squish to a smaller dimension, 
+
+143
+00:09:56,107 --> 00:09:58,760
+you can have a whole bunch of vectors that land on zero.
+
+144
+00:10:01,640 --> 00:10:05,128
+If a 2D transformation squishes space onto a line, for example, 
+
+145
+00:10:05,128 --> 00:10:09,707
+there is a separate line in a different direction full of vectors that get squished 
+
+146
+00:10:09,707 --> 00:10:10,580
+onto the origin.
+
+147
+00:10:11,780 --> 00:10:14,491
+If a 3D transformation squishes space onto a plane, 
+
+148
+00:10:14,491 --> 00:10:17,620
+there's also a full line of vectors that land on the origin.
+
+149
+00:10:20,520 --> 00:10:23,740
+If a 3D transformation squishes all of space onto a line, 
+
+150
+00:10:23,740 --> 00:10:27,460
+then there's a whole plane full of vectors that land on the origin.
+
+151
+00:10:32,800 --> 00:10:37,045
+This set of vectors that lands on the origin is called the null space, 
+
+152
+00:10:37,045 --> 00:10:38,780
+or the kernel of your matrix.
+
+153
+00:10:39,360 --> 00:10:41,795
+It's the space of all vectors that become null, 
+
+154
+00:10:41,795 --> 00:10:44,180
+in the sense that they land on the zero vector.
+
+155
+00:10:45,680 --> 00:10:49,946
+In terms of the linear system of equations, when v happens to be the zero vector, 
+
+156
+00:10:49,946 --> 00:10:53,640
+the null space gives you all of the possible solutions to the equation.
+
+157
+00:10:56,420 --> 00:10:58,886
+So that's a very high level overview of how to 
+
+158
+00:10:58,886 --> 00:11:01,720
+think about linear systems of equations geometrically.
+
+159
+00:11:02,300 --> 00:11:05,999
+Each system has some kind of linear transformation associated with it, 
+
+160
+00:11:05,999 --> 00:11:10,114
+and when that transformation has an inverse, you can use that inverse to solve 
+
+161
+00:11:10,114 --> 00:11:10,740
+your system.
+
+162
+00:11:12,280 --> 00:11:17,240
+Otherwise, the idea of column space lets us understand when a solution even exists, 
+
+163
+00:11:17,240 --> 00:11:20,841
+and the idea of a null space helps us to understand what the 
+
+164
+00:11:20,841 --> 00:11:23,440
+set of all possible solutions can look like.
+
+165
+00:11:24,980 --> 00:11:27,397
+Again, there's a lot that I haven't covered here, 
+
+166
+00:11:27,397 --> 00:11:29,380
+most notably how to compute these things.
+
+167
+00:11:29,800 --> 00:11:32,304
+I also had to limit my scope to examples where the 
+
+168
+00:11:32,304 --> 00:11:34,760
+number of equations equals the number of unknowns.
+
+169
+00:11:34,880 --> 00:11:37,557
+But the goal here is not to try to teach everything, 
+
+170
+00:11:37,557 --> 00:11:41,094
+it's that you come away with a strong intuition for inverse matrices, 
+
+171
+00:11:41,094 --> 00:11:44,731
+column space, and null space, and that those intuitions make any future 
+
+172
+00:11:44,731 --> 00:11:46,500
+learning that you do more fruitful.
+
+173
+00:11:47,660 --> 00:11:51,880
+Next video, by popular request, will be a brief footnote about non-square matrices.
+
+174
+00:11:51,880 --> 00:11:54,916
+Then after that, I'm going to give you my take on dot products, 
+
+175
+00:11:54,916 --> 00:11:58,900
+and something pretty cool that happens when you view them under the light of linear 
+
+176
+00:11:58,900 --> 00:11:59,660
+transformations.
+

@@ -57,7 +57,7 @@ class RefactorGPT:
             }
 
             # If the adjustment factor is less than the threshold, adjust the sentence
-            if prompt_percentage > percent_threshold and not all:
+            if (prompt_percentage > percent_threshold and not all) or (sentence == ""):
                 # Set default values
                 adjusted_utterance["is_adjusted"] = False
                 adjusted_utterance["original"] = sentence
@@ -65,6 +65,7 @@ class RefactorGPT:
                 adjusted_utterance["original_translated_length"] = duration
                 adjusted_utterance["adjusted_translated_length"] = None
                 adjusted_utterance["target_length"] = length
+                adjusted_utterance["same_language"] = True
 
                 # Append the adjusted_utterance to the adjusted_transcript list
                 adjusted_transcript.append(adjusted_utterance)
@@ -75,14 +76,50 @@ class RefactorGPT:
                 print(f"PERCENT THRESHOLD: {percent_threshold}")
                 print(f"ALL: {all}")
 
+
+
             try:
-                # Generate the prompt and request sentence adjustment from the model
-                prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in the same language as the input sentence."
-                response = self.client.chat.completions.create(
-                    model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
-                    messages=[{"role": "system", "content": prompt}, {"role": "user", "content": sentence}],
-                )
-                adjusted_sentence = response.choices[0].message.content
+                # Get the language of the sentence
+                language = estimate._get_language(sentence, path=file_path)
+
+                # Adjusted Language (placeholder)
+                adjusted_language = None
+
+                # Set the context to None
+                context = None
+
+                while language != adjusted_language:
+                    # Generate the prompt and request sentence adjustment from the model
+                    prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in {language}."
+                    
+                    print("prompt: ", prompt) # TEST
+                    
+                    if not context:
+                        response = self.client.chat.completions.create(
+                            model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
+                            messages=[{"role": "system", "content": prompt}, {"role": "user", "content": sentence}],
+                        )
+                    else:
+                        response = self.client.chat.completions.create(
+                            model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
+                            messages=context + [{"role": "system", "content": "Please ensure the adjusted sentence is in the same language as the original sentence. If the language is already the same, please disregard this message and continue."}, {"role": "user", "content": sentence}],
+                        )
+
+                    adjusted_sentence = response.choices[0].message.content
+
+                    # Get the output language of the adjusted sentence
+                    adjusted_language = estimate._get_language(adjusted_sentence, path=file_path)
+
+                    print("bruh") # TEST
+
+                    # If the adjusted language is the same as the original language, break the loop
+                    if context:
+                        adjusted_utterance["is_adjusted"] = False
+                        break
+                        
+                    context = [{"role": "system", "content": prompt}, {"role": "user", "content": sentence}]
+
+
                 print(f"Original: {sentence}\nAdjusted: {adjusted_sentence}\n")
 
                 # Estimate the length of the adjusted sentence
@@ -106,7 +143,7 @@ class RefactorGPT:
                 print(f"An error occurred while adjusting sentence: {e}")
             
             # TESTING ONLY (to save money and time):
-            break
+            # break
 
         print(adjusted_transcript)
         print(prompt)

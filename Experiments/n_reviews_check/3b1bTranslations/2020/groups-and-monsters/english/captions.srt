@@ -1,0 +1,1396 @@
+1
+00:00:04,320 --> 00:00:07,359
+Today, many members of the YouTube math community are getting 
+
+2
+00:00:07,359 --> 00:00:10,743
+together to make videos about their favorite numbers over 1 million, 
+
+3
+00:00:10,743 --> 00:00:13,440
+and we're encouraging you, the viewers, to do the same.
+
+4
+00:00:13,920 --> 00:00:15,560
+Take a look at the description for details.
+
+5
+00:00:16,200 --> 00:00:20,440
+My own choice is considerably larger than a million, roughly 8x10 to the 53.
+
+6
+00:00:21,100 --> 00:00:24,894
+For a sense of scale, that's around the number of atoms in the planet Jupiter, 
+
+7
+00:00:24,894 --> 00:00:26,720
+so it might seem completely arbitrary.
+
+8
+00:00:27,170 --> 00:00:31,072
+But what I love is that if you were to talk with an alien civilization or a 
+
+9
+00:00:31,072 --> 00:00:35,026
+super-intelligent AI that invented math for itself without any connection to 
+
+10
+00:00:35,026 --> 00:00:38,826
+our particular culture or experiences, I think both would agree that this 
+
+11
+00:00:38,826 --> 00:00:42,780
+number is something very peculiar and that it reflects something fundamental.
+
+12
+00:00:43,640 --> 00:00:44,580
+What is it, exactly?
+
+13
+00:00:45,020 --> 00:00:47,856
+Well, it's the size of the monster, but to explain what that 
+
+14
+00:00:47,856 --> 00:00:50,880
+means we're going to need to back up and talk about group theory.
+
+15
+00:00:52,500 --> 00:00:55,880
+This field is all about codifying the idea of symmetry.
+
+16
+00:00:56,860 --> 00:01:00,878
+For example, when we say a face is symmetric, what we mean is that you 
+
+17
+00:01:00,878 --> 00:01:04,840
+can reflect it about a line and it's left looking completely the same.
+
+18
+00:01:05,220 --> 00:01:07,740
+It's a statement about an action that you can take.
+
+19
+00:01:08,420 --> 00:01:11,760
+Something like a snowflake is also symmetric, but in more ways.
+
+20
+00:01:11,980 --> 00:01:15,932
+You can rotate it 60 degrees or 120 degrees, you can flip it along 
+
+21
+00:01:15,932 --> 00:01:20,180
+various different axes, and all these actions leave it looking the same.
+
+22
+00:01:20,860 --> 00:01:25,480
+A collection of all the actions like this taken together is called a group.
+
+23
+00:01:26,180 --> 00:01:26,900
+Kind of, at least.
+
+24
+00:01:27,120 --> 00:01:29,524
+Groups are typically defined a little more abstractly than this, 
+
+25
+00:01:29,524 --> 00:01:30,560
+but we'll get to that later.
+
+26
+00:01:31,480 --> 00:01:34,609
+Take note, the fact that mathematicians have co-opted such an 
+
+27
+00:01:34,609 --> 00:01:37,587
+otherwise generic word for this seemingly specific kind of 
+
+28
+00:01:37,587 --> 00:01:41,120
+collection should give you some sense of how fundamental they find it.
+
+29
+00:01:41,980 --> 00:01:46,000
+Also take note, we always consider the action of doing nothing to be part of the group.
+
+30
+00:01:46,000 --> 00:01:49,200
+So if we include that do-nothing action, the group of 
+
+31
+00:01:49,200 --> 00:01:52,460
+symmetries of a snowflake includes 12 distinct actions.
+
+32
+00:01:53,040 --> 00:01:55,220
+It even has a fancy name, D6.
+
+33
+00:01:56,500 --> 00:01:59,401
+The simple group of symmetries that only has two 
+
+34
+00:01:59,401 --> 00:02:02,480
+elements acting on a face also has a fancy name, C2.
+
+35
+00:02:03,380 --> 00:02:07,504
+In general, there is a whole zoo of groups with no shortage of jargon to their 
+
+36
+00:02:07,504 --> 00:02:11,420
+names categorizing the many different ways that something can be symmetric.
+
+37
+00:02:12,120 --> 00:02:14,705
+When we describe these sorts of actions, there's 
+
+38
+00:02:14,705 --> 00:02:17,080
+always an implicit structure being preserved.
+
+39
+00:02:17,740 --> 00:02:22,119
+For example, there are 24 rotations that I can apply to a cube that leave it 
+
+40
+00:02:22,119 --> 00:02:26,840
+looking the same, and those 24 actions taken together do indeed constitute a group.
+
+41
+00:02:27,380 --> 00:02:30,752
+But if we allow for reflections, which is a kind of way of saying 
+
+42
+00:02:30,752 --> 00:02:35,096
+that the orientation of the cube is not part of the structure we intend to preserve, 
+
+43
+00:02:35,096 --> 00:02:37,600
+you get a bigger group, with 48 actions in total.
+
+44
+00:02:38,180 --> 00:02:42,715
+If you loosen things further and consider the faces to be a little less rigidly attached, 
+
+45
+00:02:42,715 --> 00:02:47,200
+maybe free to rotate and get shuffled around, you would get a much larger set of actions.
+
+46
+00:02:47,900 --> 00:02:51,146
+And yes, you could consider these symmetries in the sense that they 
+
+47
+00:02:51,146 --> 00:02:54,535
+leave it looking the same, and all of these shuffling rotating actions 
+
+48
+00:02:54,535 --> 00:02:58,020
+do constitute a group, but it's a much bigger and more complicated group.
+
+49
+00:03:00,980 --> 00:03:03,464
+The large size in this group reflects the much 
+
+50
+00:03:03,464 --> 00:03:06,320
+looser sense of structure which each action preserves.
+
+51
+00:03:08,700 --> 00:03:13,072
+The loosest sense of structure is if we have a collection of points and we consider 
+
+52
+00:03:13,072 --> 00:03:17,340
+any way you could shuffle them, any permutation, to be a symmetry of those points.
+
+53
+00:03:18,320 --> 00:03:21,588
+Unconstrained by any underlying property that needs to be preserved, 
+
+54
+00:03:21,588 --> 00:03:23,720
+these permutation groups can get quite large.
+
+55
+00:03:24,380 --> 00:03:27,044
+Here, it's kind of fun to flash through every possible 
+
+56
+00:03:27,044 --> 00:03:29,660
+permutation of six objects and see how many there are.
+
+57
+00:03:41,000 --> 00:03:42,860
+In total, it amounts to 6!
+
+58
+00:03:43,360 --> 00:03:44,640
+or 720.
+
+59
+00:03:45,360 --> 00:03:48,099
+By contrast, if we gave these points some structure, 
+
+60
+00:03:48,099 --> 00:03:52,544
+maybe making them the corners of a hexagon and only considering the permutations that 
+
+61
+00:03:52,544 --> 00:03:55,180
+preserve how far apart each one is from the other, 
+
+62
+00:03:55,180 --> 00:03:58,540
+well then we only get the 12 snowflake symmetries we saw earlier.
+
+63
+00:03:59,980 --> 00:04:03,126
+Bump the number of points up to 12, and the number 
+
+64
+00:04:03,126 --> 00:04:05,780
+of permutations grows to about 479 million.
+
+65
+00:04:06,540 --> 00:04:10,188
+The monster we'll get to is rather large, but it's important to understand 
+
+66
+00:04:10,188 --> 00:04:14,080
+that largeness in and of itself is not that interesting when it comes to groups.
+
+67
+00:04:14,640 --> 00:04:16,839
+The permutation groups already make that easy to see.
+
+68
+00:04:17,519 --> 00:04:20,633
+If we were shuffling 101 objects, for example, 
+
+69
+00:04:20,633 --> 00:04:24,542
+with the 101 factorial different actions that can do this, 
+
+70
+00:04:24,542 --> 00:04:28,120
+we have a group with a size of around 9x10 to the 159.
+
+71
+00:04:28,820 --> 00:04:33,985
+If every atom in the observable universe had a copy of that universe inside itself, 
+
+72
+00:04:33,985 --> 00:04:37,060
+this is roughly how many sub-atoms there would be.
+
+73
+00:04:37,940 --> 00:04:40,559
+These permutation groups go by the name S-sub-n, 
+
+74
+00:04:40,559 --> 00:04:43,340
+and they play a very important role in group theory.
+
+75
+00:04:43,860 --> 00:04:46,600
+In a certain sense, they encompass all other groups.
+
+76
+00:04:47,520 --> 00:04:51,123
+And so far you might be thinking, okay, this is intellectually playful enough, 
+
+77
+00:04:51,123 --> 00:04:52,720
+but is any of this actually useful?
+
+78
+00:04:53,400 --> 00:04:56,228
+One of the earliest applications of group theory came when 
+
+79
+00:04:56,228 --> 00:04:59,296
+mathematicians realized that the structure of these permutation 
+
+80
+00:04:59,296 --> 00:05:02,460
+groups tells us something about solutions to polynomial equations.
+
+81
+00:05:04,060 --> 00:05:07,707
+You know how, in order to find the two roots of a quadratic equation, 
+
+82
+00:05:07,707 --> 00:05:10,000
+everyone learns a certain formula in school?
+
+83
+00:05:10,820 --> 00:05:13,983
+Slightly lesser known is the fact that there's also a cubic formula, 
+
+84
+00:05:13,983 --> 00:05:17,560
+one that involves nesting cube roots with square roots in a larger expression.
+
+85
+00:05:18,220 --> 00:05:23,100
+There's even a quartic formula for a degree 4 polynomial, which is an absolute mess.
+
+86
+00:05:23,380 --> 00:05:25,980
+It's almost impossible to write without factoring things out.
+
+87
+00:05:26,540 --> 00:05:28,971
+And for the longest time, mathematicians struggled 
+
+88
+00:05:28,971 --> 00:05:31,260
+to find a formula to solve degree 5 polynomials.
+
+89
+00:05:31,260 --> 00:05:33,980
+Maybe there's one, but it's just super complicated.
+
+90
+00:05:34,980 --> 00:05:38,555
+It turns out, though, if you think about the group which permutes 
+
+91
+00:05:38,555 --> 00:05:41,806
+the roots of such a polynomial, there's something about the 
+
+92
+00:05:41,806 --> 00:05:45,220
+nature of this group that reveals no quintic formula can exist.
+
+93
+00:05:45,940 --> 00:05:50,525
+For example, the five roots of the polynomial you see on screen now have definite values, 
+
+94
+00:05:50,525 --> 00:05:54,856
+you could write out decimal approximations, but what you can never do is write those 
+
+95
+00:05:54,856 --> 00:05:59,390
+exact values by starting with the coefficients of the polynomial and using only the four 
+
+96
+00:05:59,390 --> 00:06:02,192
+basic operations of arithmetic together with radicals, 
+
+97
+00:06:02,192 --> 00:06:04,180
+no matter how many times you nest them.
+
+98
+00:06:04,520 --> 00:06:07,520
+And that impossibility has everything to do with 
+
+99
+00:06:07,520 --> 00:06:10,460
+the inner structure of the permutation group S5.
+
+100
+00:06:13,040 --> 00:06:16,311
+A theme in math through the last two centuries has been that 
+
+101
+00:06:16,311 --> 00:06:19,636
+the nature of symmetry in and of itself can show us all sorts 
+
+102
+00:06:19,636 --> 00:06:22,800
+of non-obvious facts about the other objects that we study.
+
+103
+00:06:23,320 --> 00:06:27,153
+To give just a hint of the many many ways that this applies to physics, 
+
+104
+00:06:27,153 --> 00:06:30,880
+there's a beautiful fact known as Noether's theorem saying that every 
+
+105
+00:06:30,880 --> 00:06:34,660
+conservation law corresponds to some kind of symmetry, a certain group.
+
+106
+00:06:35,460 --> 00:06:38,460
+So all those fundamental laws like conservation of momentum 
+
+107
+00:06:38,460 --> 00:06:41,160
+and conservation of energy each correspond to a group.
+
+108
+00:06:41,820 --> 00:06:44,564
+More specifically, the actions we should be able to apply 
+
+109
+00:06:44,564 --> 00:06:47,120
+to a setup such that the laws of physics don't change.
+
+110
+00:06:48,140 --> 00:06:50,628
+All of this is to say that groups really are fundamental, 
+
+111
+00:06:50,628 --> 00:06:54,275
+and the one thing I want you to recognize right now is that they are one of the most 
+
+112
+00:06:54,275 --> 00:06:55,820
+natural things that you could study.
+
+113
+00:06:55,820 --> 00:06:57,980
+What could be more universal than symmetry?
+
+114
+00:06:58,860 --> 00:07:01,224
+So you might think that the patterns among groups 
+
+115
+00:07:01,224 --> 00:07:03,920
+themselves would somehow be very beautiful and symmetric.
+
+116
+00:07:04,640 --> 00:07:06,560
+The monster, however, tells a different story.
+
+117
+00:07:07,280 --> 00:07:10,662
+Before we get to the monster, though, at this point some mathematicians 
+
+118
+00:07:10,662 --> 00:07:13,997
+might complain that what I've described so far are not groups exactly, 
+
+119
+00:07:13,997 --> 00:07:17,380
+but group actions, and that groups are something slightly more abstract.
+
+120
+00:07:18,260 --> 00:07:20,920
+By way of analogy, if I mention the number 3, you 
+
+121
+00:07:20,920 --> 00:07:23,900
+probably don't think about a specific triplet of things.
+
+122
+00:07:24,520 --> 00:07:27,540
+You probably think about 3 as an object in and of itself, 
+
+123
+00:07:27,540 --> 00:07:30,040
+an abstraction, maybe represented with a symbol.
+
+124
+00:07:30,720 --> 00:07:34,404
+In much the same way, when mathematicians discuss the elements of a group, 
+
+125
+00:07:34,404 --> 00:07:37,990
+they don't necessarily think about specific actions on specific objects, 
+
+126
+00:07:37,990 --> 00:07:41,527
+they might think of these elements as a kind of thing in and of itself, 
+
+127
+00:07:41,527 --> 00:07:43,100
+maybe represented with a symbol.
+
+128
+00:07:44,140 --> 00:07:48,745
+For something like the number 3, the abstract symbol does us very little good unless we 
+
+129
+00:07:48,745 --> 00:07:53,298
+define its relation with other numbers, for example the way it adds or multiplies with 
+
+130
+00:07:53,298 --> 00:07:53,560
+them.
+
+131
+00:07:54,240 --> 00:07:58,707
+For each of these, you could think of a literal triplet of something, but again, 
+
+132
+00:07:58,707 --> 00:08:03,340
+most of us are comfortable, probably even more comfortable, using the symbols alone.
+
+133
+00:08:04,300 --> 00:08:06,906
+Similarly, what makes a group a group are all of 
+
+134
+00:08:06,906 --> 00:08:09,620
+the ways that its elements combine with each other.
+
+135
+00:08:10,180 --> 00:08:12,780
+And in the context of actions, this has a very vivid meaning.
+
+136
+00:08:12,780 --> 00:08:17,960
+What we mean by combining is to apply one action after the other, read from right to left.
+
+137
+00:08:18,360 --> 00:08:23,236
+If you flip a snowflake about the x-axis, then rotate it 60 degrees counterclockwise, 
+
+138
+00:08:23,236 --> 00:08:27,660
+the overall action is the same as if you had flipped it about a diagonal line.
+
+139
+00:08:31,640 --> 00:08:34,347
+All possible ways that you can combine two elements 
+
+140
+00:08:34,347 --> 00:08:37,159
+of a group like this defines a kind of multiplication.
+
+141
+00:08:37,780 --> 00:08:40,140
+That is what really gives a group its structure.
+
+142
+00:08:40,799 --> 00:08:44,720
+Here, I'm drawing out the full 8x8 table of the symmetries of a square.
+
+143
+00:08:45,320 --> 00:08:49,770
+If you apply an action from the top row and follow it by an action from the left column, 
+
+144
+00:08:49,770 --> 00:08:53,020
+it'll be the same as the action in the corresponding grid square.
+
+145
+00:08:58,620 --> 00:09:03,351
+But if we replace each one of these symmetric actions with something purely symbolic, 
+
+146
+00:09:03,351 --> 00:09:07,752
+well, the multiplication table still captures the inner structure of the group, 
+
+147
+00:09:07,752 --> 00:09:11,934
+but now it's abstracted away from any specific object that it might act on, 
+
+148
+00:09:11,934 --> 00:09:14,080
+like a square or roots of a polynomial.
+
+149
+00:09:14,740 --> 00:09:19,598
+This is entirely analogous to how the usual multiplication table is written symbolically, 
+
+150
+00:09:19,598 --> 00:09:22,460
+which abstracts away from the idea of literal counts.
+
+151
+00:09:23,240 --> 00:09:26,666
+Literal counts, arguably, would make it much clearer what's going on, 
+
+152
+00:09:26,666 --> 00:09:29,800
+but since grade school we all grow comfortable with the symbols.
+
+153
+00:09:30,360 --> 00:09:34,437
+After all, they're less cumbersome, they free us to think about more complicated numbers, 
+
+154
+00:09:34,437 --> 00:09:37,880
+and they also free us to think about numbers in new and very different ways.
+
+155
+00:09:38,820 --> 00:09:41,817
+All of this is true of groups as well, which are best 
+
+156
+00:09:41,817 --> 00:09:45,260
+understood as abstractions above the idea of symmetry actions.
+
+157
+00:09:46,120 --> 00:09:47,680
+I'm emphasizing this for two reasons.
+
+158
+00:09:48,100 --> 00:09:51,150
+One is that understanding what groups really are gives a better 
+
+159
+00:09:51,150 --> 00:09:54,297
+appreciation for the monster, and the other is that many students 
+
+160
+00:09:54,297 --> 00:09:57,920
+learning about groups for the first time can find them frustratingly opaque.
+
+161
+00:09:58,380 --> 00:09:59,140
+I know that I did.
+
+162
+00:09:59,690 --> 00:10:03,973
+A typical course starts with this very formal and abstract definition, 
+
+163
+00:10:03,973 --> 00:10:07,472
+which is that a group is a set in a collection of things, 
+
+164
+00:10:07,472 --> 00:10:11,936
+with a binary operation, a notion of multiplication between those things, 
+
+165
+00:10:11,936 --> 00:10:16,160
+such that this multiplication satisfies four special rules, or axioms.
+
+166
+00:10:16,900 --> 00:10:19,554
+And all of this can feel, well, kind of random, 
+
+167
+00:10:19,554 --> 00:10:23,536
+especially when it isn't made clear that all of these axioms arise from 
+
+168
+00:10:23,536 --> 00:10:27,629
+the things that must obviously be true when you're thinking about actions 
+
+169
+00:10:27,629 --> 00:10:28,680
+and composing them.
+
+170
+00:10:29,400 --> 00:10:32,215
+To any students among you with such a course in the future, 
+
+171
+00:10:32,215 --> 00:10:36,298
+I would say if you appreciate that the relationship groups have with symmetric actions 
+
+172
+00:10:36,298 --> 00:10:39,066
+is analogous to the relationship numbers have with counts, 
+
+173
+00:10:39,066 --> 00:10:41,460
+it can help to make the course a lot more grounded.
+
+174
+00:10:42,480 --> 00:10:45,920
+An example might help to see why this kind of abstraction is desirable.
+
+175
+00:10:46,700 --> 00:10:50,980
+Consider the symmetries of a cube and the permutation group of four objects.
+
+176
+00:10:51,580 --> 00:10:53,900
+At first, these groups feel very different.
+
+177
+00:10:53,900 --> 00:10:57,497
+You might think of the one on the left as acting on eight corners in 
+
+178
+00:10:57,497 --> 00:11:01,200
+a way that preserves the distance and orientation structure among them.
+
+179
+00:11:01,300 --> 00:11:04,130
+But on the right, we have a completely unconstrained 
+
+180
+00:11:04,130 --> 00:11:06,640
+set of actions on a much smaller set of points.
+
+181
+00:11:07,480 --> 00:11:10,381
+As it happens, though, these two groups are really the same, 
+
+182
+00:11:10,381 --> 00:11:13,520
+in the sense that their multiplication tables will look identical.
+
+183
+00:11:14,340 --> 00:11:17,940
+Anything that you can say about one group will be true of the other.
+
+184
+00:11:18,660 --> 00:11:22,469
+For example, there are eight distinct permutations where applying it three 
+
+185
+00:11:22,469 --> 00:11:26,380
+times in a row gets you back to where you started, not counting the identity.
+
+186
+00:11:27,060 --> 00:11:29,740
+These are the ones that cycle three different elements together.
+
+187
+00:11:30,960 --> 00:11:35,419
+There are also eight rotations of the cube that have this property, 
+
+188
+00:11:35,419 --> 00:11:39,420
+the various 120 and 240 degree rotations about each diagonal.
+
+189
+00:11:40,040 --> 00:11:41,600
+This is no coincidence.
+
+190
+00:11:42,680 --> 00:11:47,259
+The way to phrase this more precisely is to say there is a one-to-one mapping between 
+
+191
+00:11:47,259 --> 00:11:51,680
+rotations of a cube and permutations of four elements, which preserves composition.
+
+192
+00:11:52,320 --> 00:11:57,683
+For example, rotating 180 degrees about the y-axis followed by 180 degrees about 
+
+193
+00:11:57,683 --> 00:12:03,180
+the x-axis gives the same overall effect as rotating 180 degrees around the z-axis.
+
+194
+00:12:03,800 --> 00:12:06,200
+Remember, that's what we mean by a product of two actions.
+
+195
+00:12:06,820 --> 00:12:11,010
+And if you look at the corresponding permutations under a certain one-to-one association, 
+
+196
+00:12:11,010 --> 00:12:12,500
+this product will still be true.
+
+197
+00:12:12,960 --> 00:12:15,108
+Applying the two actions on the left gives the 
+
+198
+00:12:15,108 --> 00:12:17,120
+same overall effect as the one on the right.
+
+199
+00:12:18,160 --> 00:12:22,203
+When you have a correspondence where this remains true for all products, 
+
+200
+00:12:22,203 --> 00:12:26,800
+it's called an isomorphism, which is maybe the most important idea in group theory.
+
+201
+00:12:27,740 --> 00:12:31,825
+This particular isomorphism between cube rotations and permutations of four 
+
+202
+00:12:31,825 --> 00:12:34,835
+objects is a bit subtle, but for the curious among you, 
+
+203
+00:12:34,835 --> 00:12:39,028
+you may enjoy taking a moment to think hard about how the rotations of a cube 
+
+204
+00:12:39,028 --> 00:12:40,480
+permute its four diagonals.
+
+205
+00:12:44,100 --> 00:12:47,230
+In your mathematical life, you'll see more examples of a given 
+
+206
+00:12:47,230 --> 00:12:50,509
+group arising from seemingly unrelated situations, and as you do, 
+
+207
+00:12:50,509 --> 00:12:53,540
+you'll get a better sense for what group theory is all about.
+
+208
+00:12:54,320 --> 00:12:58,420
+Think about how a number like 3 is not really about a particular triplet of things, 
+
+209
+00:12:58,420 --> 00:13:00,520
+it's about all possible triplets of things.
+
+210
+00:13:01,080 --> 00:13:05,311
+In the same way, a group is not really about symmetries of a particular object, 
+
+211
+00:13:05,311 --> 00:13:08,220
+it's an abstract way that things can even be symmetric.
+
+212
+00:13:08,760 --> 00:13:12,790
+There are even plenty of situations where groups come up in a way that does not feel 
+
+213
+00:13:12,790 --> 00:13:16,820
+like a set of symmetric actions at all, just as numbers can do a lot more than count.
+
+214
+00:13:17,740 --> 00:13:22,430
+In fact, seeing the same group come up in different situations is a great way to reveal 
+
+215
+00:13:22,430 --> 00:13:25,041
+unexpected connections between distinct objects, 
+
+216
+00:13:25,041 --> 00:13:27,280
+that's a very common theme in modern math.
+
+217
+00:13:28,240 --> 00:13:31,674
+And once you understand this about groups, it leads you to a natural question, 
+
+218
+00:13:31,674 --> 00:13:33,500
+which will eventually lead to the monster.
+
+219
+00:13:34,080 --> 00:13:35,440
+What are all the groups?
+
+220
+00:13:35,440 --> 00:13:39,280
+But now you're in a position to ask that question in a more sophisticated way.
+
+221
+00:13:39,540 --> 00:13:42,000
+What are all the groups up to isomorphism?
+
+222
+00:13:42,580 --> 00:13:44,850
+Which is to say, we consider two groups to be 
+
+223
+00:13:44,850 --> 00:13:47,220
+the same if there's an isomorphism between them.
+
+224
+00:13:49,640 --> 00:13:53,280
+This is asking something more fundamental than what are all the symmetric things.
+
+225
+00:13:53,460 --> 00:13:57,580
+It's a way of asking, what are all the ways that something can be symmetric?
+
+226
+00:13:57,680 --> 00:14:00,963
+Is there some formula or procedure for producing them all, 
+
+227
+00:14:00,963 --> 00:14:04,080
+some meta-pattern lying at the heart of symmetry itself?
+
+228
+00:14:05,960 --> 00:14:09,980
+This question turns out to be hard, exceedingly hard.
+
+229
+00:14:10,760 --> 00:14:13,608
+For one thing, there's the division between infinite groups, 
+
+230
+00:14:13,608 --> 00:14:16,877
+for example the ones describing the symmetries of a line or a circle, 
+
+231
+00:14:16,877 --> 00:14:19,960
+and finite groups, like the ones we've looked at up to this point.
+
+232
+00:14:20,620 --> 00:14:23,920
+To maintain some hope of sanity, let's limit our view to finite groups.
+
+233
+00:14:25,000 --> 00:14:29,048
+In the same way that numbers can be broken down into their prime factorization, 
+
+234
+00:14:29,048 --> 00:14:32,186
+or molecules can be described based on the atoms within them, 
+
+235
+00:14:32,186 --> 00:14:36,589
+there's a certain way that finite groups can be broken down into a kind of composition 
+
+236
+00:14:36,589 --> 00:14:37,500
+of smaller groups.
+
+237
+00:14:38,200 --> 00:14:40,754
+The ones which can't be broken down any further, 
+
+238
+00:14:40,754 --> 00:14:44,300
+analogous to prime numbers or atoms, are known as the simple groups.
+
+239
+00:14:45,220 --> 00:14:48,155
+To give a hint for why this is useful, remember how we said that 
+
+240
+00:14:48,155 --> 00:14:50,955
+group theory can be used to prove that there's no formula for 
+
+241
+00:14:50,955 --> 00:14:53,800
+a degree 5 polynomial the way there is for quadratic equations?
+
+242
+00:14:54,520 --> 00:14:57,792
+Well, if you're wondering what that proof actually looks like, 
+
+243
+00:14:57,792 --> 00:15:01,844
+it involves showing that if there were some kind of mythical quintic formula, 
+
+244
+00:15:01,844 --> 00:15:05,584
+something which uses only radicals and the basic arithmetic operations, 
+
+245
+00:15:05,584 --> 00:15:09,428
+it would imply that the permutation group on 5 elements decomposes into a 
+
+246
+00:15:09,428 --> 00:15:13,740
+special kind of simple group, known fancifully as the cyclic groups of prime order.
+
+247
+00:15:14,500 --> 00:15:18,751
+But the actual way that this breaks down involves a different kind of simple group, 
+
+248
+00:15:18,751 --> 00:15:23,256
+a different kind of atom, one which polynomial solutions built from radicals would never 
+
+249
+00:15:23,256 --> 00:15:23,560
+allow.
+
+250
+00:15:24,800 --> 00:15:27,169
+That is a super high-level description of course, 
+
+251
+00:15:27,169 --> 00:15:29,539
+with about a semester's worth of details missing, 
+
+252
+00:15:29,539 --> 00:15:33,615
+but the point is that you have this really not obvious fact about a different part of 
+
+253
+00:15:33,615 --> 00:15:37,360
+math whose solutions come from finding the atomic structure of a certain group.
+
+254
+00:15:37,900 --> 00:15:41,323
+This is one of many different examples where understanding the nature of 
+
+255
+00:15:41,323 --> 00:15:44,840
+these simple groups, these atoms, actually matters outside of group theory.
+
+256
+00:15:45,800 --> 00:15:49,660
+The task of categorizing all finite groups breaks down into two steps.
+
+257
+00:15:50,120 --> 00:15:54,340
+One, find all the simple groups, and two, find all of the ways to combine them.
+
+258
+00:15:54,920 --> 00:15:57,446
+The first question is like finding the periodic table, 
+
+259
+00:15:57,446 --> 00:16:00,340
+and the second is a bit like doing all of chemistry thereafter.
+
+260
+00:16:00,880 --> 00:16:05,200
+The good news is that mathematicians have found all of the finite simple groups.
+
+261
+00:16:06,200 --> 00:16:09,798
+Well, more pertinent is that they proved that the ones they found are, 
+
+262
+00:16:09,798 --> 00:16:11,420
+in fact, all the ones out there.
+
+263
+00:16:12,080 --> 00:16:15,743
+It took many decades, tens of thousands of dense pages of advanced math, 
+
+264
+00:16:15,743 --> 00:16:20,060
+hundreds of some of the smartest minds out there, and significant help from computers.
+
+265
+00:16:20,600 --> 00:16:24,747
+But by 2004, with a culminating 12,000 pages to tie up the loose ends, 
+
+266
+00:16:24,747 --> 00:16:26,500
+there was a definitive answer.
+
+267
+00:16:26,500 --> 00:16:29,473
+Many experts agree, this is one of the most monumental 
+
+268
+00:16:29,473 --> 00:16:31,420
+achievements in the history of math.
+
+269
+00:16:33,260 --> 00:16:35,900
+The bad news, though, is that the answer is absurd.
+
+270
+00:16:36,500 --> 00:16:39,438
+There are 18 distinct infinite families of simple groups, 
+
+271
+00:16:39,438 --> 00:16:43,340
+which makes it really tempting to lean into the whole periodic table analogy.
+
+272
+00:16:43,900 --> 00:16:47,336
+But groups are stranger than chemistry, because there are also these 26 
+
+273
+00:16:47,336 --> 00:16:50,820
+simple groups that are just left over, they don't fit the other patterns.
+
+274
+00:16:51,460 --> 00:16:53,780
+These 26 are known as the sporadic groups.
+
+275
+00:16:54,220 --> 00:16:58,097
+That a field of study rooted in symmetry itself has such a patched 
+
+276
+00:16:58,097 --> 00:17:01,860
+together fundamental structure is, well I mean it's just bizarre.
+
+277
+00:17:02,460 --> 00:17:04,359
+It's like the universe was designed by committee.
+
+278
+00:17:05,180 --> 00:17:08,440
+If you're wondering what we mean by an infinite family, examples might help.
+
+279
+00:17:08,960 --> 00:17:13,220
+One such family of simple groups includes all of these cyclic groups with prime order.
+
+280
+00:17:13,859 --> 00:17:18,036
+These are essentially the symmetries of a regular polygon with a prime number of sides, 
+
+281
+00:17:18,036 --> 00:17:20,599
+but where you're not allowed to flip the polygon over.
+
+282
+00:17:21,180 --> 00:17:25,617
+Another of these infinite families is very similar to the permutation groups we saw 
+
+283
+00:17:25,617 --> 00:17:30,160
+earlier, but there's the tiniest constraint on how they're allowed to shuffle n items.
+
+284
+00:17:31,640 --> 00:17:34,900
+If they act on 5 or more elements, these groups are simple.
+
+285
+00:17:36,080 --> 00:17:39,570
+Which incidentally is heavily related to why polynomials with degree 
+
+286
+00:17:39,570 --> 00:17:42,960
+5 or more have solutions that can't be written down using radicals.
+
+287
+00:17:44,040 --> 00:17:46,662
+The other 16 families are notably more complicated, 
+
+288
+00:17:46,662 --> 00:17:50,344
+and I'm told that there's at least a little ambiguity in how to organize 
+
+289
+00:17:50,344 --> 00:17:53,017
+them into cleanly distinct families without overlap, 
+
+290
+00:17:53,017 --> 00:17:56,547
+but what everybody agrees on is that the 26 sporadic groups stand out 
+
+291
+00:17:56,547 --> 00:17:57,960
+as something very different.
+
+292
+00:17:58,660 --> 00:18:02,247
+The largest of these sporadic groups is known, thanks to John Conway, 
+
+293
+00:18:02,247 --> 00:18:06,040
+as the monster group, and its size is the number I mentioned at the start.
+
+294
+00:18:06,740 --> 00:18:11,120
+The second largest, and I promise this isn't a joke, is known as the baby monster group.
+
+295
+00:18:11,980 --> 00:18:16,073
+Together with the baby monster, 19 of these sporadic groups are in a certain 
+
+296
+00:18:16,073 --> 00:18:20,380
+sense children of the monster, and Robert Gries called these 20 the happy family.
+
+297
+00:18:20,920 --> 00:18:24,940
+He also called the other six, which don't even fit that pattern, the pariahs.
+
+298
+00:18:25,480 --> 00:18:28,693
+As if to compensate for how complicated the underlying math here is, 
+
+299
+00:18:28,693 --> 00:18:31,720
+the experts really let loose on their whimsy while naming things.
+
+300
+00:18:32,600 --> 00:18:36,383
+Let me emphasize, having a group which is big is not that big a deal, 
+
+301
+00:18:36,383 --> 00:18:40,545
+but the idea that one of the fundamental building blocks for one of the most 
+
+302
+00:18:40,545 --> 00:18:44,869
+fundamental ideas in math comes in a collection that just abruptly stops around 
+
+303
+00:18:44,869 --> 00:18:45,680
+8x10 to the 53.
+
+304
+00:18:46,360 --> 00:18:47,120
+That's weird.
+
+305
+00:18:48,640 --> 00:18:52,004
+Now, at this point, given that I introduced groups as symmetries, 
+
+306
+00:18:52,004 --> 00:18:55,980
+a collection of actions, you might wonder what it is that the monster acts on.
+
+307
+00:18:56,420 --> 00:18:59,060
+What object does it describe the symmetries of?
+
+308
+00:18:59,820 --> 00:19:03,806
+Well, there is an answer, but it doesn't fit into two or three dimensions to draw, 
+
+309
+00:19:03,806 --> 00:19:05,440
+nor does it fit into four or five.
+
+310
+00:19:06,200 --> 00:19:10,120
+Instead, to see what the monster acts on, we would have to jump up to...
+
+311
+00:19:10,120 --> 00:19:11,520
+Wait for it...
+
+312
+00:19:14,200 --> 00:19:16,160
+196,883 dimensions.
+
+313
+00:19:17,200 --> 00:19:21,146
+Just describing one of the elements of this group takes about 4 GB of data, 
+
+314
+00:19:21,146 --> 00:19:25,456
+even though plenty of groups that are way bigger have a much smaller computational 
+
+315
+00:19:25,456 --> 00:19:26,080
+description.
+
+316
+00:19:26,780 --> 00:19:29,969
+The permutation group on 101 elements was, if you'll recall, 
+
+317
+00:19:29,969 --> 00:19:34,622
+dramatically bigger, but we can describe each one of its elements with very little data, 
+
+318
+00:19:34,622 --> 00:19:36,400
+for example a list of 100 numbers.
+
+319
+00:19:42,440 --> 00:19:42,880
+Why the Sporadic Groups?
+
+320
+00:19:42,880 --> 00:19:45,474
+No one really understands why the sporadic groups, 
+
+321
+00:19:45,474 --> 00:19:47,560
+and the monster in particular, are there.
+
+322
+00:19:48,220 --> 00:19:50,879
+Maybe in a few decades there will be a clearer answer, 
+
+323
+00:19:50,879 --> 00:19:54,409
+maybe one of you will come up with it, but despite knowing that they are 
+
+324
+00:19:54,409 --> 00:19:57,359
+deeply fundamental to math, and arguably to physics as well, 
+
+325
+00:19:57,359 --> 00:19:59,100
+a lot about them remains mysterious.
+
+326
+00:20:00,080 --> 00:20:04,656
+In the 1970s, mathematician John McKay was making a switch from studying 
+
+327
+00:20:04,656 --> 00:20:09,484
+group theory to an adjacent field, and he noticed that a number very similar 
+
+328
+00:20:09,484 --> 00:20:14,500
+to this 196,883 showed up in a completely unrelated context, or at least almost.
+
+329
+00:20:15,020 --> 00:20:18,116
+A number one bigger than this was in the series expansion of a 
+
+330
+00:20:18,116 --> 00:20:20,968
+fundamental function in a totally different part of math, 
+
+331
+00:20:20,968 --> 00:20:24,360
+relevant to these things called modular forms and elliptic functions.
+
+332
+00:20:25,040 --> 00:20:27,949
+Assuming that this was more than a coincidence seemed crazy, 
+
+333
+00:20:27,949 --> 00:20:30,860
+enough that it was playfully deemed moonshine by John Conway.
+
+334
+00:20:30,860 --> 00:20:33,969
+But after more numerical coincidences like this were noticed, 
+
+335
+00:20:33,969 --> 00:20:37,580
+it gave rise to what became known as the monstrous moonshine conjecture.
+
+336
+00:20:38,180 --> 00:20:39,640
+Whimsical names just don't stop.
+
+337
+00:20:40,520 --> 00:20:44,330
+This was proved by Richard Borcherds in 1992, solidifying a connection 
+
+338
+00:20:44,330 --> 00:20:48,140
+between very different parts of math that at first glance seemed crazy.
+
+339
+00:20:48,920 --> 00:20:51,347
+Six years later, by the way, he won the Fields Medal, 
+
+340
+00:20:51,347 --> 00:20:53,280
+in part for the significance of this proof.
+
+341
+00:20:53,980 --> 00:20:57,540
+And related to this moonshine is a connection between the monster and string theory.
+
+342
+00:20:57,540 --> 00:21:00,897
+Maybe it shouldn't come as a surprise that something that arises from 
+
+343
+00:21:00,897 --> 00:21:04,350
+symmetry itself is relevant to physics, but in light of just how random 
+
+344
+00:21:04,350 --> 00:21:08,140
+the monster seems at first glance, this connection still elicits a double take.
+
+345
+00:21:09,600 --> 00:21:13,016
+To me, the monster and its absurd size is a nice reminder 
+
+346
+00:21:13,016 --> 00:21:16,080
+that fundamental objects are not necessarily simple.
+
+347
+00:21:16,560 --> 00:21:19,760
+The universe doesn't really care if its final answers look clean.
+
+348
+00:21:20,100 --> 00:21:22,557
+They are what they are by logical necessity, with no 
+
+349
+00:21:22,557 --> 00:21:25,200
+concern over how easily we'll be able to understand them.
+

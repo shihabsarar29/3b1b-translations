@@ -1,0 +1,836 @@
+1
+00:00:14,500 --> 00:00:18,159
+A legutóbbi videókban az egyszerű függvények deriváltjairól beszéltem, 
+
+2
+00:00:18,159 --> 00:00:22,695
+és a cél az volt, hogy legyen egy világos kép vagy intuíció, amit a fejedben tarthatsz, 
+
+3
+00:00:22,695 --> 00:00:26,200
+és ami ténylegesen megmagyarázza, honnan származnak ezek a képletek.
+
+4
+00:00:26,840 --> 00:00:30,314
+De a legtöbb függvény, amivel a világ modellezése során foglalkozunk, 
+
+5
+00:00:30,314 --> 00:00:32,647
+ezeknek az egyszerű függvényeknek a keverését, 
+
+6
+00:00:32,647 --> 00:00:35,476
+kombinálását vagy más módon történő módosítását jelenti, 
+
+7
+00:00:35,476 --> 00:00:37,809
+ezért a következő lépésünk az, hogy megértsük, 
+
+8
+00:00:37,809 --> 00:00:40,540
+hogyan vesszük a bonyolultabb kombinációk deriváltjait.
+
+9
+00:00:41,280 --> 00:00:44,342
+Ismétlem, nem azt akarom, hogy ezeket bemagoljátok, hanem azt, 
+
+10
+00:00:44,342 --> 00:00:47,600
+hogy világos képet kapjatok arról, hogy honnan származik mindegyik.
+
+11
+00:00:49,520 --> 00:00:53,600
+Ez valójában a funkciók kombinálásának három alapvető módját jelenti.
+
+12
+00:00:54,100 --> 00:00:58,235
+Összeadhatod őket, megszorozhatod őket, és beledobhatod egyiket a másikba, 
+
+13
+00:00:58,235 --> 00:00:59,780
+amit kompozíciónak nevezünk.
+
+14
+00:01:00,600 --> 00:01:03,852
+Persze, mondhatnánk, hogy kivonjuk őket, de valójában ez 
+
+15
+00:01:03,852 --> 00:01:07,220
+csak a második szorzása negatív eggyel, és összeadjuk őket.
+
+16
+00:01:08,240 --> 00:01:12,307
+Hasonlóképpen, a függvények osztása nem ad hozzá semmit, mert ez ugyanaz, 
+
+17
+00:01:12,307 --> 00:01:16,760
+mintha egyet bedugnánk a függvénybe, egyet x fölé, majd a kettőt összeszoroznánk.
+
+18
+00:01:17,660 --> 00:01:19,787
+Tehát a legtöbb funkció, amivel találkozhatsz, 
+
+19
+00:01:19,787 --> 00:01:22,955
+csak e három különböző típusú kombináció egymásra rétegzését jelenti, 
+
+20
+00:01:22,955 --> 00:01:26,440
+bár nem igazán van határa annak, hogy milyen szörnyűségeket lehet létrehozni.
+
+21
+00:01:27,100 --> 00:01:29,573
+De amíg tudod, hogyan kell játszani a származékokkal, 
+
+22
+00:01:29,573 --> 00:01:33,559
+csak ezzel a három kombinációs típussal, mindig képes leszel lépésről lépésre haladni, 
+
+23
+00:01:33,559 --> 00:01:36,720
+és bármilyen monstre kifejezéshez képes leszel áthámozni a rétegeket.
+
+24
+00:01:38,720 --> 00:01:42,756
+A kérdés tehát az, hogy ha ismerjük két függvény deriváltját, 
+
+25
+00:01:42,756 --> 00:01:48,420
+akkor mi a deriváltja összegüknek, szorzatuknak és a köztük lévő függvényösszetételnek?
+
+26
+00:01:50,320 --> 00:01:54,260
+Az összegszabályt a legkönnyebb, bár kissé nyelvtörő hangosan kimondani.
+
+27
+00:01:54,840 --> 00:01:58,600
+Két függvény összegének deriváltja a két függvény deriváltjainak összege.
+
+28
+00:01:59,800 --> 00:02:04,625
+Érdemes azonban bemelegíteni ezzel a példával azzal, hogy tényleg átgondoljuk, 
+
+29
+00:02:04,625 --> 00:02:07,496
+mit jelent két függvény összegének deriváltja, 
+
+30
+00:02:07,496 --> 00:02:12,382
+mivel a szorzat és a függvényösszetétel deriváltjainak mintái nem lesznek ilyen 
+
+31
+00:02:12,382 --> 00:02:15,620
+egyszerűek, és ilyen mélyebb gondolkodást igényelnek.
+
+32
+00:02:16,700 --> 00:02:21,200
+Gondoljunk például erre a függvényre: f az x egyenlő x szinusza plusz x négyzete.
+
+33
+00:02:22,200 --> 00:02:25,079
+Ez egy olyan függvény, ahol minden bemenethez összeadjuk 
+
+34
+00:02:25,079 --> 00:02:27,960
+az x szinusz és az x négyzetének értékét az adott ponton.
+
+35
+00:02:29,760 --> 00:02:36,699
+Tegyük fel például, hogy x 0,5-nél a szinuszgrafikon magasságát ez a függőleges sáv adja, 
+
+36
+00:02:36,699 --> 00:02:42,560
+az x négyzet parabola magasságát pedig ez a valamivel kisebb függőleges sáv.
+
+37
+00:02:44,380 --> 00:02:47,320
+És az összegük az a hossz, amelyet a két elem egymásra helyezésével kapunk.
+
+38
+00:02:48,520 --> 00:02:52,470
+A derivált esetében azt szeretné megkérdezni, hogy mi történik, 
+
+39
+00:02:52,470 --> 00:02:56,420
+ha a bemenetet kissé eltoljuk, esetleg 0,5 plusz dx-re növeljük.
+
+40
+00:02:57,560 --> 00:03:02,920
+Az f értékének a két hely közötti különbségét nevezzük df-nek.
+
+41
+00:03:04,360 --> 00:03:08,232
+És ha ezt így képzeljük el, azt hiszem, egyetértünk abban, 
+
+42
+00:03:08,232 --> 00:03:13,089
+hogy a magasság teljes változása annyi, amennyi a szinuszgörbe változása, 
+
+43
+00:03:13,089 --> 00:03:18,800
+amit úgy hívhatunk, hogy az x d szinusza, plusz az x négyzetének változása, dx négyzet.
+
+44
+00:03:22,240 --> 00:03:27,540
+Tudjuk, hogy a szinusz deriváltja a koszinusz, és emlékszünk, hogy ez mit jelent.
+
+45
+00:03:27,920 --> 00:03:31,179
+Ez azt jelenti, hogy ez a kis változás, az x szinuszának d-je, 
+
+46
+00:03:31,179 --> 00:03:33,300
+körülbelül az x koszinuszának dx-szerese.
+
+47
+00:03:33,780 --> 00:03:38,134
+Ez arányos a dx kezdeti lökésünk méretével, és az 
+
+48
+00:03:38,134 --> 00:03:43,360
+arányossági konstans egyenlő a bemeneti érték koszinuszával.
+
+49
+00:03:43,980 --> 00:03:47,964
+Hasonlóképpen, mivel x négyzetének deriváltja 2x, 
+
+50
+00:03:47,964 --> 00:03:53,940
+az x négyzet grafikon magasságának változása 2x-szerese annak, ami dx volt.
+
+51
+00:03:55,600 --> 00:04:00,294
+Tehát átrendezve df osztva dx-szel, az összegfüggvény apró 
+
+52
+00:04:00,294 --> 00:04:05,067
+változásának és az azt okozó apró x változásnak a hányadosa 
+
+53
+00:04:05,067 --> 00:04:10,080
+valóban x plusz 2x koszinusza, a részek deriváltjainak összege.
+
+54
+00:04:11,520 --> 00:04:15,716
+De mint mondtam, a termékek esetében a dolgok egy kicsit másképp alakulnak, 
+
+55
+00:04:15,716 --> 00:04:19,140
+és gondoljuk végig, hogy miért, ismét apró lökések formájában.
+
+56
+00:04:20,060 --> 00:04:21,583
+Ebben az esetben nem hiszem, hogy a grafikonok 
+
+57
+00:04:21,583 --> 00:04:23,140
+a legjobb választásunk a dolgok vizualizálására.
+
+58
+00:04:23,820 --> 00:04:28,871
+A matematikában, a matematika számos szintjén, ha két dolog szorzatával van dolgunk, 
+
+59
+00:04:28,871 --> 00:04:32,140
+akkor segít, ha azt valamilyen területként értelmezzük.
+
+60
+00:04:33,080 --> 00:04:36,580
+Ebben az esetben talán egy olyan doboz mentális beállítását próbálod beállítani, 
+
+61
+00:04:36,580 --> 00:04:39,000
+ahol az oldalhosszúságok az x szinusza és az x négyzete.
+
+62
+00:04:39,880 --> 00:04:41,040
+De mit jelentene ez?
+
+63
+00:04:42,320 --> 00:04:46,893
+Nos, mivel ezek függvények, úgy gondolhatod, hogy ezek az oldalak állíthatóak, 
+
+64
+00:04:46,893 --> 00:04:50,713
+az x értékétől függnek, amit talán úgy gondolsz, mint egy számot, 
+
+65
+00:04:50,713 --> 00:04:52,740
+amit szabadon állíthatsz fel és le.
+
+66
+00:04:53,740 --> 00:04:57,842
+Tehát, hogy megértsük, mit jelent ez, koncentráljunk arra a felső oldalra, 
+
+67
+00:04:57,842 --> 00:05:00,140
+amely az x szinusz függvényeként változik.
+
+68
+00:05:01,060 --> 00:05:04,379
+Ahogy ezt az x értéket 0-ról felfelé változtatod, 
+
+69
+00:05:04,379 --> 00:05:08,894
+az x szinuszának felfelé haladva a csúcspontja felé 1-ig növekszik, 
+
+70
+00:05:08,894 --> 00:05:13,940
+majd ezt követően csökkenni kezd, ahogy az x szinuszának 1-től lefelé halad.
+
+71
+00:05:15,100 --> 00:05:18,580
+És ugyanígy az ottani magasság is mindig az x négyzetével változik.
+
+72
+00:05:20,080 --> 00:05:24,096
+Tehát az x f, amelyet e két függvény szorzataként határozunk meg, 
+
+73
+00:05:24,096 --> 00:05:25,800
+ennek a doboznak a területe.
+
+74
+00:05:27,060 --> 00:05:30,044
+A derivált esetében pedig gondoljuk végig, hogy az x apró, 
+
+75
+00:05:30,044 --> 00:05:33,180
+dx-sel történő módosítása hogyan befolyásolja ezt a területet.
+
+76
+00:05:33,840 --> 00:05:36,280
+Mekkora a terület df eredő változása?
+
+77
+00:05:39,000 --> 00:05:44,215
+Nos, a dx lökés hatására a szélesség az x szinuszának egy kis d-vel, 
+
+78
+00:05:44,215 --> 00:05:47,920
+a magasság pedig egy kis dx négyzettel változott.
+
+79
+00:05:50,180 --> 00:05:54,632
+És ez három kis új területet ad nekünk, egy vékony téglalapot az alján, 
+
+80
+00:05:54,632 --> 00:05:59,332
+amelynek területe a szélessége, x szinusza, szorozva a vékony magasságával, 
+
+81
+00:05:59,332 --> 00:06:00,260
+dx négyzetével.
+
+82
+00:06:01,780 --> 00:06:05,993
+És ott van ez a vékony téglalap a jobb oldalon, amelynek területe a magassága, 
+
+83
+00:06:05,993 --> 00:06:09,300
+x négyzete, szorozva a vékony szélességével, az x szinuszával.
+
+84
+00:06:10,740 --> 00:06:14,140
+És ott van még ez a kis darab a sarokban, de ezt figyelmen kívül hagyhatjuk.
+
+85
+00:06:14,440 --> 00:06:19,024
+A területe végső soron arányos a dx négyzetével, és mint már láttuk, 
+
+86
+00:06:19,024 --> 00:06:22,480
+ez elhanyagolhatóvá válik, ahogy dx nullára csökken.
+
+87
+00:06:23,940 --> 00:06:26,277
+Úgy értem, ez az egész felállás nagyon hasonlít ahhoz, 
+
+88
+00:06:26,277 --> 00:06:28,700
+amit az előző videóban mutattam, az x négyzet diagrammal.
+
+89
+00:06:29,460 --> 00:06:32,771
+És mint akkor, ne feledjétek, hogy itt is kissé erősebb változtatásokat 
+
+90
+00:06:32,771 --> 00:06:35,900
+használok a dolgok megrajzolására, csak hogy valóban láthassuk őket.
+
+91
+00:06:36,360 --> 00:06:40,708
+De elvileg dx valami nagyon-nagyon kicsi, és ez azt jelenti, 
+
+92
+00:06:40,708 --> 00:06:44,700
+hogy x dx négyzete és d szinusza is nagyon-nagyon kicsi.
+
+93
+00:06:45,980 --> 00:06:51,433
+Tehát, alkalmazva azt, amit a szinusz és az x négyzetének deriváltjáról tudunk, 
+
+94
+00:06:51,433 --> 00:06:55,660
+ez az apró változás, dx négyzet, körülbelül 2x-szeres dx lesz.
+
+95
+00:06:56,360 --> 00:06:58,941
+És ez az apró változás, az x d szinusza, nos, 
+
+96
+00:06:58,941 --> 00:07:01,580
+ez körülbelül az x koszinusza szorozva dx-szel.
+
+97
+00:07:02,920 --> 00:07:06,626
+A szokásos módon osztjuk ki azzal a dx-szel, hogy lássuk, 
+
+98
+00:07:06,626 --> 00:07:10,779
+hogy a kívánt arány, df osztva dx-szel, az x szinusza szorozva x 
+
+99
+00:07:10,779 --> 00:07:15,700
+négyzetének deriváltjával, plusz x négyzete szorozva a szinusz deriváltjával.
+
+100
+00:07:17,960 --> 00:07:21,260
+És semmi, amit itt tettünk, nem vonatkozik a szinuszra vagy az x négyzetre.
+
+101
+00:07:21,580 --> 00:07:25,360
+Ugyanez az érvelés bármely két függvény, g és h esetében is működne.
+
+102
+00:07:27,000 --> 00:07:30,436
+És néha az emberek szeretnek emlékezni erre a mintára egy bizonyos mnemonikával, 
+
+103
+00:07:30,436 --> 00:07:31,540
+amit a fejükben énekelnek.
+
+104
+00:07:32,220 --> 00:07:33,680
+Balra d jobbra, jobbra d balra.
+
+105
+00:07:34,400 --> 00:07:37,871
+Ebben a példában, ahol az x szinusza x négyzete, balra d jobbra, 
+
+106
+00:07:37,871 --> 00:07:40,968
+azt jelenti, hogy a bal oldali függvényt, az x szinuszát, 
+
+107
+00:07:40,968 --> 00:07:44,760
+megszorozzuk a jobb oldali függvény deriváltjával, ebben az esetben 2x.
+
+108
+00:07:45,480 --> 00:07:48,880
+Ezután hozzáadod a jobb d balra, hogy a jobb oldali függvény, 
+
+109
+00:07:48,880 --> 00:07:52,940
+x négyzete, szorozva a bal oldali függvény deriváltjával, x koszinuszával.
+
+110
+00:07:54,360 --> 00:07:57,641
+Most kontextusból kiragadva, egy megjegyzendő szabályként bemutatva, 
+
+111
+00:07:57,641 --> 00:08:00,020
+azt hiszem, ez elég furcsa lenne, nem gondoljátok?
+
+112
+00:08:00,740 --> 00:08:03,369
+De ha ténylegesen elgondolkodik ezen az állítható dobozon, 
+
+113
+00:08:03,369 --> 00:08:05,820
+akkor láthatja, hogy mit jelentenek ezek a kifejezések.
+
+114
+00:08:06,580 --> 00:08:15,440
+Bal d jobb az alsó kis téglalap területe, és jobb d bal az oldalsó téglalap területe.
+
+115
+00:08:20,160 --> 00:08:23,256
+Egyébként meg kell említenem, hogy ha egy konstanssal szorzunk, 
+
+116
+00:08:23,256 --> 00:08:26,740
+mondjuk az x 2-szeres szinuszával, a dolgok sokkal egyszerűbbek lesznek.
+
+117
+00:08:27,400 --> 00:08:31,757
+A derivált ugyanaz, mint a konstans szorozva a függvény deriváltjával, 
+
+118
+00:08:31,757 --> 00:08:34,520
+ebben az esetben az x 2-szeres koszinuszával.
+
+119
+00:08:35,559 --> 00:08:40,179
+Rád bízom, hogy megállj és elgondolkodj, és ellenőrizd, hogy van-e értelme.
+
+120
+00:08:41,919 --> 00:08:47,029
+Az összeadás és a szorzás mellett a függvények kombinálásának másik gyakori módja - 
+
+121
+00:08:47,029 --> 00:08:52,260
+és higgye el, ez gyakran előfordul - az egyiket a másikba dugni, a függvénykompozíció.
+
+122
+00:08:53,220 --> 00:08:56,958
+Például fogjuk az x négyzetét, és beletesszük az x szinuszába, 
+
+123
+00:08:56,958 --> 00:09:00,460
+hogy megkapjuk ezt az új függvényt, az x négyzet szinuszát.
+
+124
+00:09:01,400 --> 00:09:04,080
+Mit gondolsz, mi ennek az új függvénynek a deriváltja?
+
+125
+00:09:05,300 --> 00:09:09,132
+Hogy végiggondoljam ezt az egyet, választok még egy másik módot a dolgok vizualizálására, 
+
+126
+00:09:09,132 --> 00:09:12,540
+csak hogy hangsúlyozzam, hogy a kreatív matematikában rengeteg lehetőségünk van.
+
+127
+00:09:13,320 --> 00:09:19,210
+Három különböző számsort fogok feltenni, a felső sorban lesz az x értéke, 
+
+128
+00:09:19,210 --> 00:09:25,500
+a másodikban az x négyzete, a harmadikban pedig az x négyzetének szinuszértéke.
+
+129
+00:09:26,460 --> 00:09:30,046
+Vagyis az x négyzet függvény az 1. sorból a 2. sorba, 
+
+130
+00:09:30,046 --> 00:09:33,500
+a szinusz függvény pedig a 2. sorból a 3. sorba jut.
+
+131
+00:09:34,840 --> 00:09:38,607
+Ahogy eltolom az x értékét, talán a 3 értékig, 
+
+132
+00:09:38,607 --> 00:09:45,340
+a második érték a x négyzetéhez ragasztva marad, ami ebben az esetben 9-re változik.
+
+133
+00:09:46,200 --> 00:09:52,580
+Az alsó érték, amely az x négyzetének szinusza, a 9 szinuszának megfelelő érték lesz.
+
+134
+00:09:54,900 --> 00:10:00,400
+Tehát a derivált esetében kezdjük megint azzal, hogy az x értéket dx-sel eltoljuk.
+
+135
+00:10:01,540 --> 00:10:04,429
+Mindig úgy gondolom, hogy hasznos, ha úgy gondolunk az x-re, 
+
+136
+00:10:04,429 --> 00:10:07,840
+hogy az valamilyen konkrét számmal kezdődik, ebben az esetben talán 1,5.
+
+137
+00:10:08,760 --> 00:10:12,196
+A második értékhez tartozó lökés, az ilyen dx által 
+
+138
+00:10:12,196 --> 00:10:15,700
+okozott x négyzetben bekövetkező változás dx négyzet.
+
+139
+00:10:16,960 --> 00:10:21,211
+Ezt kibővíthetnénk úgy is, mint korábban, mint 2x szorozva dx, 
+
+140
+00:10:21,211 --> 00:10:25,463
+ami a mi konkrét bemenetünk esetében 2-szer 1,5-szer dx lenne, 
+
+141
+00:10:25,463 --> 00:10:30,120
+de segít, ha a dolgokat dx négyzetként írjuk le, legalábbis egyelőre.
+
+142
+00:10:31,020 --> 00:10:35,974
+Sőt, egy lépéssel tovább megyek, és új nevet adok ennek az x négyzetnek, 
+
+143
+00:10:35,974 --> 00:10:41,200
+talán h-t, így ahelyett, hogy dx négyzetet írnánk erre a lökésre, dh-t írunk.
+
+144
+00:10:42,620 --> 00:10:47,260
+Így könnyebb elgondolkodni a harmadik értéken, amely most a h szinuszára van beállítva.
+
+145
+00:10:48,200 --> 00:10:53,680
+Változása a h d szinusza, a dh lökés okozta apró változás.
+
+146
+00:10:55,000 --> 00:11:00,378
+Az a tény, hogy balra mozog, míg a dh dudor jobbra megy, csak azt jelenti, 
+
+147
+00:11:00,378 --> 00:11:05,040
+hogy ez a változás, a h d szinusza, valamilyen negatív szám lesz.
+
+148
+00:11:06,140 --> 00:11:09,640
+Ismét felhasználhatjuk a szinusz deriváltjára vonatkozó ismereteinket.
+
+149
+00:11:10,500 --> 00:11:14,420
+Ez a h d szinusza körülbelül a h koszinusza szorozva dh-val.
+
+150
+00:11:15,240 --> 00:11:18,640
+Ez azt jelenti, hogy a szinusz deriváltja koszinusz.
+
+151
+00:11:19,540 --> 00:11:24,595
+A dolgokat kibontva, a h-t ismét x négyzetével helyettesíthetjük, így tudjuk, 
+
+152
+00:11:24,595 --> 00:11:29,780
+hogy az alsó lökés az x négyzet koszinuszának és dx négyzetének a nagysága lesz.
+
+153
+00:11:31,040 --> 00:11:32,480
+Bontjuk ki a dolgokat még tovább.
+
+154
+00:11:32,840 --> 00:11:38,100
+Ez a köztes lökés dx négyzete körülbelül 2x dx-szerese lesz.
+
+155
+00:11:39,060 --> 00:11:41,517
+Mindig jó szokás emlékeztetni magunkat arra, hogy 
+
+156
+00:11:41,517 --> 00:11:43,680
+egy ilyen kifejezés mit is jelent valójában.
+
+157
+00:11:44,340 --> 00:11:48,847
+Ebben az esetben, amikor fent az x egyenlő 1,5-nél kezdtük, 
+
+158
+00:11:48,847 --> 00:11:55,083
+ez az egész kifejezés azt mondja, hogy a harmadik sorban a lökés mérete körülbelül 
+
+159
+00:11:55,083 --> 00:11:59,966
+az 1,5 négyzetének koszinusza szorozva 2-szer 1,5-szer 1,5-szel, 
+
+160
+00:11:59,966 --> 00:12:02,220
+bármennyi is volt a dx mérete.
+
+161
+00:12:02,720 --> 00:12:07,920
+Ez arányos a dx nagyságával, és ez a derivált adja meg nekünk ezt az arányossági állandót.
+
+162
+00:12:10,920 --> 00:12:12,560
+Figyeljük meg, hogy mit kaptunk itt.
+
+163
+00:12:12,960 --> 00:12:19,572
+Megvan a külső függvény deriváltja, és még mindig a változatlan belső függvényt veszi, 
+
+164
+00:12:19,572 --> 00:12:23,220
+majd megszorozza a belső függvény deriváltjával.
+
+165
+00:12:25,820 --> 00:12:29,220
+Ismétlem, nincs semmi különös az x szinuszában vagy az x négyzetében.
+
+166
+00:12:29,740 --> 00:12:33,431
+Ha van két tetszőleges függvényünk, x g és x h, 
+
+167
+00:12:33,431 --> 00:12:39,583
+akkor a két függvény összetételének, x g és x h deriváltja a g deriváltja lesz, 
+
+168
+00:12:39,583 --> 00:12:43,660
+amelyet h-ra értékelnek, megszorozva h deriváltjával.
+
+169
+00:12:47,140 --> 00:12:50,900
+Ezt a mintát itt általában láncszabálynak nevezzük.
+
+170
+00:12:52,040 --> 00:12:57,680
+Figyeljük meg, hogy a g deriváltját dg dx helyett dg dh-nak írom.
+
+171
+00:12:58,680 --> 00:13:01,619
+Szimbolikus szinten ez egy emlékeztető, hogy az, 
+
+172
+00:13:01,619 --> 00:13:06,060
+amit a deriválthoz csatlakoztatunk, még mindig a h közbenső függvény lesz.
+
+173
+00:13:07,020 --> 00:13:09,404
+De ennél is több, ez egy fontos tükörképe annak, 
+
+174
+00:13:09,404 --> 00:13:12,520
+hogy a külső függvénynek ez a deriváltja valójában mit képvisel.
+
+175
+00:13:13,200 --> 00:13:16,446
+Emlékezzünk arra, hogy a háromsoros elrendezésünkben, 
+
+176
+00:13:16,446 --> 00:13:21,074
+amikor a szinusz deriváltját vettük az alján, a lökés méretét, a d szinuszt, 
+
+177
+00:13:21,074 --> 00:13:23,900
+a h koszinuszának dh-szorosaként bővítettük ki.
+
+178
+00:13:24,940 --> 00:13:29,840
+Ez azért volt, mert nem tudtuk azonnal, hogy az alsó lökés mérete hogyan függ x-től.
+
+179
+00:13:30,420 --> 00:13:32,600
+Ez volt az egész dolog, amit megpróbáltunk kitalálni.
+
+180
+00:13:33,260 --> 00:13:37,360
+De vehetjük a deriváltat a köztes változó, a h tekintetében is.
+
+181
+00:13:38,100 --> 00:13:41,781
+Vagyis találd ki, hogyan fejezheted ki a harmadik sorban lévő lökés 
+
+182
+00:13:41,781 --> 00:13:45,680
+méretét a második sorban lévő lökés méretének, dh-nak a többszöröseként.
+
+183
+00:13:46,580 --> 00:13:50,700
+Csak ezután bontakozott ki tovább, hogy rájöttünk, mi a dh.
+
+184
+00:13:53,320 --> 00:13:56,675
+Ebben a láncszabály kifejezésben azt mondjuk, hogy nézzük meg a g-ben, 
+
+185
+00:13:56,675 --> 00:14:00,551
+a végső kimenetben bekövetkező apró változás és a h-ban bekövetkező apró változás 
+
+186
+00:14:00,551 --> 00:14:04,380
+közötti arányt, amely ezt okozta, h pedig az az érték, amelyet a g-be illesztünk.
+
+187
+00:14:05,320 --> 00:14:11,200
+Ezután szorozza meg ezt a h apró változásával, osztva az azt okozó apró x változással.
+
+188
+00:14:12,300 --> 00:14:15,129
+Vegyük tehát észre, hogy ezek a dh-k kioltják egymást, 
+
+189
+00:14:15,129 --> 00:14:18,884
+és arányt adnak a végső kimenet változása és a bemenet változása között, 
+
+190
+00:14:18,884 --> 00:14:22,280
+amely az események bizonyos láncolatán keresztül ezt eredményezte.
+
+191
+00:14:23,860 --> 00:14:26,980
+És a dh törlése nem csak egy jegyzetelési trükk.
+
+192
+00:14:26,980 --> 00:14:30,264
+Ez valóban tükrözi azt, ami a származtatott ügyleteknél 
+
+193
+00:14:30,264 --> 00:14:33,900
+minden tevékenységünk alapját képező apró lökésekkel történik.
+
+194
+00:14:36,300 --> 00:14:39,820
+Ez tehát az a három alapvető eszköz, amelyet az övedben kell tartanod 
+
+195
+00:14:39,820 --> 00:14:43,240
+a sok kisebb dolgot kombináló függvények származékainak kezeléséhez.
+
+196
+00:14:43,840 --> 00:14:47,380
+Van az összegszabály, a szorzatszabály és a láncszabály.
+
+197
+00:14:48,400 --> 00:14:51,896
+És őszinte leszek veled, nagy különbség van aközött, hogy tudod, 
+
+198
+00:14:51,896 --> 00:14:55,554
+mi a láncszabály és mi a termékszabály, és hogy valóban folyékonyan 
+
+199
+00:14:55,554 --> 00:14:58,620
+tudod alkalmazni őket még a legvagányabb helyzetekben is.
+
+200
+00:14:59,480 --> 00:15:02,840
+A számtan mechanikájáról szóló videók, bármilyen videók 
+
+201
+00:15:02,840 --> 00:15:06,920
+megtekintése soha nem fogja helyettesíteni a mechanika gyakorlását, 
+
+202
+00:15:06,920 --> 00:15:10,400
+és a számítások elvégzéséhez szükséges izmok fejlesztését.
+
+203
+00:15:11,240 --> 00:15:14,637
+Nagyon szeretném, ha felajánlhatnám, hogy megteszem ezt önnek, de attól tartok, 
+
+204
+00:15:14,637 --> 00:15:17,440
+hogy a labda az önök térfelén van, hogy felkeressék a gyakorlatot.
+
+205
+00:15:18,040 --> 00:15:21,049
+Amit fel tudok ajánlani, és remélem, hogy fel is ajánlottam, 
+
+206
+00:15:21,049 --> 00:15:23,960
+az az, hogy megmutatom, honnan származnak ezek a szabályok.
+
+207
+00:15:24,140 --> 00:15:27,692
+Hogy megmutassuk, hogy ezek nem csak bemagolni és elkalapálni való dolgok, 
+
+208
+00:15:27,692 --> 00:15:31,386
+hanem természetes minták, olyan dolgok, amelyeket te is felfedezhettél volna, 
+
+209
+00:15:31,386 --> 00:15:34,560
+ha türelmesen végiggondolod, mit is jelent valójában egy származék.
+

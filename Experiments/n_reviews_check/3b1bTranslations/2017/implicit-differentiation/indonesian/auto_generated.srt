@@ -1,0 +1,828 @@
+1
+00:00:10,319 --> 00:00:13,117
+Izinkan saya berbagi dengan Anda sesuatu yang menurut saya sangat 
+
+2
+00:00:13,117 --> 00:00:16,000
+aneh ketika saya masih menjadi siswa pertama kali belajar kalkulus. 
+
+3
+00:00:16,780 --> 00:00:19,112
+Katakanlah Anda memiliki sebuah lingkaran dengan 
+
+4
+00:00:19,112 --> 00:00:21,540
+jari-jari 5 yang berpusat di titik asal bidang xy. 
+
+5
+00:00:22,140 --> 00:00:26,783
+Ini didefinisikan dengan persamaan x2 ditambah y2 sama dengan 5 kuadrat, 
+
+6
+00:00:26,783 --> 00:00:31,108
+yaitu semua titik pada lingkaran berjarak 5 dari titik asal seperti 
+
+7
+00:00:31,108 --> 00:00:35,496
+yang dirumuskan oleh teorema Pythagoras, dimana jumlah kuadrat kedua 
+
+8
+00:00:35,496 --> 00:00:39,440
+kaki segitiga ini sama dengan kuadrat sisi miring, 5 kuadrat. 
+
+9
+00:00:40,460 --> 00:00:44,756
+Dan misalkan anda ingin mencari kemiringan garis singgung lingkaran, 
+
+10
+00:00:44,756 --> 00:00:47,060
+mungkin di titik xy sama dengan 3,4. 
+
+11
+00:00:48,140 --> 00:00:52,026
+Jika Anda paham geometri, Anda mungkin sudah mengetahui bahwa garis singgung 
+
+12
+00:00:52,026 --> 00:00:55,660
+ini tegak lurus dengan jari-jari yang menyentuhnya pada titik tersebut. 
+
+13
+00:00:56,380 --> 00:00:59,226
+Namun katakanlah Anda belum mengetahuinya, atau mungkin Anda 
+
+14
+00:00:59,226 --> 00:01:02,680
+menginginkan teknik yang menggeneralisasi kurva selain sekadar lingkaran. 
+
+15
+00:01:03,620 --> 00:01:07,127
+Seperti halnya soal lain tentang kemiringan garis singgung terhadap kurva, 
+
+16
+00:01:07,127 --> 00:01:11,055
+pemikiran utama di sini adalah memperbesar cukup dekat sehingga kurva tersebut pada 
+
+17
+00:01:11,055 --> 00:01:13,440
+dasarnya tampak seperti garis singgungnya sendiri, 
+
+18
+00:01:13,440 --> 00:01:16,200
+lalu menanyakan langkah kecil di sepanjang kurva tersebut. 
+
+19
+00:01:17,000 --> 00:01:22,397
+Komponen y dari langkah kecil itu disebut dy, dan komponen x adalah dx, 
+
+20
+00:01:22,397 --> 00:01:27,720
+jadi kemiringan yang kita inginkan adalah rise over run, dy dibagi dx. 
+
+21
+00:01:28,480 --> 00:01:31,938
+Namun tidak seperti soal kemiringan tangen lainnya dalam kalkulus, 
+
+22
+00:01:31,938 --> 00:01:35,396
+kurva ini bukanlah grafik suatu fungsi, jadi kita tidak bisa hanya 
+
+23
+00:01:35,396 --> 00:01:39,112
+mengambil turunan sederhana, menanyakan tentang besarnya dorongan kecil 
+
+24
+00:01:39,112 --> 00:01:43,500
+terhadap keluaran suatu fungsi yang disebabkan oleh dorongan kecil terhadap masukan. 
+
+25
+00:01:44,020 --> 00:01:47,880
+x bukan masukan, dan y bukan keluaran, keduanya hanyalah nilai 
+
+26
+00:01:47,880 --> 00:01:51,680
+yang saling bergantung yang dihubungkan oleh suatu persamaan. 
+
+27
+00:01:52,820 --> 00:01:58,209
+Inilah yang disebut kurva implisit, ini hanyalah himpunan semua titik x, 
+
+28
+00:01:58,209 --> 00:02:03,820
+y yang memenuhi beberapa properti yang ditulis dalam dua variabel, x dan y. 
+
+29
+00:02:04,900 --> 00:02:08,544
+Prosedur bagaimana mencari dy, dx untuk kurva seperti ini adalah 
+
+30
+00:02:08,544 --> 00:02:12,020
+hal yang menurut saya sangat aneh sebagai mahasiswa kalkulus. 
+
+31
+00:02:12,660 --> 00:02:18,842
+Ambil turunan kedua ruas seperti ini, untuk x kuadrat tulis 2x dikali dx, 
+
+32
+00:02:18,842 --> 00:02:24,022
+begitu pula y kuadrat menjadi 2y dikali dy, lalu turunan dari 
+
+33
+00:02:24,022 --> 00:02:28,200
+konstanta 5 kuadrat di sebelah kanan itu hanya 0. 
+
+34
+00:02:29,520 --> 00:02:32,100
+Sekarang Anda bisa mengerti mengapa ini terasa sedikit aneh, bukan? 
+
+35
+00:02:32,560 --> 00:02:37,100
+Apa yang dimaksud dengan mengambil turunan dari ekspresi yang memiliki banyak 
+
+36
+00:02:37,100 --> 00:02:41,640
+variabel di dalamnya, dan mengapa kita menggunakan dy dan dx dengan cara ini? 
+
+37
+00:02:42,400 --> 00:02:47,329
+Namun jika Anda hanya bergerak maju secara membabi buta dengan apa yang Anda peroleh, 
+
+38
+00:02:47,329 --> 00:02:52,087
+Anda dapat mengatur ulang persamaan ini dan menemukan ekspresi untuk dy dibagi dx, 
+
+39
+00:02:52,087 --> 00:02:55,240
+yang dalam hal ini hasilnya adalah x negatif dibagi y. 
+
+40
+00:02:56,040 --> 00:03:00,403
+Jadi pada titik yang koordinatnya x, y sama dengan 3, 
+
+41
+00:03:00,403 --> 00:03:04,120
+4, ternyata kemiringannya negatif 3 dibagi 4. 
+
+42
+00:03:05,060 --> 00:03:09,017
+Proses aneh ini disebut diferensiasi implisit, dan jangan khawatir, 
+
+43
+00:03:09,017 --> 00:03:12,858
+saya punya penjelasan bagaimana Anda bisa mengartikan pengambilan 
+
+44
+00:03:12,858 --> 00:03:16,060
+turunan dari ekspresi dengan dua variabel seperti ini. 
+
+45
+00:03:16,580 --> 00:03:19,507
+Tapi pertama-tama saya ingin mengesampingkan masalah khusus ini 
+
+46
+00:03:19,507 --> 00:03:23,533
+dan menunjukkan bagaimana hal ini terhubung dengan jenis masalah kalkulus yang berbeda, 
+
+47
+00:03:23,533 --> 00:03:25,500
+sesuatu yang disebut masalah laju terkait. 
+
+48
+00:03:26,320 --> 00:03:30,333
+Bayangkan sebuah tangga sepanjang 5 meter disandarkan pada dinding 
+
+49
+00:03:30,333 --> 00:03:33,508
+yang puncak tangganya dimulai 4 meter di atas tanah, 
+
+50
+00:03:33,508 --> 00:03:38,720
+yang menurut teorema Pythagoras berarti bagian bawahnya berjarak 3 meter dari dinding. 
+
+51
+00:03:39,620 --> 00:03:42,481
+Dan katakanlah benda itu meluncur ke bawah sedemikian rupa 
+
+52
+00:03:42,481 --> 00:03:45,780
+sehingga puncak tangganya turun dengan kecepatan 1 meter per detik. 
+
+53
+00:03:46,760 --> 00:03:49,648
+Pertanyaannya adalah, pada momen awal tersebut, 
+
+54
+00:03:49,648 --> 00:03:53,800
+berapakah kecepatan pergerakan bagian bawah tangga menjauhi dinding? 
+
+55
+00:03:55,000 --> 00:03:56,200
+Menarik bukan? 
+
+56
+00:03:56,480 --> 00:04:04,540
+Jarak dasar tangga ke dinding itu 100% ditentukan oleh jarak puncak tangga ke lantai. 
+
+57
+00:04:05,120 --> 00:04:08,747
+Jadi kita harus mempunyai informasi yang cukup untuk mengetahui bagaimana tingkat 
+
+58
+00:04:08,747 --> 00:04:12,419
+perubahan untuk masing-masing nilai tersebut sebenarnya bergantung satu sama lain, 
+
+59
+00:04:12,419 --> 00:04:16,180
+namun mungkin tidak sepenuhnya jelas bagaimana tepatnya Anda menghubungkan keduanya. 
+
+60
+00:04:16,800 --> 00:04:20,539
+Hal pertama yang pertama, selalu menyenangkan untuk memberi nama pada 
+
+61
+00:04:20,539 --> 00:04:24,332
+besaran yang kita pedulikan, jadi mari kita beri label pada jarak dari 
+
+62
+00:04:24,332 --> 00:04:28,660
+puncak tangga ke tanah y dari t, ditulis sebagai fungsi waktu karena ia berubah. 
+
+63
+00:04:29,680 --> 00:04:33,900
+Demikian pula, beri label jarak antara bagian bawah tangga dan dinding x dari t. 
+
+64
+00:04:34,820 --> 00:04:39,202
+Persamaan utama yang menghubungkan suku-suku ini adalah teorema Pythagoras 
+
+65
+00:04:39,202 --> 00:04:43,060
+x dari t kuadrat ditambah y dari t kuadrat sama dengan 5 kuadrat. 
+
+66
+00:04:43,920 --> 00:04:46,004
+Apa yang membuat persamaan tersebut ampuh untuk digunakan 
+
+67
+00:04:46,004 --> 00:04:48,160
+adalah bahwa persamaan tersebut benar di semua titik waktu. 
+
+68
+00:04:48,160 --> 00:04:53,511
+Sekarang salah satu cara untuk menyelesaikannya adalah dengan mengisolasi x dari t, 
+
+69
+00:04:53,511 --> 00:04:58,035
+lalu Anda mencari tahu berapa y dari t yang harus didasarkan pada laju 
+
+70
+00:04:58,035 --> 00:05:02,622
+penurunan 1 m per detik tersebut, dan Anda dapat mengambil turunan dari 
+
+71
+00:05:02,622 --> 00:05:06,700
+fungsi yang dihasilkan dx dt , laju perubahan x terhadap waktu. 
+
+72
+00:05:06,700 --> 00:05:10,266
+Dan tidak apa-apa, ini melibatkan beberapa lapis penggunaan aturan rantai, 
+
+73
+00:05:10,266 --> 00:05:13,594
+dan itu pasti akan berhasil untuk Anda, tetapi saya ingin menunjukkan 
+
+74
+00:05:13,594 --> 00:05:16,400
+cara berbeda agar Anda dapat memikirkan masalah yang sama. 
+
+75
+00:05:17,320 --> 00:05:21,080
+Ruas kiri persamaan ini merupakan fungsi waktu, bukan? 
+
+76
+00:05:21,440 --> 00:05:23,917
+Kebetulan nilainya sama dengan sebuah konstanta, 
+
+77
+00:05:23,917 --> 00:05:27,152
+artinya nilainya jelas tidak berubah seiring berjalannya waktu, 
+
+78
+00:05:27,152 --> 00:05:30,438
+namun tetap ditulis sebagai ekspresi yang bergantung pada waktu, 
+
+79
+00:05:30,438 --> 00:05:33,724
+yang berarti kita dapat memanipulasinya seperti fungsi lain yang 
+
+80
+00:05:33,724 --> 00:05:35,140
+memiliki t sebagai masukan. 
+
+81
+00:05:36,060 --> 00:05:39,796
+Secara khusus, kita dapat mengambil turunan dari ruas kiri ini, 
+
+82
+00:05:39,796 --> 00:05:44,582
+yang merupakan cara untuk mengatakan, jika saya membiarkan sedikit waktu berlalu, 
+
+83
+00:05:44,582 --> 00:05:47,910
+sejumlah dt kecil, yang menyebabkan y sedikit berkurang, 
+
+84
+00:05:47,910 --> 00:05:51,880
+dan x sedikit meningkat, berapa banyak apakah ekspresi ini berubah? 
+
+85
+00:05:53,000 --> 00:05:55,487
+Di satu sisi, kita tahu bahwa turunannya haruslah 0, 
+
+86
+00:05:55,487 --> 00:05:58,679
+karena ekspresi adalah sebuah konstanta, dan konstanta tidak peduli 
+
+87
+00:05:58,679 --> 00:06:02,340
+dengan perubahan kecil pada waktunya, konstanta tersebut tetap tidak berubah. 
+
+88
+00:06:03,080 --> 00:06:06,520
+Namun di sisi lain, apa yang Anda dapatkan saat menghitung turunan ini? 
+
+89
+00:06:08,020 --> 00:06:14,120
+Nah, turunan x dari t kuadrat adalah 2 kali x dari t dikalikan turunan x. 
+
+90
+00:06:14,440 --> 00:06:16,980
+Itulah aturan rantai yang saya bicarakan di video terakhir. 
+
+91
+00:06:17,620 --> 00:06:22,315
+2x dx menyatakan besarnya perubahan pada x kuadrat yang disebabkan 
+
+92
+00:06:22,315 --> 00:06:26,380
+oleh beberapa perubahan pada x, lalu kita bagi dengan dt. 
+
+93
+00:06:27,500 --> 00:06:31,005
+Demikian pula, laju perubahan y dari t kuadrat 
+
+94
+00:06:31,005 --> 00:06:34,660
+adalah 2 kali y dari t dikalikan turunan dari y. 
+
+95
+00:06:35,740 --> 00:06:39,976
+Jelasnya, seluruh ekspresi ini haruslah 0, dan itu adalah cara yang setara untuk 
+
+96
+00:06:39,976 --> 00:06:44,580
+mengatakan bahwa x kuadrat ditambah y kuadrat tidak boleh berubah saat tangga bergerak. 
+
+97
+00:06:45,880 --> 00:06:51,055
+Pada mulanya, waktu t sama dengan 0, tinggi y dari t adalah 4 meter, 
+
+98
+00:06:51,055 --> 00:06:53,680
+dan jarak x dari t adalah 3 meter. 
+
+99
+00:06:54,480 --> 00:06:59,233
+Dan karena puncak tangga turun dengan kecepatan 1 meter per detik, 
+
+100
+00:06:59,233 --> 00:07:03,420
+turunan tersebut, dy dt, adalah negatif 1 meter per detik. 
+
+101
+00:07:04,460 --> 00:07:09,083
+Sekarang, ini memberi kita cukup informasi untuk mengisolasi turunannya, dx dt, 
+
+102
+00:07:09,083 --> 00:07:13,360
+dan ketika Anda menghitungnya, hasilnya adalah 4 pertiga meter per detik. 
+
+103
+00:07:14,380 --> 00:07:17,825
+Alasan saya mengangkat soal tangga ini adalah karena saya ingin Anda 
+
+104
+00:07:17,825 --> 00:07:21,520
+membandingkannya dengan soal mencari kemiringan garis singgung lingkaran. 
+
+105
+00:07:22,360 --> 00:07:25,476
+Dalam kedua kasus tersebut, kita mempunyai persamaan x kuadrat ditambah 
+
+106
+00:07:25,476 --> 00:07:28,290
+y kuadrat sama dengan 5 kuadrat, dan dalam kedua kasus tersebut, 
+
+107
+00:07:28,290 --> 00:07:31,320
+kita akhirnya mengambil turunan dari masing-masing sisi ekspresi ini. 
+
+108
+00:07:32,200 --> 00:07:35,731
+Namun untuk soal tangga, ungkapan-ungkapan tersebut merupakan fungsi waktu, 
+
+109
+00:07:35,731 --> 00:07:38,380
+sehingga mengambil turunannya mempunyai arti yang jelas. 
+
+110
+00:07:38,960 --> 00:07:42,360
+Ini adalah laju perubahan ekspresi seiring perubahan waktu. 
+
+111
+00:07:43,260 --> 00:07:47,467
+Tapi apa yang membuat situasi lingkaran ini aneh adalah daripada mengatakan 
+
+112
+00:07:47,467 --> 00:07:51,841
+bahwa sejumlah kecil waktu dt telah berlalu, yang menyebabkan x dan y berubah, 
+
+113
+00:07:51,841 --> 00:07:56,104
+turunannya hanya memiliki dorongan kecil, dx dan dy, hanya mengambang bebas, 
+
+114
+00:07:56,104 --> 00:07:59,980
+tidak terikat pada suatu benda. variabel umum lainnya, seperti waktu. 
+
+115
+00:08:01,140 --> 00:08:02,980
+Izinkan saya menunjukkan kepada Anda cara yang baik untuk memikirkan hal ini. 
+
+116
+00:08:03,240 --> 00:08:07,440
+Mari kita beri nama ekspresi x kuadrat ditambah y kuadrat ini, mungkin s. 
+
+117
+00:08:08,240 --> 00:08:11,060
+s pada dasarnya adalah fungsi dari dua variabel. 
+
+118
+00:08:11,880 --> 00:08:15,660
+Dibutuhkan setiap titik xy pada bidang dan mengaitkannya dengan sebuah angka. 
+
+119
+00:08:16,620 --> 00:08:19,660
+Untuk titik-titik pada lingkaran, angkanya adalah 25. 
+
+120
+00:08:20,560 --> 00:08:24,400
+Jika Anda menjauhi lingkaran dari pusat, nilainya akan lebih besar. 
+
+121
+00:08:25,060 --> 00:08:32,419
+Untuk titik xy lain yang lebih dekat ke titik asal, nilainya akan lebih kecil. 
+
+122
+00:08:32,419 --> 00:08:36,490
+Sekarang yang dimaksud dengan mengambil turunan dari ekspresi ini, 
+
+123
+00:08:36,490 --> 00:08:41,836
+turunan dari s, adalah dengan mempertimbangkan perubahan kecil pada kedua variabel ini, 
+
+124
+00:08:41,836 --> 00:08:46,210
+beberapa perubahan kecil dx ke x, dan beberapa perubahan kecil dy ke y, 
+
+125
+00:08:46,210 --> 00:08:50,767
+dan belum tentu perubahan yang mempertahankan Anda berada dalam lingkaran, 
+
+126
+00:08:50,767 --> 00:08:55,020
+ngomong-ngomong, itu hanyalah langkah kecil ke segala arah bidang xy. 
+
+127
+00:08:56,000 --> 00:08:58,080
+Dan dari situ Anda bertanya, seberapa besar perubahan nilai s? 
+
+128
+00:08:58,080 --> 00:09:03,242
+Dan perbedaan itu, selisih nilai s sebelum nudge dan setelah nudge, 
+
+129
+00:09:03,242 --> 00:09:05,900
+itulah yang saya tulis sebagai ds. 
+
+130
+00:09:05,900 --> 00:09:11,209
+Misalnya, dalam gambar ini kita mulai dari titik di mana x sama 
+
+131
+00:09:11,209 --> 00:09:16,519
+dengan 3 dan y sama dengan 4, dan anggap saja langkah yang saya 
+
+132
+00:09:16,519 --> 00:09:21,580
+gambar memiliki dx di negatif 0.02 dan dy pada negatif 0.01. 
+
+133
+00:09:21,580 --> 00:09:28,256
+Maka penurunan s, jumlah perubahan x kuadrat ditambah y kuadrat pada langkah tersebut, 
+
+134
+00:09:28,256 --> 00:09:34,780
+akan menjadi sekitar 2 kali 3 kali negatif 0.02 ditambah 2 kali 4 kali negatif 0.01. 
+
+135
+00:09:35,600 --> 00:09:40,800
+Itulah arti sebenarnya dari ekspresi turunan, 2x dx ditambah 2y dy. 
+
+136
+00:09:41,380 --> 00:09:45,032
+Ini adalah resep untuk memberi tahu Anda seberapa besar perubahan 
+
+137
+00:09:45,032 --> 00:09:48,629
+nilai x kuadrat ditambah y kuadrat yang ditentukan oleh titik xy 
+
+138
+00:09:48,629 --> 00:09:52,060
+di mana Anda memulai dan langkah kecil dx dy yang Anda ambil. 
+
+139
+00:09:53,080 --> 00:09:56,570
+Dan seperti semua hal turunan, ini hanyalah sebuah perkiraan, 
+
+140
+00:09:56,570 --> 00:10:01,580
+tapi ini adalah perkiraan yang semakin benar untuk pilihan dx dan dy yang semakin kecil. 
+
+141
+00:10:02,500 --> 00:10:05,523
+Poin kuncinya di sini adalah ketika Anda membatasi diri pada 
+
+142
+00:10:05,523 --> 00:10:08,448
+langkah-langkah di sepanjang lingkaran, pada dasarnya Anda 
+
+143
+00:10:08,448 --> 00:10:11,720
+mengatakan Anda ingin memastikan bahwa nilai s ini tidak berubah. 
+
+144
+00:10:12,240 --> 00:10:16,520
+Ini dimulai pada nilai 25 dan Anda ingin mempertahankannya pada nilai 25. 
+
+145
+00:10:17,180 --> 00:10:19,100
+Artinya, ds harusnya 0. 
+
+146
+00:10:20,200 --> 00:10:24,887
+Jadi menetapkan ekspresi 2x dx ditambah 2y dy sama dengan 0 adalah kondisi 
+
+147
+00:10:24,887 --> 00:10:29,700
+dimana salah satu langkah kecil ini benar-benar tetap berada pada lingkaran. 
+
+148
+00:10:30,620 --> 00:10:32,460
+Sekali lagi, ini hanya perkiraan. 
+
+149
+00:10:33,040 --> 00:10:36,516
+Lebih tepatnya, kondisi itulah yang membuat Anda tetap berada 
+
+150
+00:10:36,516 --> 00:10:39,880
+pada garis singgung lingkaran, bukan lingkaran itu sendiri. 
+
+151
+00:10:40,580 --> 00:10:43,900
+Namun untuk langkah-langkah yang cukup kecil, pada dasarnya hal tersebut sama saja. 
+
+152
+00:10:45,180 --> 00:10:47,434
+Tentu saja, tidak ada yang istimewa dari ekspresi 
+
+153
+00:10:47,434 --> 00:10:49,780
+x kuadrat ditambah y kuadrat sama dengan 5 kuadrat. 
+
+154
+00:10:50,440 --> 00:10:53,428
+Selalu menyenangkan untuk memikirkan lebih banyak contoh, 
+
+155
+00:10:53,428 --> 00:10:57,500
+jadi mari kita pertimbangkan persamaan sinus x dikali y kuadrat sama dengan x. 
+
+156
+00:10:58,160 --> 00:11:00,800
+Ini sesuai dengan sejumlah kurva berbentuk u pada bidang tersebut. 
+
+157
+00:11:00,800 --> 00:11:08,518
+Dan ingat, kurva tersebut mewakili semua titik xy di 
+
+158
+00:11:08,518 --> 00:11:16,820
+mana nilai sinus x dikali y kuadrat sama dengan nilai x. 
+
+159
+00:11:16,820 --> 00:11:19,630
+Sekarang bayangkan mengambil beberapa langkah kecil dengan komponen 
+
+160
+00:11:19,630 --> 00:11:22,400
+dx dy dan belum tentu komponen yang membuat Anda tetap pada kurva. 
+
+161
+00:11:22,400 --> 00:11:26,253
+Mengambil turunan setiap sisi persamaan ini akan memberi tahu kita 
+
+162
+00:11:26,253 --> 00:11:30,280
+seberapa besar perubahan nilai sisi tersebut selama langkah tersebut. 
+
+163
+00:11:30,280 --> 00:11:34,529
+Di sisi kiri, aturan perkalian yang kita bicarakan di video terakhir 
+
+164
+00:11:34,529 --> 00:11:38,840
+memberi tahu kita bahwa ini harus kiri d kanan ditambah kanan d kiri. 
+
+165
+00:11:39,480 --> 00:11:45,499
+Yaitu sinus dari x dikalikan perubahan terhadap y kuadrat, yaitu 2y dikali dy, 
+
+166
+00:11:45,499 --> 00:11:52,280
+ditambah y kuadrat dikalikan perubahan terhadap sinus x, yaitu kosinus dari x dikali dx. 
+
+167
+00:11:52,280 --> 00:11:59,780
+Ruas kanannya hanyalah x, jadi besarnya perubahan nilai tersebut tepat dx, bukan? 
+
+168
+00:11:59,780 --> 00:12:05,090
+Sekarang mengatur kedua sisi ini sama satu sama lain adalah cara untuk mengatakan 
+
+169
+00:12:05,090 --> 00:12:08,781
+berapapun langkah kecil Anda dengan koordinat dx dan dy, 
+
+170
+00:12:08,781 --> 00:12:14,221
+jika itu ingin kita tetap pada kurva, nilai dari sisi kiri dan kanan harus berubah. 
+
+171
+00:12:14,221 --> 00:12:15,840
+dengan jumlah yang sama. 
+
+172
+00:12:15,840 --> 00:12:18,860
+Itulah satu-satunya cara agar persamaan teratas ini tetap benar. 
+
+173
+00:12:20,220 --> 00:12:23,391
+Dari sana, tergantung pada masalah apa yang ingin Anda selesaikan, 
+
+174
+00:12:23,391 --> 00:12:25,995
+Anda memiliki sesuatu untuk dikerjakan secara aljabar, 
+
+175
+00:12:25,995 --> 00:12:29,830
+dan mungkin tujuan paling umum adalah mencoba mencari tahu apa itu dy dibagi dx. 
+
+176
+00:12:29,830 --> 00:12:33,965
+Sebagai contoh terakhir di sini, saya ingin menunjukkan kepada 
+
+177
+00:12:33,965 --> 00:12:37,640
+Anda bagaimana Anda sebenarnya dapat menggunakan teknik 
+
+178
+00:12:37,640 --> 00:12:41,710
+diferensiasi implisit ini untuk menemukan rumus turunan baru. 
+
+179
+00:12:42,630 --> 00:12:47,014
+Saya telah menyebutkan bahwa turunan dari e terhadap x adalah dirinya sendiri, 
+
+180
+00:12:47,014 --> 00:12:51,510
+tetapi bagaimana dengan turunan dari fungsi inversnya, logaritma natural dari x? 
+
+181
+00:12:51,510 --> 00:12:55,270
+Grafik logaritma natural x dapat dianggap sebagai kurva implisit. 
+
+182
+00:12:56,050 --> 00:13:00,470
+Itu semua adalah titik x, y pada bidang di mana y sama dengan ln dari x. 
+
+183
+00:13:00,470 --> 00:13:08,130
+Kebetulan x dan y pada persamaan ini tidak bercampur seperti pada contoh kita yang lain. 
+
+184
+00:13:09,350 --> 00:13:23,110
+Kemiringan grafik ini, dy dibagi dx, seharusnya merupakan turunan dari ln dari x, bukan? 
+
+185
+00:13:23,110 --> 00:13:26,389
+Nah untuk mencarinya, atur ulang dulu persamaan y sama 
+
+186
+00:13:26,389 --> 00:13:29,490
+dengan ln dari x menjadi e menjadi y sama dengan x. 
+
+187
+00:13:29,490 --> 00:13:34,690
+Inilah yang dimaksud dengan logaritma natural dari x, yang menyatakan e sama dengan x. 
+
+188
+00:13:34,690 --> 00:13:38,730
+Karena kita mengetahui turunan e terhadap y, kita dapat mengambil turunan 
+
+189
+00:13:38,730 --> 00:13:42,498
+kedua sisi di sini, yang secara efektif menanyakan bagaimana langkah 
+
+190
+00:13:42,498 --> 00:13:46,430
+kecil dengan komponen dx dy mengubah nilai masing-masing sisi tersebut. 
+
+191
+00:13:46,430 --> 00:13:49,883
+Untuk memastikan bahwa suatu langkah tetap berada pada kurva, 
+
+192
+00:13:49,883 --> 00:13:54,061
+perubahan pada ruas kiri persamaan tersebut, yaitu e terhadap y dikali dy, 
+
+193
+00:13:54,061 --> 00:13:58,350
+harus sama dengan perubahan pada ruas kanan, yang dalam hal ini hanyalah dx. 
+
+194
+00:13:58,890 --> 00:14:03,660
+Jika disusun ulang, artinya dy dibagi dx, kemiringan grafik kita, 
+
+195
+00:14:03,660 --> 00:14:06,190
+sama dengan 1 dibagi e terhadap y. 
+
+196
+00:14:06,910 --> 00:14:11,855
+Dan ketika kita berada pada kurva, e terhadap y secara definisi sama dengan x, 
+
+197
+00:14:11,855 --> 00:14:14,610
+jadi jelas kemiringannya adalah 1 dibagi x. 
+
+198
+00:14:15,830 --> 00:14:21,730
+Dan tentu saja ekspresi kemiringan grafik suatu fungsi yang ditulis dalam x seperti ini 
+
+199
+00:14:21,730 --> 00:14:27,630
+adalah turunan dari fungsi tersebut, jadi ternyata turunan ln dari x adalah 1 dibagi x. 
+
+200
+00:14:32,610 --> 00:14:36,675
+Omong-omong, semua ini adalah sedikit gambaran tentang kalkulus multivariabel, 
+
+201
+00:14:36,675 --> 00:14:40,278
+di mana Anda mempertimbangkan fungsi yang memiliki banyak masukan dan 
+
+202
+00:14:40,278 --> 00:14:43,830
+bagaimana perubahannya saat Anda mengubah beberapa masukan tersebut. 
+
+203
+00:14:44,870 --> 00:14:47,533
+Kuncinya, seperti biasa, adalah memiliki gambaran yang jelas di 
+
+204
+00:14:47,533 --> 00:14:50,031
+benak Anda tentang dorongan kecil apa saja yang terjadi dan 
+
+205
+00:14:50,031 --> 00:14:53,070
+bagaimana sebenarnya dorongan tersebut saling bergantung satu sama lain. 
+
+206
+00:14:54,530 --> 00:15:09,172
+Selanjutnya saya akan membahas tentang limit dan cara 
+
+207
+00:15:09,172 --> 00:15:22,730
+penggunaannya untuk memformalkan gagasan turunan. 
+

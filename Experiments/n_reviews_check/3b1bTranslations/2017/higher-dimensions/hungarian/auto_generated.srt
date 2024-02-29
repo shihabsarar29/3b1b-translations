@@ -1,0 +1,1424 @@
+1
+00:00:03,980 --> 00:00:06,200
+A matematika néha igazi ugratás.
+
+2
+00:00:06,820 --> 00:00:10,930
+Elcsábít minket a két és három dimenzióban való geometriai gondolkodás szépségével, 
+
+3
+00:00:10,930 --> 00:00:14,894
+ahol nagyon szépen lehet oda-vissza váltogatni a számpárokat vagy számhármasokat 
+
+4
+00:00:14,894 --> 00:00:18,320
+és a térbeli dolgokat, amelyeket a vizuális kéreg jól tud feldolgozni.
+
+5
+00:00:19,140 --> 00:00:23,074
+Ha például egy 1 sugarú körre gondolunk, amelynek középpontja az origó, 
+
+6
+00:00:23,074 --> 00:00:26,845
+akkor tulajdonképpen az x és y számok minden olyan lehetséges párját 
+
+7
+00:00:26,845 --> 00:00:31,546
+fogalmilag megfogalmazzuk, amelyek kielégítik azt a bizonyos numerikus tulajdonságot, 
+
+8
+00:00:31,546 --> 00:00:34,060
+hogy x négyzet plusz y négyzet egyenlő 1-gyel.
+
+9
+00:00:35,020 --> 00:00:39,099
+És ennek az a haszna, hogy sok olyan tény, amely tisztán analitikus kontextusban 
+
+10
+00:00:39,099 --> 00:00:43,380
+átláthatatlannak tűnik, geometriai szempontból teljesen világossá válik, és fordítva.
+
+11
+00:00:44,260 --> 00:00:48,386
+Őszintén szólva, ez a csatorna közvetlen haszonélvezője volt ennek az ide-oda 
+
+12
+00:00:48,386 --> 00:00:52,724
+járkálásnak, mivel olyan gazdag könyvtárat kínál az okosságnak abból a különleges 
+
+13
+00:00:52,724 --> 00:00:56,640
+kategóriájából, amely két látszólag eltérő ötlet összekapcsolását jelenti.
+
+14
+00:00:57,300 --> 00:00:59,732
+És itt nem csak a számpárok vagy számhármasok közötti általános 
+
+15
+00:00:59,732 --> 00:01:01,860
+oda-vissza mozgásra és a térbeli gondolkodásra gondolok.
+
+16
+00:01:02,220 --> 00:01:06,280
+A négyzetek, körök és gömbök összegei közötti konkrétan erre gondolok.
+
+17
+00:01:07,120 --> 00:01:09,365
+Ez áll a középpontjában annak a videónak, amelyben bemutattam, 
+
+18
+00:01:09,365 --> 00:01:12,501
+hogyan kapcsolódik a pí a számelmélethez és a prímszámokhoz, valamint annak a videónak, 
+
+19
+00:01:12,501 --> 00:01:15,281
+amelyben azt mutatom be, hogyan lehet az összes lehetséges Pitagorasz-hármast 
+
+20
+00:01:15,281 --> 00:01:15,780
+megjeleníteni.
+
+21
+00:01:16,380 --> 00:01:18,745
+Ez áll a Borsuk-Ulam-tételről szóló videó alapjául is, 
+
+22
+00:01:18,745 --> 00:01:21,713
+amelyet arra használtak, hogy a gömbökre vonatkozó topológiai tények 
+
+23
+00:01:21,713 --> 00:01:24,940
+felhasználásával megoldják azt, ami alapvetően egy számolási rejtvény volt.
+
+24
+00:01:25,640 --> 00:01:28,529
+Kétségtelen, hogy az analitikus tények geometriai keretbe 
+
+25
+00:01:28,529 --> 00:01:31,220
+foglalásának képessége nagyon hasznos a matematikában.
+
+26
+00:01:31,720 --> 00:01:35,524
+De az egész csak ugratás, mert amikor elkezdesz négyes vagy 
+
+27
+00:01:35,524 --> 00:01:39,520
+ötszörös vagy százas számpárokról kérdezősködni, az frusztráló.
+
+28
+00:01:40,280 --> 00:01:43,725
+Úgy tűnik, hogy a fizikai terünkre vonatkozó korlátok korlátozták a 
+
+29
+00:01:43,725 --> 00:01:47,780
+geometriával kapcsolatos intuícióinkat, és ezt az oda-vissza veszést elvesztjük.
+
+30
+00:01:48,520 --> 00:01:52,588
+Úgy értem, teljesen ésszerű elképzelni, hogy léteznek olyan problémák, 
+
+31
+00:01:52,588 --> 00:01:56,312
+amelyekre okos és tanulságos megoldások születnének, ha tudnánk, 
+
+32
+00:01:56,312 --> 00:02:01,240
+hogyan fogalmazzuk meg mondjuk a 10 számból álló listákat mint egy tér egyes pontjait.
+
+33
+00:02:02,220 --> 00:02:06,444
+A matematikusok, informatikusok vagy fizikusok számára a háromnál több számból álló 
+
+34
+00:02:06,444 --> 00:02:10,617
+listák számjegyzékek formájában megfogalmazott problémák a munka rendszeres részét 
+
+35
+00:02:10,617 --> 00:02:15,043
+képezik, és a magasabb dimenziókban történő matematikai feladatok elvégzésének szokásos 
+
+36
+00:02:15,043 --> 00:02:18,864
+megközelítése az, hogy analógia céljából két és három dimenziót használnak, 
+
+37
+00:02:18,864 --> 00:02:22,636
+de alapvetően csak analitikusan gondolkodnak a dolgokról, hasonlóan ahhoz, 
+
+38
+00:02:22,636 --> 00:02:26,709
+mint amikor egy pilóta elsősorban a műszerekre támaszkodik, nem pedig a látásra, 
+
+39
+00:02:26,709 --> 00:02:28,520
+miközben a felhőkön keresztül repül.
+
+40
+00:02:28,880 --> 00:02:33,356
+Amit most itt fel akarok ajánlani, az egy hibrid a tisztán geometriai és a tisztán 
+
+41
+00:02:33,356 --> 00:02:37,671
+analitikus nézetek között, egy módszer, amely az analitikus érvelést egy kicsit 
+
+42
+00:02:37,671 --> 00:02:42,202
+vizuálisabbá teszi, oly módon, hogy tetszőlegesen nagy dimenziókra általánosítható, 
+
+43
+00:02:42,202 --> 00:02:44,845
+és hogy egy ilyen taktika értékét érzékeltessem, 
+
+44
+00:02:44,845 --> 00:02:47,758
+szeretnék megosztani veletek egy nagyon híres példát, 
+
+45
+00:02:47,758 --> 00:02:50,832
+ahol a két és három dimenziós analógiák nem segíthetnek, 
+
+46
+00:02:50,832 --> 00:02:55,040
+mert valami rendkívül ellentmondásos, ami csak magasabb dimenziókban történik.
+
+47
+00:02:55,900 --> 00:03:00,680
+Remélem azonban, hogy amit itt mutatok, segít intuitívabbá tenni ezt a jelenséget.
+
+48
+00:03:02,100 --> 00:03:07,815
+A hangsúly a magasabb dimenziós gömbökön lesz, például amikor egy négydimenziós, 
+
+49
+00:03:07,815 --> 00:03:13,319
+mondjuk egy sugarú gömbről beszélünk, amelynek a középpontja az origóban van, 
+
+50
+00:03:13,319 --> 00:03:19,600
+ami valójában az xyzw számok négyeseinek halmaza, ahol e számok négyzeteinek összege egy.
+
+51
+00:03:20,300 --> 00:03:24,881
+Amit itt most ábrázoltam, az egy 4d gömb több háromdimenziós szelete, 
+
+52
+00:03:24,881 --> 00:03:28,350
+amit visszavetítünk három dimenzióba, de ez zavaros, 
+
+53
+00:03:28,350 --> 00:03:32,997
+és még ha meg is fordítjuk a fejünket, csak visszaveti a kérdést arra, 
+
+54
+00:03:32,997 --> 00:03:38,756
+hogy hogyan gondolkodnánk egy öt, hat vagy hét dimenziós gömbről, és ami még fontosabb, 
+
+55
+00:03:38,756 --> 00:03:44,647
+ha hunyorítunk a szemünkkel, hogy megértsük az ilyen vetítést, az nem nagyon tükrözi azt, 
+
+56
+00:03:44,647 --> 00:03:47,920
+amit a 4d gömbbel való matekozás valójában jelent.
+
+57
+00:03:49,020 --> 00:03:52,594
+Ehelyett az alapötlet az lesz, hogy nagyon szó szerint fogalmazzunk, 
+
+58
+00:03:52,594 --> 00:03:54,460
+és négy külön számban gondolkodjunk.
+
+59
+00:03:55,300 --> 00:03:57,306
+Szeretek négy függőleges számsort elképzelni, 
+
+60
+00:03:57,306 --> 00:03:59,400
+amelyeken csúszkák jelképezik az egyes számokat.
+
+61
+00:04:00,240 --> 00:04:05,438
+Ezeknek a csúszkáknak minden egyes konfigurációja egy pont a 4d térben, 
+
+62
+00:04:05,438 --> 00:04:11,287
+egy számnégyzet, és azt jelenti, hogy az origó központú 4d egységgömbön vagyunk, 
+
+63
+00:04:11,287 --> 00:04:14,320
+hogy e négy érték négyzetének összege egy.
+
+64
+00:04:16,579 --> 00:04:20,456
+A célunk az, hogy megértsük, hogy e csúszkák mozgásai 
+
+65
+00:04:20,456 --> 00:04:23,400
+milyen mozgásoknak felelnek meg a gömbön.
+
+66
+00:04:25,500 --> 00:04:29,640
+Ehhez segít, ha a dolgokat két dimenzióra csökkentjük, ahol ténylegesen láthatjuk a kört.
+
+67
+00:04:30,520 --> 00:04:33,247
+Tehát kérdezd meg magadtól, hogy mi egy szép módja annak, 
+
+68
+00:04:33,247 --> 00:04:36,680
+hogy elgondoljuk ezt az összefüggést, hogy x négyzet plusz y négyzet egy?
+
+69
+00:04:38,040 --> 00:04:42,784
+Nos, én úgy gondolom, hogy x értéke négyzetben az x-hez tartozó ingatlan, 
+
+70
+00:04:42,784 --> 00:04:46,888
+és hasonlóképpen y értéke négyzetben az y-hoz tartozó ingatlan, 
+
+71
+00:04:46,888 --> 00:04:50,800
+és hogy összesen egy egységnyi ingatlanon kell osztozkodniuk.
+
+72
+00:04:51,540 --> 00:04:58,320
+A körön való mozgás tehát a két változó közötti állandó ingatlancserének felel meg.
+
+73
+00:04:59,520 --> 00:05:03,756
+Részben azért választottam ezt a kifejezést, mert lehetővé teszi számunkra azt a nagyon 
+
+74
+00:05:03,756 --> 00:05:06,885
+hasznos analógiát, hogy az ingatlanok olcsóak a nulla közelében, 
+
+75
+00:05:06,885 --> 00:05:10,158
+és drágábbak a nullától távolabb. Hogy ezt lássuk, gondoljunk arra, 
+
+76
+00:05:10,158 --> 00:05:13,865
+hogy egy olyan helyzetben kezdjük, ahol x egyenlő 1 és y 0, ami azt jelenti, 
+
+77
+00:05:13,865 --> 00:05:18,198
+hogy x-nek az összes ingatlan a sajátja, ami a szokásos geometriai képünkben azt jelenti, 
+
+78
+00:05:18,198 --> 00:05:20,220
+hogy a kör legjobb szélső pontján vagyunk.
+
+79
+00:05:21,240 --> 00:05:28,260
+Ha x-et egy kicsit lejjebb mozgatjuk 0,9-re, akkor az x négyzet értéke 0,81-re változik, 
+
+80
+00:05:28,260 --> 00:05:32,520
+tehát valójában 0,19 egységnyi ingatlanról mondott le.
+
+81
+00:05:33,240 --> 00:05:36,880
+De ahhoz, hogy y négyzete ugyanennyivel növekedjen, 
+
+82
+00:05:36,880 --> 00:05:43,180
+y-nak 0,44 egységet kell elmozdulnia 0-tól, ami több mint négyszerese az x elmozdulásának.
+
+83
+00:05:43,940 --> 00:05:47,860
+Más szóval, x egy kicsit változott, hogy lemondjon a drága ingatlanról, 
+
+84
+00:05:47,860 --> 00:05:51,780
+hogy y sokat mozoghasson, és ugyanolyan értékű olcsó ingatlanhoz jusson.
+
+85
+00:05:52,780 --> 00:05:57,700
+A szokásos körrajzot tekintve ez a jobb oldalhoz közeli meredek lejtőnek felel meg.
+
+86
+00:05:58,180 --> 00:06:01,640
+Egy kis lökés az x-ben nagyon nagy változást tesz lehetővé az y-ban.
+
+87
+00:06:02,440 --> 00:06:06,027
+Továbblépve, adjunk hozzá néhány jelölést ezekhez a vonalakhoz, 
+
+88
+00:06:06,027 --> 00:06:10,120
+hogy jelezzük, hogyan néz ki 0,05 egységnyi ingatlan minden egyes ponton.
+
+89
+00:06:10,580 --> 00:06:16,460
+Azaz, mennyit kell változnia x-nek ahhoz, hogy x négyzetének értéke 0,05-tel változzon?
+
+90
+00:06:17,740 --> 00:06:22,208
+Ahogy körbejárja a kört, az x négyzet és az y négyzet közötti értékek közötti 
+
+91
+00:06:22,208 --> 00:06:25,359
+kompromisszum adja ezt a dugattyúszerű táncos mozgást, 
+
+92
+00:06:25,359 --> 00:06:28,052
+ahol a csúszkák lassabban mozognak a nullától, 
+
+93
+00:06:28,052 --> 00:06:30,860
+mert az ingatlanok drágábbak azokban a régiókban.
+
+94
+00:06:31,420 --> 00:06:34,200
+Egyszerűen csak több jelölést kell megtenni egységnyi távolságonként.
+
+95
+00:06:35,420 --> 00:06:38,396
+Továbbá, az ingatlan kifejezés kellemes mellékhatása, 
+
+96
+00:06:38,396 --> 00:06:41,262
+hogy természetes módon illeszkedik ahhoz a tényhez, 
+
+97
+00:06:41,262 --> 00:06:45,948
+hogy a távolság négyzetének mértékegységei, így az összes koordináták közötti összes 
+
+98
+00:06:45,948 --> 00:06:48,980
+ingatlan négyzetgyöke adja az origótól való távolságot.
+
+99
+00:06:50,540 --> 00:06:54,913
+Egy háromdimenziós egységgömbhöz, azaz az x, y, z hármasok halmazához, 
+
+100
+00:06:54,913 --> 00:07:00,025
+ahol a négyzetek összege egy, csak egy harmadik csúszkát kell hozzáadnunk a z-hez, 
+
+101
+00:07:00,025 --> 00:07:04,460
+de ez a három csúszka még mindig csak egy egységnyi ingatlanon osztozik.
+
+102
+00:07:05,180 --> 00:07:09,587
+Hogy érzékeltessük ezt, képzeljük el, hogy x-et 0,5-nél tartjuk, 
+
+103
+00:07:09,587 --> 00:07:12,300
+ahol 0,25 egységnyi területet foglal el.
+
+104
+00:07:13,160 --> 00:07:17,706
+Ez azt jelenti, hogy az y és a z ugyanolyan dugattyús táncos mozgást végezhet, 
+
+105
+00:07:17,706 --> 00:07:22,540
+mint amit korábban láttunk, miközben a maradék 0,75 egységnyi területet cserélgetik.
+
+106
+00:07:23,500 --> 00:07:27,908
+A gömb szemléltetésének tipikus módja szerint ez azt jelenti, 
+
+107
+00:07:27,908 --> 00:07:32,033
+hogy a gömböt felszeleteljük a sík mentén, ahol az x 0,5, 
+
+108
+00:07:32,033 --> 00:07:36,300
+és megnézzük a gömbön az y és z értékek által alkotott kört.
+
+109
+00:07:37,600 --> 00:07:43,629
+Ahogy növeljük az x értékét, úgy csökken az y és z számára fennmaradó ingatlanterület, 
+
+110
+00:07:43,629 --> 00:07:48,620
+és ez a korlátozottabb dugattyútánc az, amit a körszelet kisebbnek érez.
+
+111
+00:07:49,500 --> 00:07:53,300
+Végül, ha x eléri az 1-es értéket, nem marad több ingatlan, 
+
+112
+00:07:53,300 --> 00:07:58,240
+így elérjük ezt a szingularitási pontot, ahol y és z egyaránt 0-ra kényszerül.
+
+113
+00:07:59,560 --> 00:08:03,120
+Az érzés itt egy kicsit olyan, mintha bogár lennék a gömb felszínén.
+
+114
+00:08:03,480 --> 00:08:06,560
+Képtelenek vagytok egyszerre látni az egész szférát.
+
+115
+00:08:07,020 --> 00:08:10,258
+Ehelyett csak egyetlen ponton ülsz, és van némi érzéked arra, 
+
+116
+00:08:10,258 --> 00:08:12,400
+hogy milyen helyi mozgások megengedettek.
+
+117
+00:08:15,680 --> 00:08:18,553
+Négy dimenzióban és magasabb dimenziókban elveszítjük a 
+
+118
+00:08:18,553 --> 00:08:21,427
+térbeli látvány nyújtotta globális áttekintés mankóját, 
+
+119
+00:08:21,427 --> 00:08:25,020
+de ennek az ingatlancserének az alapvető szabályai ugyanazok maradnak.
+
+120
+00:08:25,700 --> 00:08:30,115
+Ha rögzítünk egy csúszkát a helyén, és figyeljük, hogy a másik három cserélődik, 
+
+121
+00:08:30,115 --> 00:08:33,603
+ez alapvetően azt jelenti, hogy a 4d gömb egy szeletét vesszük, 
+
+122
+00:08:33,603 --> 00:08:38,072
+hogy egy kis 3d gömböt kapjunk, ugyanúgy, ahogy a háromdimenziós esetben az egyik 
+
+123
+00:08:38,072 --> 00:08:40,907
+csúszka rögzítése egy kör alakú szeletet ad nekünk, 
+
+124
+00:08:40,907 --> 00:08:43,360
+amikor a maradék kettő szabadon változhatott.
+
+125
+00:08:44,900 --> 00:08:48,779
+Nos, nézni, ahogy ezek a csúszkák mozognak, és gondolkodni az ingatlancserén, 
+
+126
+00:08:48,779 --> 00:08:52,013
+elég szórakoztató, de fennáll a veszélye, hogy céltalanná válik, 
+
+127
+00:08:52,013 --> 00:08:56,440
+hacsak nincs egy tényleges, nagy dimenziójú puzzle, amibe belemélyeszthetjük a fogainkat.
+
+128
+00:08:56,720 --> 00:08:59,727
+Tegyük tehát félre egy pillanatra a csúszkákat, 
+
+129
+00:08:59,727 --> 00:09:02,860
+és hozzunk egy nagyon klasszikus példát valamire, 
+
+130
+00:09:02,860 --> 00:09:06,808
+ami két és három dimenzióban ésszerűnek, sőt unalmasnak tűnik, 
+
+131
+00:09:06,808 --> 00:09:09,440
+de magasabb dimenziókban teljesen kiborul.
+
+132
+00:09:10,660 --> 00:09:14,100
+Kezdetnek vegyünk egy 2x2-es négyzetet, amelynek középpontja az origóban van.
+
+133
+00:09:14,880 --> 00:09:20,640
+Sarkai az 1,1, 1,-1,-1,-1,1 és 1,-1 csúcsokon vannak.
+
+134
+00:09:21,520 --> 00:09:26,943
+Rajzoljunk négy, egyenként 1 sugarú kört, amelyek középpontja a négy csúcspontban van, 
+
+135
+00:09:26,943 --> 00:09:29,500
+így mindegyik kör két szomszédját érinti.
+
+136
+00:09:30,560 --> 00:09:33,788
+Most azt akarom, hogy gondoljatok az origó középpontjában lévő körre, 
+
+137
+00:09:33,788 --> 00:09:36,925
+amely éppen elég nagy ahhoz, hogy megérintse ezeket a sarokköröket, 
+
+138
+00:09:36,925 --> 00:09:38,540
+és mindegyikhez érintőleges legyen.
+
+139
+00:09:39,360 --> 00:09:43,939
+Amit ennél a felállásnál és a magasabb dimenziókban lévő analógiáknál tenni akarunk, 
+
+140
+00:09:43,939 --> 00:09:46,040
+az a belső kör sugarának meghatározása.
+
+141
+00:09:48,040 --> 00:09:51,849
+Itt két dimenzióban a Pitagorasz-tételt használva láthatjuk, 
+
+142
+00:09:51,849 --> 00:09:57,220
+hogy az origótól a doboz sarkáig mért távolság a 2 négyzetgyöke, ami körülbelül 1,414.
+
+143
+00:09:58,320 --> 00:10:05,617
+Ezután kivonhatjuk ezt a részt itt, a sarokkör sugarát, 
+
+144
+00:10:05,617 --> 00:10:10,700
+ami a definíció szerint 1, és ez 1,414.
+
+145
+00:10:11,540 --> 00:10:13,820
+Nincs meglepetés, ez elég ésszerűnek tűnik.
+
+146
+00:10:15,060 --> 00:10:17,080
+Most csinálj valami hasonlót három dimenzióban.
+
+147
+00:10:17,740 --> 00:10:23,846
+Rajzoljunk egy 2x2x2-es kockát, amelynek sarkai az 1,1,1,1,1,1,1,-1, és így tovább, 
+
+148
+00:10:23,846 --> 00:10:29,662
+és így tovább, majd fogunk nyolc különböző gömböt, amelyek mindegyike 1 sugarú, 
+
+149
+00:10:29,662 --> 00:10:36,060
+és ezekre a csúcsokra központosítjuk őket úgy, hogy mindegyik három szomszédját érintse.
+
+150
+00:10:37,220 --> 00:10:40,424
+Gondoljunk ismét az origó középpontjában lévő gömbre, 
+
+151
+00:10:40,424 --> 00:10:44,400
+amely éppen elég nagy ahhoz, hogy alig érintse a nyolc sarokgömböt.
+
+152
+00:10:45,160 --> 00:10:49,038
+Mint korábban, kezdhetjük azzal, hogy az origótól a doboz sarkáig, 
+
+153
+00:10:49,038 --> 00:10:52,280
+mondjuk az 1,1,1,1 sarokig terjedő távolságra gondolunk.
+
+154
+00:10:53,280 --> 00:10:56,609
+Egyébként, azt hiszem, még mindig nem mondtam ki egyértelműen, 
+
+155
+00:10:56,609 --> 00:10:59,464
+hogy a távolságok magasabb dimenziókban úgy működnek, 
+
+156
+00:10:59,464 --> 00:11:02,847
+hogy mindig összeadjuk az összetevők négyzetét minden irányban, 
+
+157
+00:11:02,847 --> 00:11:04,380
+és kivesszük a négyzetgyökét.
+
+158
+00:11:05,040 --> 00:11:08,182
+Ha még sosem láttátok, miért következik ez a Pitagorasz-tételből csak 
+
+159
+00:11:08,182 --> 00:11:11,190
+a kétdimenziós esetben, akkor ez egy igazán szórakoztató rejtvény, 
+
+160
+00:11:11,190 --> 00:11:15,140
+amin érdemes elgondolkodni, és a vonatkozó képet fent hagytam a képernyőn azok számára, 
+
+161
+00:11:15,140 --> 00:11:17,340
+akik szeretnének megállni és elgondolkodni rajta.
+
+162
+00:11:18,080 --> 00:11:23,066
+Mindenesetre a mi esetünkben az origó és az 1,1,1 sarok közötti távolság az 1 
+
+163
+00:11:23,066 --> 00:11:28,820
+négyzetgyök plusz 1 négyzet plusz 1 négyzet, vagyis a 3 négyzetgyöke, ami körülbelül 1,73.
+
+164
+00:11:29,880 --> 00:11:35,469
+Tehát a belső gömb sugara ez a mennyiség lesz mínusz a sarokgömb sugara, 
+
+165
+00:11:35,469 --> 00:11:37,460
+ami a definíció szerint 1.
+
+166
+00:11:38,160 --> 00:11:43,060
+És ismétlem, a 0,73 ésszerű sugarúnak tűnik a belső gömbhöz.
+
+167
+00:11:43,820 --> 00:11:47,040
+De mi történik ezzel a belső sugárral, ha növeljük a dimenziókat?
+
+168
+00:11:48,100 --> 00:11:51,755
+Nyilvánvalóan azért hozom ezt fel, mert valami meglepő dolog fog történni, 
+
+169
+00:11:51,755 --> 00:11:55,312
+és néhányan talán látjátok, hogy ez hova vezet, de valójában nem akarom, 
+
+170
+00:11:55,312 --> 00:11:56,580
+hogy meglepetésnek tűnjön.
+
+171
+00:11:57,180 --> 00:12:00,300
+Bármilyen szórakoztató is lenyűgözni az embereket az ellentmondásos 
+
+172
+00:12:00,300 --> 00:12:03,880
+tényekkel és matematikával, a cél itt a valódi megértés, nem pedig a sokkolás.
+
+173
+00:12:04,500 --> 00:12:08,017
+A magasabb dimenziók esetében csúszkákat fogunk használni, hogy megértsük, 
+
+174
+00:12:08,017 --> 00:12:11,441
+mi történik, de mivel ez egyfajta másfajta módja a dolgok szemlélésének, 
+
+175
+00:12:11,441 --> 00:12:14,395
+segít, hogy egy futókezdetet kapjunk azzal, hogy visszanézzük, 
+
+176
+00:12:14,395 --> 00:12:17,960
+hogyan elemezzük a két- és háromdimenziós eseteket a csúszkák kontextusában.
+
+177
+00:12:19,100 --> 00:12:21,484
+Először is, hogyan gondolkodsz egy olyan körről, 
+
+178
+00:12:21,484 --> 00:12:24,160
+amelynek középpontja egy olyan sarokban van, mint 1,-1?
+
+179
+00:12:25,180 --> 00:12:29,503
+Nos, korábban egy origó-középpontú kör esetében az x-hez és y-hoz 
+
+180
+00:12:29,503 --> 00:12:34,220
+tartozó ingatlanok mennyisége a 0-ás számtól való távolságuktól függött.
+
+181
+00:12:35,140 --> 00:12:38,233
+És itt is ugyanaz az alapötlet, ahogy a középpont körül mozogsz, 
+
+182
+00:12:38,233 --> 00:12:41,945
+csakhogy az ingatlanok függhetnek az egyes koordináták közötti távolságtól és 
+
+183
+00:12:41,945 --> 00:12:43,040
+valamilyen más számtól.
+
+184
+00:12:43,720 --> 00:12:47,764
+Tehát ezen az 1,-1 középpontú kör esetében az x-hez tartozó 
+
+185
+00:12:47,764 --> 00:12:51,540
+ingatlan mennyisége az 1-től való távolságának négyzete.
+
+186
+00:12:52,280 --> 00:12:57,420
+Hasonlóképpen, az y-hoz tartozó ingatlan a negatív 1-től való távolságának négyzete.
+
+187
+00:12:58,100 --> 00:13:02,380
+Ettől eltekintve, a megjelenés és az érzés ezzel a dugattyús tánccal teljesen ugyanaz.
+
+188
+00:13:03,480 --> 00:13:07,820
+Az egyszerűség kedvéért csak az egyik körre koncentrálunk, az 1,-1 középpontú körre.
+
+189
+00:13:08,780 --> 00:13:11,717
+Most kérdezd meg magadtól, mit jelent az, hogy találunk egy olyan kört, 
+
+190
+00:13:11,717 --> 00:13:14,082
+amelynek középpontja az origóban van, és elég nagy ahhoz, 
+
+191
+00:13:14,082 --> 00:13:17,020
+hogy érintője legyen ennek a fickónak, ha csak csúszkákban gondolkodunk?
+
+192
+00:13:20,120 --> 00:13:23,310
+Figyeljük meg, hogy ez a tangenciapont akkor következik be, 
+
+193
+00:13:23,310 --> 00:13:25,490
+amikor az x és y koordináták megegyeznek.
+
+194
+00:13:26,310 --> 00:13:30,085
+Vagy másképp fogalmazva, ennek a sarokkörnek az origóhoz 
+
+195
+00:13:30,085 --> 00:13:34,590
+legközelebbi pontján az ingatlan egyenlően oszlik meg x és y között.
+
+196
+00:13:35,410 --> 00:13:37,382
+Ez később fontos lesz, úgyhogy ássuk bele magunkat, 
+
+197
+00:13:37,382 --> 00:13:39,090
+és gondolkodjunk el azon, hogy miért igaz ez.
+
+198
+00:13:40,070 --> 00:13:42,121
+Képzeljük el, hogy ezt a pontot kissé megzavarjuk, 
+
+199
+00:13:42,121 --> 00:13:44,896
+esetleg az x-et egy kicsit közelebb hozzuk a 0-hoz, ami azt jelenti, 
+
+200
+00:13:44,896 --> 00:13:47,270
+hogy az y-nak egy kicsit távolabb kellene kerülnie a 0-tól.
+
+201
+00:13:47,910 --> 00:13:52,230
+Az x változásának valamivel kisebbnek kell lennie, mint az y változásának, 
+
+202
+00:13:52,230 --> 00:13:55,513
+mivel az 1-től való távolodással nyert ingatlan drágább, 
+
+203
+00:13:55,513 --> 00:13:59,430
+mint az az ingatlan, amelyet az y veszít az 1-hez való közeledéssel.
+
+204
+00:14:00,310 --> 00:14:04,610
+A 0,0 kiindulópontból nézve azonban ez a kompromisszum megfordul.
+
+205
+00:14:05,330 --> 00:14:11,314
+Az x négyzetének eredő változása kisebb, mint az y négyzetének eredő változása, 
+
+206
+00:14:11,314 --> 00:14:15,279
+mivel ha az ingatlanokat 0,0-hoz viszonyítva mérjük, 
+
+207
+00:14:15,279 --> 00:14:18,870
+akkor az y 1 felé történő elmozdulása a drágább.
+
+208
+00:14:20,150 --> 00:14:23,639
+Ez azt jelenti, hogy minden kis perturbáció ettől a ponttól, 
+
+209
+00:14:23,639 --> 00:14:27,757
+ahol az ingatlanok egyenletesen oszlanak meg, az origótól való távolság 
+
+210
+00:14:27,757 --> 00:14:29,130
+növekedését eredményezi.
+
+211
+00:14:30,470 --> 00:14:33,930
+Azért érdekel minket, mert ez a pont a belső kör érintője, 
+
+212
+00:14:33,930 --> 00:14:37,450
+így úgy is gondolhatunk rá, mint a belső kör egyik pontjára.
+
+213
+00:14:38,130 --> 00:14:40,070
+És ez nagyon hasznos lesz a magasabb dimenziókban.
+
+214
+00:14:40,530 --> 00:14:44,470
+Ez ad egy viszonyítási pontot a belső kör sugarának megértéséhez.
+
+215
+00:14:45,290 --> 00:14:49,922
+Pontosabban, megkérdezhetjük, hogy ebben a pontban mekkora az x és az y között 
+
+216
+00:14:49,922 --> 00:14:54,790
+megosztott valós terület, ha a valós méréseket a 0,0 origóhoz viszonyítva végezzük.
+
+217
+00:14:55,890 --> 00:15:00,842
+Például itt lent két dimenzióban az x és az y egyaránt 0,5 alá 
+
+218
+00:15:00,842 --> 00:15:07,918
+süllyed ebben a konfigurációban, így az x négyzet plusz y négyzet összértéke kisebb lesz, 
+
+219
+00:15:07,918 --> 00:15:10,670
+mint 0,5 négyzet plusz 0,5 négyzet.
+
+220
+00:15:11,670 --> 00:15:14,703
+Az ehhez a félúthoz való viszonyítás igazán jól fog jönni ahhoz, 
+
+221
+00:15:14,703 --> 00:15:17,130
+hogy felfogjuk, mi történik a magasabb dimenziókban.
+
+222
+00:15:18,010 --> 00:15:20,750
+Lépésről lépésre haladva, emeljük fel a dolgot három dimenzióra.
+
+223
+00:15:22,690 --> 00:15:26,270
+Tekintsük az 1,1,1,1 középpontú, 1 sugarú sarokgömböt.
+
+224
+00:15:26,970 --> 00:15:32,929
+A gömbnek az origóhoz legközelebb eső pontja megfelel a csúszkák olyan konfigurációjának, 
+
+225
+00:15:32,929 --> 00:15:37,630
+ahol az x, y és z mind lefelé, a 0 felé nyúlik, és egyenlőek egymással.
+
+226
+00:15:38,450 --> 00:15:43,519
+Ismétlem, mindegyiknek egy kicsit túl kell lépnie ezen a félúton, 
+
+227
+00:15:43,519 --> 00:15:49,510
+mert a 0,5 pozíció csak 0,5 négyzetet, vagyis 0,25 egységnyi ingatlant jelent.
+
+228
+00:15:50,630 --> 00:15:54,430
+Tehát mivel mindhárom koordináta egyharmad ingatlanegységet kap, 
+
+229
+00:15:54,430 --> 00:15:55,950
+távolabbra kell kerülniük.
+
+230
+00:15:56,750 --> 00:16:00,816
+És ismétlem, mivel ez egy olyan pont, ahol a sarokgömb a belső gömböt érinti, 
+
+231
+00:16:00,816 --> 00:16:02,850
+ez egyben a belső gömb egyik pontja is.
+
+232
+00:16:03,610 --> 00:16:07,960
+Tehát a 0,0,0,0 origóra vonatkoztatva gondoljunk arra, hogy az x, 
+
+233
+00:16:07,960 --> 00:16:12,903
+y és z közötti valós terület mekkora részét osztja meg ez az érintőpontnak 
+
+234
+00:16:12,903 --> 00:16:14,090
+megfelelő pozíció.
+
+235
+00:16:14,830 --> 00:16:20,016
+Határozottan kevesebb, mint 0,75, mivel mindhárom kisebb, 
+
+236
+00:16:20,016 --> 00:16:25,830
+mint 0,5, tehát mindegyik kevesebb, mint 0,25 egységnyi ingatlan.
+
+237
+00:16:26,890 --> 00:16:29,950
+És megint hátradőlünk, és jól érezzük magunkat ezzel az eredménnyel, igaz?
+
+238
+00:16:30,070 --> 00:16:32,590
+A belső gömb kisebb, mint a sarokgömbök.
+
+239
+00:16:33,550 --> 00:16:36,270
+A dolgok azonban érdekessé válnak, amikor négy dimenzióba lépünk.
+
+240
+00:16:37,950 --> 00:16:44,972
+A 2x2x2x2x2 dobozunknak 16 csúcsa lesz 1111, 111-1, és így tovább, 
+
+241
+00:16:44,972 --> 00:16:51,470
+az 1 és a negatív 1 minden lehetséges bináris kombinációjával.
+
+242
+00:16:52,310 --> 00:16:55,857
+Ez azt jelenti, hogy ezekben a sarkokban 16 egységnyi gömb van, 
+
+243
+00:16:55,857 --> 00:16:58,850
+amelyek mindegyike négy szomszédos gömbhöz érintkezik.
+
+244
+00:17:00,150 --> 00:17:04,550
+Mint korábban, most is csak az egyikre fogunk koncentrálni, a 1111-es központúra.
+
+245
+00:17:04,990 --> 00:17:10,482
+A gömbnek az origóhoz legközelebbi pontja megfelel a csúszkák azon konfigurációjának, 
+
+246
+00:17:10,482 --> 00:17:14,890
+ahol mind a négy koordináta pontosan az 1 és a 0 közötti félúton van.
+
+247
+00:17:15,770 --> 00:17:20,524
+Ez azért van így, mert ha az egyik koordináta 0,5 egységnyire van az 1-től, 
+
+248
+00:17:20,524 --> 00:17:24,589
+akkor az 1 ponthoz képest 0,25 egységnyi ingatlannal rendelkezik.
+
+249
+00:17:25,369 --> 00:17:27,639
+Ugyanazt a trükköt alkalmazzuk, mint korábban, 
+
+250
+00:17:27,639 --> 00:17:30,004
+most a belső gömb egy pontjaként gondolunk erre, 
+
+251
+00:17:30,004 --> 00:17:34,350
+és a dolgokat az origóhoz képest mérjük, de már láthatod, hogy mi a jó a négy dimenzióban.
+
+252
+00:17:34,930 --> 00:17:40,501
+Ha áttérünk az ingatlanok 0000-ra való gondolkodására, akkor még mindig az a helyzet, 
+
+253
+00:17:40,501 --> 00:17:45,296
+hogy a négy koordináta mindegyike 0,25 egységnyi ingatlannal rendelkezik, 
+
+254
+00:17:45,296 --> 00:17:48,730
+így a négy koordináta összesen egy egységet oszt meg.
+
+255
+00:17:50,110 --> 00:17:54,710
+Más szóval, ez a belső gömb pontosan ugyanolyan méretű, mint a sarokgömbök.
+
+256
+00:17:55,670 --> 00:18:00,875
+Ez egyébként megegyezik azzal, amit numerikusan látunk, ahol kiszámíthatjuk, 
+
+257
+00:18:00,875 --> 00:18:05,473
+hogy az origó és a sarok közötti távolság 1111, ami 4 négyzetgyöke, 
+
+258
+00:18:05,473 --> 00:18:09,530
+és amikor levonjuk az egyik sarokgömb sugarát, akkor 1 lesz.
+
+259
+00:18:10,430 --> 00:18:14,790
+De van valami sokkal kielégítőbb abban, ha látod, mintha csak kiszámítanád.
+
+260
+00:18:15,590 --> 00:18:19,570
+Különösen itt van egy klassz aspektusa annak a ténynek, hogy a belső gömbnek 1 sugara van.
+
+261
+00:18:20,190 --> 00:18:24,882
+Mozgassuk el a dolgokat úgy, hogy az összes ingatlan az x koordinátára kerüljön, 
+
+262
+00:18:24,882 --> 00:18:26,910
+és az 1, 0, 0, 0, 0 ponthoz jutunk.
+
+263
+00:18:27,490 --> 00:18:30,874
+Ez a pont valójában érinti a 2x2x2x2x2-es dobozt, 
+
+264
+00:18:30,874 --> 00:18:35,749
+és amikor a két- vagy háromdimenziós esetekben gondolkodunk, ez a tény, 
+
+265
+00:18:35,749 --> 00:18:40,352
+hogy a belső gömb sugara 1, ugyanolyan méretű, mint a sarokgömböké, 
+
+266
+00:18:40,352 --> 00:18:44,550
+és hogy érinti a dobozt, nos, ez egyszerűen túl nagynak tűnik.
+
+267
+00:18:45,290 --> 00:18:50,120
+De fontos felismerni, hogy ez alapvetően egy négydimenziós jelenség, 
+
+268
+00:18:50,120 --> 00:18:52,990
+és nem lehet kisebb dimenziókba zsúfolni.
+
+269
+00:18:54,170 --> 00:18:55,070
+De a dolgok egyre furcsábbak.
+
+270
+00:18:55,350 --> 00:18:56,750
+Emeljük fel öt dimenzióra.
+
+271
+00:18:57,370 --> 00:19:00,731
+Ebben az esetben elég sok sarokgömbünk van, összesen 32, 
+
+272
+00:19:00,731 --> 00:19:05,450
+de az egyszerűség kedvéért megint csak a 11111 középpontjában lévőkre gondolunk.
+
+273
+00:19:06,190 --> 00:19:09,265
+Gondoljunk a gömbnek az origóhoz legközelebbi pontjára, 
+
+274
+00:19:09,265 --> 00:19:13,550
+ahol mind az öt koordináta egyenlően osztja fel a közös ingatlan egy egységét.
+
+275
+00:19:14,430 --> 00:19:18,110
+Ezúttal minden koordináta egy kicsit magasabb, mint 0,5.
+
+276
+00:19:18,530 --> 00:19:24,429
+Ha 0,5-ig érnek le, akkor mindegyiknek 0,25 egységnyi ingatlanja lenne, 
+
+277
+00:19:24,429 --> 00:19:26,970
+ami összesen 1,25, ami túl sok.
+
+278
+00:19:27,750 --> 00:19:31,846
+De a kocka megfordul, ha ezt a belső gömb egy pontjaként tekintjük, 
+
+279
+00:19:31,846 --> 00:19:36,967
+mert az origóhoz képest ez a konfiguráció sokkal több mint egy egységnyi ingatlannal 
+
+280
+00:19:36,967 --> 00:19:37,690
+rendelkezik.
+
+281
+00:19:40,130 --> 00:19:44,098
+Nemcsak, hogy minden koordináta több mint 0,5 egységre van a 0-tól, 
+
+282
+00:19:44,098 --> 00:19:49,058
+de a dimenziók nagyobb száma azt is jelenti, hogy az összes dimenziót összeadva több 
+
+283
+00:19:49,058 --> 00:19:50,050
+a teljes terület.
+
+284
+00:19:50,650 --> 00:19:55,690
+Konkrétan kiszámítható, hogy a belső gömb sugara körülbelül 1,24.
+
+285
+00:19:56,530 --> 00:20:01,431
+Ez intuitív módon azt jelenti, hogy a csúszkák nagyobb területen mozoghatnak, 
+
+286
+00:20:01,431 --> 00:20:04,510
+mint amit egyetlen ingatlanegység lehetővé tenne.
+
+287
+00:20:05,610 --> 00:20:08,001
+Az egyik szórakoztató módja annak, hogy megnézzük, mit jelent ez, 
+
+288
+00:20:08,001 --> 00:20:11,010
+ha mindent úgy állítunk be, hogy az összes ingatlan egyetlen koordinátára kerüljön.
+
+289
+00:20:12,010 --> 00:20:15,990
+Mivel ez a koordináta túlmutat az egyiken, azt látjátok, 
+
+290
+00:20:15,990 --> 00:20:20,810
+hogy ez az ötdimenziós belső gömb valójában a dobozon kívülre nyúlik.
+
+291
+00:20:22,670 --> 00:20:25,733
+De hogy igazán érezzük, mennyire furcsává válnak a dolgok, 
+
+292
+00:20:25,733 --> 00:20:28,330
+egy utolsó példaként tíz dimenzióba akarok ugrani.
+
+293
+00:20:29,130 --> 00:20:32,110
+Ne feledjük, ez csak annyit jelent, hogy a pontoknak tíz koordinátájuk van.
+
+294
+00:20:32,770 --> 00:20:35,928
+Egy 1 sugarú gömb esetében egyetlen ingatlanegységet 
+
+295
+00:20:35,928 --> 00:20:38,610
+kell megosztani mind a tíz koordináta között.
+
+296
+00:20:39,630 --> 00:20:43,338
+Mint mindig, ennek a sarokgömbnek az origóhoz legközelebbi pontja az, 
+
+297
+00:20:43,338 --> 00:20:46,730
+ahol mind a tíz koordináta egyenletesen osztja fel az ingatlant.
+
+298
+00:20:47,450 --> 00:20:51,310
+És itt látszik igazán, hogy milyen messze van ez az eredetitől.
+
+299
+00:20:52,230 --> 00:20:55,219
+Vagy másképp fogalmazva, ez a belső szféra nagyon 
+
+300
+00:20:55,219 --> 00:20:57,670
+nagy mennyiségű ingatlannal rendelkezhet.
+
+301
+00:20:58,690 --> 00:21:03,690
+Valójában kiszámítható, hogy a belső gömb sugara körülbelül 2,16.
+
+302
+00:21:04,750 --> 00:21:09,067
+És ebből a perspektívából nézve, ahol tíz teljes dimenzióval kell megosztani 
+
+303
+00:21:09,067 --> 00:21:12,151
+ezt az ingatlant, nem tűnik-e valamennyire ésszerűnek, 
+
+304
+00:21:12,151 --> 00:21:16,020
+hogy a belső gömb sugarának több mint kétszer akkorának kell lennie, 
+
+305
+00:21:16,020 --> 00:21:17,590
+mint az összes sarokgömbnek?
+
+306
+00:21:18,830 --> 00:21:23,350
+Hogy érzékeltessük, mekkora ez a belső gömb, nézzünk vissza két dimenzióban, 
+
+307
+00:21:23,350 --> 00:21:27,930
+és képzeljünk el egy 4x4-es dobozt, amely kívülről határolja mind a négy kört.
+
+308
+00:21:28,750 --> 00:21:32,961
+Vagy menjünk három dimenzióba, és képzeljünk el egy 4x4x4-es dobozt, 
+
+309
+00:21:32,961 --> 00:21:35,830
+amely kívülről határolja az összes sarokgömböt.
+
+310
+00:21:36,350 --> 00:21:42,027
+Itt fent, a tíz dimenzióban, ez az idézőjeles belső gömb valójában elég nagy ahhoz, 
+
+311
+00:21:42,027 --> 00:21:47,570
+hogy a külső határoló dobozon kívülre kerüljön, mivel átmérője nagyobb, mint négy.
+
+312
+00:21:50,070 --> 00:21:53,402
+Tudom, hogy ez őrültségnek tűnik, de fel kell ismerned, 
+
+313
+00:21:53,402 --> 00:21:57,984
+hogy a doboz arca mindig két egységnyire van az origótól, függetlenül attól, 
+
+314
+00:21:57,984 --> 00:21:59,710
+hogy milyen magas a dimenzió.
+
+315
+00:22:00,170 --> 00:22:04,250
+És alapvetően azért, mert csak egyetlen tengely mentén mozog.
+
+316
+00:22:05,030 --> 00:22:09,262
+De a 1111111111 pont, amely meghatározza a belső gömb sugarát, 
+
+317
+00:22:09,262 --> 00:22:14,570
+valójában nagyon messze van a középponttól, egészen itt fent a tíz dimenzióban.
+
+318
+00:22:15,250 --> 00:22:20,750
+Ez azért van, mert mind a tíz dimenzió egy teljes egységnyi ingatlant ad az adott ponthoz.
+
+319
+00:22:22,390 --> 00:22:25,328
+És persze, ahogy egyre nagyobb dimenziókat használsz, 
+
+320
+00:22:25,328 --> 00:22:27,450
+ez a belső gömb határtalanul növekszik.
+
+321
+00:22:27,950 --> 00:22:31,530
+Nemcsak, hogy kívülről bök ki ezekből a dobozokból, 
+
+322
+00:22:31,530 --> 00:22:37,659
+hanem a belső gömbnek a dobozon belül fekvő aránya exponenciálisan csökken a nulla felé, 
+
+323
+00:22:37,659 --> 00:22:39,450
+ahogy a dimenzió egyre nő.
+
+324
+00:22:41,610 --> 00:22:45,940
+Tehát egy lépést hátrébb lépve, az egyik dolog, amit szeretek ebben a csúszómódszerben, 
+
+325
+00:22:45,940 --> 00:22:48,449
+hogy amikor megosztottam néhány barátommal, a mód, 
+
+326
+00:22:48,449 --> 00:22:52,730
+ahogyan a magasabb dimenziókról beszélni kezdtek, egy kicsit kevésbé lett metafizikus, 
+
+327
+00:22:52,730 --> 00:22:56,470
+és inkább úgy hangzott, mintha egy matematikust hallanál beszélni a témáról.
+
+328
+00:22:57,010 --> 00:23:00,730
+Ahelyett, hogy szkeptikusan azt kérdeznék, hogy a tízdimenziós tér valóságos 
+
+329
+00:23:00,730 --> 00:23:04,401
+dolog-e vagy sem, felismerve, hogy pontosan olyan valóságos, mint a számok, 
+
+330
+00:23:04,401 --> 00:23:08,411
+az emberek valójában azt vizsgálnák, hogy milyen más tulajdonságokkal rendelkeznek 
+
+331
+00:23:08,411 --> 00:23:12,470
+a nagydimenziós gömbök, és milyen más formák érzik magukat a csúszkák szempontjából.
+
+332
+00:23:13,450 --> 00:23:17,103
+Ez a dobozhelyzet csak egy a sok dolog közül, amit nagyon őrültnek érzek 
+
+333
+00:23:17,103 --> 00:23:20,556
+a magasabb dimenziós szférákkal kapcsolatban, és nagyon szórakoztató 
+
+334
+00:23:20,556 --> 00:23:24,310
+ezekről a többiekről a csúszkák és az ingatlanok kontextusában gondolkodni.
+
+335
+00:23:25,230 --> 00:23:28,902
+Nyilvánvalóan korlátozott, úgy értem, hogy egy bogár vagy ezeknek a tárgyaknak 
+
+336
+00:23:28,902 --> 00:23:32,250
+a felületén, csak egy-egy pontra és a mozgás szabályaira kapsz ráérzést.
+
+337
+00:23:33,230 --> 00:23:36,938
+A geometria akkor is nagyon szép tud lenni, ha koordinátamentes, 
+
+338
+00:23:36,938 --> 00:23:40,304
+és ez ennek az ellentéte, de ez egy kicsit konkrétabban ad 
+
+339
+00:23:40,304 --> 00:23:43,670
+támpontot a nagydimenziós alakzatokról való gondolkodáshoz.
+
+340
+00:23:46,030 --> 00:23:49,230
+Most azt mondhatnánk, hogy a dolgok csúszkákkal való szemlélése 
+
+341
+00:23:49,230 --> 00:23:51,930
+nem különbözik a tisztán analitikus gondolkodásmódtól.
+
+342
+00:23:52,490 --> 00:23:55,465
+Úgy értem, ez őszintén szólva alig több, mint az egyes koordináták 
+
+343
+00:23:55,465 --> 00:23:58,530
+szó szerinti megjelenítése, ez a legkézenfekvőbb dolog, amit tehetsz.
+
+344
+00:23:59,250 --> 00:24:01,750
+De ez az apró lépés sokkal inkább lehetővé teszi, 
+
+345
+00:24:01,750 --> 00:24:05,800
+hogy eljátsszunk egy nagydimenziós pont gondolatával, és még olyan apróságok is, 
+
+346
+00:24:05,800 --> 00:24:09,350
+mint például a koordináták négyzeteinek ingatlanokként való felfogása, 
+
+347
+00:24:09,350 --> 00:24:13,650
+fényt deríthetnek a nagy dimenziók néhány látszólag furcsa aspektusára, például arra, 
+
+348
+00:24:13,650 --> 00:24:16,450
+hogy egy doboz sarka milyen messze van a középpontjától.
+
+349
+00:24:17,290 --> 00:24:21,255
+Ha valami, akkor éppen az a tény, hogy ez egy tisztán analitikus leírás 
+
+350
+00:24:21,255 --> 00:24:24,945
+ilyen közvetlen megjelenítése, pontosan az teszi hűen tükrözi azt, 
+
+351
+00:24:24,945 --> 00:24:28,690
+amit a matematika magasabb dimenziókban való valódi művelése jelent.
+
+352
+00:24:29,390 --> 00:24:34,077
+Még mindig a felhőkben repülünk, bízva az analitikus gondolkodás eszközeiben, 
+
+353
+00:24:34,077 --> 00:24:38,344
+de ez az eszközök újratervezése, amely jobban kihasználja azt a tényt, 
+
+354
+00:24:38,344 --> 00:24:41,530
+hogy agyunk nagy része a képfeldolgozásra fordítódik.
+
+355
+00:24:42,410 --> 00:24:44,674
+Úgy értem, csak azért, mert valamit nem tudsz vizualizálni, 
+
+356
+00:24:44,674 --> 00:24:47,090
+még nem jelenti azt, hogy nem tudsz róla vizuálisan gondolkodni.
+

@@ -1,0 +1,600 @@
+1
+00:00:02,800 --> 00:00:05,980
+Imagine you have a weighted coin, so the probability 
+
+2
+00:00:05,980 --> 00:00:08,680
+of flipping heads might not be 50-50 exactly.
+
+3
+00:00:09,140 --> 00:00:18,480
+It could be 20%, or maybe 90%, or 0%, or 31.41592%.
+
+4
+00:00:18,480 --> 00:00:20,200
+The point is that you just don't know.
+
+5
+00:00:20,780 --> 00:00:23,609
+But imagine that you flip this coin 10 different times, 
+
+6
+00:00:23,609 --> 00:00:25,580
+and 7 of those times it comes up heads.
+
+7
+00:00:25,580 --> 00:00:28,800
+Do you think that the underlying weight of this coin is 
+
+8
+00:00:28,800 --> 00:00:32,020
+such that each flip has a 70% chance of coming up heads?
+
+9
+00:00:32,759 --> 00:00:36,104
+If I were to ask you, hey, what's the probability that the 
+
+10
+00:00:36,104 --> 00:00:39,620
+true probability of flipping heads is 0.7, what would you say?
+
+11
+00:00:41,540 --> 00:00:44,220
+This is a pretty weird question, and for two reasons.
+
+12
+00:00:44,700 --> 00:00:48,354
+First of all, it's asking about a probability of a probability, 
+
+13
+00:00:48,354 --> 00:00:51,894
+as in the value we don't know is itself some kind of long-run 
+
+14
+00:00:51,894 --> 00:00:55,720
+frequency for a random event, which frankly is hard to think about.
+
+15
+00:00:56,280 --> 00:00:58,638
+But the more pressing weirdness comes from asking 
+
+16
+00:00:58,638 --> 00:01:01,280
+about probabilities in the setting of continuous values.
+
+17
+00:01:02,540 --> 00:01:06,780
+Let's give this unknown probability of flipping heads some kind of name, like h.
+
+18
+00:01:07,540 --> 00:01:11,155
+Keep in mind that h could be any real number from 0 up to 1, 
+
+19
+00:01:11,155 --> 00:01:16,015
+ranging from a coin that always flips tails up to one that always flips heads and 
+
+20
+00:01:16,015 --> 00:01:17,320
+everything in between.
+
+21
+00:01:18,720 --> 00:01:23,715
+So if I ask, hey, what's the probability that h is precisely 0.7, 
+
+22
+00:01:23,715 --> 00:01:28,559
+as opposed to, say, 0.7000001, or any other nearby value, well, 
+
+23
+00:01:28,559 --> 00:01:34,160
+there's going to be a strong possibility for paradox if we're not careful.
+
+24
+00:01:34,860 --> 00:01:37,681
+It feels like no matter how small the answer to this question, 
+
+25
+00:01:37,681 --> 00:01:39,160
+it just wouldn't be small enough.
+
+26
+00:01:39,940 --> 00:01:44,602
+If every specific value within some range, all uncountably infinitely many of them, 
+
+27
+00:01:44,602 --> 00:01:48,709
+has a non-zero probability, well, even if that probability was minuscule, 
+
+28
+00:01:48,709 --> 00:01:53,427
+adding them all up to get the total probability of any one of these values will blow 
+
+29
+00:01:53,427 --> 00:01:54,260
+up to infinity.
+
+30
+00:01:55,860 --> 00:01:59,333
+On the other hand though, if all of these probabilities are 0, 
+
+31
+00:01:59,333 --> 00:02:03,855
+aside from the fact that that now gives you no useful information about the coin, 
+
+32
+00:02:03,855 --> 00:02:07,660
+the total sum of those probabilities would be 0, when it should be 1.
+
+33
+00:02:08,539 --> 00:02:11,763
+After all, this weight of the coin h is something, 
+
+34
+00:02:11,763 --> 00:02:16,440
+so the probability of it being any one of these values should add up to 1.
+
+35
+00:02:17,320 --> 00:02:22,220
+So if these values can't all be non-zero, and they can't all be 0, what do you do?
+
+36
+00:02:24,800 --> 00:02:28,001
+Where we're going with this, by the way, is that I'd like to talk 
+
+37
+00:02:28,001 --> 00:02:31,349
+about the very practical question of using data to create meaningful 
+
+38
+00:02:31,349 --> 00:02:34,600
+answers to these sorts of probabilities of probabilities questions.
+
+39
+00:02:35,680 --> 00:02:39,205
+But for this video, let's take a moment to appreciate how to work with 
+
+40
+00:02:39,205 --> 00:02:42,780
+probabilities over continuous values, and resolve this apparent paradox.
+
+41
+00:02:49,320 --> 00:02:53,960
+The key is not to focus on individual values, but ranges of values.
+
+42
+00:02:54,620 --> 00:03:00,891
+For example, we might make these buckets to represent the probability that h is between, 
+
+43
+00:03:00,891 --> 00:03:02,160
+say, 0.8 and 0.85.
+
+44
+00:03:03,160 --> 00:03:05,701
+Also, and this is more important than it might seem, 
+
+45
+00:03:05,701 --> 00:03:10,018
+rather than thinking of the height of each of these bars as representing the probability, 
+
+46
+00:03:10,018 --> 00:03:13,040
+think of the area of each one as representing that probability.
+
+47
+00:03:13,960 --> 00:03:17,480
+Where exactly those areas come from is something that we'll answer later.
+
+48
+00:03:17,960 --> 00:03:21,175
+For right now, just know that in principle, there's some answer 
+
+49
+00:03:21,175 --> 00:03:24,140
+to the probability of h sitting inside one of these ranges.
+
+50
+00:03:24,960 --> 00:03:29,382
+Our task right now is to take the answers to these very coarse-grained questions, 
+
+51
+00:03:29,382 --> 00:03:34,236
+and to get a more exact understanding of the distribution at the level of each individual 
+
+52
+00:03:34,236 --> 00:03:34,560
+input.
+
+53
+00:03:35,460 --> 00:03:38,980
+The natural thing to do would be consider finer and finer buckets.
+
+54
+00:03:39,500 --> 00:03:42,572
+And when you do, the smaller probability of falling into any 
+
+55
+00:03:42,572 --> 00:03:46,250
+one of them is accounted for in the thinner width of each of these bars, 
+
+56
+00:03:46,250 --> 00:03:48,920
+while the heights are going to stay roughly the same.
+
+57
+00:03:49,660 --> 00:03:53,382
+That's important, because it means that as you take this process to the limit, 
+
+58
+00:03:53,382 --> 00:03:55,220
+you approach some kind of smooth curve.
+
+59
+00:03:55,900 --> 00:03:59,769
+So even though all of the individual probabilities of falling into 
+
+60
+00:03:59,769 --> 00:04:03,465
+any one particular bucket will approach zero, the overall shape 
+
+61
+00:04:03,465 --> 00:04:07,220
+of the distribution is preserved, and even refined in this limit.
+
+62
+00:04:08,700 --> 00:04:13,061
+If, on the other hand, we had let the heights of the bars represent probabilities, 
+
+63
+00:04:13,061 --> 00:04:14,900
+everything would have gone to zero.
+
+64
+00:04:20,040 --> 00:04:22,840
+So in the limit, we would have just had a flat line giving 
+
+65
+00:04:22,840 --> 00:04:25,640
+no information about the overall shape of the distribution.
+
+66
+00:04:27,420 --> 00:04:28,140
+So, wonderful.
+
+67
+00:04:28,440 --> 00:04:31,260
+Letting area represent probability helps solve this problem.
+
+68
+00:04:31,900 --> 00:04:35,463
+But let me ask you, if the y-axis no longer represents probability, 
+
+69
+00:04:35,463 --> 00:04:37,140
+what exactly are the units here?
+
+70
+00:04:37,800 --> 00:04:42,121
+Since probability sits in the area of these bars, or width times height, 
+
+71
+00:04:42,121 --> 00:04:46,443
+the height represents a kind of probability per unit in the x-direction, 
+
+72
+00:04:46,443 --> 00:04:49,640
+what's known in the business as a probability density.
+
+73
+00:04:50,580 --> 00:04:53,460
+The other thing to keep in mind is that the total area of 
+
+74
+00:04:53,460 --> 00:04:56,540
+all these bars has to equal one at every level of the process.
+
+75
+00:04:57,060 --> 00:05:00,500
+That's something that has to be true for any valid probability distribution.
+
+76
+00:05:01,980 --> 00:05:04,299
+The idea of probability density is actually really 
+
+77
+00:05:04,299 --> 00:05:06,300
+clever when you step back to think about it.
+
+78
+00:05:06,300 --> 00:05:11,077
+As you take things to the limit, even if there's all sorts of paradoxes associated 
+
+79
+00:05:11,077 --> 00:05:15,912
+with assigning a probability to each of these uncountably infinitely many values of 
+
+80
+00:05:15,912 --> 00:05:20,747
+h between 0 and 1, there's no problem if we associate a probability density to each 
+
+81
+00:05:20,747 --> 00:05:25,640
+one of them, giving what's known as a probability density function, or PDF for short.
+
+82
+00:05:26,420 --> 00:05:30,120
+Anytime you see a PDF in the wild, the way to interpret it is 
+
+83
+00:05:30,120 --> 00:05:33,879
+that the probability of your random variable lying between two 
+
+84
+00:05:33,879 --> 00:05:37,520
+values equals the area under this curve between those values.
+
+85
+00:05:38,220 --> 00:05:43,460
+So, for example, what's the probability of getting any one very specific number, like 0.7?
+
+86
+00:05:44,220 --> 00:05:48,340
+Well, the area of an infinitely thin slice is 0, so it's 0.
+
+87
+00:05:48,900 --> 00:05:51,140
+What's the probability of all of them put together?
+
+88
+00:05:51,780 --> 00:05:53,960
+Well, the area under the full curve is 1.
+
+89
+00:05:54,620 --> 00:05:54,920
+You see?
+
+90
+00:05:55,720 --> 00:05:56,400
+Paradox sidestepped.
+
+91
+00:05:57,500 --> 00:06:00,220
+And the way that it's been sidestepped is a bit subtle.
+
+92
+00:06:00,220 --> 00:06:04,167
+In normal, finite settings, like rolling a die or drawing a card, 
+
+93
+00:06:04,167 --> 00:06:08,294
+the probability that a random value falls into a given collection of 
+
+94
+00:06:08,294 --> 00:06:12,960
+possibilities is simply the sum of the probabilities of being any one of them.
+
+95
+00:06:13,840 --> 00:06:15,020
+This feels very intuitive.
+
+96
+00:06:15,240 --> 00:06:17,600
+It's even true in a countably infinite context.
+
+97
+00:06:18,120 --> 00:06:21,540
+But to deal with the continuum, the rules themselves have shifted.
+
+98
+00:06:22,100 --> 00:06:25,239
+The probability of falling into a range of values is no 
+
+99
+00:06:25,239 --> 00:06:28,660
+longer the sum of the probabilities of each individual value.
+
+100
+00:06:29,180 --> 00:06:34,100
+Instead, probabilities associated with ranges are the fundamental primitive objects, 
+
+101
+00:06:34,100 --> 00:06:38,267
+and the only sense in which it's meaningful to talk about an individual 
+
+102
+00:06:38,267 --> 00:06:41,220
+value here is to think of it as a range of width 0.
+
+103
+00:06:42,180 --> 00:06:46,362
+If the idea of the rules changing between a finite setting and a continuous one feels 
+
+104
+00:06:46,362 --> 00:06:50,400
+unsettling, well, you'll be happy to know that mathematicians are way ahead of you.
+
+105
+00:06:50,820 --> 00:06:53,212
+There's a field of math called measure theory, 
+
+106
+00:06:53,212 --> 00:06:57,387
+which helps to unite these two settings and make rigorous the idea of associating 
+
+107
+00:06:57,387 --> 00:07:01,510
+numbers like probabilities to various subsets of all possibilities in a way that 
+
+108
+00:07:01,510 --> 00:07:03,140
+combines and distributes nicely.
+
+109
+00:07:04,040 --> 00:07:07,916
+For example, let's say you're in a setting where you have a random number 
+
+110
+00:07:07,916 --> 00:07:11,636
+that equals 0 with 50% probability, and the rest of the time it's some 
+
+111
+00:07:11,636 --> 00:07:15,880
+positive number according to a distribution that looks like half of a bell curve.
+
+112
+00:07:16,480 --> 00:07:20,093
+This is an awkward middle ground between a finite context, 
+
+113
+00:07:20,093 --> 00:07:24,380
+where a single value has a non-zero probability, and a continuous one.
+
+114
+00:07:24,640 --> 00:07:28,680
+where probabilities are found according to areas under the appropriate density function.
+
+115
+00:07:29,460 --> 00:07:32,600
+This is the sort of thing that measure theory handles very smoothly.
+
+116
+00:07:33,040 --> 00:07:35,557
+I mention this mainly for the especially curious viewer, 
+
+117
+00:07:35,557 --> 00:07:38,120
+and you can find more reading material in the description.
+
+118
+00:07:40,620 --> 00:07:44,207
+It's a pretty common rule of thumb that if you find yourself using a 
+
+119
+00:07:44,207 --> 00:07:48,108
+sum in a discrete context, then use an integral in the continuous context, 
+
+120
+00:07:48,108 --> 00:07:51,800
+which is the tool from calculus that we use to find areas under curves.
+
+121
+00:07:51,800 --> 00:07:54,540
+In fact, you could argue this video would be way shorter 
+
+122
+00:07:54,540 --> 00:07:57,040
+if I just said that at the front and called it good.
+
+123
+00:07:57,760 --> 00:08:00,542
+For my part though, I always found it a little unsatisfying to 
+
+124
+00:08:00,542 --> 00:08:03,280
+do this blindly without thinking through what it really means.
+
+125
+00:08:04,080 --> 00:08:08,131
+And in fact, if you really dig into the theoretical underpinnings of integrals, 
+
+126
+00:08:08,131 --> 00:08:11,676
+what you'd find is that in addition to the way that it's defined in a 
+
+127
+00:08:11,676 --> 00:08:15,474
+typical intro calculus class, there is a separate more powerful definition 
+
+128
+00:08:15,474 --> 00:08:19,020
+that's based on measure theory, this formal foundation of probability.
+
+129
+00:08:20,280 --> 00:08:23,072
+If I look back to when I first learned probability, 
+
+130
+00:08:23,072 --> 00:08:27,476
+I definitely remember grappling with this weird idea that in continuous settings, 
+
+131
+00:08:27,476 --> 00:08:31,719
+like random variables that are real numbers or throwing a dart at a dartboard, 
+
+132
+00:08:31,719 --> 00:08:34,296
+you have a bunch of outcomes that are possible, 
+
+133
+00:08:34,296 --> 00:08:38,539
+and yet each one has a probability of zero, and somehow altogether they have a 
+
+134
+00:08:38,539 --> 00:08:39,559
+probability of one.
+
+135
+00:08:40,820 --> 00:08:44,802
+Now one step of coming to terms with this is to realize that possibility is 
+
+136
+00:08:44,802 --> 00:08:47,579
+better tied to probability density than probability, 
+
+137
+00:08:47,579 --> 00:08:51,457
+but just swapping out sums of one for integrals of the others never quite 
+
+138
+00:08:51,457 --> 00:08:52,820
+scratched the itch for me.
+
+139
+00:08:53,280 --> 00:08:56,615
+I remember that it only really clicked when I realized that the rules for 
+
+140
+00:08:56,615 --> 00:09:00,355
+combining probabilities of different sets were not quite what I thought they were, 
+
+141
+00:09:00,355 --> 00:09:03,240
+and there was simply a different axiom system underlying it all.
+
+142
+00:09:04,580 --> 00:09:08,440
+But anyway, steering away from the theory somewhere back in the loose direction of 
+
+143
+00:09:08,440 --> 00:09:12,440
+application, look back to our original question about the coin with an unknown weight.
+
+144
+00:09:12,960 --> 00:09:16,564
+What we've learned here is that the right question to ask is, 
+
+145
+00:09:16,564 --> 00:09:21,506
+what's the probability density function that describes this value h after seeing the 
+
+146
+00:09:21,506 --> 00:09:22,960
+outcomes of a few tosses?
+
+147
+00:09:23,460 --> 00:09:27,371
+If you can find that PDF, you can use it to answer questions like, 
+
+148
+00:09:27,371 --> 00:09:32,099
+what's the probability that the true probability of flipping heads falls between 
+
+149
+00:09:32,099 --> 00:09:32,800
+0.6 and 0.8?
+
+150
+00:09:33,680 --> 00:09:36,060
+To find that PDF, join me in the next part.
+

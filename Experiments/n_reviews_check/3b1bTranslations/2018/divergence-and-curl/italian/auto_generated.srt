@@ -1,0 +1,980 @@
+1
+00:00:00,000 --> 00:00:03,400
+Oggi tu ed io entreremo in divergenza e arricciaremo.
+
+2
+00:00:05,820 --> 00:00:08,520
+Per essere sicuri di essere tutti sulla stessa lunghezza d'onda, 
+
+3
+00:00:08,520 --> 00:00:10,140
+iniziamo parlando dei campi vettoriali.
+
+4
+00:00:10,760 --> 00:00:14,144
+Essenzialmente un campo vettoriale è ciò che ottieni se associ ogni 
+
+5
+00:00:14,144 --> 00:00:17,480
+punto nello spazio con un vettore, una certa grandezza e direzione.
+
+6
+00:00:18,060 --> 00:00:21,913
+Forse quei vettori rappresentano la velocità delle particelle di fluido 
+
+7
+00:00:21,913 --> 00:00:25,819
+in ogni punto dello spazio, o forse rappresentano la forza di gravità in 
+
+8
+00:00:25,819 --> 00:00:29,780
+molti punti diversi nello spazio, o forse l'intensità del campo magnetico.
+
+9
+00:00:30,680 --> 00:00:34,515
+Breve nota su come disegnarli, spesso se si disegnano i vettori in scala, 
+
+10
+00:00:34,515 --> 00:00:37,262
+quelli più lunghi finiscono per ingombrare il tutto, 
+
+11
+00:00:37,262 --> 00:00:40,786
+quindi è normale mentire un po' e accorciare artificialmente quelli 
+
+12
+00:00:40,786 --> 00:00:45,140
+che sono troppo lunghi, magari usando il colore per dare un vago senso di lunghezza.
+
+13
+00:00:46,140 --> 00:00:49,780
+In linea di principio, i campi vettoriali in fisica potrebbero cambiare nel tempo.
+
+14
+00:00:50,140 --> 00:00:52,591
+In quasi tutti i flussi di fluidi del mondo reale, 
+
+15
+00:00:52,591 --> 00:00:56,629
+le velocità delle particelle in una data regione dello spazio cambieranno nel tempo 
+
+16
+00:00:56,629 --> 00:00:58,360
+in risposta al contesto circostante.
+
+17
+00:00:58,880 --> 00:01:00,240
+Il vento non è una costante, arriva a raffiche e il campo elettrico 
+
+18
+00:01:00,240 --> 00:01:01,740
+cambia man mano che le particelle cariche che lo caratterizzano si muovono.
+
+19
+00:01:02,040 --> 00:01:04,237
+Ma qui esamineremo solo i campi vettoriali statici, 
+
+20
+00:01:04,237 --> 00:01:06,520
+che forse pensi che descrivano un sistema stazionario.
+
+21
+00:01:07,540 --> 00:01:11,030
+Inoltre, mentre tali vettori potrebbero in linea di principio essere tridimensionali, 
+
+22
+00:01:11,030 --> 00:01:13,060
+o anche più alti, esamineremo solo due dimensioni.
+
+23
+00:01:13,960 --> 00:01:16,070
+Un'idea importante che regolarmente non viene detta è che spesso è possibile 
+
+24
+00:01:16,070 --> 00:01:18,099
+comprendere un campo vettoriale che rappresenta meglio un fenomeno fisico 
+
+25
+00:01:18,099 --> 00:01:20,100
+immaginando cosa accadrebbe se rappresentasse un fenomeno fisico diverso.
+
+26
+00:01:20,920 --> 00:01:27,963
+E se questi vettori che descrivono la forza gravitazionale 
+
+27
+00:01:27,963 --> 00:01:32,620
+definissero invece un flusso di fluido?
+
+28
+00:01:33,360 --> 00:01:37,800
+Come sarebbe questo flusso?
+
+29
+00:01:38,240 --> 00:01:39,660
+E cosa possono dirci le proprietà di quel flusso sulla forza gravitazionale originaria?
+
+30
+00:01:40,040 --> 00:01:42,152
+E cosa succederebbe se si pensasse che i vettori che definiscono un 
+
+31
+00:01:42,152 --> 00:01:44,420
+flusso di fluido descrivano la direzione in discesa di una certa collina?
+
+32
+00:01:45,040 --> 00:01:50,280
+Esiste una collina del genere?
+
+33
+00:01:51,000 --> 00:01:52,360
+E se sì, cosa ci dice riguardo al flusso originale?
+
+34
+00:01:52,720 --> 00:01:55,780
+Questo tipo di domande possono essere sorprendentemente utili.
+
+35
+00:01:56,520 --> 00:01:57,106
+Ad esempio, le idee di divergenza e arricciamento sono comprese in modo 
+
+36
+00:01:57,106 --> 00:01:57,643
+particolarmente viscerale quando si pensa che il campo vettoriale 
+
+37
+00:01:57,643 --> 00:01:58,237
+rappresenti il flusso di un fluido, anche se il campo che stai guardando 
+
+38
+00:01:58,237 --> 00:01:58,840
+è in realtà destinato a descrivere qualcos'altro, come un campo elettrico.
+
+39
+00:01:59,240 --> 00:02:05,621
+Ecco, dai un'occhiata a questo campo vettoriale e pensa a ciascun 
+
+40
+00:02:05,621 --> 00:02:12,100
+vettore come se descrivesse la velocità di un fluido in quel punto.
+
+41
+00:02:15,520 --> 00:02:21,920
+Nota che quando lo fai, quel fluido si comporta in un modo molto strano, non fisico.
+
+42
+00:02:22,860 --> 00:02:25,715
+Intorno ad alcuni punti, come questi, il fluido sembra nascere dal nulla, 
+
+43
+00:02:25,715 --> 00:02:27,220
+come se lì ci fosse una sorta di fonte.
+
+44
+00:02:27,960 --> 00:02:31,830
+Alcuni altri punti funzionano più come lavandini, 
+
+45
+00:02:31,830 --> 00:02:35,160
+dove il fluido sembra scomparire nel nulla.
+
+46
+00:02:35,780 --> 00:02:38,024
+La divergenza di un campo vettoriale in un punto particolare del piano indica quanto 
+
+47
+00:02:38,024 --> 00:02:40,400
+questo fluido immaginario tende a fuoriuscire o entrare in piccole regioni vicine ad esso.
+
+48
+00:02:41,120 --> 00:02:46,340
+Ad esempio, la divergenza del nostro campo vettoriale valutata in 
+
+49
+00:02:46,340 --> 00:02:51,720
+tutti quei punti che agiscono come sorgenti darà un numero positivo.
+
+50
+00:02:52,260 --> 00:02:59,600
+E non è necessario che tutto il fluido scorra via da quel punto.
+
+51
+00:03:01,180 --> 00:03:02,405
+La divergenza sarebbe positiva anche se fosse solo che il fluido che vi 
+
+52
+00:03:02,405 --> 00:03:03,853
+entra da una direzione fosse più lento del flusso che ne esce in un'altra direzione, 
+
+53
+00:03:03,853 --> 00:03:04,960
+poiché ciò insinuerebbe comunque una certa generazione spontanea.
+
+54
+00:03:05,360 --> 00:03:11,457
+D'altra parte, se in una piccola regione attorno a un punto sembra esserci più fluido che 
+
+55
+00:03:11,457 --> 00:03:17,420
+scorre al suo interno che fuori, la divergenza in quel punto sarebbe un numero negativo.
+
+56
+00:03:20,080 --> 00:03:25,050
+Ricorda, questo campo vettoriale è in realtà una funzione che 
+
+57
+00:03:25,050 --> 00:03:29,860
+accetta input bidimensionali e genera output bidimensionali.
+
+58
+00:03:32,580 --> 00:03:34,609
+La divergenza di quel campo vettoriale ti dà una nuova funzione, 
+
+59
+00:03:34,609 --> 00:03:36,763
+che accetta un singolo punto 2d come input, ma il suo output dipende 
+
+60
+00:03:36,763 --> 00:03:38,980
+dal comportamento del campo in un piccolo intorno attorno a quel punto.
+
+61
+00:03:44,100 --> 00:03:51,039
+In questo modo è analogo a una derivata, e quell'output è solo un singolo numero, 
+
+62
+00:03:51,039 --> 00:03:56,540
+che misura quanto quel punto agisce come una sorgente o un pozzo.
+
+63
+00:03:57,200 --> 00:04:00,975
+E ritardando di proposito la discussione sui calcoli qui, 
+
+64
+00:04:00,975 --> 00:04:04,620
+la comprensione di ciò che rappresenta è più importante.
+
+65
+00:04:05,280 --> 00:04:06,883
+Ciò significa che per un fluido fisico reale, come l'acqua piuttosto che un fluido 
+
+66
+00:04:06,883 --> 00:04:08,235
+immaginario utilizzato per illustrare un campo vettoriale arbitrario, 
+
+67
+00:04:08,235 --> 00:04:09,839
+se quel fluido è incomprimibile, il campo vettoriale della velocità deve avere una 
+
+68
+00:04:09,839 --> 00:04:10,380
+divergenza pari a 0 ovunque.
+
+69
+00:04:11,340 --> 00:04:18,228
+Questo è un vincolo importante su quali tipi di campi vettoriali 
+
+70
+00:04:18,228 --> 00:04:25,540
+potrebbero risolvere i problemi di flusso dei fluidi nel mondo reale.
+
+71
+00:04:26,200 --> 00:04:28,836
+Per l'arricciatura in un dato punto, pensi anche al flusso del fluido attorno ad esso, 
+
+72
+00:04:28,836 --> 00:04:31,200
+ma questa volta ti chiedi quanto quel fluido tende a ruotare attorno al punto.
+
+73
+00:04:32,380 --> 00:04:36,482
+Ad esempio, se in quel punto dovessi far cadere un ramoscello nel fluido, 
+
+74
+00:04:36,482 --> 00:04:41,140
+fissandone in qualche modo il centro in posizione, tenderebbe a girare su se stesso?
+
+75
+00:04:41,860 --> 00:04:45,377
+Si dice che le regioni in cui la rotazione è in senso orario abbiano un'arricciatura 
+
+76
+00:04:45,377 --> 00:04:49,020
+positiva, mentre le regioni in cui è in senso antiorario hanno un'arricciatura negativa.
+
+77
+00:04:49,980 --> 00:04:53,409
+E non è necessario che tutti i vettori attorno all'input 
+
+78
+00:04:53,409 --> 00:04:57,260
+puntino in senso antiorario o che puntino tutti in senso orario.
+
+79
+00:04:57,740 --> 00:04:59,204
+Un punto all'interno di una regione come questa, ad esempio, 
+
+80
+00:04:59,204 --> 00:05:01,004
+avrebbe anche un curvatura diversa da zero, poiché il flusso è lento nella 
+
+81
+00:05:01,004 --> 00:05:02,204
+parte inferiore, ma veloce nella parte superiore, 
+
+82
+00:05:02,204 --> 00:05:03,380
+risultando in un'influenza netta in senso orario.
+
+83
+00:05:03,900 --> 00:05:07,727
+E in realtà, il vero arricciamento vero e proprio è un'idea tridimensionale, 
+
+84
+00:05:07,727 --> 00:05:10,958
+in cui si associa ogni punto nello spazio 3D a un nuovo vettore, 
+
+85
+00:05:10,958 --> 00:05:13,542
+che caratterizza la rotazione attorno a quel punto, 
+
+86
+00:05:13,542 --> 00:05:15,680
+secondo una certa regola della mano destra.
+
+87
+00:05:19,260 --> 00:05:25,458
+Ho molti contenuti del mio periodo alla Khan Academy che descrivono 
+
+88
+00:05:25,458 --> 00:05:31,748
+questo in modo più dettagliato, ma per il nostro scopo principale mi 
+
+89
+00:05:31,748 --> 00:05:36,944
+riferirò solo alla variante bidimensionale del ricciolo, 
+
+90
+00:05:36,944 --> 00:05:42,414
+che associa ogni punto nello spazio 2D a un singolo numero, 
+
+91
+00:05:42,414 --> 00:05:45,240
+piuttosto che un nuovo vettore.
+
+92
+00:05:47,900 --> 00:05:51,938
+Come ho detto, anche se queste intuizioni sono date nel contesto del flusso dei fluidi, 
+
+93
+00:05:51,938 --> 00:05:55,380
+entrambe queste idee sono significative per altri tipi di campi vettoriali.
+
+94
+00:05:55,980 --> 00:05:58,801
+Un esempio molto importante è come l'elettricità e il 
+
+95
+00:05:58,801 --> 00:06:01,780
+magnetismo siano descritti da quattro equazioni speciali.
+
+96
+00:06:02,320 --> 00:06:04,724
+Queste sono conosciute come equazioni di Maxwell e sono 
+
+97
+00:06:04,724 --> 00:06:07,300
+scritte nel linguaggio della divergenza e dell'arricciatura.
+
+98
+00:06:07,900 --> 00:06:10,640
+Questa in alto, ad esempio, è la legge di Gauss, 
+
+99
+00:06:10,640 --> 00:06:15,450
+secondo la quale la divergenza di un campo elettrico in un dato punto è proporzionale 
+
+100
+00:06:15,450 --> 00:06:17,520
+alla densità di carica in quel punto.
+
+101
+00:06:18,520 --> 00:06:23,852
+Analizzando l'intuizione per questo, potresti immaginare 
+
+102
+00:06:23,852 --> 00:06:28,997
+regioni caricate positivamente come fonti di un fluido 
+
+103
+00:06:28,997 --> 00:06:35,640
+immaginario e regioni caricate negativamente come pozzi di quel fluido.
+
+104
+00:06:36,480 --> 00:06:39,416
+E in tutte le parti dello spazio dove non c’è carica, 
+
+105
+00:06:39,416 --> 00:06:43,060
+il fluido scorrerebbe in modo incomprimibile, proprio come l’acqua.
+
+106
+00:06:43,740 --> 00:06:50,820
+Naturalmente non esiste un fluido elettrico letterale, 
+
+107
+00:06:50,820 --> 00:06:59,960
+ma è un modo molto utile e carino per leggere un'equazione come questa.
+
+108
+00:07:00,740 --> 00:07:06,390
+Allo stesso modo, un’altra equazione importante è 
+
+109
+00:07:06,390 --> 00:07:12,380
+che la divergenza del campo magnetico è zero ovunque.
+
+110
+00:07:13,440 --> 00:07:17,290
+Lo si può capire dicendo che se il campo rappresentasse un flusso di fluido, 
+
+111
+00:07:17,290 --> 00:07:20,540
+quel fluido sarebbe incomprimibile, senza sorgenti e senza pozzi.
+
+112
+00:07:21,320 --> 00:07:25,176
+Questo ha anche l'interpretazione che i monopoli magnetici, 
+
+113
+00:07:25,176 --> 00:07:30,254
+qualcosa che agisce proprio come l'estremità nord o sud di un magnete isolato, 
+
+114
+00:07:30,254 --> 00:07:35,331
+non esistono, non c'è niente di analogo alle cariche positive e negative in un 
+
+115
+00:07:35,331 --> 00:07:36,360
+campo elettrico.
+
+116
+00:07:37,520 --> 00:07:40,370
+Allo stesso modo, le ultime due equazioni ci dicono che il modo in cui 
+
+117
+00:07:40,370 --> 00:07:43,180
+uno di questi campi cambia dipende dall’arricciatura dell’altro campo.
+
+118
+00:07:44,000 --> 00:07:47,537
+Questa è un’idea puramente tridimensionale, e un po’ al di fuori del 
+
+119
+00:07:47,537 --> 00:07:50,973
+nostro obiettivo principale qui, ma il punto è che la divergenza e 
+
+120
+00:07:50,973 --> 00:07:54,460
+l’arricciatura sorgono in contesti che non sono correlati al flusso.
+
+121
+00:07:55,220 --> 00:08:01,437
+E l'andata e ritorno di queste ultime due equazioni 
+
+122
+00:08:01,437 --> 00:08:06,220
+è ciò che dà origine alle onde luminose.
+
+123
+00:08:06,900 --> 00:08:12,090
+E molto spesso queste idee sono utili in contesti che 
+
+124
+00:08:12,090 --> 00:08:17,280
+a prima vista non sembrano nemmeno di natura spaziale.
+
+125
+00:08:19,200 --> 00:08:21,240
+Per fare un classico esempio che studiano spesso gli studenti di equazioni differenziali, 
+
+126
+00:08:21,240 --> 00:08:22,850
+supponiamo che tu voglia monitorare le dimensioni della popolazione di 
+
+127
+00:08:22,850 --> 00:08:24,120
+due specie diverse, di cui una è predatrice di un'altra.
+
+128
+00:08:24,780 --> 00:08:26,655
+Lo stato di questo sistema in un dato momento, 
+
+129
+00:08:26,655 --> 00:08:29,569
+ovvero le due dimensioni della popolazione, potrebbe essere pensato come 
+
+130
+00:08:29,569 --> 00:08:32,402
+un punto nello spazio bidimensionale, quello che chiamereste lo spazio 
+
+131
+00:08:32,402 --> 00:08:33,559
+delle fasi di questo sistema.
+
+132
+00:08:34,299 --> 00:08:37,415
+Per una data coppia di dimensioni della popolazione, 
+
+133
+00:08:37,415 --> 00:08:41,882
+queste popolazioni possono essere inclini a cambiare in base a fattori come 
+
+134
+00:08:41,882 --> 00:08:46,350
+il livello riproduttivo delle due specie o semplicemente quanto piace a una 
+
+135
+00:08:46,350 --> 00:08:47,820
+di loro mangiare l'altra.
+
+136
+00:08:48,660 --> 00:08:56,150
+Questi tassi di variazione verrebbero tipicamente scritti 
+
+137
+00:08:56,150 --> 00:09:03,640
+analiticamente come un insieme di equazioni differenziali.
+
+138
+00:09:04,440 --> 00:09:06,552
+Non c'è problema se non capisci queste particolari equazioni, 
+
+139
+00:09:06,552 --> 00:09:08,528
+le sto solo lanciando per quelli di voi che sono curiosi, 
+
+140
+00:09:08,528 --> 00:09:10,880
+e perché sostituire le variabili con le immagini mi fa ridere un po'.
+
+141
+00:09:11,780 --> 00:09:14,455
+Ma la rilevanza qui è che un buon modo per visualizzare ciò che un 
+
+142
+00:09:14,455 --> 00:09:17,928
+simile insieme di equazioni dice realmente è quello di associare ogni punto sul piano, 
+
+143
+00:09:17,928 --> 00:09:20,763
+ogni coppia di dimensioni della popolazione, con un vettore che indica 
+
+144
+00:09:20,763 --> 00:09:22,720
+i tassi di cambiamento per entrambe le variabili.
+
+145
+00:09:23,460 --> 00:09:24,514
+Ad esempio, quando ci sono molte volpi, ma relativamente pochi conigli, 
+
+146
+00:09:24,514 --> 00:09:25,745
+il numero di volpi potrebbe tendere a diminuire a causa della disponibilità di cibo 
+
+147
+00:09:25,745 --> 00:09:26,961
+limitata, e anche il numero di conigli potrebbe tendere a diminuire perché vengono 
+
+148
+00:09:26,961 --> 00:09:28,177
+mangiati da tutti. delle volpi, potenzialmente a un ritmo più veloce di quello che 
+
+149
+00:09:28,177 --> 00:09:28,500
+riescono a riprodursi.
+
+150
+00:09:28,500 --> 00:09:29,865
+Quindi un dato vettore qui ti dice come e quanto velocemente 
+
+151
+00:09:29,865 --> 00:09:31,320
+una data coppia di dimensioni della popolazione tende a cambiare.
+
+152
+00:09:32,160 --> 00:09:36,765
+Nota, questo è un caso in cui il campo vettoriale non riguarda lo spazio fisico, 
+
+153
+00:09:36,765 --> 00:09:40,689
+ma è invece una rappresentazione di un certo sistema dinamico che ha 
+
+154
+00:09:40,689 --> 00:09:43,760
+due variabili e come quel sistema si evolve nel tempo.
+
+155
+00:09:44,320 --> 00:09:46,517
+Questo forse può anche dare un senso al motivo per cui i matematici 
+
+156
+00:09:46,517 --> 00:09:48,780
+si interessano allo studio della geometria delle dimensioni superiori.
+
+157
+00:09:49,340 --> 00:09:56,080
+Cosa succederebbe se il nostro sistema monitorasse più di due o tre numeri?
+
+158
+00:09:56,420 --> 00:09:57,820
+Ora, il flusso associato a questo campo è chiamato flusso di fase per la 
+
+159
+00:09:57,820 --> 00:09:59,086
+nostra funzione differenziale, ed è un modo per concettualizzare, 
+
+160
+00:09:59,086 --> 00:10:00,640
+a colpo d'occhio, quanti possibili stati iniziali potrebbero evolversi nel tempo.
+
+161
+00:10:01,840 --> 00:10:17,600
+Operazioni come divergenza e curvatura possono aiutarti a informarti sul sistema.
+
+162
+00:10:19,280 --> 00:10:23,750
+Le dimensioni della popolazione tendono a convergere verso una 
+
+163
+00:10:23,750 --> 00:10:28,220
+particolare coppia di numeri o ci sono valori da cui divergono?
+
+164
+00:10:28,680 --> 00:10:37,740
+Esistono modelli ciclici e tali cicli sono stabili o instabili?
+
+165
+00:10:37,980 --> 00:10:39,200
+Per essere del tutto onesto con te, per qualcosa del genere vorresti spesso 
+
+166
+00:10:39,200 --> 00:10:40,421
+utilizzare strumenti correlati oltre la semplice divergenza e arricciatura, 
+
+167
+00:10:40,421 --> 00:10:41,690
+ma lo stato d'animo che ti porta a praticare con queste due idee si ripercuote 
+
+168
+00:10:41,690 --> 00:10:43,120
+bene sullo studio di configurazioni come questa con simili pezzi di macchine matematiche.
+
+169
+00:10:43,840 --> 00:10:47,156
+Se vuoi veramente padroneggiare queste idee, vorresti imparare 
+
+170
+00:10:47,156 --> 00:10:49,840
+come calcolarle ed esercitarti con questi calcoli, 
+
+171
+00:10:49,840 --> 00:10:53,420
+e lascerò dei link dove puoi imparare questo ed esercitarti se vuoi.
+
+172
+00:10:54,220 --> 00:10:58,855
+Ancora una volta, ho realizzato alcuni video, articoli ed esempi 
+
+173
+00:10:58,855 --> 00:11:04,418
+pratici su questo argomento per la Khan Academy durante la mia permanenza lì, 
+
+174
+00:11:04,418 --> 00:11:08,840
+quindi troppi dettagli qui inizieranno a sembrarmi ridondanti.
+
+175
+00:11:09,620 --> 00:11:13,872
+Ma c’è una cosa che vale la pena menzionare, riguardo 
+
+176
+00:11:13,872 --> 00:11:17,180
+alla notazione associata a questi calcoli.
+
+177
+00:11:17,780 --> 00:11:20,453
+Comunemente, la divergenza è scritta come un prodotto scalare 
+
+178
+00:11:20,453 --> 00:11:23,386
+tra questo triangolo rovesciato e la funzione del campo vettoriale, 
+
+179
+00:11:23,386 --> 00:11:26,060
+e l'arricciatura è scritta come un prodotto incrociato simile.
+
+180
+00:11:31,620 --> 00:11:35,800
+A volte agli studenti viene detto che questo è solo un trucco notazionale.
+
+181
+00:11:36,580 --> 00:11:40,384
+Ogni calcolo coinvolge una certa somma di determinate derivate e 
+
+182
+00:11:40,384 --> 00:11:44,130
+trattare questo triangolo capovolto come se fosse un vettore di 
+
+183
+00:11:44,130 --> 00:11:48,520
+operatori di derivata può essere un modo utile per mantenere tutto a posto.
+
+184
+00:11:49,000 --> 00:11:54,500
+Ma in realtà è più di un semplice dispositivo mnemonico.
+
+185
+00:11:55,500 --> 00:11:57,784
+Esiste una connessione reale tra divergenza e prodotto 
+
+186
+00:11:57,784 --> 00:11:59,820
+scalare e tra arricciatura e prodotto incrociato.
+
+187
+00:12:02,800 --> 00:12:07,700
+Anche se qui non faremo calcoli pratici, vorrei darti almeno 
+
+188
+00:12:07,700 --> 00:12:12,280
+un vago senso di come queste quattro idee sono collegate.
+
+189
+00:12:12,940 --> 00:12:25,620
+Immagina di fare qualche piccolo passo da un punto del tuo campo vettoriale a un altro.
+
+190
+00:12:26,440 --> 00:12:30,103
+Il vettore in questo nuovo punto sarà probabilmente leggermente diverso da 
+
+191
+00:12:30,103 --> 00:12:34,498
+quello del primo punto, ci saranno alcuni cambiamenti nella funzione dopo quel passaggio, 
+
+192
+00:12:34,498 --> 00:12:37,820
+che potresti vedere sottraendo il vettore originale da quello nuovo.
+
+193
+00:12:38,560 --> 00:12:44,271
+E questo tipo di differenza nella tua funzione rispetto a 
+
+194
+00:12:44,271 --> 00:12:50,180
+piccoli passi è ciò su cui si basa il calcolo differenziale.
+
+195
+00:12:52,160 --> 00:13:07,480
+Il prodotto scalare ti dà una misura di quanto sono allineati due vettori, giusto?
+
+196
+00:13:08,100 --> 00:13:10,850
+Il prodotto scalare del vettore dei passi con il vettore di differenza che provoca 
+
+197
+00:13:10,850 --> 00:13:13,600
+tende ad essere positivo nelle regioni in cui la divergenza è positiva e viceversa.
+
+198
+00:13:13,960 --> 00:13:16,498
+In effetti, in un certo senso, la divergenza è una sorta di valore medio per questo 
+
+199
+00:13:16,498 --> 00:13:19,037
+prodotto scalare di un passo con un cambiamento nell'output che provoca in tutte le 
+
+200
+00:13:19,037 --> 00:13:21,637
+possibili direzioni del passo, presupponendo che le cose siano ridimensionate in modo 
+
+201
+00:13:21,637 --> 00:13:22,000
+appropriato.
+
+202
+00:13:28,620 --> 00:13:30,078
+Voglio dire, pensaci, se un passo in una certa direzione provoca un 
+
+203
+00:13:30,078 --> 00:13:31,279
+cambiamento in quel vettore in quella stessa direzione, 
+
+204
+00:13:31,279 --> 00:13:33,060
+ciò corrisponde a una tendenza al flusso verso l'esterno, alla divergenza positiva.
+
+205
+00:13:33,620 --> 00:13:35,928
+E d'altro canto, se questi prodotti scalari tendono ad essere negativi, 
+
+206
+00:13:35,928 --> 00:13:38,429
+significa che il vettore differenza punta nella direzione opposta rispetto al 
+
+207
+00:13:38,429 --> 00:13:40,898
+vettore a gradini, ciò corrisponde a una tendenza al flusso verso l'interno, 
+
+208
+00:13:40,898 --> 00:13:41,540
+divergenza negativa.
+
+209
+00:13:42,220 --> 00:13:50,328
+Allo stesso modo, ricorda che il prodotto incrociato è una 
+
+210
+00:13:50,328 --> 00:13:58,300
+sorta di misura di quanto sono perpendicolari due vettori.
+
+211
+00:13:59,020 --> 00:14:02,540
+Quindi il prodotto incrociato del vettore del passo con il vettore della differenza che 
+
+212
+00:14:02,540 --> 00:14:05,820
+provoca tende ad essere positivo nelle regioni in cui l'arricciatura è positiva e 
+
+213
+00:14:05,820 --> 00:14:06,220
+viceversa.
+
+214
+00:14:06,780 --> 00:14:11,083
+Potresti pensare al ricciolo come una sorta di media di questo 
+
+215
+00:14:11,083 --> 00:14:15,660
+prodotto incrociato di vettori di differenza di vettori di gradini.
+
+216
+00:14:16,460 --> 00:14:18,851
+Se un passo in una certa direzione corrisponde a un cambiamento perpendicolare 
+
+217
+00:14:18,851 --> 00:14:21,000
+a quel passo, ciò corrisponde a una tendenza alla rotazione del flusso.
+
+218
+00:14:21,620 --> 00:14:24,998
+Quindi in genere questa è la parte in cui potrebbe 
+
+219
+00:14:24,998 --> 00:14:27,980
+esserci una sorta di messaggio dello sponsor.
+
+220
+00:14:28,800 --> 00:14:33,135
+Ma una cosa che voglio fare con il canale che va avanti è smettere di pubblicare 
+
+221
+00:14:33,135 --> 00:14:37,738
+contenuti sponsorizzati e concentrare invece le cose solo sul rapporto diretto con il 
+
+222
+00:14:37,738 --> 00:14:38,220
+pubblico.
+
+223
+00:14:38,760 --> 00:14:39,400
+Intendo questo non solo nel senso del modello di finanziamento, 
+
+224
+00:14:39,400 --> 00:14:40,140
+con il supporto diretto tramite Patreon, ma anche nel senso che penso che 
+
+225
+00:14:40,140 --> 00:14:40,900
+questi video possano raggiungere meglio il loro obiettivo se ognuno di loro 
+
+226
+00:14:40,900 --> 00:14:41,710
+sente che si tratta solo di te e io che condividiamo un amore per la matematica, 
+
+227
+00:14:41,710 --> 00:14:42,480
+senza altro motivo, soprattutto nei casi in cui gli spettatori sono studenti.
+
+228
+00:14:42,480 --> 00:14:47,518
+Ci sono alcuni altri motivi, e ho scritto alcuni dei miei pensieri completi su questo su 
+
+229
+00:14:47,518 --> 00:14:52,500
+Patreon, che certamente non devi essere un sostenitore per leggere, è proprio dove vive.
+
+230
+00:14:53,100 --> 00:14:56,535
+Penso che la pubblicità su Internet occupi uno spettro molto ampio, 
+
+231
+00:14:56,535 --> 00:15:01,032
+dal clickbait veramente degenerato fino alle partnership vantaggiose per tutti veramente 
+
+232
+00:15:01,032 --> 00:15:01,740
+ben allineate.
+
+233
+00:15:02,440 --> 00:15:04,246
+Mi sono sempre preoccupato di fare solo promozioni 
+
+234
+00:15:04,246 --> 00:15:05,840
+per le aziende che consiglierei sinceramente.
+
+235
+00:15:06,440 --> 00:15:11,563
+Per fare un esempio, potresti aver notato che ho realizzato diversi promo per Brilliant, 
+
+236
+00:15:11,563 --> 00:15:15,420
+ed è davvero difficile immaginare un allineamento migliore di così.
+
+237
+00:15:16,000 --> 00:15:16,791
+Cerco di ispirare le persone a interessarsi alla matematica, 
+
+238
+00:15:16,791 --> 00:15:17,687
+ma sono anche fermamente convinto che i video non siano sufficienti, 
+
+239
+00:15:17,687 --> 00:15:18,375
+che sia necessario risolvere attivamente i problemi, 
+
+240
+00:15:18,375 --> 00:15:18,960
+ed ecco una piattaforma che fornisce pratica.
+
+241
+00:15:20,000 --> 00:15:21,536
+E allo stesso modo anche per tutti gli altri che ho promosso, 
+
+242
+00:15:21,536 --> 00:15:22,800
+mi assicuro sempre di sentire un buon allineamento.
+
+243
+00:15:23,360 --> 00:15:24,692
+Tuttavia, anche se si cercano le migliori partnership possibili, 
+
+244
+00:15:24,692 --> 00:15:25,656
+ogni volta che la pubblicità è nell’equazione, 
+
+245
+00:15:25,656 --> 00:15:27,420
+l’incentivo sarà sempre quello di cercare di raggiungere quante più persone possibile.
+

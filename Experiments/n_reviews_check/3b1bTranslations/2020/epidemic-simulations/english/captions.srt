@@ -1,0 +1,1304 @@
+1
+00:00:02,160 --> 00:00:06,460
+I want to share with you a few simulations that model how an epidemic spreads.
+
+2
+00:00:07,480 --> 00:00:11,215
+There have recently been a few wonderful interactive articles in this vein, 
+
+3
+00:00:11,215 --> 00:00:13,918
+including one in the Washington Post by Harry Stevens, 
+
+4
+00:00:13,918 --> 00:00:16,720
+and then another by Kevin Simler over at Melting Asphalt.
+
+5
+00:00:17,260 --> 00:00:19,664
+They are great, you can play with them, they're very informative, 
+
+6
+00:00:19,664 --> 00:00:21,340
+I'll of course leave links in the description.
+
+7
+00:00:22,380 --> 00:00:24,600
+After seeing those, I had a few more questions.
+
+8
+00:00:25,140 --> 00:00:28,860
+Like if people stay away from each other, I get that that's going to slow down the spread.
+
+9
+00:00:29,140 --> 00:00:32,022
+But what if despite mostly staying away from each other, 
+
+10
+00:00:32,022 --> 00:00:36,320
+people still occasionally go to a central location, like a grocery store or a school?
+
+11
+00:00:37,360 --> 00:00:40,500
+Also, what if you're able to identify and isolate the cases?
+
+12
+00:00:40,740 --> 00:00:43,181
+And if you can, what if a few slip through, say 
+
+13
+00:00:43,181 --> 00:00:45,980
+because they don't show symptoms so they aren't tested?
+
+14
+00:00:47,240 --> 00:00:50,220
+How does travel between separate communities affect things?
+
+15
+00:00:50,700 --> 00:00:53,986
+And what if people avoid contact with each other for a while, 
+
+16
+00:00:53,986 --> 00:00:56,160
+but then they kind of get tired and stop?
+
+17
+00:01:06,820 --> 00:01:09,329
+We'll explore these questions and more, but first 
+
+18
+00:01:09,329 --> 00:01:12,040
+let's walk through how exactly these models will work.
+
+19
+00:01:12,700 --> 00:01:15,709
+Each simulation represents what's called an SIR model, 
+
+20
+00:01:15,709 --> 00:01:18,938
+meaning the population is broken up into three categories, 
+
+21
+00:01:18,938 --> 00:01:23,097
+those who are susceptible to getting the disease, those who are infectious, 
+
+22
+00:01:23,097 --> 00:01:26,052
+and then those who have recovered from the infection, 
+
+23
+00:01:26,052 --> 00:01:28,460
+so people who are immune don't play into it.
+
+24
+00:01:29,280 --> 00:01:33,059
+The way I've written these, for every unit of time that a susceptible 
+
+25
+00:01:33,059 --> 00:01:37,216
+person spends within a certain infection radius of someone with the disease, 
+
+26
+00:01:37,216 --> 00:01:40,455
+they'll have some probability of contracting it themselves, 
+
+27
+00:01:40,455 --> 00:01:44,720
+so we're using physical proximity as a stand-in for things like shaking hands, 
+
+28
+00:01:44,720 --> 00:01:49,040
+touching the same surface, kissing, sneezing on each other, all that good stuff.
+
+29
+00:01:49,800 --> 00:01:55,058
+Then for each infectious person, after some amount of time they'll recover and no longer 
+
+30
+00:01:55,058 --> 00:02:00,199
+be able to spread the disease, or if they die they won't be able to spread it anymore, 
+
+31
+00:02:00,199 --> 00:02:05,340
+so as a more generic term, sometimes people consider the R in SIR to stand for removed.
+
+32
+00:02:06,820 --> 00:02:10,520
+This should go without saying, but let me emphasize it at the start anyway.
+
+33
+00:02:10,900 --> 00:02:14,389
+These are toy models, with a tiny population, inevitably falling 
+
+34
+00:02:14,389 --> 00:02:18,040
+far short of the complexities in real people and larger populations.
+
+35
+00:02:18,640 --> 00:02:21,815
+I am not an epidemiologist, so I would be very hesitant to 
+
+36
+00:02:21,815 --> 00:02:25,260
+generalize any of the lessons here without deeper consideration.
+
+37
+00:02:25,980 --> 00:02:30,700
+That said, I think it can be healthy to engage the little scientist inside all of us 
+
+38
+00:02:30,700 --> 00:02:33,866
+and take the chance to be experimental and quantitative, 
+
+39
+00:02:33,866 --> 00:02:36,476
+even if it's in a necessarily limited fashion, 
+
+40
+00:02:36,476 --> 00:02:40,420
+especially if the alternative is to dwell on headlines and uncertainty.
+
+41
+00:02:42,100 --> 00:02:45,080
+We'll start things simple and layer on more complexity gradually.
+
+42
+00:02:45,440 --> 00:02:48,091
+In these first few runs that you're looking at, 
+
+43
+00:02:48,091 --> 00:02:52,123
+everybody is simply meandering around the city in a kind of random walk, 
+
+44
+00:02:52,123 --> 00:02:54,940
+and the infection follows the rules we've laid out.
+
+45
+00:03:03,220 --> 00:03:08,440
+So it doesn't look great, after not too long almost everybody gets infected.
+
+46
+00:03:09,240 --> 00:03:13,640
+As a sanity check, what would you expect to happen if I double this radius of infection?
+
+47
+00:03:14,300 --> 00:03:18,070
+You might think of this as representing more total interactions between people, 
+
+48
+00:03:18,070 --> 00:03:19,720
+or a more socially engaged society.
+
+49
+00:03:20,800 --> 00:03:23,340
+It'll spread more quickly, of course, but how much?
+
+50
+00:03:28,750 --> 00:03:30,640
+It's actually very drastic.
+
+51
+00:03:31,100 --> 00:03:33,607
+Within a short time span, the majority of our 
+
+52
+00:03:33,607 --> 00:03:36,060
+little population is infected simultaneously.
+
+53
+00:03:37,120 --> 00:03:40,721
+As another sanity check, what would you expect if we go back to the 
+
+54
+00:03:40,721 --> 00:03:44,800
+original infection radius, and then cut the probability of infection in half?
+
+55
+00:03:45,480 --> 00:03:49,575
+Remember, the way this is running, for each day that a susceptible person is within 
+
+56
+00:03:49,575 --> 00:03:53,720
+that radius of an infectious person, they have some probability of becoming infected.
+
+57
+00:03:54,320 --> 00:03:58,420
+By default I've set it to 20%, but this is the number we're now going to cut in half.
+
+58
+00:03:59,440 --> 00:04:01,709
+You might think of this as better hand washing, 
+
+59
+00:04:01,709 --> 00:04:03,980
+better cough protection, and less face touching.
+
+60
+00:04:16,420 --> 00:04:19,100
+As you might expect, it spreads out the curve.
+
+61
+00:04:19,880 --> 00:04:23,022
+In fact it does this by quite a lot, which really illustrates how 
+
+62
+00:04:23,022 --> 00:04:26,260
+changes to hygiene have very large effects on the rate of spreading.
+
+63
+00:04:30,080 --> 00:04:33,970
+The first of several key takeaways here that I'd like you to tuck away in your 
+
+64
+00:04:33,970 --> 00:04:37,860
+mind is just how sensitive this growth can be to each parameter in our control.
+
+65
+00:04:38,520 --> 00:04:42,424
+It's not that hard to imagine changing your daily habits in a way that multiplies 
+
+66
+00:04:42,424 --> 00:04:46,328
+the number of people you interact with, or that cuts your probability of catching 
+
+67
+00:04:46,328 --> 00:04:50,090
+an infection in half, but the implications for the pace of the spread are huge.
+
+68
+00:04:51,650 --> 00:04:55,429
+The goal is probably to reduce the total number of people who die, 
+
+69
+00:04:55,429 --> 00:04:58,870
+which is some proportion of this removed category in the end.
+
+70
+00:04:59,470 --> 00:05:01,750
+That proportion is not a constant, though.
+
+71
+00:05:01,750 --> 00:05:05,405
+If you get to a point where the peak of the infection curve is too high, 
+
+72
+00:05:05,405 --> 00:05:08,510
+meaning there's a time when many people are all sick at once, 
+
+73
+00:05:08,510 --> 00:05:12,015
+that's the point when available healthcare resources are overwhelmed, 
+
+74
+00:05:12,015 --> 00:05:14,870
+which for a bad disease will increase the mortality rate.
+
+75
+00:05:15,950 --> 00:05:18,977
+Now I don't know where you're from, but in most towns people don't 
+
+76
+00:05:18,977 --> 00:05:22,230
+actually spend their days drunkenly wandering around the city like this.
+
+77
+00:05:22,650 --> 00:05:25,770
+Often there's a common destination, like a central market or a school.
+
+78
+00:05:26,470 --> 00:05:30,346
+In our model, if we introduce some central spot like this that 
+
+79
+00:05:30,346 --> 00:05:34,470
+people regularly visit and then return from, it's… well, just look.
+
+80
+00:05:37,950 --> 00:05:41,929
+One of the main things I was curious about is how to mitigate this effect, 
+
+81
+00:05:41,929 --> 00:05:44,530
+and that's something we'll examine in just a bit.
+
+82
+00:05:45,270 --> 00:05:47,517
+Another feature we could include is to have a 
+
+83
+00:05:47,517 --> 00:05:50,010
+few separate communities with transit between them.
+
+84
+00:05:50,550 --> 00:05:54,405
+Every day, each person will have some probability of traveling to the center 
+
+85
+00:05:54,405 --> 00:05:58,110
+of another community, and then going about their usual routine from there.
+
+86
+00:05:59,670 --> 00:06:02,778
+All of that is our basic setup, so now the question 
+
+87
+00:06:02,778 --> 00:06:05,230
+is what actions help to stop this spread?
+
+88
+00:06:08,510 --> 00:06:12,871
+What is by far most effective is to identify and isolate whoever is infectious, 
+
+89
+00:06:12,871 --> 00:06:15,870
+for example with good testing and quick responsiveness.
+
+90
+00:06:16,810 --> 00:06:20,097
+In our simulations, once we hit some critical threshold of cases, 
+
+91
+00:06:20,097 --> 00:06:24,232
+we're going to start sending people to a separate location one day after they have 
+
+92
+00:06:24,232 --> 00:06:24,930
+the infection.
+
+93
+00:06:24,930 --> 00:06:29,480
+This is of course a stand-in for whatever isolation would look like in the real world, 
+
+94
+00:06:29,480 --> 00:06:33,770
+it doesn't have to literally be transporting all the sick people into one sad box.
+
+95
+00:06:35,030 --> 00:06:38,350
+Unsurprisingly, this totally halts the epidemic in its tracks.
+
+96
+00:06:39,290 --> 00:06:43,392
+But what if when you're infected you have a 20% chance of not getting quarantined, 
+
+97
+00:06:43,392 --> 00:06:46,259
+say because you show no symptoms so you don't get tested, 
+
+98
+00:06:46,259 --> 00:06:47,990
+and you go about your day as usual?
+
+99
+00:06:48,810 --> 00:06:51,022
+We're going to illustrate these people that have 
+
+100
+00:06:51,022 --> 00:06:53,190
+no symptoms using yellow circles instead of red.
+
+101
+00:06:53,810 --> 00:06:58,328
+Obviously this will have a result somewhere between a total quarantine and doing nothing, 
+
+102
+00:06:58,328 --> 00:07:00,990
+but where on the spectrum would you predict it'll be?
+
+103
+00:07:18,170 --> 00:07:21,832
+The peak number of simultaneous cases is only a little bit higher, 
+
+104
+00:07:21,832 --> 00:07:26,150
+but there is a very low long tail as it takes a much longer time to stamp out, 
+
+105
+00:07:26,150 --> 00:07:28,610
+resulting in about twice as many total cases.
+
+106
+00:07:30,610 --> 00:07:32,695
+This gets more interesting when we do it in a 
+
+107
+00:07:32,695 --> 00:07:35,190
+setting with many communities and transit between them.
+
+108
+00:07:35,710 --> 00:07:40,201
+Again, totally effective tracking in isolation stops the epidemic very quickly, 
+
+109
+00:07:40,201 --> 00:07:43,570
+but what would you predict is going to happen if now 20% of 
+
+110
+00:07:43,570 --> 00:07:46,210
+the infectious cases slip through that process?
+
+111
+00:07:47,050 --> 00:07:50,228
+Again, I've set things to wait until a certain critical threshold of 
+
+112
+00:07:50,228 --> 00:07:53,730
+cases is hit before our little dot society kicks into gear and takes action.
+
+113
+00:07:54,210 --> 00:07:58,006
+As a side note, it's a little interesting that even when all the parameters are the same, 
+
+114
+00:07:58,006 --> 00:08:00,790
+some runs take three times longer to reach this point than others.
+
+115
+00:08:01,350 --> 00:08:05,154
+Before the law of large numbers kicks in, that pace of growth can have as much to do 
+
+116
+00:08:05,154 --> 00:08:08,870
+with the roll of the dice as it does with anything intrinsic to the disease itself.
+
+117
+00:08:19,010 --> 00:08:22,607
+This leaky quarantining effort definitely flattens out the curve, 
+
+118
+00:08:22,607 --> 00:08:27,403
+but it is a much thicker tail and takes a much longer time to track down all the cases, 
+
+119
+00:08:27,403 --> 00:08:30,510
+with over half the population getting infected this time.
+
+120
+00:08:35,289 --> 00:08:37,839
+Now, what would you predict if it was only 50% of 
+
+121
+00:08:37,839 --> 00:08:40,390
+the infectious cases that were isolated like this?
+
+122
+00:08:41,470 --> 00:08:43,955
+If half the infectious people are getting quarantined, 
+
+123
+00:08:43,955 --> 00:08:47,390
+it doesn't mean that half the total population will end up with the disease.
+
+124
+00:08:47,990 --> 00:08:51,284
+Because there are so many agents still out there spreading it, 
+
+125
+00:08:51,284 --> 00:08:55,990
+we end up with a situation that's only barely better than if nothing had been done at all.
+
+126
+00:09:00,370 --> 00:09:05,083
+A second key takeaway here is that changes in how many people slip through the tests 
+
+127
+00:09:05,083 --> 00:09:09,630
+can cause disproportionately large changes to the total number of people infected.
+
+128
+00:09:11,110 --> 00:09:15,598
+If we look back to the fact that quickly containing cases so early is so effective, 
+
+129
+00:09:15,598 --> 00:09:19,445
+it actually has an interesting corollary, which is that the most lethal 
+
+130
+00:09:19,445 --> 00:09:22,170
+diseases are in some sense less dangerous globally.
+
+131
+00:09:22,990 --> 00:09:27,590
+Remember that the rule of this quarantine simulation is to send infectious people to 
+
+132
+00:09:27,590 --> 00:09:30,458
+a separate spot one day after they've been infected, 
+
+133
+00:09:30,458 --> 00:09:34,571
+but if the disease kills its host after one day, the model looks identical, 
+
+134
+00:09:34,571 --> 00:09:36,790
+it just has a much darker interpretation.
+
+135
+00:09:37,490 --> 00:09:40,450
+It is terrible for those who get it, but it doesn't spread.
+
+136
+00:09:42,410 --> 00:09:46,148
+It also means that the most dangerous viruses are the ones that kill some part of 
+
+137
+00:09:46,148 --> 00:09:50,070
+the population in the first place, while laying unnoticed and spreadable among others.
+
+138
+00:09:50,510 --> 00:09:53,382
+Or worse yet, if they remain unnoticed and spreadable 
+
+139
+00:09:53,382 --> 00:09:55,830
+in everyone before eventually becoming lethal.
+
+140
+00:09:57,170 --> 00:10:00,546
+One of the reasons that the SARS outbreak in 2002 was so well 
+
+141
+00:10:00,546 --> 00:10:04,303
+contained is that just about everybody in this infectious population 
+
+142
+00:10:04,303 --> 00:10:08,170
+was showing symptoms, so they were much easier to identify and isolate.
+
+143
+00:10:09,490 --> 00:10:12,122
+A more optimistic corollary of these quarantine 
+
+144
+00:10:12,122 --> 00:10:14,810
+simulations is how useful early treatment can be.
+
+145
+00:10:15,130 --> 00:10:19,856
+If there exists an antiviral therapeutic that can move people out of this infectious 
+
+146
+00:10:19,856 --> 00:10:24,250
+category quickly, it has the same effect on the model as isolating those cases.
+
+147
+00:10:28,690 --> 00:10:32,950
+But let's say you don't have widespread testing or antiviral therapeutics.
+
+148
+00:10:33,630 --> 00:10:35,931
+Well, let's introduce a new parameter here, which 
+
+149
+00:10:35,931 --> 00:10:37,910
+is how much people try to avoid each other.
+
+150
+00:10:38,370 --> 00:10:40,270
+Let's call it the social distance factor.
+
+151
+00:10:40,850 --> 00:10:44,417
+In these animations, I'll apply it as a repulsive force between people, 
+
+152
+00:10:44,417 --> 00:10:48,530
+and have them glow yellow when they feel just a little too close to their neighbor.
+
+153
+00:10:49,790 --> 00:10:53,325
+This has the sad but kind of cute effect that when our little agents are 
+
+154
+00:10:53,325 --> 00:10:56,910
+social distancing, they often end up trembling near the edge of their box.
+
+155
+00:10:57,590 --> 00:11:01,336
+No isolation is perfect, though, so every now and then even those 
+
+156
+00:11:01,336 --> 00:11:04,970
+repulsed by each other will jiggle close enough to get infected.
+
+157
+00:11:05,610 --> 00:11:08,090
+The point is that those interactions are much rarer.
+
+158
+00:11:08,850 --> 00:11:10,930
+Let's take a look at four separate runs here.
+
+159
+00:11:11,370 --> 00:11:15,130
+In each one of them, after we hit 50 cases, I'll turn on social distancing.
+
+160
+00:11:15,670 --> 00:11:18,210
+But in the top left, we'll turn it on for everybody.
+
+161
+00:11:18,750 --> 00:11:22,210
+In the top right, we'll turn it on for 90% of the population.
+
+162
+00:11:22,690 --> 00:11:25,361
+In the bottom left, for 70% of the population, 
+
+163
+00:11:25,361 --> 00:11:28,430
+and in the bottom right, for only half the population.
+
+164
+00:11:29,150 --> 00:11:30,550
+What would you predict is going to happen?
+
+165
+00:11:38,090 --> 00:11:41,570
+As you might expect, when 100% of people avoid each other, 
+
+166
+00:11:41,570 --> 00:11:43,930
+the disease quickly goes away, entirely.
+
+167
+00:11:44,690 --> 00:11:47,285
+And in all four cases, the presence of some kind of 
+
+168
+00:11:47,285 --> 00:11:50,430
+widespread social distancing definitely flattens out the curve.
+
+169
+00:11:51,190 --> 00:11:54,209
+However, in terms of the ultimate number of cases, 
+
+170
+00:11:54,209 --> 00:11:58,591
+the run with 70% and even the one with 90% end up with a little less than 
+
+171
+00:11:58,591 --> 00:12:01,492
+half the population ultimately getting infected, 
+
+172
+00:12:01,492 --> 00:12:04,690
+which is only a tiny bit better than the one with 50%.
+
+173
+00:12:04,990 --> 00:12:10,179
+That case with 90% of people repelling each other certainly takes longer to get there, 
+
+174
+00:12:10,179 --> 00:12:14,712
+but evidently a mere 10% of the population cheating adds enough instability 
+
+175
+00:12:14,712 --> 00:12:18,410
+to our system to keep the fire slowly burning for a long time.
+
+176
+00:12:22,690 --> 00:12:25,104
+Again, I'll emphasize that these are toy models, 
+
+177
+00:12:25,104 --> 00:12:28,750
+and I leave it to the intelligence of the viewer to judge if the behavior 
+
+178
+00:12:28,750 --> 00:12:32,446
+of these little dots accurately reflects what social distancing would mean 
+
+179
+00:12:32,446 --> 00:12:33,530
+for you and your life.
+
+180
+00:12:34,270 --> 00:12:37,521
+Someone fully sequestered in their home is not necessarily 
+
+181
+00:12:37,521 --> 00:12:41,213
+affected by the random jiggling of their neighbor, but then again, 
+
+182
+00:12:41,213 --> 00:12:44,410
+few of us genuinely live independently from everyone else.
+
+183
+00:12:45,110 --> 00:12:48,565
+Insofar as these models aren't outlandish, the third key takeaway 
+
+184
+00:12:48,565 --> 00:12:51,968
+is that social distancing absolutely works to flatten the curve, 
+
+185
+00:12:51,968 --> 00:12:55,110
+but even small imperfections prolong the spread for a while.
+
+186
+00:12:59,050 --> 00:13:02,530
+Now let's look at that setup with 12 communities and travel between them.
+
+187
+00:13:02,910 --> 00:13:05,998
+By default I have it set so that every day each agent has a 
+
+188
+00:13:05,998 --> 00:13:09,190
+2% chance of traveling to the center of a different community.
+
+189
+00:13:11,810 --> 00:13:14,659
+Now let's try a run where once we hit 100 cases, 
+
+190
+00:13:14,659 --> 00:13:18,730
+we cut down that travel rate by a factor of 4, to only half a percent.
+
+191
+00:13:19,450 --> 00:13:20,730
+What would you predict is going to happen?
+
+192
+00:13:36,030 --> 00:13:38,670
+The honest answer is that it depends.
+
+193
+00:13:39,290 --> 00:13:43,750
+In some runs it doesn't make any difference, and the majority of every community gets it.
+
+194
+00:13:44,750 --> 00:13:47,870
+Other times there are a couple communities that end up unscathed.
+
+195
+00:13:51,630 --> 00:13:55,788
+In general, the earlier you turn on this effect, the more effective it is, 
+
+196
+00:13:55,788 --> 00:13:59,502
+but the takeaway here is that reducing contact between communities 
+
+197
+00:13:59,502 --> 00:14:03,549
+really has only a limited effect once those communities already have it, 
+
+198
+00:14:03,549 --> 00:14:06,710
+and as solutions go it's certainly not robust on its own.
+
+199
+00:14:09,770 --> 00:14:13,359
+As a side note, when we run these simulations with larger cities, 
+
+200
+00:14:13,359 --> 00:14:17,330
+which has the effect that city centers act like concentrated urban hubs, 
+
+201
+00:14:17,330 --> 00:14:21,355
+you can see how as soon as the infection hits one of these urban centers, 
+
+202
+00:14:21,355 --> 00:14:23,150
+it very quickly hits all of them.
+
+203
+00:14:25,650 --> 00:14:28,670
+And after that, it slowly spreads to the edges of each community.
+
+204
+00:14:34,810 --> 00:14:37,950
+Let's take a moment to talk about how to quantify this spread.
+
+205
+00:14:38,670 --> 00:14:41,198
+Consider one person with the disease, and then 
+
+206
+00:14:41,198 --> 00:14:44,050
+count how many people they infect while they have it.
+
+207
+00:14:45,790 --> 00:14:49,139
+The average for this count across everybody who's been 
+
+208
+00:14:49,139 --> 00:14:52,610
+sick is known as the effective reproductive number, or R.
+
+209
+00:14:53,250 --> 00:14:56,893
+A more commonly discussed number is R-naught, which is the value 
+
+210
+00:14:56,893 --> 00:15:00,650
+of R in a fully susceptible population, like at the very beginning.
+
+211
+00:15:00,650 --> 00:15:03,810
+This is known as the basic reproductive number.
+
+212
+00:15:06,790 --> 00:15:10,120
+You may have noticed I have this little label on our simulations, 
+
+213
+00:15:10,120 --> 00:15:14,157
+and the way it's being calculated is to look at each individual who's currently 
+
+214
+00:15:14,157 --> 00:15:17,134
+infectious, count how many people they've infected so far, 
+
+215
+00:15:17,134 --> 00:15:21,625
+estimate how many they're going to infect in total based on the duration of the illness, 
+
+216
+00:15:21,625 --> 00:15:23,190
+and then average those numbers.
+
+217
+00:15:25,610 --> 00:15:29,235
+For example, in our first default simulation with no added spices, 
+
+218
+00:15:29,235 --> 00:15:32,319
+R is around 2.2 at the highest part of the growth phase, 
+
+219
+00:15:32,319 --> 00:15:35,350
+before falling down as the population becomes saturated.
+
+220
+00:15:36,870 --> 00:15:41,310
+By contrast, when we doubled the infection radius, R was as high as 8!
+
+221
+00:15:42,090 --> 00:15:44,550
+This factor has a huge effect on the growth rate.
+
+222
+00:15:45,710 --> 00:15:48,590
+It should kind of make sense that it jumped up as high as 8, though.
+
+223
+00:15:48,590 --> 00:15:53,290
+When you double that radius, there's about 4 times as many people inside it to infect.
+
+224
+00:15:55,470 --> 00:16:00,810
+When we chopped the infection rate in half, it hovered around the 1.3 to 1.7 range.
+
+225
+00:16:02,010 --> 00:16:05,476
+While R is greater than 1, the infection is growing exponentially, 
+
+226
+00:16:05,476 --> 00:16:08,270
+and it's at that point that it's known as an epidemic.
+
+227
+00:16:08,930 --> 00:16:13,035
+When it holds steady around 1, that's when a disease is called endemic, 
+
+228
+00:16:13,035 --> 00:16:15,430
+and less than 1 means it's on the decline.
+
+229
+00:16:16,190 --> 00:16:20,707
+For comparison, R0 for COVID-19 is estimated to be a little above 2, 
+
+230
+00:16:20,707 --> 00:16:25,878
+which is also around what the mean estimate for R0 was during the 1918 Spanish 
+
+231
+00:16:25,878 --> 00:16:26,730
+flu pandemic.
+
+232
+00:16:27,350 --> 00:16:31,030
+The seasonal flu by comparison is much lower, around 1.3.
+
+233
+00:16:32,450 --> 00:16:36,976
+In the travel case, as soon as we turn on social distancing and shut down travel, 
+
+234
+00:16:36,976 --> 00:16:39,130
+you can see R quickly drop down from 2.
+
+235
+00:16:39,730 --> 00:16:43,024
+There's a little bit of a lag between the change we make to the model and 
+
+236
+00:16:43,024 --> 00:16:46,720
+the value of this number, since it's calculated based on current infectious cases, 
+
+237
+00:16:46,720 --> 00:16:49,570
+which might have existed prior to the method being put in place.
+
+238
+00:16:52,930 --> 00:16:56,780
+Like I said at the start, one of the things I was most curious about is the 
+
+239
+00:16:56,780 --> 00:17:00,530
+effect of some kind of shared central location, like a market or a school.
+
+240
+00:17:01,290 --> 00:17:06,609
+When I introduce such a destination for our little dots, R0 jumps as high as 5.8.
+
+241
+00:17:08,510 --> 00:17:12,442
+This might be a little unfair, since it puts everyone right in the same spot, 
+
+242
+00:17:12,442 --> 00:17:16,021
+and given that we're using physical proximity as a stand-in for things 
+
+243
+00:17:16,021 --> 00:17:19,601
+like shaking hands or kissing, we should maybe acknowledge that people 
+
+244
+00:17:19,601 --> 00:17:23,987
+going to the same school or grocery store are not as likely to spread an infection as, 
+
+245
+00:17:23,987 --> 00:17:26,710
+say, close friends or people living in the same house.
+
+246
+00:17:27,569 --> 00:17:29,864
+To account for this, let's conservatively cut 
+
+247
+00:17:29,864 --> 00:17:32,110
+the probability of infection per day in half.
+
+248
+00:17:32,830 --> 00:17:38,690
+This does indeed cut R0 in half, but the effect of a central market remains dramatic.
+
+249
+00:17:45,990 --> 00:17:50,504
+Now let's try a run where after some threshold is hit, we turn on social distancing, 
+
+250
+00:17:50,504 --> 00:17:54,170
+but people still go to that central location the way they did before.
+
+251
+00:17:59,430 --> 00:18:04,175
+You may notice that some of our little dots seem to have escaped their little cage, 
+
+252
+00:18:04,175 --> 00:18:09,147
+which was not supposed to happen, but I'm going to make the conscious choice not to fix 
+
+253
+00:18:09,147 --> 00:18:09,430
+that.
+
+254
+00:18:09,850 --> 00:18:12,750
+It's like they all looked at the chaos inside and just went, 
+
+255
+00:18:12,750 --> 00:18:14,890
+nope, I'm out, I don't want any part of that.
+
+256
+00:18:15,410 --> 00:18:18,012
+Living in the Bay Area during a shelter-in-place order, 
+
+257
+00:18:18,012 --> 00:18:20,290
+I can confirm that this is how some people react.
+
+258
+00:18:20,990 --> 00:18:25,270
+Wandering dots aside, let me show you how this graph compares to the control case 
+
+259
+00:18:25,270 --> 00:18:29,708
+where we did nothing, and how it compares to what would have happened if in addition 
+
+260
+00:18:29,708 --> 00:18:34,250
+to repelling from each other, all the dots also stopped going to that central location.
+
+261
+00:18:35,430 --> 00:18:38,942
+The peak of the infection curve is a little lower than the control, 
+
+262
+00:18:38,942 --> 00:18:42,247
+but in terms of the total number of cases, keeping that central 
+
+263
+00:18:42,247 --> 00:18:46,070
+location active really defeats the effects of otherwise social distancing.
+
+264
+00:18:47,950 --> 00:18:50,230
+Now let me ask you to make a prediction.
+
+265
+00:18:50,670 --> 00:18:52,110
+What do you think will be more effective?
+
+266
+00:18:52,630 --> 00:18:57,016
+If on top of that social distancing effect, we decrease the frequency with 
+
+267
+00:18:57,016 --> 00:19:00,642
+which people go to that central spot, maybe by a factor of 5, 
+
+268
+00:19:00,642 --> 00:19:04,852
+or if we chop the probability of infection down by another factor of 2, 
+
+269
+00:19:04,852 --> 00:19:09,180
+meaning people are super extra cautious about washing their hands and not 
+
+270
+00:19:09,180 --> 00:19:10,350
+touching their face.
+
+271
+00:19:11,670 --> 00:19:16,479
+The simulation on the left requires our dots to very heavily alter their daily routines, 
+
+272
+00:19:16,479 --> 00:19:20,262
+whereas on the right our dots can mostly continue their usual habits, 
+
+273
+00:19:20,262 --> 00:19:22,370
+but are much more conscious of hygiene.
+
+274
+00:19:24,750 --> 00:19:27,744
+They're actually nearly identical, which surprised me, 
+
+275
+00:19:27,744 --> 00:19:31,610
+given that one of them is a fivefold decrease and the other is twofold.
+
+276
+00:19:32,230 --> 00:19:34,678
+I guess it goes to show that the effect of hygiene, 
+
+277
+00:19:34,678 --> 00:19:37,550
+which is maybe easier said than done, really goes a long way.
+
+278
+00:19:39,390 --> 00:19:42,090
+Of course, it doesn't have to be an either-or.
+
+279
+00:19:42,650 --> 00:19:46,250
+Our goal with these experiments is to look at the effects of one change at a time.
+
+280
+00:19:46,930 --> 00:19:50,605
+If you're curious, here's what it looks like when we apply social distancing, 
+
+281
+00:19:50,605 --> 00:19:53,480
+we restrict the rate that people go to the central location, 
+
+282
+00:19:53,480 --> 00:19:55,790
+and we also lower the infection rate all at once.
+
+283
+00:19:59,490 --> 00:20:02,530
+This combination is, indeed, very effective.
+
+284
+00:20:02,530 --> 00:20:06,081
+But I want to emphasize again how the most desirable case 
+
+285
+00:20:06,081 --> 00:20:09,510
+is when you can consistently identify and isolate cases.
+
+286
+00:20:10,310 --> 00:20:15,131
+Even in this central market simulation, which left unchecked gives a huge conflagration, 
+
+287
+00:20:15,131 --> 00:20:18,381
+being able to do this effectively still halts the epidemic, 
+
+288
+00:20:18,381 --> 00:20:22,986
+and our little dots don't even have to be repelled by each other or stop their trips 
+
+289
+00:20:22,986 --> 00:20:24,070
+to the central spot.
+
+290
+00:20:25,350 --> 00:20:29,388
+In real epidemiology, by the way, it gets way more sophisticated than this, 
+
+291
+00:20:29,388 --> 00:20:34,064
+with tactics like contact tracing, where you not only identify and isolate known cases, 
+
+292
+00:20:34,064 --> 00:20:37,890
+but you do the same for everyone who's been in contact with those cases.
+
+293
+00:20:42,090 --> 00:20:45,128
+Given the time I'm posting this, I imagine there's some 
+
+294
+00:20:45,128 --> 00:20:47,950
+expectation for it to be a PSA on social distancing.
+
+295
+00:20:48,570 --> 00:20:51,170
+But to be honest, that's not really my own main takeaway.
+
+296
+00:20:51,870 --> 00:20:56,463
+To be clear, when it's needed, like it is now, social distancing absolutely saves lives, 
+
+297
+00:20:56,463 --> 00:21:00,798
+and as we saw earlier, when people cheat or when they continue to regularly meet at 
+
+298
+00:21:00,798 --> 00:21:05,030
+a central spot, it has a disproportionate effect on the long-term number of cases.
+
+299
+00:21:06,010 --> 00:21:09,882
+The uncomfortable truth, though, is that while the disease still exists, 
+
+300
+00:21:09,882 --> 00:21:13,331
+as soon as people let up and they go back to their normal lives, 
+
+301
+00:21:13,331 --> 00:21:17,098
+if nothing is in place to contain the cases, few though they might be, 
+
+302
+00:21:17,098 --> 00:21:18,690
+you'll just get a second wave.
+
+303
+00:21:21,890 --> 00:21:26,698
+After making all of these, what I came away with more than anything else was a deeper 
+
+304
+00:21:26,698 --> 00:21:31,730
+appreciation for disease control done right, for the inordinate value of early widespread 
+
+305
+00:21:31,730 --> 00:21:36,370
+testing and the ability to isolate cases, for therapeutics that treat these cases, 
+
+306
+00:21:36,370 --> 00:21:41,290
+and most importantly, for how easy it is to underestimate all that value when times are 
+
+307
+00:21:41,290 --> 00:21:41,570
+good.
+
+308
+00:21:42,090 --> 00:21:45,820
+I'm writing this during a pandemic, when some viewers may be able to identify 
+
+309
+00:21:45,820 --> 00:21:49,550
+a little too well with the trembling dots retreating to the edge of their box.
+
+310
+00:21:50,190 --> 00:21:54,778
+But in the future, many people will be watching this during a pandemic that never was, 
+
+311
+00:21:54,778 --> 00:21:58,312
+a time when a novel pathogen that could have spread widely if left 
+
+312
+00:21:58,312 --> 00:22:00,950
+unchecked was instead swiftly found and contained.
+
+313
+00:22:01,930 --> 00:22:05,016
+Those would-be pandemics never make it into the history books, 
+
+314
+00:22:05,016 --> 00:22:08,690
+which is maybe why we don't value the heroes behind them the way we should.
+
+315
+00:22:09,570 --> 00:22:13,088
+Living in a world with widespread travel and vibrant urban centers does make 
+
+316
+00:22:13,088 --> 00:22:16,470
+fighting the spread of a disease an uphill battle, that's absolutely true.
+
+317
+00:22:17,070 --> 00:22:21,184
+But that same level of connectedness means that ideas spread more quickly than ever, 
+
+318
+00:22:21,184 --> 00:22:25,250
+ideas that can lead to systems and technologies that nip these outbreaks in the bud.
+
+319
+00:22:25,990 --> 00:22:29,546
+It won't happen on its own, and it's clear that we sometimes make mistakes, 
+
+320
+00:22:29,546 --> 00:22:33,290
+but I'm fundamentally optimistic about our ability to learn from those mistakes.
+
+321
+00:22:38,270 --> 00:22:41,810
+As you might imagine, these videos require a lot of hours of effort.
+
+322
+00:22:42,310 --> 00:22:45,919
+I don't do any ad reads at the end, and YouTube content related to the current 
+
+323
+00:22:45,919 --> 00:22:48,158
+pandemic seems to be systematically demonetized, 
+
+324
+00:22:48,158 --> 00:22:51,859
+so I just want to take this chance to say a particularly warm thank you to those 
+
+325
+00:22:51,859 --> 00:22:53,550
+who support them directly on Patreon.
+
+326
+00:22:54,110 --> 00:22:54,990
+It really does make a difference.
+

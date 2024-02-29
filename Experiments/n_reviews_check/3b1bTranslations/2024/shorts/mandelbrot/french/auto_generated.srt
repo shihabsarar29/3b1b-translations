@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:01,698
+L’ensemble de Mandelbrot est l’une des images 
+
+2
+00:00:01,698 --> 00:00:03,360
+les plus connues de toutes les mathématiques.
+
+3
+00:00:03,780 --> 00:00:07,964
+Vous commencez par un nombre complexe, c, puis vous définissez récursivement 
+
+4
+00:00:07,964 --> 00:00:11,334
+une séquence de nombres complexes où la suite commence par 0, 
+
+5
+00:00:11,334 --> 00:00:15,899
+et chaque nouvelle valeur est définie comme étant le carré de la valeur précédente, 
+
+6
+00:00:15,899 --> 00:00:16,280
+plus c.
+
+7
+00:00:16,780 --> 00:00:21,937
+Ainsi, par exemple, lors de la toute première itération, vous prenez 0 au carré plus c, 
+
+8
+00:00:21,937 --> 00:00:25,923
+ce qui signifie que z1 est juste c, puis pour l'itération suivante, 
+
+9
+00:00:25,923 --> 00:00:30,905
+vous prenez ce nombre au carré plus c, ce qui signifie que z2 est c au carré plus c, 
+
+10
+00:00:30,905 --> 00:00:31,960
+et ainsi de suite.
+
+11
+00:00:32,180 --> 00:00:35,080
+Chaque nouvelle valeur est le carré de la précédente plus c.
+
+12
+00:00:35,560 --> 00:00:39,408
+En fonction du choix de cette valeur c, parfois la séquence reste bornée, 
+
+13
+00:00:39,408 --> 00:00:41,540
+et parfois elle explose jusqu'à l'infini.
+
+14
+00:00:42,060 --> 00:00:45,744
+Si vous colorez toutes les valeurs de c qui font que ce processus reste limité 
+
+15
+00:00:45,744 --> 00:00:49,150
+en noir et que vous appliquez un dégradé de couleurs aux autres valeurs, 
+
+16
+00:00:49,150 --> 00:00:53,301
+où la couleur dépend de la rapidité avec laquelle le processus explose jusqu'à l'infini, 
+
+17
+00:00:53,301 --> 00:00:56,380
+vous obtenez cette forme emblématique de cardioïde avec des bulles
+

@@ -1,0 +1,716 @@
+1
+00:00:14,760 --> 00:00:18,927
+Bevezettem néhány derivált képletet, de egy nagyon fontosat kihagytam, 
+
+2
+00:00:18,927 --> 00:00:20,160
+az exponenciálisokat.
+
+3
+00:00:20,840 --> 00:00:24,168
+Itt tehát olyan függvények deriváltjairól szeretnék beszélni, 
+
+4
+00:00:24,168 --> 00:00:27,550
+mint a 2 az x-hez, 7 az x-hez, és azt is szeretném megmutatni, 
+
+5
+00:00:27,550 --> 00:00:31,040
+hogy miért az e az x-hez a legfontosabb az exponenciálisok közül.
+
+6
+00:00:32,240 --> 00:00:36,120
+Először is, hogy megértsük, koncentráljunk csak a 2 az x függvényre.
+
+7
+00:00:36,920 --> 00:00:40,752
+Gondoljunk erre a bemenetre úgy, mint egy időre, t, talán napokban, 
+
+8
+00:00:40,752 --> 00:00:43,796
+és a kimenetre, 2 a t-hez, mint a populáció méretére, 
+
+9
+00:00:43,796 --> 00:00:47,234
+talán egy különösen termékeny pite-lényekből álló csoportra, 
+
+10
+00:00:47,234 --> 00:00:49,320
+amely minden egyes nap megduplázódik.
+
+11
+00:00:50,560 --> 00:00:55,948
+És tulajdonképpen a népesség mérete helyett, amely minden egyes új pitebaba teremtéssel 
+
+12
+00:00:55,948 --> 00:01:00,968
+diszkrét kis ugrásokkal növekszik, talán gondoljunk a 2 a t-hez a népesség teljes 
+
+13
+00:01:00,968 --> 00:01:01,520
+tömegére.
+
+14
+00:01:02,220 --> 00:01:05,319
+Szerintem ez jobban tükrözi ennek a funkciónak a folyamatosságát, nem gondolja?
+
+15
+00:01:06,380 --> 00:01:13,680
+Így például a t egyenlő 0 időpontban a teljes tömeg 2 a 0 egyenlő 1, az egy lény tömegére.
+
+16
+00:01:14,410 --> 00:01:20,200
+A t egyenlő 1 napra a populáció 2 egyedre nőtt az 1 egyenlő 2 egyed tömegére.
+
+17
+00:01:21,160 --> 00:01:27,120
+Egy nap t egyenlő 2-vel, t négyzet, vagy 4, és általában minden nap megduplázódik.
+
+18
+00:01:28,260 --> 00:01:33,498
+A deriváltnak a dm dt-t, a populáció tömegének növekedési sebességét akarjuk megadni, 
+
+19
+00:01:33,498 --> 00:01:38,920
+amit a tömeg apró változásának és az idő apró változásának hányadosaként kell elképzelni.
+
+20
+00:01:39,840 --> 00:01:43,411
+Kezdjük azzal, hogy a változás mértékét egy teljes napra, 
+
+21
+00:01:43,411 --> 00:01:46,060
+mondjuk a 3. és a 4. nap között vizsgáljuk.
+
+22
+00:01:46,500 --> 00:01:54,220
+Ebben az esetben 8-ról 16-ra nő, tehát egy nap alatt 8 új teremtménytömeggel bővül.
+
+23
+00:01:55,060 --> 00:01:59,840
+És vegyük észre, hogy a növekedés mértéke megegyezik a nap elején mért népességszámmal.
+
+24
+00:02:01,480 --> 00:02:08,434
+A 4. és az 5. nap között 16-ról 32-re nő, ami napi 16 új élőlénytömeggel egyenlő, 
+
+25
+00:02:08,434 --> 00:02:12,760
+ami ismét megegyezik a nap eleji populációmérettel.
+
+26
+00:02:13,520 --> 00:02:16,995
+És általában ez a növekedési ütem egy teljes nap alatt 
+
+27
+00:02:16,995 --> 00:02:20,660
+megegyezik az adott nap kezdetén mért populációnagysággal.
+
+28
+00:02:21,680 --> 00:02:24,914
+Így csábító lehet azt mondani, hogy ez azt jelenti, 
+
+29
+00:02:24,914 --> 00:02:27,962
+hogy a 2 t-re való deriváltja egyenlő önmagával, 
+
+30
+00:02:27,962 --> 00:02:32,316
+hogy ennek a függvénynek a változási sebessége egy adott t időpontban 
+
+31
+00:02:32,316 --> 00:02:34,120
+egyenlő a függvény értékével.
+
+32
+00:02:34,120 --> 00:02:38,880
+És ez határozottan a helyes irányba mutat, de nem egészen helyes.
+
+33
+00:02:39,460 --> 00:02:43,923
+Amit itt csinálunk, az egy teljes napra vonatkozó összehasonlítás, 
+
+34
+00:02:43,923 --> 00:02:47,720
+figyelembe véve a 2 t plusz 1 és 2 t közötti különbséget.
+
+35
+00:02:48,560 --> 00:02:50,689
+De a származékosok esetében meg kell kérdeznünk, 
+
+36
+00:02:50,689 --> 00:02:53,340
+hogy mi történik az egyre kisebb és kisebb változások esetén.
+
+37
+00:02:53,960 --> 00:02:59,220
+Mekkora a növekedés egy nap tized része, egy nap százada, egy nap milliárdod része alatt?
+
+38
+00:02:59,960 --> 00:03:04,123
+Ezért gondoltam úgy, hogy a függvényt a populáció tömegét reprezentálja, 
+
+39
+00:03:04,123 --> 00:03:08,743
+mivel van értelme a tömeg apró változására kérdezni egy nap apró töredéke alatt, 
+
+40
+00:03:08,743 --> 00:03:13,876
+de nincs annyi értelme, hogy egy diszkrét populáció méretének apró változására kérdezzünk 
+
+41
+00:03:13,876 --> 00:03:14,960
+rá másodpercenként.
+
+42
+00:03:15,900 --> 00:03:21,446
+Elvontabban fogalmazva, egy apró időváltozás, dt esetében a 2 a t plusz dt 
+
+43
+00:03:21,446 --> 00:03:27,140
+és a 2 a t közötti különbséget szeretnénk megérteni, mindezt elosztva dt-vel.
+
+44
+00:03:27,660 --> 00:03:32,060
+A függvény időegységre vetített változása, de most nagyon szűk körben, 
+
+45
+00:03:32,060 --> 00:03:36,400
+egy adott időpont körül vizsgáljuk, nem pedig egy teljes nap folyamán.
+
+46
+00:03:39,580 --> 00:03:44,508
+És itt van a dolog, szeretném, ha lenne egy nagyon tiszta geometriai kép, amiben minden, 
+
+47
+00:03:44,508 --> 00:03:48,052
+ami most következik, egyszerűen felbukkanna, egy olyan diagram, 
+
+48
+00:03:48,052 --> 00:03:51,652
+ahol rámutathatsz egy értékre, és azt mondhatod, hogy ez a rész, 
+
+49
+00:03:51,652 --> 00:03:53,480
+ez a 2 deriváltja a t-hez képest.
+
+50
+00:03:54,380 --> 00:03:56,640
+És ha tudsz egyet, kérlek, szólj nekem.
+
+51
+00:03:57,020 --> 00:03:59,705
+És bár a cél itt is, mint a sorozat többi részében, 
+
+52
+00:03:59,705 --> 00:04:03,424
+a felfedezés játékos szellemének fenntartása, a következő játéktípusnak 
+
+53
+00:04:03,424 --> 00:04:07,660
+inkább a numerikus minták megtalálására kell irányulnia, mint a vizuális mintákra.
+
+54
+00:04:08,680 --> 00:04:13,560
+Kezdjük tehát azzal, hogy nagyon közelről megnézzük ezt a kifejezést, 2 a t plusz dt.
+
+55
+00:04:14,360 --> 00:04:17,110
+Az exponenciálisok egyik alapvető tulajdonsága, 
+
+56
+00:04:17,110 --> 00:04:20,720
+hogy ezt felbonthatjuk úgy, hogy 2 a t-hez szorozva 2 a dt-hez.
+
+57
+00:04:21,260 --> 00:04:24,120
+Ez valóban az exponensek legfontosabb tulajdonsága.
+
+58
+00:04:24,660 --> 00:04:27,238
+Ha két értéket adsz össze ebben az exponensben, 
+
+59
+00:04:27,238 --> 00:04:30,140
+akkor a kimenetet valamilyen termékként bonthatod fel.
+
+60
+00:04:30,820 --> 00:04:34,269
+Ez az, ami lehetővé teszi, hogy az additív gondolatokat, például az idő apró lépéseit, 
+
+61
+00:04:34,269 --> 00:04:37,680
+összekapcsoljuk a multiplikatív gondolatokkal, például az arányokkal és az arányokkal.
+
+62
+00:04:38,420 --> 00:04:39,960
+Úgy értem, csak nézd meg, mi történik itt.
+
+63
+00:04:40,840 --> 00:04:45,298
+Ezután a lépés után a t-hez ki tudjuk szorozni a 2-t, 
+
+64
+00:04:45,298 --> 00:04:49,840
+ami most már csak a dt mínusz 1, mindezt osztva dt-vel.
+
+65
+00:04:50,720 --> 00:04:53,835
+És ne feledjük, hogy a 2 deriváltja a t-hez képest az, 
+
+66
+00:04:53,835 --> 00:04:57,460
+amit ez az egész kifejezés megközelít, ahogy dt közelít a 0-hoz.
+
+67
+00:04:58,540 --> 00:05:02,080
+És ez első pillantásra jelentéktelen manipulációnak tűnhet.
+
+68
+00:05:02,700 --> 00:05:06,388
+De egy rendkívül fontos tény, hogy ez a jobb oldali kifejezés, 
+
+69
+00:05:06,388 --> 00:05:10,780
+ahol az összes dt dolog lakik, teljesen elkülönül magától a t kifejezéstől.
+
+70
+00:05:11,260 --> 00:05:13,920
+Ez nem függ attól, hogy ténylegesen mikor kezdtük.
+
+71
+00:05:14,620 --> 00:05:21,279
+Elmehetsz egy számológéphez, és nagyon kis értékeket adhatsz meg a dt-nek, 
+
+72
+00:05:21,279 --> 00:05:26,340
+például beírhatsz 2-t a 0,001 mínusz 1 osztva 0,001-gyel.
+
+73
+00:05:27,760 --> 00:05:32,796
+Azt fogja tapasztalni, hogy a dt egyre kisebb és kisebb választása esetén 
+
+74
+00:05:32,796 --> 00:05:37,560
+ez az érték egy nagyon konkrét számhoz közelít, körülbelül 0,6931-hez.
+
+75
+00:05:38,640 --> 00:05:43,580
+Ne aggódj, ha ez a szám rejtélyesnek tűnik, a lényeg az, hogy ez valamiféle állandó.
+
+76
+00:05:44,500 --> 00:05:48,320
+Más függvények deriváltjaitól eltérően a dt-től 
+
+77
+00:05:48,320 --> 00:05:52,140
+függő dolgok elkülönülnek magától a t értékétől.
+
+78
+00:05:52,840 --> 00:05:58,120
+Tehát a 2 deriváltja a t-hez képest csak önmaga, de megszorozva valamilyen konstanssal.
+
+79
+00:05:59,300 --> 00:06:01,802
+És ennek van értelme, mert korábban úgy éreztem, 
+
+80
+00:06:01,802 --> 00:06:04,763
+hogy a 2 a t-re való származtatásnak magának kell lennie, 
+
+81
+00:06:04,763 --> 00:06:08,440
+legalábbis amikor egy teljes nap alatt bekövetkező változásokat néztünk.
+
+82
+00:06:09,030 --> 00:06:13,690
+És nyilvánvaló, hogy ennek a függvénynek a változási üteme sokkal 
+
+83
+00:06:13,690 --> 00:06:18,845
+kisebb időskálákon nem teljesen egyenlő önmagával, de arányos önmagával, 
+
+84
+00:06:18,845 --> 00:06:22,800
+ezzel a nagyon különös 0,6931-es arányossági állandóval.
+
+85
+00:06:29,040 --> 00:06:32,200
+És itt a 2-es számmal kapcsolatban sincs túl sok különlegesség.
+
+86
+00:06:32,840 --> 00:06:36,351
+Ha ehelyett a 3 a t-hez függvénnyel foglalkoztunk volna, 
+
+87
+00:06:36,351 --> 00:06:41,527
+akkor az exponenciális tulajdonság alapján szintén arra a következtetésre jutottunk 
+
+88
+00:06:41,527 --> 00:06:45,409
+volna, hogy a 3 a t-hez függvény deriváltja önmagával arányos, 
+
+89
+00:06:45,409 --> 00:06:48,120
+de ezúttal 1,0986-os arányossági állandóval.
+
+90
+00:06:49,200 --> 00:06:53,267
+Az exponensedhez tartozó más bázisok esetében pedig szórakozhatsz azzal, hogy megnézed, 
+
+91
+00:06:53,267 --> 00:06:55,902
+mik a különböző arányossági állandók, és talán megnézed, 
+
+92
+00:06:55,902 --> 00:06:57,520
+találsz-e bennük valamilyen mintát.
+
+93
+00:06:58,400 --> 00:07:03,058
+Ha például 8-at egy nagyon apró szám hatványára, mínusz 1, 
+
+94
+00:07:03,058 --> 00:07:07,875
+és elosztjuk ugyanezzel az apró számmal, akkor azt találjuk, 
+
+95
+00:07:07,875 --> 00:07:12,140
+hogy a vonatkozó arányossági állandó körülbelül 2,079.
+
+96
+00:07:12,660 --> 00:07:17,486
+És talán, csak talán, észreveszed, hogy ez a szám történetesen 
+
+97
+00:07:17,486 --> 00:07:21,700
+pontosan 3-szorosa a 2-es bázishoz tartozó konstansnak.
+
+98
+00:07:22,460 --> 00:07:27,960
+Tehát ezek a számok biztosan nem véletlenszerűek, van valamilyen minta, de mi az?
+
+99
+00:07:28,180 --> 00:07:35,400
+Mi köze a 2-nek a 0,6931-es számhoz, és mi köze a 8-nak a 2,079-es számhoz?
+
+100
+00:07:36,780 --> 00:07:42,957
+Nos, a második kérdés, ami végső soron megmagyarázza ezeket a rejtélyes állandókat, 
+
+101
+00:07:42,957 --> 00:07:47,149
+hogy van-e olyan alap, ahol ez az arányossági állandó 1, 
+
+102
+00:07:47,149 --> 00:07:53,180
+ahol a t hatványa nem csak önmagával arányos, hanem ténylegesen egyenlő önmagával.
+
+103
+00:07:53,720 --> 00:07:54,680
+És van is!
+
+104
+00:07:55,080 --> 00:07:59,300
+Ez az e speciális állandó 2,71828 körül van.
+
+105
+00:08:00,320 --> 00:08:04,387
+Valójában nem csak arról van szó, hogy az e szám történetesen itt jelenik meg, 
+
+106
+00:08:04,387 --> 00:08:07,220
+hanem bizonyos értelemben ez határozza meg az e számot.
+
+107
+00:08:08,600 --> 00:08:12,264
+Ha azt kérdezzük, hogy miért van az összes szám közül az e-nek ez a tulajdonsága, 
+
+108
+00:08:12,264 --> 00:08:15,080
+az egy kicsit olyan, mintha azt kérdeznénk, hogy miért van az, 
+
+109
+00:08:15,080 --> 00:08:18,120
+hogy az összes szám közül a pi a kör kerület és az átmérő hányadosa.
+
+110
+00:08:18,670 --> 00:08:21,280
+Ez a lényege annak, ami ezt az értéket meghatározza.
+
+111
+00:08:22,060 --> 00:08:26,108
+Minden exponenciális függvény arányos a saját deriváltjával, 
+
+112
+00:08:26,108 --> 00:08:30,356
+de egyedül e az a speciális szám, így az arányossági állandó 1, 
+
+113
+00:08:30,356 --> 00:08:34,140
+vagyis e a t-hez valójában egyenlő a saját deriváltjával.
+
+114
+00:08:35,440 --> 00:08:39,089
+Ezt úgy is elképzelhetjük, hogy ha megnézzük az e és a t grafikonját, 
+
+115
+00:08:39,089 --> 00:08:42,999
+akkor az a különös tulajdonsága, hogy a grafikon bármely pontjához tartozó 
+
+116
+00:08:42,999 --> 00:08:47,640
+érintővonal meredeksége megegyezik az adott pont vízszintes tengely feletti magasságával.
+
+117
+00:08:48,760 --> 00:08:53,851
+Egy ilyen függvény létezése választ ad a rejtélyes állandók kérdésére, mégpedig azért, 
+
+118
+00:08:53,851 --> 00:08:58,300
+mert másképpen gondolkodhatunk a saját deriváltjukkal arányos függvényekről.
+
+119
+00:08:59,200 --> 00:09:01,000
+A kulcs a láncszabály használata.
+
+120
+00:09:01,920 --> 00:09:05,300
+Például mi az e deriváltja a 3t-hez képest?
+
+121
+00:09:06,340 --> 00:09:12,380
+Nos, vesszük a legkülső függvény deriváltját, ami az e különleges természetéből adódóan 
+
+122
+00:09:12,380 --> 00:09:18,420
+csak önmaga, és megszorozzuk a belső függvény deriváltjával, a 3t-vel, ami a 3 konstans.
+
+123
+00:09:19,460 --> 00:09:23,904
+Vagy ahelyett, hogy vakon alkalmaznál egy szabályt, megragadhatnád ezt a pillanatot, 
+
+124
+00:09:23,904 --> 00:09:28,086
+hogy gyakorold a láncszabály intuícióját, amiről a múltkori videóban beszéltem, 
+
+125
+00:09:28,086 --> 00:09:32,112
+gondolkodva azon, hogy a t enyhe lökése hogyan változtatja meg a 3t értékét, 
+
+126
+00:09:32,112 --> 00:09:35,720
+és hogy ez a köztes változás hogyan löki az e végső értékét a 3t-hez.
+
+127
+00:09:38,420 --> 00:09:42,856
+Akárhogy is, a lényeg az, hogy e egy konstans és t szorzatának 
+
+128
+00:09:42,856 --> 00:09:46,800
+hatványa egyenlő ugyanannak a konstansnak a szorzatával.
+
+129
+00:09:47,960 --> 00:09:51,478
+És innentől kezdve a titokzatos állandók kérdése valójában 
+
+130
+00:09:51,478 --> 00:09:54,640
+csak egy bizonyos algebrai manipulációra szorítkozik.
+
+131
+00:09:56,300 --> 00:10:01,060
+A 2 számot úgy is fel lehet írni, hogy e a 2 természetes logaritmusa.
+
+132
+00:10:01,060 --> 00:10:05,787
+Nincs itt semmi különös, ez csak a természetes log definíciója, 
+
+133
+00:10:05,787 --> 00:10:09,480
+ez teszi fel a kérdést, hogy e a mi egyenlő 2-vel.
+
+134
+00:10:10,820 --> 00:10:14,499
+Tehát a 2 a t-hez függvény ugyanaz, mint az e függvény 
+
+135
+00:10:14,499 --> 00:10:18,380
+a 2-szer t 2-szer t természetes logaritmusának hatványára.
+
+136
+00:10:20,320 --> 00:10:23,561
+És abból, amit az imént láttunk, kombinálva azt a tényt, 
+
+137
+00:10:23,561 --> 00:10:26,517
+hogy e a t-hez a saját deriváltja a láncszabállyal, 
+
+138
+00:10:26,517 --> 00:10:29,474
+ennek a függvénynek a deriváltja önmagával arányos, 
+
+139
+00:10:29,474 --> 00:10:33,000
+a 2 természetes logaritmusával egyenlő arányossági állandóval.
+
+140
+00:10:34,080 --> 00:10:38,254
+És valóban, ha a számológépbe bedugod a 2 természetes logaritmusát, 
+
+141
+00:10:38,254 --> 00:10:42,920
+azt találod, hogy 0,6931, a rejtélyes állandó, amibe korábban belefutottunk.
+
+142
+00:10:43,980 --> 00:10:46,220
+Ugyanez vonatkozik az összes többi bázisra is.
+
+143
+00:10:46,760 --> 00:10:50,908
+A rejtélyes arányossági állandó, amely a deriváltak felvételekor felbukkan, 
+
+144
+00:10:50,908 --> 00:10:53,420
+nem más, mint a bázis természetes logaritmusa.
+
+145
+00:10:53,420 --> 00:11:02,726
+Valójában a számtan alkalmazásai során ritkán találkozunk exponenciálisokkal, 
+
+146
+00:11:02,726 --> 00:11:07,380
+amelyeket valamilyen t hatványra írtak.
+
+147
+00:11:08,060 --> 00:11:10,998
+Ehelyett az exponenciális értéket szinte mindig úgy írjuk le, 
+
+148
+00:11:10,998 --> 00:11:13,320
+hogy e valamilyen konstans t-szeresének hatványa.
+
+149
+00:11:14,200 --> 00:11:17,235
+Minden egyenértékű, úgy értem, hogy bármelyik függvény, 
+
+150
+00:11:17,235 --> 00:11:20,325
+mint például 2 a t-hez vagy 3 a t-hez, úgy is felírható, 
+
+151
+00:11:20,325 --> 00:11:22,440
+hogy e valamilyen konstans t-szeresére.
+
+152
+00:11:24,520 --> 00:11:29,600
+A szimbólumokra való túlzott koncentrálás veszélye miatt szeretném hangsúlyozni, 
+
+153
+00:11:29,600 --> 00:11:33,740
+hogy sokféleképpen lehet leírni bármelyik exponenciális függvényt.
+
+154
+00:11:34,500 --> 00:11:39,408
+És amikor valamit úgy írunk le, hogy e és egy konstans szorozva t-vel, 
+
+155
+00:11:39,408 --> 00:11:44,940
+az egy olyan döntés, hogy így írjuk le, és az e szám nem alapvető a függvényben.
+
+156
+00:11:45,560 --> 00:11:49,265
+Az exponenciálisok e-vel való írásának különlegessége, 
+
+157
+00:11:49,265 --> 00:11:53,780
+hogy az exponensben lévő konstansnak szépen olvasható jelentést ad.
+
+158
+00:11:54,440 --> 00:11:55,540
+Hadd mutassam meg, mire gondolok.
+
+159
+00:11:56,280 --> 00:12:00,615
+A természeti jelenségek minden fajtája magában foglal valamilyen változási sebességet, 
+
+160
+00:12:00,615 --> 00:12:02,260
+amely arányos a változó dologgal.
+
+161
+00:12:03,260 --> 00:12:08,170
+Például a népesség növekedési üteme valóban arányos a népesség méretével, 
+
+162
+00:12:08,170 --> 00:12:13,480
+feltéve, hogy nincs valamilyen korlátozott erőforrás, ami lelassítja a dolgokat.
+
+163
+00:12:14,100 --> 00:12:18,118
+És ha egy csésze forró vizet teszünk egy hűvös szobába, 
+
+164
+00:12:18,118 --> 00:12:22,926
+akkor a víz lehűlésének sebessége arányos a szoba és a víz közötti 
+
+165
+00:12:22,926 --> 00:12:27,016
+hőmérsékletkülönbséggel, vagy kicsit másképp fogalmazva, 
+
+166
+00:12:27,016 --> 00:12:30,820
+a különbség változásának sebessége arányos önmagával.
+
+167
+00:12:31,960 --> 00:12:39,080
+Ha befekteted a pénzed, akkor a pénz növekedési üteme arányos a mindenkori pénzösszeggel.
+
+168
+00:12:39,940 --> 00:12:44,851
+Mindezekben az esetekben, amikor egy változó változási sebessége önmagával arányos, 
+
+169
+00:12:44,851 --> 00:12:48,418
+az adott változót az idő múlásával leíró függvény valamilyen 
+
+170
+00:12:48,418 --> 00:12:50,640
+exponenciális függvénynek fog kinézni.
+
+171
+00:12:51,760 --> 00:12:55,590
+És bár rengeteg módja van bármilyen exponenciális függvény felírásának, 
+
+172
+00:12:55,590 --> 00:12:58,994
+nagyon természetes, hogy ezeket a függvényeket úgy fejezzük ki, 
+
+173
+00:12:58,994 --> 00:13:01,974
+hogy e-t valamilyen konstans t-szeresének a hatványára, 
+
+174
+00:13:01,974 --> 00:13:04,900
+mivel ez a konstans nagyon természetes jelentéssel bír.
+
+175
+00:13:04,900 --> 00:13:08,384
+Ez ugyanaz, mint a változó változó mérete és a 
+
+176
+00:13:08,384 --> 00:13:11,720
+változás mértéke közötti arányossági állandó.
+
+177
+00:13:14,760 --> 00:13:16,599
+És mint mindig, szeretnék köszönetet mondani azoknak, 
+
+178
+00:13:16,599 --> 00:13:17,860
+akik lehetővé tették ezt a sorozatot.
+
+179
+00:13:34,900 --> 00:13:49,500
+Köszönöm.
+

@@ -1,0 +1,1320 @@
+1
+00:00:03,019 --> 00:00:05,363
+Talán tisztában vagy vele, hogy nagy rajongója vagyok a 
+
+2
+00:00:05,363 --> 00:00:08,000
+Grant Sanderson által vezetett 3blue1brown YouTube-csatornának.
+
+3
+00:00:08,300 --> 00:00:11,947
+Grant kiváló videókat készít a matematikáról és más témák matematikai vonatkozásairól, 
+
+4
+00:00:11,947 --> 00:00:13,960
+ezért megengedem, hogy ma átvegye a csatornámat.
+
+5
+00:00:14,360 --> 00:00:15,460
+Grant, vigye el.
+
+6
+00:00:16,420 --> 00:00:19,882
+Egy héttel ezelőtt közzétettem egy tweetet, amely egy különleges helyet mutat be, 
+
+7
+00:00:19,882 --> 00:00:22,458
+ahol egy ellipszis emelkedik, de amit nem említettem, az az, 
+
+8
+00:00:22,458 --> 00:00:25,921
+hogy ez az önkényesnek tűnő konstrukció valójában nagyon releváns Richard Feynman 
+
+9
+00:00:25,921 --> 00:00:28,159
+egy egyszer elveszett előadásában, amely arról szól, 
+
+10
+00:00:28,159 --> 00:00:30,060
+hogy a bolygók miért keringenek ellipszisben.
+
+11
+00:00:30,640 --> 00:00:33,727
+Maga az építés azzal kezdődik, hogy rajzolunk egy kört, 
+
+12
+00:00:33,727 --> 00:00:37,420
+kiválasztunk egy pontot a körön belül, ami nincs a középpontjában, 
+
+13
+00:00:37,420 --> 00:00:41,445
+amit excentrikus pontnak nevezek, majd húzunk egy csomó vonalat ettől az 
+
+14
+00:00:41,445 --> 00:00:45,855
+excentrikus ponttól egészen a kerületig, majd mindegyik vonal esetében forgassa 
+
+15
+00:00:45,855 --> 00:00:50,155
+el 90 fokkal a felezőpontja körül, és amikor ezt az összes vonalnál megteszi, 
+
+16
+00:00:50,155 --> 00:00:52,140
+egy ellipszis jelenik meg a közepén.
+
+17
+00:00:52,889 --> 00:00:56,328
+A szövegkörnyezeten kívül ez egy enyhén tetszetős kíváncsiság, 
+
+18
+00:00:56,328 --> 00:01:01,240
+de az elégedettségnek sokkal mélyebb formája van az úton, ha megérted a teljes történetet.
+
+19
+00:01:01,880 --> 00:01:06,620
+A történet elején és középpontjában Richard Feynman áll, aki számos dimenzióban híres.
+
+20
+00:01:07,160 --> 00:01:10,244
+A tudósok számára a 20. századi fizika óriása, 
+
+21
+00:01:10,244 --> 00:01:15,100
+Nobel-díjas a kvantumelektrodinamikai alapismereteiért, sok egyéb mellett.
+
+22
+00:01:15,420 --> 00:01:19,142
+A közvélemény számára üdítően ellentmond a fizikusokról szóló sztereotípiáknak, 
+
+23
+00:01:19,142 --> 00:01:22,259
+egy biztonságos bongót játszó, enyhén filanderista nonkonformista, 
+
+24
+00:01:22,259 --> 00:01:25,330
+akinek erősen brooklyni akcentusú hangját valószínűleg hallottad, 
+
+25
+00:01:25,330 --> 00:01:29,053
+amint egy kis értelmetlen pragmatikus bölcsességet közvetít az egyetlen ésszerű 
+
+26
+00:01:29,053 --> 00:01:32,635
+módszerről. nézze meg a világot, vagy valami fanyar viccet mond el egy görbe 
+
+27
+00:01:32,635 --> 00:01:33,520
+mosolyon keresztül.
+
+28
+00:01:34,040 --> 00:01:36,990
+Ám a fizikus hallgatók számára kivételesen ügyes tanár volt, 
+
+29
+00:01:36,990 --> 00:01:39,602
+mind a karizmája, mind az elképesztő képessége miatt, 
+
+30
+00:01:39,602 --> 00:01:42,940
+hogy bonyolult témákat természetessé és megközelíthetővé varázsoljon.
+
+31
+00:01:43,420 --> 00:01:46,928
+A Caltech elsőéves kurzusain tartott előadásai közül sokat a ma már híres 
+
+32
+00:01:46,928 --> 00:01:51,100
+Feynman-előadások örökítettek meg, három kötetét ingyenesen megtalálhatja az interneten.
+
+33
+00:01:51,720 --> 00:01:54,940
+De nem minden előadása került be ebbe a gyűjteménybe.
+
+34
+00:01:55,480 --> 00:02:00,298
+Egy 1964. március 13-i vendégelőadás, a Bolygók mozgása a Nap körül címmel, 
+
+35
+00:02:00,298 --> 00:02:03,404
+csak kiadatlan részleges átiratként maradt fenn, 
+
+36
+00:02:03,404 --> 00:02:08,984
+néhány jegyzetet Feynman egyik kollégájának irodájában temettek el, míg végül felásták. 
+
+37
+00:02:08,984 --> 00:02:11,520
+A Caltech levéltárosa, Judith Goodstein.
+
+38
+00:02:12,040 --> 00:02:15,510
+Annak ellenére, hogy hiányoztak néhány fontos táblarajz a Feynman 
+
+39
+00:02:15,510 --> 00:02:19,980
+mondanivalójának követéséhez, férje, David végül rekonstruálta az előadás érvelését, 
+
+40
+00:02:19,980 --> 00:02:23,766
+amelyet ketten a Feynman elveszett előadása című könyvben tettek közzé, 
+
+41
+00:02:23,766 --> 00:02:27,500
+átadva mind az előadást, mind a környező történetet. igazán szép módon.
+
+42
+00:02:28,640 --> 00:02:31,352
+Itt szeretném egy animáltabb és leegyszerűsített 
+
+43
+00:02:31,352 --> 00:02:34,120
+újramesélést adni a Feynman által előadott érvnek.
+
+44
+00:02:35,440 --> 00:02:38,470
+Maga az előadás arról szól, hogy a bolygók és más csillagászati 
+
+45
+00:02:38,470 --> 00:02:40,980
+objektumok miért keringenek ellipszisben a Nap körül.
+
+46
+00:02:41,420 --> 00:02:44,543
+Ez végső soron a fordított négyzettörvényhez kapcsolódik, 
+
+47
+00:02:44,543 --> 00:02:47,990
+azzal a ténnyel, hogy az objektumot a Nap felé húzó gravitációs 
+
+48
+00:02:47,990 --> 00:02:51,760
+erő fordítottan arányos a tárgy és a Nap közötti távolság négyzetével.
+
+49
+00:02:52,580 --> 00:02:53,220
+De miért?
+
+50
+00:02:53,780 --> 00:02:57,280
+Pontosan hogyan hoz létre ez a törvény minden alakú ellipszist?
+
+51
+00:02:58,040 --> 00:03:01,226
+Természetesen a különböző bolygók, holdak és üstökösök közötti 
+
+52
+00:03:01,226 --> 00:03:05,728
+gravitációs vonzások és mindez azt jelenti, hogy egyetlen pálya sem tökéletes ellipszis, 
+
+53
+00:03:05,728 --> 00:03:08,460
+de tessék, nagyon jó közelítéssel ez egy pálya alakja.
+
+54
+00:03:09,540 --> 00:03:13,930
+Megoldhatja ezt analitikusan, felállítva a megfelelő differenciálegyenletet, 
+
+55
+00:03:13,930 --> 00:03:16,040
+és látni fogja az ellipszis képletét.
+
+56
+00:03:16,500 --> 00:03:19,496
+De Feynman célja ezzel az előadással az volt, hogy valami különlegeset csináljon, 
+
+57
+00:03:19,496 --> 00:03:21,580
+és ne hagyatkozzon semmilyen nehéz matematikai gépezetre.
+
+58
+00:03:22,220 --> 00:03:24,720
+Sőt, hallgassuk meg, ahogy megfogalmazza saját célját.
+
+59
+00:03:25,440 --> 00:03:28,760
+Azt fogom tartani, amit elemi bemutatónak nevezek.
+
+60
+00:03:29,340 --> 00:03:31,420
+Az elemi alatt nem azt jelenti, hogy könnyen érthető.
+
+61
+00:03:33,840 --> 00:03:38,576
+Az elemi azt jelenti, hogy semmit, nagyon keveset nem kell előre tudni ahhoz, 
+
+62
+00:03:38,576 --> 00:03:42,220
+hogy megértsük, kivéve a végtelen mennyiségű intelligenciát.
+
+63
+00:03:43,760 --> 00:03:47,873
+Lehetséges, hogy sok olyan lépés létezik, amelyeket nagyon nehéz követni, 
+
+64
+00:03:47,873 --> 00:03:51,098
+de minden lépéshez nem szükséges már ismerni a számítást, 
+
+65
+00:03:51,098 --> 00:03:54,100
+már ismerni a Fourier-transzformációkat és így tovább.
+
+66
+00:03:55,140 --> 00:03:58,040
+Igen, ez minden, csak egy kis végtelen intelligencia.
+
+67
+00:03:58,280 --> 00:03:59,740
+Azt hiszem, erre kész vagy, nem?
+
+68
+00:04:00,320 --> 00:04:03,550
+Megtettem, ami tőlem telik, hogy leegyszerűsítsem a dolgokat az eredeti előadásához 
+
+69
+00:04:03,550 --> 00:04:06,780
+képest, de ez nem jelenti azt, hogy továbbra sem lesz szükség nagy összpontosításra.
+
+70
+00:04:07,600 --> 00:04:10,032
+Először is meg kell határoznunk az ellipszis fogalmát, 
+
+71
+00:04:10,032 --> 00:04:13,040
+különben nincs remény annak bizonyítására, hogy ez egy pálya alakja.
+
+72
+00:04:13,720 --> 00:04:15,969
+Néhányan talán ismerik az ellipszis felépítésének 
+
+73
+00:04:15,969 --> 00:04:18,579
+klasszikus módját két rajzszög és egy zsinór segítségével.
+
+74
+00:04:19,360 --> 00:04:22,477
+A hüvelykujj segítségével rögzítse egy kis zsinór végeit, 
+
+75
+00:04:22,477 --> 00:04:26,778
+majd húzza meg a zsinórt egy ceruzával, és próbáljon meg kirajzolni egy görbét, 
+
+76
+00:04:26,778 --> 00:04:28,660
+miközben feszesen tartja a zsinórt.
+
+77
+00:04:29,400 --> 00:04:33,150
+Ez hasonló ahhoz, hogy egyetlen rajzszöget használjon egy kör felépítéséhez, 
+
+78
+00:04:33,150 --> 00:04:35,536
+ahol a karakterlánc rögzített hossza garantálja, 
+
+79
+00:04:35,536 --> 00:04:38,800
+hogy minden kirajzolt pont állandó távolságra legyen a rajzszögtől.
+
+80
+00:04:39,340 --> 00:04:43,457
+De ebben az esetben, két rajzszöggel, milyen tulajdonságot 
+
+81
+00:04:43,457 --> 00:04:46,180
+garantál minden egyes kinyomott pontra?
+
+82
+00:04:47,220 --> 00:04:51,730
+Nos, minden ponton az ettől a ponttól a két rajzszöghöz 
+
+83
+00:04:51,730 --> 00:04:56,160
+mért távolságok összege a húr teljes hossza lesz, igaz?
+
+84
+00:04:56,160 --> 00:04:59,146
+Ennek a görbének az a meghatározó tulajdonsága, 
+
+85
+00:04:59,146 --> 00:05:04,622
+hogy amikor a görbe bármely pontjáról vonalakat húzunk erre a két speciális rajzszögre, 
+
+86
+00:05:04,622 --> 00:05:09,040
+e vonalak hosszának összege állandó, nevezetesen a karakterlánc hossza.
+
+87
+00:05:10,060 --> 00:05:14,000
+Ezen pontok mindegyikét az ellipszis fókuszának nevezzük, összefoglaló néven gócoknak.
+
+88
+00:05:14,740 --> 00:05:18,012
+Érdekes tény, hogy a fókusz szó a latin kandalló szóból származik, 
+
+89
+00:05:18,012 --> 00:05:21,138
+mivel az egyik első hely, ahol az ellipsziseket tanulmányozták, 
+
+90
+00:05:21,138 --> 00:05:24,753
+a Nap körüli pályákra vonatkozott, ami a Naprendszer egyfajta kandallója, 
+
+91
+00:05:24,753 --> 00:05:27,000
+amely a bolygó pályájának egyik gócában ült. .
+
+92
+00:05:27,840 --> 00:05:32,480
+Kicsit kidolgozva magunknak a terminológiát, nevezzük az ellipszis bármely pontja 
+
+93
+00:05:32,480 --> 00:05:37,120
+és a két fókusz közötti távolságok állandó összegét az ellipszis fókuszösszegének.
+
+94
+00:05:37,640 --> 00:05:40,013
+Egy pillanat alatt eljutunk az orbitális mechanikához, 
+
+95
+00:05:40,013 --> 00:05:43,033
+de először azt szeretném, ha visszakanyarodna ahhoz a konstrukcióhoz, 
+
+96
+00:05:43,033 --> 00:05:46,140
+amelyet az elején mutattam, és amely később újra előkerül a történetben.
+
+97
+00:05:46,760 --> 00:05:51,348
+Ne feledje, ezeket a vonalakat a kör egy excentrikus pontjától a kerülete felé vesszük, 
+
+98
+00:05:51,348 --> 00:05:54,320
+és mindegyiket elforgatjuk 90 fokkal a középpontja körül.
+
+99
+00:05:54,900 --> 00:05:58,980
+De mi a franc köze van ennek az imént leírt állandó fókuszösszeg tulajdonsághoz?
+
+100
+00:05:59,620 --> 00:06:02,915
+Fogadhatnád a szavamat, hogy ez a kialakuló alakzat egy ellipszis, 
+
+101
+00:06:02,915 --> 00:06:05,424
+de azt hiszem, a végén sokkal elégedettebb leszel, 
+
+102
+00:06:05,424 --> 00:06:09,360
+ha most szánunk egy kis időt egy rövid oldallépésre a geometriabiztos föld felé.
+
+103
+00:06:09,960 --> 00:06:13,220
+Először is, valójában csak két speciális pont van ezen az ábrán.
+
+104
+00:06:13,540 --> 00:06:17,480
+Ott van az excentrikus pont, ahonnan az összes egyenes kilép, és a kör középpontja.
+
+105
+00:06:18,040 --> 00:06:22,600
+Tehát ésszerű feltételezés az lenne, hogy ezek mindegyike az ellipszis fókusza.
+
+106
+00:06:22,820 --> 00:06:26,727
+Tekintettel az ellipszis meghatározó tulajdonságára, tudja, 
+
+107
+00:06:26,727 --> 00:06:30,700
+hogy meg akarja nézni e két pont és valami távolság összegét.
+
+108
+00:06:31,400 --> 00:06:34,367
+Továbbá, ha bármilyen geometriai problémát csinál egy körrel, 
+
+109
+00:06:34,367 --> 00:06:38,243
+akkor nagy valószínűséggel meg kell rajzolnia a kör sugarát egy bizonyos ponton, 
+
+110
+00:06:38,243 --> 00:06:41,689
+és használnia kell azt a tényt, hogy ennek a sugárnak a hossza állandó, 
+
+111
+00:06:41,689 --> 00:06:43,460
+függetlenül attól, hogy hol rajzolja.
+
+112
+00:06:43,700 --> 00:06:46,397
+Úgy értem, ez határozza meg a kört, szóval valószínűleg 
+
+113
+00:06:46,397 --> 00:06:48,180
+be kell építeni ezt a tényt valahova.
+
+114
+00:06:48,920 --> 00:06:53,811
+Ezzel a két gondolattal az elmédben, korlátozzuk figyelmünket e vonalak egyikére, 
+
+115
+00:06:53,811 --> 00:06:55,900
+érintve a kör valamelyik P pontját.
+
+116
+00:06:56,640 --> 00:06:58,100
+Ne feledje, mi történik az építkezésünkben.
+
+117
+00:06:58,440 --> 00:07:03,514
+Ezt az egyenest az excentrikus ponttól 90 fokkal elforgatjuk a középpontja körül, 
+
+118
+00:07:03,514 --> 00:07:07,102
+és a geometria rajongói a szobában képzeletben az eredeti 
+
+119
+00:07:07,102 --> 00:07:09,640
+egyenes merőleges felezőjének nevezhetik.
+
+120
+00:07:10,420 --> 00:07:14,808
+Most szánjon egy pillanatot arra, hogy gondolja át a javasolt fókuszpontok és 
+
+121
+00:07:14,808 --> 00:07:19,140
+a merőleges felezőszög mentén tetszőleges Q pont közötti távolságok összegét.
+
+122
+00:07:22,719 --> 00:07:26,838
+A legfontosabb meglátás az, hogy találhat két egybevágó háromszöget, 
+
+123
+00:07:26,838 --> 00:07:29,643
+és ezek alapján arra a következtetésre juthat, 
+
+124
+00:07:29,643 --> 00:07:34,120
+hogy a Q és az excentrikus pont távolsága megegyezik a Q és P távolságával.
+
+125
+00:07:35,320 --> 00:07:39,506
+Tehát ez azt jelenti, hogy a távolságok hozzáadása az egyes fókuszokhoz ugyanaz, 
+
+126
+00:07:39,506 --> 00:07:43,280
+mint a középpont távolságának Q-hez, majd Q-hoz P-hez való hozzáadásával.
+
+127
+00:07:44,220 --> 00:07:46,800
+És van két kulcsfontosságú dolog, amit szeretném, ha itt észrevesz.
+
+128
+00:07:47,320 --> 00:07:52,583
+Először is, azon a ponton, ahol ez a merőleges felező metszi a sugarat, 
+
+129
+00:07:52,583 --> 00:07:55,800
+ez az összeg egyértelműen csak a kör sugara.
+
+130
+00:07:56,600 --> 00:08:00,490
+És mivel ez a sugár állandó, függetlenül attól, hogy hol rajzoljuk meg, 
+
+131
+00:08:00,490 --> 00:08:03,677
+a gyújtópont összege abban a metszéspontban állandó marad, 
+
+132
+00:08:03,677 --> 00:08:07,189
+ami definíció szerint azt jelenti, hogy kirajzol egy ellipszist, 
+
+133
+00:08:07,189 --> 00:08:11,620
+konkrétan egy olyan ellipszist, amelynek fókuszösszege megegyezik a kör sugarával.
+
+134
+00:08:12,280 --> 00:08:12,560
+Hát nem ügyes?
+
+135
+00:08:12,560 --> 00:08:17,572
+Másodszor pedig, mivel ennek a két hossznak az összege a merőleges felező minden 
+
+136
+00:08:17,572 --> 00:08:20,913
+más pontjában nagyobb, mint a sugár, ami azt jelenti, 
+
+137
+00:08:20,913 --> 00:08:25,431
+hogy az ezektől a pontoktól a fókuszpontok távolságának összege nagyobb, 
+
+138
+00:08:25,431 --> 00:08:30,319
+mint az ellipszis fókuszösszege, ennek az egyenesnek az összes többi pontja az 
+
+139
+00:08:30,319 --> 00:08:32,299
+ellipszisen kívül kell feküdnie.
+
+140
+00:08:32,940 --> 00:08:37,408
+Ez azt jelenti, és ez fontos lesz, hogy ez a merőleges felező, 
+
+141
+00:08:37,408 --> 00:08:42,799
+a speciális 90 fokos elforgatásunk után kapott egyenes érinti az ellipszist.
+
+142
+00:08:43,620 --> 00:08:48,624
+Tehát az oka annak, hogy a korábban megrajzolt összes vonal a semmiből jeleníti meg ezt 
+
+143
+00:08:48,624 --> 00:08:53,117
+az ellipszist, mert alapvetően egy egész csomó érintővonalat rajzolunk erre az 
+
+144
+00:08:53,117 --> 00:08:53,800
+ellipszisre.
+
+145
+00:08:53,800 --> 00:08:56,818
+Amint később látni fogjuk, az az ok, ami fontos, 
+
+146
+00:08:56,818 --> 00:09:01,500
+hogy ez az érintési irány meg fog felelni egy keringő objektum sebességének.
+
+147
+00:09:02,580 --> 00:09:06,520
+Oké, a geometria ellenőrzése megtörtént, néhány tényleges fizikával és pályamechanikával.
+
+148
+00:09:07,319 --> 00:09:12,349
+Az első tény az, hogy használjuk Kepler nagyon szép második törvényét, amely azt mondja, 
+
+149
+00:09:12,349 --> 00:09:16,983
+hogy amikor egy tárgy kering a Nap körül, a terület, amelyet egy adott idő alatt, 
+
+150
+00:09:16,983 --> 00:09:21,900
+például egy nap alatt kisöpör, állandó marad, függetlenül attól, hogy hol van. a pálya.
+
+151
+00:09:22,760 --> 00:09:26,040
+Például gondolhat egy üstökösre, amelynek pályája nagyon ferde.
+
+152
+00:09:26,520 --> 00:09:29,454
+A naphoz közel nagyon gyorsan felpörög, így adott 
+
+153
+00:09:29,454 --> 00:09:31,920
+időintervallumban nagyobb ívhosszt fed le.
+
+154
+00:09:32,280 --> 00:09:38,280
+De távolabb lassabban mozog, így rövidebb ívhosszt fed le ugyanezen idő alatt.
+
+155
+00:09:39,020 --> 00:09:44,572
+És ez a kompromisszum a sugár és az ívhossz között éppen úgy egyensúlyoz ki, 
+
+156
+00:09:44,572 --> 00:09:46,880
+hogy a kisöpört terület ugyanaz.
+
+157
+00:09:47,240 --> 00:09:49,359
+Egy gyors módja annak, hogy megtudja, miért igaz ez, 
+
+158
+00:09:49,359 --> 00:09:51,000
+ha kihasználja a szögimpulzus megőrzését.
+
+159
+00:09:52,040 --> 00:09:58,760
+Bármilyen apró kis időlépésnél, delta t, a kisöpört terület alapvetően egy háromszög.
+
+160
+00:09:59,180 --> 00:10:02,604
+Elvileg ezt egy kis szeletnek kell tekinteni egy apró időlépéshez, 
+
+161
+00:10:02,604 --> 00:10:06,080
+de szépen megrajzolom vastagon, hogy jobban lássuk az összes részét.
+
+162
+00:10:06,940 --> 00:10:10,480
+Ennek a háromszögnek a területe a magasság 1 fele.
+
+163
+00:10:10,960 --> 00:10:13,760
+Ez az alap a nap távolsága.
+
+164
+00:10:13,760 --> 00:10:17,440
+Mi a helyzet a magassággal, ezzel a kis hosszúsággal, hogyan találod meg?
+
+165
+00:10:17,680 --> 00:10:22,683
+Ez lesz az objektum sebességének a Nap vonalára merőleges összetevője, 
+
+166
+00:10:22,683 --> 00:10:26,560
+amit vperp-nek nevezek, megszorozva a kis időtartammal.
+
+167
+00:10:27,340 --> 00:10:33,260
+Tehát a teljes terület a sugár 1 fele szor vperp szor delta t.
+
+168
+00:10:33,920 --> 00:10:38,584
+A szögimpulzus megőrzése egy adott kezdőponthoz, például ehhez a naphoz, 
+
+169
+00:10:38,584 --> 00:10:43,696
+azt mondja nekünk, hogy ez a sugár szorozva a rá merőleges sebességkomponenssel 
+
+170
+00:10:43,696 --> 00:10:48,680
+állandó marad mindaddig, amíg a tárgyra ható összes erő az origó felé irányul.
+
+171
+00:10:49,680 --> 00:10:53,065
+Nos, konkrétan azt mondja, hogy ez a mennyiség szorozva az objektum 
+
+172
+00:10:53,065 --> 00:10:56,600
+tömegével állandó marad, de a keringő objektum tömege nem fog változni.
+
+173
+00:10:57,660 --> 00:11:04,760
+Tehát a kisepert területre vonatkozó kifejezésünk csak az eltelt időtől függ, delta t.
+
+174
+00:11:05,720 --> 00:11:08,100
+Történelmileg egyébként ez fordítva ment.
+
+175
+00:11:08,420 --> 00:11:10,908
+Kepler második törvénye egyike azoknak az empirikus tényeknek, 
+
+176
+00:11:10,908 --> 00:11:13,160
+amelyek elvezettek bennünket a szögimpulzus megértéséhez.
+
+177
+00:11:13,940 --> 00:11:17,740
+És hangsúlyoznom kell, ez a törvény nem feltételezi, hogy a pályák ellipszisek.
+
+178
+00:11:18,160 --> 00:11:20,500
+A fenébe, még csak nem is feltételezi a fordított négyzettörvényt.
+
+179
+00:11:20,500 --> 00:11:24,249
+Ennek az egyenlő területű tulajdonságnak csak az kell, 
+
+180
+00:11:24,249 --> 00:11:28,680
+hogy a tárgyra ható egyetlen erő egyenesen a nap felé irányuljon.
+
+181
+00:11:29,540 --> 00:11:32,695
+Ezt a tényt Feynman sokkal több időt töltött ennek bemutatásával, 
+
+182
+00:11:32,695 --> 00:11:34,800
+elmesélve Newton érvelését a Principiájából.
+
+183
+00:11:35,360 --> 00:11:39,616
+De ez valahogy elvonja a figyelmet a fő célunkról, úgyhogy azt feltételezem, 
+
+184
+00:11:39,616 --> 00:11:44,260
+hogy a szögimpulzus megőrzése elég jó a mi céljainknak, bár némi elemi veszteséggel.
+
+185
+00:11:48,880 --> 00:11:53,080
+Ezen a ponton a sejtető rajzaim ellenére nem ismerjük a pálya alakját.
+
+186
+00:11:53,460 --> 00:11:56,200
+Annyit tudunk, hogy ez valami kócos, nem elliptikus tojásforma.
+
+187
+00:11:56,880 --> 00:11:59,328
+Az inverz négyzettörvény segíteni fog nekünk, hogy pontosan 
+
+188
+00:11:59,328 --> 00:12:01,900
+meghatározzuk ezt az alakzatot, de a stratégia kissé közvetett.
+
+189
+00:12:01,900 --> 00:12:06,916
+Mielőtt megmutatnánk a keringő objektum által kirajzolt útvonal alakját, 
+
+190
+00:12:06,916 --> 00:12:11,520
+megmutatjuk az objektum sebességvektorai által kirajzolt alakzatot.
+
+191
+00:12:12,120 --> 00:12:13,900
+Hadd mutassam meg, mit értek ezen.
+
+192
+00:12:14,360 --> 00:12:16,820
+Ahogy az objektum kering, a sebessége változik, igaz?
+
+193
+00:12:16,820 --> 00:12:21,383
+Forog, mindig érinti a pálya görbéjét, és hosszabb azokon a pontokon, 
+
+194
+00:12:21,383 --> 00:12:26,860
+ahol az objektum gyorsan mozog, és rövidebb azokon a pontokon, ahol lassabban mozog.
+
+195
+00:12:27,620 --> 00:12:32,569
+Megmutatjuk, hogy ha ezeket a sebességvektorokat úgy gyűjtjük össze, 
+
+196
+00:12:32,569 --> 00:12:38,380
+hogy a farkuk egy pontban üljön, a hegyük valójában egy tökéletes kört rajzol ki.
+
+197
+00:12:39,040 --> 00:12:41,500
+Ez egy fantasztikus tény, ha engem kérdezel.
+
+198
+00:12:41,920 --> 00:12:46,045
+A sebesség körbe-körbe forog, egyre gyorsabban és lassabban különböző szögekben, 
+
+199
+00:12:46,045 --> 00:12:49,202
+de nyilvánvalóan a fizika törvényei úgy alakítják a dolgokat, 
+
+200
+00:12:49,202 --> 00:12:51,240
+hogy ezek tökéletes kört rajzoljanak ki.
+
+201
+00:12:52,080 --> 00:12:55,263
+Az okos köztetek előfordulhat, hogy egy kis belső villanykörte kezd 
+
+202
+00:12:55,263 --> 00:12:58,400
+kigyulladni ennek a körnek a helyén, amelynek középpontja nem lesz.
+
+203
+00:12:59,620 --> 00:13:02,480
+De ismét fel kell tennünk a kérdést, hogy miért lenne ez igaz?
+
+204
+00:13:03,480 --> 00:13:06,581
+Feynman leírja, hogy ezen a ponton nem tudja könnyen követni Newtont, 
+
+205
+00:13:06,581 --> 00:13:10,480
+ezért ehelyett saját elegáns gondolatmenetével magyarázza el, honnan származik ez a kör.
+
+206
+00:13:10,480 --> 00:13:14,807
+Azzal kezdi, hogy megnézi a pályát, amelynek alakját nem ismerjük, 
+
+207
+00:13:14,807 --> 00:13:20,040
+és apró darabokra vágja, amelyek mindegyike azonos szöget zár be a Naphoz képest.
+
+208
+00:13:21,340 --> 00:13:25,715
+Gondoljon bele, mennyi időbe telik, amíg a keringő objektum áthalad ezen egyenlő szögű 
+
+209
+00:13:25,715 --> 00:13:30,040
+szeletek valamelyikén, és hogyan változik ez az idő, amikor egy nagyobb szelethez lép.
+
+210
+00:13:30,860 --> 00:13:36,500
+Kepler második törvénye szerint ez az idő arányos a szelet területével, igaz?
+
+211
+00:13:36,500 --> 00:13:43,683
+Mivel ezeknek a szeleteknek azonos a szöge, a naptól távolabb kerülve nemcsak a sugár 
+
+212
+00:13:43,683 --> 00:13:50,700
+növekszik, hanem a sugárvonalra merőleges ívhossz-komponens a sugárral arányosan nő.
+
+213
+00:13:50,700 --> 00:13:54,606
+Az egyik ilyen szelet területe, és így az az idő, 
+
+214
+00:13:54,606 --> 00:14:00,700
+amely alatt a tárgy áthalad rajta, arányos a Naptól való távolság négyzetével.
+
+215
+00:14:00,860 --> 00:14:05,326
+Elvileg csak nagyon kis szeleteket fogunk figyelembe venni, 
+
+216
+00:14:05,326 --> 00:14:11,580
+így nem lesz kétértelmű, hogy mit értek a sugár alatt, és az ív hossza egyenes lesz.
+
+217
+00:14:11,580 --> 00:14:14,480
+Gondold át, hogyan lép életbe a fordított négyzettörvény.
+
+218
+00:14:14,800 --> 00:14:18,569
+Egy adott pontban a nap által az objektumra gyakorolt 
+
+219
+00:14:18,569 --> 00:14:21,780
+erő arányos 1-gyel osztva a sugár négyzetével.
+
+220
+00:14:22,400 --> 00:14:23,700
+De mit is jelent ez valójában?
+
+221
+00:14:24,380 --> 00:14:28,502
+Mi az erő, az az objektum tömegének szorzata a gyorsulásával, 
+
+222
+00:14:28,502 --> 00:14:32,160
+amennyivel a sebessége egységnyi idő alatt megváltozik.
+
+223
+00:14:32,740 --> 00:14:36,973
+Ez elég ahhoz, hogy rendkívül hasznos információt adjon nekünk arról, 
+
+224
+00:14:36,973 --> 00:14:41,931
+hogyan változik a keringő objektum sebessége az egyik szelet elejétől a következő 
+
+225
+00:14:41,931 --> 00:14:42,960
+szelet kezdetéig.
+
+226
+00:14:43,500 --> 00:14:48,160
+Ez a sebességváltozás a gyorsulás szorzata az idő változásával, igaz?
+
+227
+00:14:48,960 --> 00:14:52,405
+Ez azt jelenti, hogy ez a sebességváltozás arányos 
+
+228
+00:14:52,405 --> 00:14:55,580
+az időbeli változás osztva a sugár négyzetével.
+
+229
+00:14:56,480 --> 00:15:01,161
+De mivel az egy szelet áthaladásához szükséges idő arányos a sugár négyzetével, 
+
+230
+00:15:01,161 --> 00:15:06,194
+ezek a kifejezések érvénytelenítik, így az adott szeleten való áthaladás sebességének 
+
+231
+00:15:06,194 --> 00:15:10,700
+változása valójában egy olyan állandó, amely egyáltalán nem függ a szelettől.
+
+232
+00:15:11,300 --> 00:15:15,402
+Itt kibontva, mit értek ezen, ha megnézed a sebességet egy szelet elején, 
+
+233
+00:15:15,402 --> 00:15:18,396
+majd megnézed a sebességet annak a szeletnek a végén, 
+
+234
+00:15:18,396 --> 00:15:22,721
+és közvetlenül összehasonlítod ezt a két vektort a farkuk összekapcsolásával, 
+
+235
+00:15:22,721 --> 00:15:27,045
+és megnézed. a köztük lévő különbségnél, a hegyükhöz csatlakozó kis vektornál 
+
+236
+00:15:27,045 --> 00:15:31,980
+ez a különbség egyforma hosszúságú, függetlenül attól, hogy a pálya melyik szeletét nézi.
+
+237
+00:15:32,700 --> 00:15:37,242
+Ha tehát összehasonlítja ezeket a sebességvektorokat az egyes szeletek elején, 
+
+238
+00:15:37,242 --> 00:15:40,980
+akkor valamiféle sokszöget alkotnak, amelynek oldalhossza azonos.
+
+239
+00:15:41,880 --> 00:15:45,423
+Továbbá, mivel az erővektor mindig a Nap felé mutat, 
+
+240
+00:15:45,423 --> 00:15:49,969
+ahogy az egyik szelet elejétől a másikig haladunk, ez az erővektor, 
+
+241
+00:15:49,969 --> 00:15:53,580
+és így a gyorsulásvektor is, állandó szöggel elfordul.
+
+242
+00:15:54,160 --> 00:15:58,120
+A geometriai nyelvben ez azt jelenti, hogy sokszögünk 
+
+243
+00:15:58,120 --> 00:16:01,200
+összes külső szöge egyenlő lesz egymással.
+
+244
+00:16:01,200 --> 00:16:05,580
+Tudom, hogy ez egy kicsit trükkös, de tarts ki.
+
+245
+00:16:05,840 --> 00:16:09,220
+Ne feledje, csak a végtelen intelligenciára van szüksége a követéshez.
+
+246
+00:16:10,000 --> 00:16:12,470
+Érdemes megismételni csak azért, hogy egyértelmű legyen, 
+
+247
+00:16:12,470 --> 00:16:14,160
+mi történik ezzel a sebességdiagrammal.
+
+248
+00:16:14,700 --> 00:16:18,279
+Az egyik vektorról a másikra való váltás, ez a kis különbségvektor, 
+
+249
+00:16:18,279 --> 00:16:22,280
+amely az egyik csúcsát a következő csúcsához köti, mindig azonos hosszúságú.
+
+250
+00:16:22,640 --> 00:16:25,140
+Ez volt a Kepler második törvényének az inverz négyzettörvénnyel 
+
+251
+00:16:25,140 --> 00:16:27,180
+való keverése közötti tökéletes törlés következménye.
+
+252
+00:16:27,180 --> 00:16:31,875
+És mivel ezek az állandó hosszváltozási vektorok minden alkalommal állandó 
+
+253
+00:16:31,875 --> 00:16:36,320
+szöggel elfordulnak, ez azt jelenti, hogy szabályos sokszöget alkotnak.
+
+254
+00:16:37,220 --> 00:16:41,238
+És ahogy az eredeti pálya finomabb és finomabb szeleteit tekintjük, 
+
+255
+00:16:41,238 --> 00:16:44,252
+ezeknek a szeleteknek egyre kisebb szögei alapján, 
+
+256
+00:16:44,252 --> 00:16:48,626
+a sebességdiagramban ezen vektorok csúcsait meghatározó szabályos sokszög 
+
+257
+00:16:48,626 --> 00:16:50,340
+egy tökéletes körhöz közelít.
+
+258
+00:16:51,020 --> 00:16:50,340
+Hát nem ügyes?
+
+259
+00:16:51,020 --> 00:16:56,756
+Remélhetőleg ezen a ponton a kört nézi, az excentrikus pontot nézi, és csak viszket, 
+
+260
+00:16:56,756 --> 00:17:01,480
+hogy látja, hogyan hoz létre ez egy ellipszist, ahogy korábban láttuk.
+
+261
+00:17:01,880 --> 00:17:04,099
+De ez egy kicsit furcsa, nem?
+
+262
+00:17:04,099 --> 00:17:07,616
+Ezt a diagramot a sebességtérben nézzük, tehát hogyan használjuk fel, 
+
+263
+00:17:07,616 --> 00:17:10,380
+hogy következtetéseket vonjunk le a tényleges pályáról?
+
+264
+00:17:11,200 --> 00:17:13,520
+Ami ezután következik, az trükkös, de okos.
+
+265
+00:17:14,339 --> 00:17:16,099
+Lépjen hátra, és gondolja át, mit tudunk.
+
+266
+00:17:16,579 --> 00:17:19,159
+A pálya konkrét alakját nem ismerjük, csak azt az alakot, 
+
+267
+00:17:19,159 --> 00:17:20,760
+amelyet a sebességvektorok követnek.
+
+268
+00:17:20,760 --> 00:17:26,629
+De ennél pontosabban tudjuk, hogy ha a bolygó a Naphoz képest théta fokos szöget 
+
+269
+00:17:26,629 --> 00:17:32,788
+fordított a vízszinteshez képest, ez megfelel a körünk körüli théta fokos járásnak a 
+
+270
+00:17:32,788 --> 00:17:37,933
+sebességdiagramban, mivel a gyorsulási vektorok éppen annyit forognak, 
+
+271
+00:17:37,933 --> 00:17:39,600
+mint a a sugárvektorok.
+
+272
+00:17:40,400 --> 00:17:43,440
+Ez megmondja nekünk a pálya minden pontjának érintési irányát.
+
+273
+00:17:43,440 --> 00:17:48,743
+A sebességdiagramból melyik vektor érinti a kör körüli théta-pontot, 
+
+274
+00:17:48,743 --> 00:17:55,430
+az a keringő objektumunk sebességvektora, és ebből következően a görbe érintési iránya.
+
+275
+00:17:56,450 --> 00:18:00,264
+Valójában hadd kezdjem el ezeket a vektorokat vonalként rajzolni, 
+
+276
+00:18:00,264 --> 00:18:04,830
+mivel csak a pályagörbe meredekségére vonatkozó információkat kell használnunk.
+
+277
+00:18:05,270 --> 00:18:08,410
+Az egyes sebességek fajlagos nagysága nem lesz olyan fontos.
+
+278
+00:18:09,410 --> 00:18:12,912
+Figyeld meg, nem azt mondom, hogy a sebességvektor 
+
+279
+00:18:12,912 --> 00:18:16,690
+szöge ezen a ponton théta fokkal eltér a függőlegestől.
+
+280
+00:18:16,690 --> 00:18:20,601
+Nem, nem, nem, a szög, amelyre a sebességdiagramban hivatkozom, 
+
+281
+00:18:20,601 --> 00:18:25,063
+a kör középpontjához viszonyítva van, ami szinte bizonyosan eltér attól, 
+
+282
+00:18:25,063 --> 00:18:27,570
+ahol a sebességvektorok mind gyökereznek.
+
+283
+00:18:28,410 --> 00:18:34,139
+A kérdés tehát az, hogy milyen speciális görbe elégíti ki azt a tulajdonságot, 
+
+284
+00:18:34,139 --> 00:18:38,273
+hogy a vízszintestől eltérő théta-pont érintési irányát, 
+
+285
+00:18:38,273 --> 00:18:44,366
+a meredekséget ez a vektor adja meg a kör egy speciális excentrikus pontjától a kör 
+
+286
+00:18:44,366 --> 00:18:47,050
+körül théta fokos pontig. függőleges?
+
+287
+00:18:47,970 --> 00:18:49,310
+Oké, egyértelmű a kérdés?
+
+288
+00:18:50,110 --> 00:18:51,170
+Nos, itt a trükk.
+
+289
+00:18:51,890 --> 00:18:55,223
+Először is forgassa el az egész kört 90 fokkal, 
+
+290
+00:18:55,223 --> 00:19:00,918
+majd vegye fel az egyes sebességi irányokat, és fordítsa el 90 fokkal visszafelé, 
+
+291
+00:19:00,918 --> 00:19:07,030
+így ugyanúgy tájékozódnak, mint korábban, csak az, hogy gyökereznek. egy másik helyszín.
+
+292
+00:19:07,950 --> 00:19:08,210
+Aha!
+
+293
+00:19:08,570 --> 00:19:09,970
+Észrevettük az ellipszisünket!
+
+294
+00:19:10,250 --> 00:19:13,972
+De van még előttünk egy kis gondolkodás, hogy valóban megértsük, 
+
+295
+00:19:13,972 --> 00:19:18,210
+hogyan kapcsolódik ez a kis felbukkanó ellipszis a csillagászati pályához.
+
+296
+00:19:19,250 --> 00:19:22,586
+Fontos, hogy ezeket a vonalakat nem csak egy pont körül forgattam, 
+
+297
+00:19:22,586 --> 00:19:25,375
+hanem mindegyiket a középpontja körül, ami azt jelenti, 
+
+298
+00:19:25,375 --> 00:19:29,210
+hogy kihasználhatjuk a néhány perccel ezelőtt látott geometriai bizonyítékot.
+
+299
+00:19:29,970 --> 00:19:32,920
+És valószínűleg ez az a pillanat, amikor össze kell ráncolnia a szemöldökét, 
+
+300
+00:19:32,920 --> 00:19:36,370
+és vissza kell gondolnia, oké, várjon egy percet, mi történt megint abban a bizonyítékban?
+
+301
+00:19:37,010 --> 00:19:41,522
+Nos, az egyik kulcspont az volt, hogy amikor két egyenes van, 
+
+302
+00:19:41,522 --> 00:19:45,235
+egy a kör közepétől és egy az excentrikus ponttól, 
+
+303
+00:19:45,235 --> 00:19:48,801
+mindkettő a kör kerületének egy közös pontjához, 
+
+304
+00:19:48,801 --> 00:19:53,970
+akkor az excentrikus egyenesre merőleges felezőpont érinti a ellipszis.
+
+305
+00:19:54,390 --> 00:19:58,330
+És mi több, az érintési pont az, ahol a merőleges 
+
+306
+00:19:58,330 --> 00:20:02,350
+felező metszi a sugárirányú vonalat a középpontból.
+
+307
+00:20:03,250 --> 00:20:06,479
+Ez azt jelenti, hogy a mi kis ellipszisünk pontja, 
+
+308
+00:20:06,479 --> 00:20:11,291
+amely a kör középpontjához képest théta fokban van eltérve a vízszintestől, 
+
+309
+00:20:11,291 --> 00:20:14,521
+van egy érintő meredeksége az excentrikus vonalra, 
+
+310
+00:20:14,521 --> 00:20:17,940
+és az egész 90 fokos elforgatás miatt ez azt jelenti, 
+
+311
+00:20:17,940 --> 00:20:21,170
+hogy párhuzamosnak kell lennie a sebességvektorral.
+
+312
+00:20:21,730 --> 00:20:25,331
+Tehát ez a kis felbukkanó görbe a sebességdiagramon belül pontosan 
+
+313
+00:20:25,331 --> 00:20:29,846
+azzal az érintési tulajdonsággal rendelkezik, amelyre a pályának rendelkeznie kell, 
+
+314
+00:20:29,846 --> 00:20:32,910
+és ezért a pálya alakjának ellipszisnek kell lennie, QED.
+
+315
+00:20:35,790 --> 00:20:41,830
+Oké, veregesd meg magad, mert ennek követéséhez nem kis okosság kell.
+
+316
+00:20:42,370 --> 00:20:45,432
+Először is megvolt az ellipszis felépítésének ez a sajátos módja, 
+
+317
+00:20:45,432 --> 00:20:48,727
+amihez némi geometriai hozzáértés szükséges a megfelelő bizonyításhoz, 
+
+318
+00:20:48,727 --> 00:20:52,207
+majd ott van az a meglehetősen okos lépés, amikor még gondolkodni is kell, 
+
+319
+00:20:52,207 --> 00:20:56,105
+és fel kell tenni a kérdést, hogy milyen alakzatot rajzolnak ki a sebességvektorok, 
+
+320
+00:20:56,105 --> 00:20:57,730
+amikor a farkukat a ugyanaz a hely.
+
+321
+00:20:58,290 --> 00:21:00,467
+Ahhoz pedig, hogy megmutassuk, hogy ez egy kör, 
+
+322
+00:21:00,467 --> 00:21:03,734
+össze kell keverni az inverz négyzettörvényt Kepler második törvényével 
+
+323
+00:21:03,734 --> 00:21:05,050
+egy másik ravasz mozdulattal.
+
+324
+00:21:05,690 --> 00:21:07,997
+De az okosság ezzel még nem ér véget, bemutatva, 
+
+325
+00:21:07,997 --> 00:21:11,670
+hogy ez a sebességdiagram a középponttól eltérő pontban gyökerező vektorokkal 
+
+326
+00:21:11,670 --> 00:21:15,202
+azt jelenti, hogy egy elliptikus pálya behozza ezt a nagyon ügyes 90 fokos 
+
+327
+00:21:15,202 --> 00:21:16,050
+forgatási trükköt.
+
+328
+00:21:16,690 --> 00:21:17,370
+Egyszerűen imádom ezt.
+
+329
+00:21:17,890 --> 00:21:22,510
+Feynman fizikáját, még az elemi fizikát is nézni olyan, mintha Bobby Fischert sakkoznánk.
+
+330
+00:21:23,689 --> 00:21:27,090
+Még egyszer köszönet Grantnek, és mindenképpen nézze meg a videóit a 3Blue1Brown oldalon.
+

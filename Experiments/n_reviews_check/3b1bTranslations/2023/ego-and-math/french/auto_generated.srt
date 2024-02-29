@@ -1,0 +1,876 @@
+1
+00:00:00,000 --> 00:00:03,514
+C'est honnêtement un honneur d'être ici.
+
+2
+00:00:03,514 --> 00:00:08,200
+Un grand merci à la faculté de m'avoir inclus.
+
+3
+00:00:08,200 --> 00:00:11,393
+Bienvenue à tous les parents et amis qui ont pu 
+
+4
+00:00:11,393 --> 00:00:14,785
+venir et surtout félicitations à la promotion 2023.
+
+5
+00:00:14,785 --> 00:00:18,552
+J'étais assis essentiellement là où vous êtes actuellement il y a environ huit ans.
+
+6
+00:00:18,552 --> 00:00:20,722
+J'obtenais le même diplôme et depuis lors, 
+
+7
+00:00:20,722 --> 00:00:24,231
+je me suis consacré à essayer de partager les mathématiques avec les autres 
+
+8
+00:00:24,231 --> 00:00:27,601
+principalement via YouTube mais aussi par d'autres moyens et ce dont 
+
+9
+00:00:27,601 --> 00:00:31,017
+je veux vous parler aujourd'hui est une petite façon dont ma relation 
+
+10
+00:00:31,017 --> 00:00:34,248
+avec les mathématiques a changé pendant cette période et j'espère 
+
+11
+00:00:34,248 --> 00:00:35,680
+qu'il continuera à changer.
+
+12
+00:00:35,680 --> 00:00:37,939
+Le changement est personnel, mais c'est quelque chose qui 
+
+13
+00:00:37,939 --> 00:00:40,198
+pourrait s'appliquer à vous aussi et si c'est le cas, 
+
+14
+00:00:40,198 --> 00:00:42,384
+cela pourrait réellement vous aider à façonner votre avenir.
+
+15
+00:00:42,384 --> 00:00:45,070
+Je réfléchissais avant aujourd’hui à ce qui m’avait 
+
+16
+00:00:45,070 --> 00:00:47,240
+poussé à aborder ce sujet en premier lieu.
+
+17
+00:00:47,240 --> 00:00:49,504
+Pourquoi est-ce que je suis tombé amoureux du sujet?
+
+18
+00:00:49,504 --> 00:00:52,096
+Pourquoi ai-je choisi de m'y spécialiser lorsque j'étais ici?
+
+19
+00:00:52,096 --> 00:00:55,220
+Pourquoi ai-je passé les huit dernières années dans ce genre de carrière 
+
+20
+00:00:55,220 --> 00:00:58,129
+étrange et peu orthodoxe consistant à expliquer les choses en ligne?
+
+21
+00:00:58,129 --> 00:01:01,207
+Et vous voyez, il y a une histoire que je pense que beaucoup d'entre 
+
+22
+00:01:01,207 --> 00:01:04,411
+nous racontent et l'histoire est centrée sur des choses comme la beauté 
+
+23
+00:01:04,411 --> 00:01:07,362
+incontournable du sujet ou le fait qu'il est très charmant à quel 
+
+24
+00:01:07,362 --> 00:01:10,397
+point il est bien appliqué non seulement à la physique et pas seulement 
+
+25
+00:01:10,397 --> 00:01:13,516
+à l'informatique. mais une pléthore de domaines techniques différents.
+
+26
+00:01:13,516 --> 00:01:17,449
+Mais cette histoire, du moins pour moi, passerait sous silence un autre facteur 
+
+27
+00:01:17,449 --> 00:01:21,627
+qui pourrait être tout aussi influent mais qui est beaucoup plus difficile à aborder.
+
+28
+00:01:21,627 --> 00:01:21,877
+Ego.
+
+29
+00:01:21,877 --> 00:01:25,363
+Je ne sais pas si vous vous souvenez de ce que c'était d'être un enfant.
+
+30
+00:01:25,363 --> 00:01:27,660
+Si vous vous souvenez de ce que c'était peut-être à 
+
+31
+00:01:27,660 --> 00:01:30,204
+l'école primaire et de la façon dont cela nous est apparu.
+
+32
+00:01:30,204 --> 00:01:32,329
+Si je repense à mes premiers souvenirs de mathématiques, 
+
+33
+00:01:32,329 --> 00:01:35,050
+je pense que j'ai eu beaucoup de chance parce que cela me paraissait 
+
+34
+00:01:35,050 --> 00:01:37,846
+comme un jeu et je pense que cela avait à voir avec la façon dont mon père 
+
+35
+00:01:37,846 --> 00:01:38,480
+me le présentait.
+
+36
+00:01:38,480 --> 00:01:41,692
+Mais dans le contexte scolaire, cela revêtait un caractère très différent.
+
+37
+00:01:41,692 --> 00:01:42,768
+C’était compétitif.
+
+38
+00:01:42,768 --> 00:01:45,037
+Je ne pense pas que ce soit l'intention des enseignants.
+
+39
+00:01:45,037 --> 00:01:47,446
+Je ne pense pas que ce soit l’intention d’aucun des adultes présents.
+
+40
+00:01:47,446 --> 00:01:49,848
+Mais il y avait une certaine hypothèse tacite 
+
+41
+00:01:49,848 --> 00:01:52,510
+selon laquelle le sujet était censé être difficile.
+
+42
+00:01:52,510 --> 00:01:55,060
+Beaucoup d’entre nous allaient avoir du mal à y faire face.
+
+43
+00:01:55,060 --> 00:01:57,953
+Et sans doute grâce aux jeux auxquels je jouais avec mon père, 
+
+44
+00:01:57,953 --> 00:02:01,169
+je faisais partie des chanceux qui ont trouvé cela un peu plus facile.
+
+45
+00:02:01,169 --> 00:02:03,498
+Et parce que je l'ai trouvé un peu plus facile, 
+
+46
+00:02:03,498 --> 00:02:07,036
+je pense que j'en suis venu à aimer le sujet non pas parce qu'il était 
+
+47
+00:02:07,036 --> 00:02:10,754
+beau ni parce qu'il était utile et même pas parce qu'il était ludique mais 
+
+48
+00:02:10,754 --> 00:02:14,785
+franchement à cause de cette autosatisfaction enfantine qui vient de se sentir comme toi. 
+
+49
+00:02:14,785 --> 00:02:18,458
+Vous réussissez bien dans un domaine pour lequel les adultes vous disent que vous 
+
+50
+00:02:18,458 --> 00:02:19,309
+êtes censé réussir.
+
+51
+00:02:19,309 --> 00:02:21,177
+Et pendant longtemps, à l’école, cela a en quelque 
+
+52
+00:02:21,177 --> 00:02:23,045
+sorte déclenché une boucle de rétroaction positive.
+
+53
+00:02:23,045 --> 00:02:25,807
+J'ai passé beaucoup de temps sur le sujet parce que je l'aimais.
+
+54
+00:02:25,807 --> 00:02:27,712
+J'ai aimé ça parce que je me sentais bien.
+
+55
+00:02:27,712 --> 00:02:29,854
+Et dans la mesure où je n'étais pas bon dans ce domaine, 
+
+56
+00:02:29,854 --> 00:02:31,857
+c'était parce que j'y passais tellement de temps.
+
+57
+00:02:31,857 --> 00:02:34,655
+Et je ne veux pas suggérer que cela est vrai pour tous ceux qui 
+
+58
+00:02:34,655 --> 00:02:37,498
+aiment les mathématiques et je ne veux pas non plus suggérer que 
+
+59
+00:02:37,498 --> 00:02:40,428
+c'est le genre de boucle qui n'entraîne pas de difficultés.
+
+60
+00:02:40,428 --> 00:02:43,223
+Parce qu’il y a absolument des difficultés dans toute façon d’apprendre les mathématiques.
+
+61
+00:02:43,223 --> 00:02:46,521
+C'est plus que si je suis honnête, les forces qui m'ont permis de 
+
+62
+00:02:46,521 --> 00:02:49,106
+surmonter certaines difficultés et de consacrer le temps, 
+
+63
+00:02:49,106 --> 00:02:52,403
+la pratique et les efforts nécessaires pour m'améliorer dans le sujet 
+
+64
+00:02:52,403 --> 00:02:55,255
+étaient au moins en partie motivées par le désir d'être vu. 
+
+65
+00:02:55,255 --> 00:02:56,681
+comme étant bon dans ce domaine.
+
+66
+00:02:56,681 --> 00:02:59,886
+Et vous savez, j'étais adolescente, c'est difficile d'échapper 
+
+67
+00:02:59,886 --> 00:03:02,793
+un peu à l'ego, mais l'ego est un motif difficile à aborder.
+
+68
+00:03:02,793 --> 00:03:06,357
+Et si je suis honnête, la beauté de l’application a vraiment joué un rôle.
+
+69
+00:03:06,357 --> 00:03:08,421
+Ce n'est pas comme s'ils n'étaient pas là du tout, 
+
+70
+00:03:08,421 --> 00:03:09,764
+mais ils sont arrivés beaucoup plus tard.
+
+71
+00:03:09,764 --> 00:03:11,497
+En raison de cette boucle de rétroaction positive, 
+
+72
+00:03:11,497 --> 00:03:14,146
+je passais du temps sur la matière et j'en discutais avec mes professeurs 
+
+73
+00:03:14,146 --> 00:03:14,758
+après l'école.
+
+74
+00:03:14,758 --> 00:03:16,508
+J'allais à des événements de cercles mathématiques locaux.
+
+75
+00:03:16,508 --> 00:03:18,305
+J'ai appris ce qu'était un mathématicien.
+
+76
+00:03:18,305 --> 00:03:20,361
+Je lisais des livres sur la résolution de problèmes.
+
+77
+00:03:20,361 --> 00:03:22,885
+Et dans ce genre d’immersion, il est difficile de 
+
+78
+00:03:22,885 --> 00:03:25,511
+ne pas tomber amoureux de la beauté réelle du sujet.
+
+79
+00:03:25,511 --> 00:03:28,175
+Donc même si la passion a commencé pour ces raisons un peu plus 
+
+80
+00:03:28,175 --> 00:03:30,964
+égocentriques et un peu plus enfantines, elle a commencé à céder à 
+
+81
+00:03:30,964 --> 00:03:33,877
+quelque chose d'un peu plus pur, quelque chose qui ressemble plus 
+
+82
+00:03:33,877 --> 00:03:37,290
+à un sens esthétique, quelque chose d'un peu plus tourné vers l'extérieur.
+
+83
+00:03:37,290 --> 00:03:40,186
+C'est un peu comme un fossile où vous savez que les molécules 
+
+84
+00:03:40,186 --> 00:03:42,907
+organiques commencent lentement à céder la place à un minéral 
+
+85
+00:03:42,907 --> 00:03:45,583
+plus solide à plus long terme qui sera là jusqu'à la fin.
+
+86
+00:03:45,583 --> 00:03:48,081
+Pour moi, il s'agissait moins d'une question 
+
+87
+00:03:48,081 --> 00:03:50,720
+de succès perçu que d'un peu plus du sujet lui-même.
+
+88
+00:03:50,720 --> 00:03:54,396
+Mais ce n’est pas vraiment de ce changement dont je veux vous parler.
+
+89
+00:03:54,396 --> 00:03:57,269
+Ce changement de motivation, le processus de fossilisation, 
+
+90
+00:03:57,269 --> 00:04:00,334
+s'est probablement produit, peut-être vers la fin du lycée, 
+
+91
+00:04:00,334 --> 00:04:02,105
+a commencé mon séjour ici à Stanford.
+
+92
+00:04:02,105 --> 00:04:06,069
+Mais ce dont je veux parler, c'est de la manière dont les nouveaux minéraux 
+
+93
+00:04:06,069 --> 00:04:10,281
+d'un fossile prennent toujours la même forme générale que l'os d'origine.
+
+94
+00:04:10,281 --> 00:04:13,635
+Je pense qu'il pourrait y avoir eu des séquelles persistantes 
+
+95
+00:04:13,635 --> 00:04:16,582
+associées aux motivations originales moins pures du sujet.
+
+96
+00:04:16,582 --> 00:04:18,450
+Vous voyez, pendant que j'étais ici à Stanford, 
+
+97
+00:04:18,450 --> 00:04:21,037
+je me souviens que beaucoup de mes pairs utilisaient le mot intéressant.
+
+98
+00:04:21,037 --> 00:04:23,809
+Maintenant, pourquoi avez-vous choisi de faire ce stage que vous avez fait cet été 
+
+99
+00:04:23,809 --> 00:04:26,514
+ou pourquoi avez-vous choisi de travailler avec ce professeur que vous avez fait?
+
+100
+00:04:26,514 --> 00:04:29,257
+Oh, on aurait dit qu'ils travaillaient sur des problèmes très intéressants.
+
+101
+00:04:29,257 --> 00:04:32,342
+Mais que signifie le mot intéressant?
+
+102
+00:04:32,342 --> 00:04:33,885
+Intéressant pour qui?
+
+103
+00:04:33,885 --> 00:04:37,910
+Je pense que si je devais regarder en arrière et voir comment j'utilisais ce mot, 
+
+104
+00:04:37,910 --> 00:04:40,437
+au moins une partie de ce que je voulais dire par là, 
+
+105
+00:04:40,437 --> 00:04:42,777
+c'était qu'un problème semblait difficile.
+
+106
+00:04:42,777 --> 00:04:45,372
+Cela semblait visiblement dur, mais pas si dur 
+
+107
+00:04:45,372 --> 00:04:48,023
+que je ne pouvais pas y mettre les dents un peu.
+
+108
+00:04:48,023 --> 00:04:50,866
+L'utilitaire avait une étrange banquette arrière pour 
+
+109
+00:04:50,866 --> 00:04:53,610
+moi et c'était vraiment une question de défi en soi.
+
+110
+00:04:53,610 --> 00:04:55,647
+Et je ne pense pas que ce soit juste moi.
+
+111
+00:04:55,647 --> 00:04:59,590
+Si nous avançons rapidement au moment où je faisais des vidéos YouTube depuis longtemps, 
+
+112
+00:04:59,590 --> 00:05:02,692
+l'une des vidéos les plus populaires de la chaîne était celle qui 
+
+113
+00:05:02,692 --> 00:05:06,104
+avait le titre le problème le plus difficile lors du test le plus difficile, 
+
+114
+00:05:06,104 --> 00:05:08,142
+ce qui, certes, est un appât à clics flagrant.
+
+115
+00:05:08,142 --> 00:05:11,047
+Et il s'agissait d'un problème du Putnam et entre vous et moi, 
+
+116
+00:05:11,047 --> 00:05:13,706
+ce n'était pas vraiment le problème le plus difficile que le 
+
+117
+00:05:13,706 --> 00:05:16,448
+Putnam ait jamais présenté, mais il était positionné en numéro six.
+
+118
+00:05:16,448 --> 00:05:18,930
+Mais si l’on pense au fait qu’il s’agissait d’un clickbait, 
+
+119
+00:05:18,930 --> 00:05:20,254
+pourquoi cela fonctionnerait-il?
+
+120
+00:05:20,254 --> 00:05:23,787
+Comment se fait-il qu'environ 10 millions de personnes en dehors de la base 
+
+121
+00:05:23,787 --> 00:05:27,320
+d'abonnés habituelle soient curieuses de cliquer sur un sujet non pas parce 
+
+122
+00:05:27,320 --> 00:05:30,941
+qu'il était beau ou pas parce qu'il promettait quelque chose d'utile, 
+
+123
+00:05:30,941 --> 00:05:34,254
+mais simplement parce qu'il promettait que quelque chose était un défi.
+
+124
+00:05:34,254 --> 00:05:37,128
+Maintenant, pour être honnête, parfois la difficulté correspond à 
+
+125
+00:05:37,128 --> 00:05:40,220
+quelque chose d'utile. Peut-être qu'il y a un champ bloqué par 
+
+126
+00:05:40,220 --> 00:05:43,355
+un casse-tête que personne ne sait comment résoudre et si quelqu'un 
+
+127
+00:05:43,355 --> 00:05:46,578
+pouvait le résoudre, cela débloquerait plus d'utilité dans ce domaine.
+
+128
+00:05:46,578 --> 00:05:49,890
+Mais la question est de savoir si la raison pour laquelle on s'intéresse 
+
+129
+00:05:49,890 --> 00:05:53,461
+fondamentalement au problème était liée à cette utilité ou s'il s'agissait 
+
+130
+00:05:53,461 --> 00:05:56,945
+du fait qu'il est largement reconnu comme étant un défi et à cause de ce que 
+
+131
+00:05:56,945 --> 00:06:00,774
+cela pourrait impliquer pour la personne qui le résout et comment elle pourrait le faire.
+
+132
+00:06:00,774 --> 00:06:03,619
+perçu. Je vais donc vous donner un autre exemple où vous savez que 
+
+133
+00:06:03,619 --> 00:06:06,634
+les origines d'une motivation légèrement plus jeune et compétitive 
+
+134
+00:06:06,634 --> 00:06:09,521
+pour les mathématiques auraient pu avoir ces séquelles persistantes 
+
+135
+00:06:09,521 --> 00:06:12,621
+même après que cette motivation n'était plus la motivation dominante.
+
+136
+00:06:12,621 --> 00:06:15,631
+Quand j'ai commencé à faire des vidéos sur les mathématiques, 
+
+137
+00:06:15,631 --> 00:06:19,007
+j'étais en fait en terminale ici à Stanford. Quand j'ai commencé, 
+
+138
+00:06:19,007 --> 00:06:23,020
+je les téléchargeais sur une chaîne à laquelle j'avais donné le nom très étrange de 
+
+139
+00:06:23,020 --> 00:06:26,989
+trois bleus et marrons et à cette époque, je me souciais beaucoup du le contenu semble 
+
+140
+00:06:26,989 --> 00:06:28,768
+très différent des cours traditionnels.
+
+141
+00:06:28,768 --> 00:06:32,290
+Je tenais beaucoup à ce que cela montre quelque chose que les élèves ne verraient 
+
+142
+00:06:32,290 --> 00:06:35,727
+pas dans le parcours linéaire habituel de l'école et je pense que je tenais 
+
+143
+00:06:35,727 --> 00:06:38,563
+beaucoup à être perçu comme offrant quelque chose d'original, 
+
+144
+00:06:38,563 --> 00:06:39,680
+quelque chose de distinct.
+
+145
+00:06:39,680 --> 00:06:42,079
+Maintenant, si nous comparons cela, après avoir obtenu mon diplôme, 
+
+146
+00:06:42,079 --> 00:06:44,266
+j'ai passé du temps à travailler à la Khan Academy et là, 
+
+147
+00:06:44,266 --> 00:06:47,089
+l'objectif était très explicitement de créer un contenu qui rencontrait les 
+
+148
+00:06:47,089 --> 00:06:48,500
+étudiants là où ils se trouvaient alors.
+
+149
+00:06:48,500 --> 00:06:51,997
+J'ai créé quelques centaines de contenus principalement centrés sur le calcul 
+
+150
+00:06:51,997 --> 00:06:55,708
+multivarié et je choisissais des sujets non basés sur l'originalité ou le désir de 
+
+151
+00:06:55,708 --> 00:06:59,205
+me démarquer plus que tout. Je choisissais des sujets simplement parce qu'ils 
+
+152
+00:06:59,205 --> 00:07:02,404
+figuraient sur la liste de ce que les étudiants avaient demandé de savoir. 
+
+153
+00:07:02,404 --> 00:07:06,072
+ce qu'ils avaient besoin de savoir et les retours dans les deux catégories de ces 
+
+154
+00:07:06,072 --> 00:07:09,825
+vidéos étaient positifs mais avec un caractère différent et l'une d'elles était 
+
+155
+00:07:09,825 --> 00:07:10,806
+beaucoup plus profonde.
+
+156
+00:07:10,806 --> 00:07:14,147
+Ceux des premiers trois bleus et marrons avaient l'impression d'être 
+
+157
+00:07:14,147 --> 00:07:17,358
+des gens qui regardaient un sport partagé, quelque chose que nous aimions 
+
+158
+00:07:17,358 --> 00:07:20,482
+tous regarder ensemble, mais ceux de la Khan Academy avaient une saveur 
+
+159
+00:07:20,482 --> 00:07:23,475
+très différente et se caractérisaient plus que tout par la gratitude.
+
+160
+00:07:23,475 --> 00:07:27,839
+J’avais le sentiment d’aider réellement les gens et ils les trouvaient vraiment utiles.
+
+161
+00:07:27,839 --> 00:07:30,194
+Ainsi, plus tard, sur trois bleus et marron, j'ai commencé à donner la 
+
+162
+00:07:30,194 --> 00:07:32,611
+priorité aux leçons qui rencontraient les apprenants là où ils se trouvaient.
+
+163
+00:07:32,611 --> 00:07:34,351
+J'ai fait une série sur l'algèbre linéaire, 
+
+164
+00:07:34,351 --> 00:07:37,028
+j'ai fait une série sur le calcul, les gens m'ont demandé si je pouvais 
+
+165
+00:07:37,028 --> 00:07:39,939
+expliquer ce qu'est une transformée de Fourier ou comment fonctionnent les réseaux 
+
+166
+00:07:39,939 --> 00:07:41,177
+de neurones et j'ai donc accepté.
+
+167
+00:07:41,177 --> 00:07:44,162
+Maintenant, les sujets n'étaient pas originaux, vous savez, 
+
+168
+00:07:44,162 --> 00:07:48,267
+il y a beaucoup d'autres vidéos et éléments de contenu en ligne qui les expliquent, 
+
+169
+00:07:48,267 --> 00:07:51,905
+mais ce sont de loin ceux qui ont reçu le plus de gratitude à cette époque et 
+
+170
+00:07:51,905 --> 00:07:55,590
+qui ont contribué à tout succès que j'ai rencontré. J'ai trouvé depuis.
+
+171
+00:07:55,590 --> 00:07:59,180
+Il y a toujours de la place pour la nouveauté dans l'approche spécifique une fois 
+
+172
+00:07:59,180 --> 00:08:02,896
+qu'un sujet est choisi, mais ce qui m'a pris un temps embarrassant pour vraiment 
+
+173
+00:08:02,896 --> 00:08:05,944
+apprendre la leçon qui a mis beaucoup de temps à vraiment être absorbée, 
+
+174
+00:08:05,944 --> 00:08:09,619
+c'est que lorsque les sujets sont choisis principalement en raison de la façon dont 
+
+175
+00:08:09,619 --> 00:08:13,293
+ils sont choisis. Les préoccupations telles que la nouveauté et l'originalité et la 
+
+176
+00:08:13,293 --> 00:08:17,051
+question de savoir si quelque chose est capital ou intéressant ne sont toutes pertinentes 
+
+177
+00:08:17,051 --> 00:08:20,683
+que dans la mesure où elles contribuent à l'objectif de rencontrer un apprenant là 
+
+178
+00:08:20,683 --> 00:08:21,352
+où il se trouve.
+
+179
+00:08:21,352 --> 00:08:24,182
+C'est à ce moment-là que la portée semble vraiment significative et, 
+
+180
+00:08:24,182 --> 00:08:27,595
+pour ce qu'elle vaut, je pense que ce changement d'orientation est probablement 
+
+181
+00:08:27,595 --> 00:08:30,930
+ce qui a fait la différence entre les vidéos étant un passe-temps et les vidéos étant 
+
+182
+00:08:30,930 --> 00:08:31,434
+une carrière.
+
+183
+00:08:31,434 --> 00:08:34,506
+Maintenant, pour chacun d'entre vous qui êtes assis ici en ce moment, 
+
+184
+00:08:34,506 --> 00:08:37,619
+peu importe ce que vous choisissez de faire, en allant de l'avant avec 
+
+185
+00:08:37,619 --> 00:08:40,732
+les mathématiques que vous avez apprises ici et les autres compétences que 
+
+186
+00:08:40,732 --> 00:08:43,803
+vous avez acquises ici, l'épanouissement futur que vous retirez de ce 
+
+187
+00:08:43,803 --> 00:08:46,916
+travail est cela aura autant à voir avec la façon dont vous évaluez ce sur 
+
+188
+00:08:46,916 --> 00:08:49,987
+quoi il vaut la peine de travailler qu'avec les points forts que vous 
+
+189
+00:08:49,987 --> 00:08:50,817
+apportez à la table.
+
+190
+00:08:50,817 --> 00:08:54,819
+La marque future que votre travail laisse sur le monde a autant à voir avec la 
+
+191
+00:08:54,819 --> 00:08:58,669
+façon dont vous évaluez ce sur quoi vous travaillez qu'avec toute autre 
+
+192
+00:08:58,669 --> 00:09:02,671
+chose et mes conseils en ce moment et vous êtes à ce stade crucial de votre la 
+
+193
+00:09:02,671 --> 00:09:06,927
+vie doit être particulièrement attentive à l’origine de cette fonction d’évaluation.
+
+194
+00:09:06,927 --> 00:09:09,570
+Si après aujourd’hui vous vous lancez dans l’industrie, 
+
+195
+00:09:09,570 --> 00:09:12,685
+vous pourriez vous demander comment choisissez-vous où travailler?
+
+196
+00:09:12,685 --> 00:09:14,500
+Comment avez-vous choisi avec qui travailler?
+
+197
+00:09:14,500 --> 00:09:16,236
+Comment choisissez-vous quoi construire?
+
+198
+00:09:16,236 --> 00:09:19,261
+Si vous allez dans le monde universitaire, demandez-vous si c'est pour les 
+
+199
+00:09:19,261 --> 00:09:22,285
+bonnes raisons et comment vous choisirez les problèmes sur lesquels travailler.
+
+200
+00:09:22,285 --> 00:09:26,132
+Dans quelle mesure cela dépend de la façon dont vous serez perçu pour résoudre les 
+
+201
+00:09:26,132 --> 00:09:30,025
+problèmes et dans quelle mesure cela dépend de la valeur que les autres en tireront.
+
+202
+00:09:30,025 --> 00:09:32,313
+Maintenant, si vous vous lancez dans l'enseignement, et honnêtement, 
+
+203
+00:09:32,313 --> 00:09:34,602
+si vous vous lancez dans l'enseignement, vous êtes probablement plus 
+
+204
+00:09:34,602 --> 00:09:36,984
+sage que le reste d'entre nous, donc je n'ai pas grand-chose à dire.
+
+205
+00:09:36,984 --> 00:09:38,958
+Voyez-vous, au cours des huit dernières années, 
+
+206
+00:09:38,958 --> 00:09:41,632
+j’ai ressenti un changement dans ma propre fonction d’évaluation.
+
+207
+00:09:41,632 --> 00:09:44,810
+Une dureté en soi qui ne suffit pas.
+
+208
+00:09:44,810 --> 00:09:48,421
+L'originalité en soi est creuse et les mathématiques ont toujours une beauté 
+
+209
+00:09:48,421 --> 00:09:51,987
+intrinsèque, mais honnêtement, de nos jours, cette beauté est d'autant plus 
+
+210
+00:09:51,987 --> 00:09:55,732
+puissante qu'il y a au moins le murmure de quelque chose de véritablement utile 
+
+211
+00:09:55,732 --> 00:09:56,044
+en vue.
+
+212
+00:09:56,044 --> 00:09:59,772
+Je ne peux pas vous dire quelle est la fonction d'évaluation qui vous convient.
+
+213
+00:09:59,772 --> 00:10:03,179
+Je peux suggérer que cela aura probablement plus d'importance lorsque 
+
+214
+00:10:03,179 --> 00:10:06,725
+cela dépendra moins de vous-même et que cela dépendra un peu plus des autres 
+
+215
+00:10:06,725 --> 00:10:09,533
+et de ce que vous faites pour eux, mais ce dont je suis sûr, 
+
+216
+00:10:09,533 --> 00:10:12,848
+c'est le temps passé aujourd'hui à réévaluer sérieusement où se 
+
+217
+00:10:12,848 --> 00:10:16,946
+situe l'évaluation. la fonction vient des stands pour rendre votre avenir plus riche.
+
+218
+00:10:16,946 --> 00:10:19,859
+Alors félicitations encore une fois, nous attendons tous avec 
+
+219
+00:10:19,859 --> 00:10:22,960
+impatience à quoi ressemblera cet avenir pour chacun d’entre vous.
+

@@ -1,0 +1,288 @@
+1
+00:00:04,019 --> 00:00:06,740
+A Taylor-sorozatokról szóló következő fejezetben 
+
+2
+00:00:06,740 --> 00:00:09,460
+gyakran hivatkozom a magasabb rendű deriváltakra.
+
+3
+00:00:10,100 --> 00:00:13,980
+És ha már jól ismered a második és harmadik deriváltakat, és így tovább, nagyszerű!
+
+4
+00:00:14,420 --> 00:00:16,660
+Nyugodtan ugorjon tovább a fő eseményre.
+
+5
+00:00:16,880 --> 00:00:17,800
+Nem fogsz megbántani.
+
+6
+00:00:18,960 --> 00:00:21,490
+De valahogy eddig ebben a sorozatban egyáltalán nem 
+
+7
+00:00:21,490 --> 00:00:24,020
+sikerült felhoznom a magasabb rendű származékosokat.
+
+8
+00:00:24,520 --> 00:00:27,673
+Ezért a teljesség kedvéért gondoltam, hogy ezt a kis lábjegyzetet csak azért adom, 
+
+9
+00:00:27,673 --> 00:00:29,080
+hogy nagyon gyorsan átfussunk rajtuk.
+
+10
+00:00:29,640 --> 00:00:32,794
+Elsősorban a második deriváltra fogok koncentrálni, megmutatva, 
+
+11
+00:00:32,794 --> 00:00:35,553
+hogyan néz ki a grafikonok és a mozgás összefüggésében, 
+
+12
+00:00:35,553 --> 00:00:38,560
+és hagyom, hogy a magasabb rendű analógiákról gondolkodjatok.
+
+13
+00:00:40,100 --> 00:00:44,154
+Adott valamilyen f függvény az x-ről, a derivált értelmezhető úgy, 
+
+14
+00:00:44,154 --> 00:00:47,180
+mint a grafikon meredeksége egy pont felett, igaz?
+
+15
+00:00:47,760 --> 00:00:50,131
+A meredek meredekség a derivált magas értékét jelenti, 
+
+16
+00:00:50,131 --> 00:00:52,460
+a lefelé irányuló meredekség pedig negatív deriváltat.
+
+17
+00:00:53,240 --> 00:00:57,556
+Tehát a második derivált, amelynek jelölését egy pillanat múlva elmagyarázom, 
+
+18
+00:00:57,556 --> 00:01:02,260
+a derivált deriváltja, ami azt jelenti, hogy megmondja, hogyan változik a meredekség.
+
+19
+00:01:03,280 --> 00:01:06,006
+Ezt egy pillantással úgy láthatjuk, ha elgondolkodunk azon, 
+
+20
+00:01:06,006 --> 00:01:07,460
+hogyan görbül az x f grafikonja.
+
+21
+00:01:08,140 --> 00:01:12,122
+Azokban a pontokban, ahol felfelé görbül, a meredekség növekszik, 
+
+22
+00:01:12,122 --> 00:01:15,200
+és ez azt jelenti, hogy a második derivált pozitív.
+
+23
+00:01:17,800 --> 00:01:21,325
+Azokban a pontokban, ahol lefelé görbül, a meredekség csökken, 
+
+24
+00:01:21,325 --> 00:01:23,060
+így a második derivált negatív.
+
+25
+00:01:26,000 --> 00:01:31,877
+Például egy ilyen grafikonon a 4-es pontnál nagyon pozitív a második derivált, 
+
+26
+00:01:31,877 --> 00:01:35,671
+mivel a meredekség gyorsan növekszik a pont körül, 
+
+27
+00:01:35,671 --> 00:01:41,994
+míg egy ilyen grafikonon ugyanannál a pontnál még mindig pozitív a második derivált, 
+
+28
+00:01:41,994 --> 00:01:45,640
+de ez kisebb, a meredekség csak lassan növekszik.
+
+29
+00:01:46,500 --> 00:01:50,900
+Azokban a pontokban, ahol nincs igazán görbület, a második derivált egyszerűen 0.
+
+30
+00:01:53,380 --> 00:01:56,926
+Ami a jelölést illeti, megpróbálhatnád így írni, 
+
+31
+00:01:56,926 --> 00:02:02,860
+jelezve a derivált függvény egy kis változását, osztva az x egy kis változásával, 
+
+32
+00:02:02,860 --> 00:02:06,696
+ahol, mint mindig, a d betű használata azt sugallja, 
+
+33
+00:02:06,696 --> 00:02:12,630
+hogy amit valójában figyelembe akarsz venni, az az, hogy ez az arány mit közelít, 
+
+34
+00:02:12,630 --> 00:02:14,440
+ahogy dx közelít a 0-hoz.
+
+35
+00:02:15,540 --> 00:02:23,180
+Ez elég kényelmetlen és nehézkes, ezért a szabvány szerint d2f osztva dx2-vel rövidítik.
+
+36
+00:02:24,360 --> 00:02:28,520
+És bár ez nem túl fontos ahhoz, hogy megértsük a második deriváltat, 
+
+37
+00:02:28,520 --> 00:02:32,500
+azt hiszem, érdemes megmutatni, hogyan olvashatjuk ezt a jelölést.
+
+38
+00:02:33,160 --> 00:02:37,073
+Kezdetnek gondolj valamilyen bemeneti adatra a függvényedhez, 
+
+39
+00:02:37,073 --> 00:02:40,860
+majd tegyél két kis lépést jobbra, mindegyiknek a mérete dx.
+
+40
+00:02:42,000 --> 00:02:45,603
+Elég nagy lépéseket választok itt, hogy lássuk, mi történik, 
+
+41
+00:02:45,603 --> 00:02:49,680
+de elvileg tartsd a fejedben, hogy a dx-nek elég aprónak kell lennie.
+
+42
+00:02:50,900 --> 00:02:54,418
+Az első lépés valamilyen változást okoz a függvényben, 
+
+43
+00:02:54,418 --> 00:02:58,193
+amit df1-nek fogok nevezni, a második lépés pedig hasonló, 
+
+44
+00:02:58,193 --> 00:03:02,480
+de esetleg kissé eltérő változást okoz, amit df2-nek fogok nevezni.
+
+45
+00:03:03,330 --> 00:03:08,586
+A különbség e változások között, a függvény változásának változása az, 
+
+46
+00:03:08,586 --> 00:03:10,660
+amit ddf-nek fogunk nevezni.
+
+47
+00:03:12,020 --> 00:03:17,460
+Ezt nagyon kicsinek kell elképzelni, jellemzően dx2 méretével arányosnak.
+
+48
+00:03:18,400 --> 00:03:22,986
+Tehát ha például a dx értékét 0,01-gyel helyettesítenénk, 
+
+49
+00:03:22,986 --> 00:03:28,600
+akkor azt várnánk, hogy ez a ddf körülbelül arányos legyen 0,0001-gyel.
+
+50
+00:03:29,700 --> 00:03:35,997
+A második derivált ennek a változásnak a nagysága, osztva a dx2 nagyságával, 
+
+51
+00:03:35,997 --> 00:03:41,640
+pontosabban, amit ez az arány megközelít, ahogy dx közeledik a 0-hoz.
+
+52
+00:03:43,000 --> 00:03:49,192
+Bár ez a betű nem olyan, mintha d egy változó lenne, amit f-fel szorozunk, 
+
+53
+00:03:49,192 --> 00:03:54,477
+a tömörebb jelölés kedvéért úgy írnád, hogy d2f osztva dx2-vel, 
+
+54
+00:03:54,477 --> 00:03:57,780
+és nem bajlódsz a zárójelekkel az alján.
+
+55
+00:03:59,040 --> 00:04:04,240
+Talán a második derivált legnyilvánvalóbb megértése az, hogy a gyorsulást jelképezi.
+
+56
+00:04:05,180 --> 00:04:09,989
+Tegyük fel, hogy van egy függvényünk, amely a megtett távolságot rögzíti az idő 
+
+57
+00:04:09,989 --> 00:04:13,415
+függvényében, és talán a grafikonja valahogy így néz ki: 
+
+58
+00:04:13,415 --> 00:04:15,820
+az idő múlásával folyamatosan növekszik.
+
+59
+00:04:16,740 --> 00:04:20,216
+Ezután a deriváltja megmondja a sebességet minden egyes időpontban, 
+
+60
+00:04:20,216 --> 00:04:22,823
+például a grafikon úgy nézhet ki, mint ez a dudor, 
+
+61
+00:04:22,823 --> 00:04:26,300
+amely növekszik egy bizonyos maximumig, majd csökken vissza nullára.
+
+62
+00:04:27,200 --> 00:04:31,418
+A második derivált tehát a sebesség változásának mértékét adja meg, 
+
+63
+00:04:31,418 --> 00:04:33,900
+ami a gyorsulás minden egyes időpontban.
+
+64
+00:04:34,920 --> 00:04:38,635
+Ebben a példában a második derivált pozitív az út első felében, 
+
+65
+00:04:38,635 --> 00:04:43,395
+ami a gyorsulást jelzi, vagyis azt az érzést, amikor visszatolnak az autósülésbe, 
+
+66
+00:04:43,395 --> 00:04:46,820
+vagy inkább azt, amikor az autósülés előre tolja az embert.
+
+67
+00:04:47,540 --> 00:04:52,520
+A negatív második derivált lassulást, negatív gyorsulást jelez.
+
+68
+00:04:54,000 --> 00:04:57,080
+A harmadik deriváltat, és ez nem vicc, úgy hívják, hogy rángatózás.
+
+69
+00:04:57,840 --> 00:05:03,920
+Ha tehát a rántás nem nulla, az azt jelenti, hogy maga a gyorsulás erőssége változik.
+
+70
+00:05:06,280 --> 00:05:09,802
+Az egyik leghasznosabb dolog a magasabb rendű deriváltakkal kapcsolatban az, 
+
+71
+00:05:09,802 --> 00:05:13,600
+hogy hogyan segítenek nekünk a függvények közelítésében, ami pontosan a következő, 
+
+72
+00:05:13,600 --> 00:05:16,620
+Taylor-sorozatokról szóló fejezet témája, úgyhogy ott találkozunk.
+

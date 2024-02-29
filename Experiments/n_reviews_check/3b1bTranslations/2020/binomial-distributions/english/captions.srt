@@ -1,0 +1,720 @@
+1
+00:00:00,000 --> 00:00:02,900
+You're buying a product online, and you see three different sellers.
+
+2
+00:00:03,460 --> 00:00:06,200
+They're all offering that same product at essentially the same price.
+
+3
+00:00:06,720 --> 00:00:10,640
+One of them has a 100% positive rating, but with only 10 reviews.
+
+4
+00:00:11,180 --> 00:00:14,740
+Another has a 96% positive rating, with 50 total reviews.
+
+5
+00:00:15,220 --> 00:00:19,560
+And yet another has a 93% positive rating, but with 200 total reviews.
+
+6
+00:00:20,300 --> 00:00:21,360
+Which one should you buy from?
+
+7
+00:00:28,120 --> 00:00:31,038
+I think we all have this instinct that the more data we see, 
+
+8
+00:00:31,038 --> 00:00:33,240
+it gives us more confidence in a given rating.
+
+9
+00:00:33,760 --> 00:00:35,990
+We're a little suspicious of seeing 100% ratings, 
+
+10
+00:00:35,990 --> 00:00:38,979
+since more often than not they come from a tiny number of reviews, 
+
+11
+00:00:38,979 --> 00:00:42,146
+which makes it feel more plausible that things could have gone another 
+
+12
+00:00:42,146 --> 00:00:43,440
+way and given a lower rating.
+
+13
+00:00:43,920 --> 00:00:45,840
+But how do you make that intuition quantitative?
+
+14
+00:00:46,420 --> 00:00:49,864
+What's the rational way to reason about the trade-off here between the 
+
+15
+00:00:49,864 --> 00:00:53,260
+confidence gained from more data versus the lower absolute percentage?
+
+16
+00:00:54,540 --> 00:00:58,402
+This particular example is a slight modification from one that John Cook 
+
+17
+00:00:58,402 --> 00:01:02,160
+gave in his excellent blog post, A Bayesian Review of Amazon Resellers.
+
+18
+00:01:02,620 --> 00:01:05,209
+For you and me, it's a wonderful excuse to dig into 
+
+19
+00:01:05,209 --> 00:01:07,600
+a few core topics in probability and statistics.
+
+20
+00:01:08,320 --> 00:01:11,000
+And to really cover these topics properly, it takes time.
+
+21
+00:01:11,560 --> 00:01:14,434
+So what I'm going to do is break this down into three videos, 
+
+22
+00:01:14,434 --> 00:01:17,402
+where in this first one we'll set up a model for the situation, 
+
+23
+00:01:17,402 --> 00:01:19,860
+and start by talking about the binomial distribution.
+
+24
+00:01:19,980 --> 00:01:23,234
+The second is going to bring in ideas of Bayesian updating, 
+
+25
+00:01:23,234 --> 00:01:26,380
+and how to work with probabilities over continuous values.
+
+26
+00:01:27,040 --> 00:01:30,415
+And in the third, we'll look at something known as a beta distribution, 
+
+27
+00:01:30,415 --> 00:01:33,088
+and pull up a little python to analyze the data we have, 
+
+28
+00:01:33,088 --> 00:01:36,980
+and come to various different answers depending on what it is you want to optimize.
+
+29
+00:01:39,660 --> 00:01:42,214
+Now, to throw you a bone before we dive into all the math, 
+
+30
+00:01:42,214 --> 00:01:44,898
+let me just show you what one of the answers turns out to be, 
+
+31
+00:01:44,898 --> 00:01:46,240
+since it's delightfully simple.
+
+32
+00:01:46,880 --> 00:01:50,324
+When you see an online rating, something like this 10 out of 10, 
+
+33
+00:01:50,324 --> 00:01:54,352
+you pretend that there were two more reviews, one that was positive and one 
+
+34
+00:01:54,352 --> 00:01:55,200
+that's negative.
+
+35
+00:01:55,860 --> 00:02:00,479
+In this case, that means you pretend that it's 11 out of 12, which would give 91.7%.
+
+36
+00:02:01,500 --> 00:02:06,080
+This number is your probability of having a good experience with that seller.
+
+37
+00:02:08,139 --> 00:02:13,044
+So in the case of 50 reviews, where you have 48 positive and 2 negative, 
+
+38
+00:02:13,044 --> 00:02:18,755
+you pretend that it's 49 positive and 3 negative, which would give you 49 out of 52, 
+
+39
+00:02:18,755 --> 00:02:19,360
+or 94.2%.
+
+40
+00:02:20,500 --> 00:02:23,840
+That's your probability of having a good experience with the second seller.
+
+41
+00:02:25,320 --> 00:02:30,705
+Playing the same game with our third seller who had 200 reviews, 
+
+42
+00:02:30,705 --> 00:02:33,440
+you get 187 out of 202, or 92.6%.
+
+43
+00:02:34,640 --> 00:02:38,660
+So according to this rule, it would mean your best bet is to go with seller number 2.
+
+44
+00:02:39,299 --> 00:02:42,604
+This is something known as Laplace's rule of succession, 
+
+45
+00:02:42,604 --> 00:02:45,850
+and to understand what assumptions are underlying this, 
+
+46
+00:02:45,850 --> 00:02:50,951
+and how changing either those assumptions or your underlying goal can change the choice 
+
+47
+00:02:50,951 --> 00:02:54,140
+you make, we really do need to go through all the math.
+
+48
+00:02:54,660 --> 00:02:56,359
+So without further ado, let's dive in.
+
+49
+00:03:00,840 --> 00:03:03,512
+Step 1, how exactly are we modeling the situation, 
+
+50
+00:03:03,512 --> 00:03:06,080
+and what exactly is it that you want to optimize?
+
+51
+00:03:06,700 --> 00:03:11,496
+One option is to think of each seller as producing random experiences that are either 
+
+52
+00:03:11,496 --> 00:03:15,958
+positive or negative, and that each seller has some kind of constant underlying 
+
+53
+00:03:15,958 --> 00:03:20,643
+probability of giving a good experience, what we're going to call the success rate, 
+
+54
+00:03:20,643 --> 00:03:21,480
+or S for short.
+
+55
+00:03:21,900 --> 00:03:24,100
+The whole challenge is that we don't know S.
+
+56
+00:03:25,640 --> 00:03:28,429
+When you see that first rating of 100% with 10 reviews, 
+
+57
+00:03:28,429 --> 00:03:31,120
+that doesn't mean the underlying success rate is 100%.
+
+58
+00:03:31,640 --> 00:03:33,920
+It could very well be something like 95%.
+
+59
+00:03:33,920 --> 00:03:37,584
+And just to illustrate, let me run a little simulation, 
+
+60
+00:03:37,584 --> 00:03:42,556
+where I choose a random number between 0 and 1, and if it's less than 0.95, 
+
+61
+00:03:42,556 --> 00:03:47,660
+I'll record it as a positive review, otherwise record it as a negative review.
+
+62
+00:03:48,760 --> 00:03:54,301
+Now do this 10 times in a row, and then make 10 more, and 10 more, 
+
+63
+00:03:54,301 --> 00:03:59,512
+and 10 more, and so on, to get a sense of what sequences of 10 
+
+64
+00:03:59,512 --> 00:04:05,220
+reviews for a seller with this success rate, would tend to look like.
+
+65
+00:04:05,740 --> 00:04:09,520
+Quite a few of those, around 60% actually, give 10 out of 10.
+
+66
+00:04:10,020 --> 00:04:14,460
+So the data we see seems perfectly plausible if the seller's true success rate was 95%.
+
+67
+00:04:15,580 --> 00:04:18,039
+Or maybe it's really 90%, or 99%.
+
+68
+00:04:18,700 --> 00:04:20,680
+The whole challenge is that we just don't know.
+
+69
+00:04:21,600 --> 00:04:25,280
+As to the goal, let's say you simply want to maximize your probability of 
+
+70
+00:04:25,280 --> 00:04:28,960
+having a positive experience, despite not being sure of this success rate.
+
+71
+00:04:29,860 --> 00:04:34,448
+So think about this here, we've got many different possible success rates for 
+
+72
+00:04:34,448 --> 00:04:39,096
+each seller, any number from 0 up to 1, and we need to say something about how 
+
+73
+00:04:39,096 --> 00:04:43,920
+likely each one of these success rates is, a kind of probability of probabilities.
+
+74
+00:04:45,120 --> 00:04:49,196
+Unlike the more gamified examples like coin flips and die tosses and the 
+
+75
+00:04:49,196 --> 00:04:52,211
+sort of things you see in an intro probability class, 
+
+76
+00:04:52,211 --> 00:04:55,785
+where you go in assuming a long run frequency, like 1.5 or 1.6, 
+
+77
+00:04:55,785 --> 00:04:59,694
+what we have here is uncertainty about the long run frequency itself, 
+
+78
+00:04:59,694 --> 00:05:02,040
+which is a much more potent kind of doubt.
+
+79
+00:05:03,160 --> 00:05:07,367
+I should also emphasize that this kind of setup is relevant to many many situations in 
+
+80
+00:05:07,367 --> 00:05:11,720
+the real world where you need to make a judgment about a random process from limited data.
+
+81
+00:05:12,860 --> 00:05:16,566
+For example, let's say that you're setting up a factory producing cars, 
+
+82
+00:05:16,566 --> 00:05:20,840
+and in an initial test of 100 cars, two of them come out with some kind of problem.
+
+83
+00:05:21,400 --> 00:05:24,568
+If you plan to spin things up to produce a million cars, 
+
+84
+00:05:24,568 --> 00:05:29,292
+what are you willing to confidently say about how many total cars will have problems 
+
+85
+00:05:29,292 --> 00:05:30,460
+that need addressing?
+
+86
+00:05:31,240 --> 00:05:35,005
+It's not like the test guarantees that the true error rate is 2%, 
+
+87
+00:05:35,005 --> 00:05:36,660
+but what exactly does it say?
+
+88
+00:05:38,620 --> 00:05:40,560
+As your first challenge, let me ask you this.
+
+89
+00:05:40,840 --> 00:05:45,985
+If you did magically know the true success rate for a given seller, 
+
+90
+00:05:45,985 --> 00:05:51,054
+say it was 95%, how would you compute the probability of seeing 10 
+
+91
+00:05:51,054 --> 00:05:56,200
+positive reviews and 0 negative reviews, or 48 and 2, or 186 and 14?
+
+92
+00:05:57,120 --> 00:06:02,160
+In other words, what's the probability of seeing the data given an assumed success rate?
+
+93
+00:06:03,060 --> 00:06:06,329
+A moment ago I showed you something like this with a simulation, 
+
+94
+00:06:06,329 --> 00:06:10,251
+generating 10 random reviews, and with a little programming you could just do 
+
+95
+00:06:10,251 --> 00:06:14,526
+that many times, building up a histogram to get some sense of what this distribution 
+
+96
+00:06:14,526 --> 00:06:15,080
+looks like.
+
+97
+00:06:21,659 --> 00:06:24,435
+Likewise, you could simulate sets of 50 reviews, 
+
+98
+00:06:24,435 --> 00:06:29,080
+and get some sense for how probable it would be to see 48 positive and 2 negative.
+
+99
+00:06:29,900 --> 00:06:31,580
+You see, this is the nice thing about probability.
+
+100
+00:06:31,960 --> 00:06:34,812
+A little programming can almost always let you cheat a little 
+
+101
+00:06:34,812 --> 00:06:37,480
+and see what the answer is ahead of time by simulating it.
+
+102
+00:06:37,840 --> 00:06:41,740
+For example, after a few hundred thousand samples of 50 reviews, 
+
+103
+00:06:41,740 --> 00:06:46,960
+assuming the success rate is 95%, it looks like about 26.1% of them would give us this 
+
+104
+00:06:46,960 --> 00:06:48,160
+48 out of 50 review.
+
+105
+00:06:49,200 --> 00:06:52,440
+Luckily, in this case, an exact formula is not bad at all.
+
+106
+00:06:52,980 --> 00:06:56,820
+The probability of seeing exactly 48 out of 50 looks like this.
+
+107
+00:06:57,740 --> 00:07:03,037
+This first term is pronounced 50 choose 48, and it represents the total 
+
+108
+00:07:03,037 --> 00:07:08,040
+number of ways that you could take 50 slots and fill out 48 of them.
+
+109
+00:07:09,099 --> 00:07:13,789
+For example, maybe you start with 48 good reviews and end with 2 bad reviews, 
+
+110
+00:07:13,789 --> 00:07:18,660
+or maybe you start with 47 good reviews and then it goes bad good bad, and so on.
+
+111
+00:07:19,100 --> 00:07:23,175
+In principle, if you were to enumerate every possible way of 
+
+112
+00:07:23,175 --> 00:07:29,187
+filling 48 out of 50 slots like this, the total number of these patterns is 50 choose 48, 
+
+113
+00:07:29,187 --> 00:07:31,860
+which in this case works out to be 1225.
+
+114
+00:07:32,680 --> 00:07:34,000
+What do we multiply by this count?
+
+115
+00:07:34,000 --> 00:07:37,298
+Well, it's the probability of any one of these patterns, 
+
+116
+00:07:37,298 --> 00:07:40,943
+which is the probability of a single positive review raised to 
+
+117
+00:07:40,943 --> 00:07:44,820
+the 48th times the probability of a single negative review squared.
+
+118
+00:07:45,640 --> 00:07:49,230
+Crucial is that we assume each review is independent of the last, 
+
+119
+00:07:49,230 --> 00:07:52,549
+so we can multiply all the probabilities together like this, 
+
+120
+00:07:52,549 --> 00:07:56,792
+and with the numbers we have, when you evaluate it, it works out to be 0.261, 
+
+121
+00:07:56,792 --> 00:08:00,220
+which matches what we just saw empirically with the simulation.
+
+122
+00:08:01,380 --> 00:08:04,672
+You could also replace this 48 with some other value, 
+
+123
+00:08:04,672 --> 00:08:09,305
+and compute the probability of seeing any other number of positive reviews, 
+
+124
+00:08:09,305 --> 00:08:11,500
+again assuming a given success rate.
+
+125
+00:08:14,760 --> 00:08:18,852
+What you're looking at right now, by the way, is known in the business as a 
+
+126
+00:08:18,852 --> 00:08:23,160
+binomial distribution, one of the most fundamental distributions in probability.
+
+127
+00:08:23,860 --> 00:08:26,809
+It comes up whenever you have something like a coin flip, 
+
+128
+00:08:26,809 --> 00:08:31,080
+a random event that can go one of two ways, and you repeat it some number of times, 
+
+129
+00:08:31,080 --> 00:08:35,200
+and what you want to know is the probability of getting various different totals.
+
+130
+00:08:36,720 --> 00:08:41,375
+For our purposes, this formula gives us the probability of seeing the data given 
+
+131
+00:08:41,375 --> 00:08:46,146
+an assumed success rate, which ultimately we want to somehow use to make judgments 
+
+132
+00:08:46,146 --> 00:08:50,860
+about the opposite, the probability of a success rate given the fixed data we see.
+
+133
+00:08:51,320 --> 00:08:53,440
+These are related, but definitely distinct.
+
+134
+00:08:54,060 --> 00:08:58,201
+To get more in that direction, let's play around with this value of s 
+
+135
+00:08:58,201 --> 00:09:02,580
+and see what happens as we change it to different numbers between 0 and 1.
+
+136
+00:09:04,560 --> 00:09:07,603
+The binomial distribution that it produces kind of looks 
+
+137
+00:09:07,603 --> 00:09:10,860
+like this pile that's centered around whatever s times 50 is.
+
+138
+00:09:11,460 --> 00:09:15,964
+The value we care about, the probability of seeing 48 out of 50 reviews, 
+
+139
+00:09:15,964 --> 00:09:18,680
+is represented by this highlighted 48th bar.
+
+140
+00:09:19,400 --> 00:09:24,600
+Let's draw a second plot on the bottom, representing how that value depends on s.
+
+141
+00:09:25,480 --> 00:09:30,320
+When s is equal to 0.96, that value is as high as it's ever going to get.
+
+142
+00:09:30,840 --> 00:09:35,419
+And this should kind of make sense, because when you look at that review of 96%, 
+
+143
+00:09:35,419 --> 00:09:39,319
+it should be most likely if the true underlying success rate was 96%.
+
+144
+00:09:41,000 --> 00:09:45,220
+As s increases, it kind of peters out, going to 0 as s approaches 1, 
+
+145
+00:09:45,220 --> 00:09:50,480
+since someone with a perfect success rate would never have those two negative reviews.
+
+146
+00:09:51,420 --> 00:09:54,560
+Also, as you move to the left, it approaches 0 pretty quickly.
+
+147
+00:09:56,900 --> 00:10:01,146
+By the time you get to s equals 0.8, getting 48 out of 50 reviews 
+
+148
+00:10:01,146 --> 00:10:05,200
+by chance is exceedingly rare, it would happen 1 in 1000 times.
+
+149
+00:10:06,240 --> 00:10:09,608
+This plot we have on the bottom is a great start to getting a more 
+
+150
+00:10:09,608 --> 00:10:13,380
+quantitative description for which values of s feel more or less plausible.
+
+151
+00:10:14,200 --> 00:10:18,908
+Written down as a formula, what I want you to remember is that as a function 
+
+152
+00:10:18,908 --> 00:10:23,371
+of the success rate s, the curve looks like some constant times s to the 
+
+153
+00:10:23,371 --> 00:10:28,080
+number of positive reviews times 1 minus s to the number of negative reviews.
+
+154
+00:10:29,100 --> 00:10:33,848
+In principle, if we had more data, like 480 positive reviews and 20 negative reviews, 
+
+155
+00:10:33,848 --> 00:10:36,940
+the resulting plot would still be centered around 0.96, 
+
+156
+00:10:36,940 --> 00:10:39,480
+but it would be smaller and more concentrated.
+
+157
+00:10:39,930 --> 00:10:44,220
+A good exercise right now would be to see if you could explain why that's the case.
+
+158
+00:10:45,480 --> 00:10:49,480
+There is a lingering question, though, of what to actually do with these curves.
+
+159
+00:10:50,220 --> 00:10:53,044
+I mean, our goal is to compute the probability that you 
+
+160
+00:10:53,044 --> 00:10:56,020
+have a good experience with this seller, so what do you do?
+
+161
+00:10:57,000 --> 00:10:59,833
+Naively, you might think that probability is 96%, 
+
+162
+00:10:59,833 --> 00:11:04,026
+since that's where the peak of the graph is, which in a sense is the most 
+
+163
+00:11:04,026 --> 00:11:05,160
+likely success rate.
+
+164
+00:11:05,620 --> 00:11:07,860
+But think of the example with 10 out of 10 positives.
+
+165
+00:11:07,860 --> 00:11:13,260
+In that case, the whole binomial formula simplifies to be s to the power 10.
+
+166
+00:11:15,080 --> 00:11:17,865
+The probability of seeing 10 consecutive good reviews is 
+
+167
+00:11:17,865 --> 00:11:20,650
+the probability of seeing one of them raised to the 10th.
+
+168
+00:11:21,320 --> 00:11:23,933
+The closer the true success rate is to 1, the 
+
+169
+00:11:23,933 --> 00:11:26,660
+higher the probability of seeing a 10 out of 10.
+
+170
+00:11:27,220 --> 00:11:30,980
+Our plot on the bottom only ever increases as s approaches 1.
+
+171
+00:11:32,400 --> 00:11:35,980
+But even if s equals 1 is the value that maximizes this probability, 
+
+172
+00:11:35,980 --> 00:11:39,302
+surely you wouldn't feel comfortable saying that you personally 
+
+173
+00:11:39,302 --> 00:11:42,520
+have a 100% probability of a good experience with this seller.
+
+174
+00:11:43,460 --> 00:11:46,855
+Maybe you think that instead we should look for some kind of center 
+
+175
+00:11:46,855 --> 00:11:50,400
+of mass of this graph, and that would absolutely be on the right track.
+
+176
+00:11:51,300 --> 00:11:55,826
+First, though, we need to explain how to take this expression for the probability 
+
+177
+00:11:55,826 --> 00:12:00,629
+of the data we're seeing given a value of s, and get the probability for a value of s, 
+
+178
+00:12:00,629 --> 00:12:04,880
+the thing we actually don't know, given the data, the thing we actually know.
+
+179
+00:12:05,380 --> 00:12:09,980
+And that requires us to talk about Bayes' rule, and also probability density functions.
+
+180
+00:12:10,620 --> 00:12:12,060
+For those, I'll see you in part 2.
+
