@@ -21,14 +21,37 @@ class elevenLabsPipeline:
     
     def full_pipeline(self, fulfillment_json_path: str, output_folder: str) -> None:
         """the full pipeline to process the fulfillment JSON"""
+        # Get the valid file paths from the fulfillment JSON
+
+        # Confirm continuation
+
+        # List of files saves
+
+        # Loop through each valid file path
+
+            # Generate the audio to file
+        
+            # Add the file to the list of files saved
+        
+
         pass
 
     def __confirm_continuation(self, price_estimate: float) -> bool:
         """confirm that user wants to continue with the process despite the price estimate"""
+        # Calculate the price estimate
+
+        # Tell the user the price estimate
+
+        # Ask the user if they want to continue
         pass
 
     def get_price_estimate(self, full_data: list[str]) -> float:
         """estimate the price of generating audio files"""
+        # Get the number of characters in the full_data
+
+        # Get the price per character based on the plan
+
+        # Return the price estimate
         pass
     
     def get_valid_file_paths(self, fulfillment_json_path: str) -> list[str]:
@@ -92,10 +115,48 @@ class elevenLabsPipeline:
 
         return final_output_file_path
     
-    def sync_audio(self, audio_file_paths: list[str]) -> None:
+    def sync_audio(self, transcript_file_path: str, temp_audio_file_folder: str, save_csv_to: str) -> None:
         """syncs the audio files to the fulfillment JSON"""
+
+        # Get intervals for each utterance
+
+        # Dataframe to store information for each temp audio file
+
+        # Loop through each temp audio file
+
+            # Initialize the series to store the information for the current temp audio file
+        
+            # Get basic information for the series
+
+            # Get the duration of the audio file
+        
+            # Get difference between the duration of the audio file and the duration of the utterance\
+        
+            # If this is less than 10% shorter than the duration of the utterance, speed it up
+        
+            # If this is 10-20% shorter than the duration of the utterance, speed it up and flag it
+        
+            # If this is more than 20% shorter than the duration of the utterance, flag it and severely flag it
+        
+            # If the audio segment is shorter, add silence to the end
+        
+            # Overwrite the temp audio file with the new audio segment
+
+        # Save the dataframe to a csv file
         pass
 
-    def garbage_disposal(self, audio_file_paths: list[str]) -> None:
+    def garbage_disposal(self, *folders_to_dispose) -> None:
         """deletes the temporary audio files"""
+        # Loop through each folder to dispose
+            
+                # Loop through each file in the folder
+    
+                    # Delete the file
+    
+                # Delete the folder
+
+        pass
+
+    def __price_per_character(self) -> float:
+        """returns the price per character based on the plan"""
         pass
