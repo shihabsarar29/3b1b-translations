@@ -8,11 +8,14 @@ import os
 import random
 import string
 import pandas as pd
+from AzureTTS import AzureTTS
+
 class elevenLabsPipeline:
     def __init__(self, path_to_transcripts: str, api_key: str = None, confirm_continuation: bool = True):
         self.path_to_transcripts = path_to_transcripts
         self.confirm_continuation = confirm_continuation
         self.audio_manipulation = AudioManipulation()
+        self.azureTTS = AzureTTS()
 
         if api_key:
             self.elevenLabsAPI = elevenLabsAPI(api_key=api_key)
@@ -121,7 +124,7 @@ class elevenLabsPipeline:
 
         return matching_paths
     
-    def generate_audio_to_file(self, utterances_list: list[str], intervals: list[float], output_folder: str, transcript_file_path: str) -> list[str]:
+    def generate_audio_to_file(self, utterances_list: list[str], intervals: list[float], output_folder: str, transcript_file_path: str, elevenLabs: bool = True) -> list[str]:
         """creates the audio files from the fulfillment JSON"""
         # Create the output folder
         os.makedirs(output_folder, exist_ok=True)
@@ -138,7 +141,10 @@ class elevenLabsPipeline:
         output_file_path = os.path.join(temp_audio_file_folder, "output")
 
         # Generate the audio files to the temp_audio_file_folder
-        self.elevenLabsAPI.get_audio_to_file(utterances_list, output_file_path)
+        if elevenLabs:
+            self.elevenLabsAPI.get_audio_to_file(utterances_list, output_file_path)
+        else:
+            self.azureTTS.convert_text_to_speech_list(utterances_list, file_name=output_file_path)
 
         # Generate the pause files into the temp_pause_file_folder
         self.audio_manipulation.batch_pause_audios(intervals, temp_pause_file_folder)

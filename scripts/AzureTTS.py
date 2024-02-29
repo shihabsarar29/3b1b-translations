@@ -64,6 +64,44 @@ class AzureTTS:
             
         except Exception as e:
             raise Exception(f"Exception occurred when converting text to speech. Error: {e}")
+        
+    def convert_text_to_speech_list(self, textList: list[str], voice_name: str="en-US-AndrewMultilingualNeural", filename: str="output-azure.mp3", speed_rate: float=1.0):
+        try:
+            url = f"https://{self.speech_region}.tts.speech.microsoft.com/cognitiveservices/v1"
+            headers = {
+                'Ocp-Apim-Subscription-Key': self.speech_key,
+                'Content-Type': 'application/ssml+xml',
+                'X-Microsoft-OutputFormat': 'audio-16khz-128kbitrate-mono-mp3',
+                'User-Agent': 'azure-tts-client',
+            }
+
+            lang=voice_name.split("-")[0]+"-"+voice_name.split("-")[1]
+
+            for idx, text in enumerate(textList):
+                escaped_text = saxutils.escape(text)
+                data = f'''
+                <speak version='1.0' xml:lang='{lang}'>
+                    <voice xml:lang='{lang}' xml:gender='Male' name='{voice_name}'>
+                        <prosody rate='{speed_rate}'>
+                            {escaped_text}
+                        </prosody>
+                    </voice>
+                </speak>
+                '''
+                response = requests.post(url, headers=headers, data=data.encode("utf-8"))
+                response.raise_for_status()
+
+                if response.content == b'':
+                    raise Exception("Response content is empty.")
+                
+                with open(f"{filename}_{idx}.mp3", 'wb') as audio:
+                    audio.write(response.content)
+                    print(f'Audio content written to file "{filename}"')
+
+                time.sleep(2)
+            
+        except Exception as e:
+            raise Exception(f"Exception occurred when converting text to speech. Error: {e}")
 
 
     def translate_text(self, text: str, to_lang: str='es'):

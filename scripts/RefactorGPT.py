@@ -76,8 +76,6 @@ class RefactorGPT:
                 print(f"PERCENT THRESHOLD: {percent_threshold}")
                 print(f"ALL: {all}")
 
-
-
             try:
                 # Get the language of the sentence
                 language = estimate._get_language(sentence, path=file_path)
@@ -88,36 +86,21 @@ class RefactorGPT:
                 # Set the context to None
                 context = None
 
-                while language != adjusted_language:
-                    # Generate the prompt and request sentence adjustment from the model
-                    prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in {language}."
-                    
-                    print("prompt: ", prompt) # TEST
-                    
-                    if not context:
-                        response = self.client.chat.completions.create(
-                            model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
-                            messages=[{"role": "system", "content": prompt}, {"role": "user", "content": sentence}],
-                        )
-                    else:
-                        response = self.client.chat.completions.create(
-                            model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
-                            messages=context + [{"role": "system", "content": "Please ensure the adjusted sentence is in the same language as the original sentence. If the language is already the same, please disregard this message and continue."}, {"role": "user", "content": sentence}],
-                        )
+                # Generate the prompt and request sentence adjustment from the model
+                prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in {language}."
 
-                    adjusted_sentence = response.choices[0].message.content
+                # Initialize sentence adjustment variable
+                adjusted_sentence = ""
+                context = None
 
-                    # Get the output language of the adjusted sentence
-                    adjusted_language = estimate._get_language(adjusted_sentence, path=file_path)
-
-                    print("bruh") # TEST
-
-                    # If the adjusted language is the same as the original language, break the loop
-                    if context:
-                        adjusted_utterance["is_adjusted"] = False
+                for i in range(3):
+                    if sentence == "":
                         break
-                        
-                    context = [{"role": "system", "content": prompt}, {"role": "user", "content": sentence}]
+
+                    adjusted_sentence, is_same_language, is_less_length, context, prompt = self.adjust_GPT(prompt, sentence, context, estimate, language)       
+
+                    if is_less_length and is_same_language:
+                        break            
 
 
                 print(f"Original: {sentence}\nAdjusted: {adjusted_sentence}\n")
@@ -163,6 +146,53 @@ class RefactorGPT:
             # Return the adjusted_transcript list
             return adjusted_transcript
 
+    def adjust_GPT(self, prompt: str, sentence: str, context: str, estimate: Estimate, language: str) -> tuple[str, bool, bool, list[dict], str]:
+        """
+        Adjusts the GPT-3.5 output based on the specified average speed count.
+
+        Args:
+            text (str): The text to adjust.
+            language (str): The language of the text.
+            percent_threshold (int): The percentage threshold to adjust the text.
+            all (bool): If True, adjust all sentences regardless of the threshold.
+
+        Returns:
+            str: The adjusted text.
+        """
+
+        if not context:
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
+                messages=[{"role": "system", "content": prompt}, {"role": "user", "content": sentence}],
+            )
+        else:
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo-0125",  # Using GPT-3.5 Turbo
+                messages=context + [{"role": "system", "content": prompt}, {"role": "user", "content": sentence}],
+            )
+
+        adjusted_sentence = response.choices[0].message.content
+
+        # Get the output language of the adjusted sentence
+        adjusted_language = estimate._get_language(adjusted_sentence, path=file_path)
+
+        # Get context
+        context = [{"role": "system", "content": prompt}, {"role": "user", "content": sentence}]
+
+        # Return variable
+        is_same_language = adjusted_language is language
+        is_less_length = len(adjusted_sentence) > len(sentence)
+
+        # Next prompt
+        next_prompt = ""
+
+        if not is_same_language:
+            next_prompt += "Please ensure the adjusted sentence is in the same language as the original sentence. If the language is already the same, please disregard this message and continue."
+        if is_less_length:
+            next_prompt += "The adjusted sentence is longer than the original sentence. Please ensure the adjusted sentence is shorter than the original sentence while maintaining the same meaning."
+
+        return adjusted_sentence, is_same_language, is_less_length, context, next_prompt      
+     
 
 # Example usage
 file_path = r'C:\Users\sapat\Downloads\3b1b\API\256-bit-security\bengali\sentence_translations.json' #File Path
