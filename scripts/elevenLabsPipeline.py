@@ -62,9 +62,12 @@ class elevenLabsPipeline:
 
         return matching_paths
     
-    def generate_audio_to_file(self, utterances_list: list[str], intervals: list[float], output_folder: str) -> None:
+    def generate_audio_to_file(self, utterances_list: list[str], intervals: list[float], output_folder: str) -> str:
         """creates the audio files from the fulfillment JSON"""
-        # Create the output folder if it doesn't exist
+        # Create the output folder
+        os.makedirs(output_folder, exist_ok=True)
+
+        # Get temp_audio_file_folder and temp_pause_file_folder
         temp_audio_file_folder = os.path.join(output_folder, "temp_audio_files")
         temp_pause_file_folder = os.path.join(output_folder, "temp_pause_files")
 
@@ -78,12 +81,17 @@ class elevenLabsPipeline:
         # Generate the audio files to the temp_audio_file_folder
         self.elevenLabsAPI.get_audio_to_file(utterances_list, output_file_path)
 
-        # Create one pause audio for beginning of the audio
-
         # Generate the pause files into the temp_pause_file_folder
         self.audio_manipulation.batch_pause_audios(intervals, temp_pause_file_folder)
-        pass
 
+        # Create the final output path
+        final_output_file_path = os.path.join(output_folder, "final_output.mp3")
+
+        # Merge the audio and pause audio files into the output_folder
+        self.audio_manipulation.merge_audio_and_pause_audio_folders(temp_audio_file_folder, temp_pause_file_folder, final_output_file_path)
+
+        return final_output_file_path
+    
     def sync_audio(self, audio_file_paths: list[str]) -> None:
         """syncs the audio files to the fulfillment JSON"""
         pass
