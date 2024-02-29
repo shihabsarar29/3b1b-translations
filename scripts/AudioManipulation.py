@@ -172,3 +172,21 @@ class AudioManipulation:
         
         # Delete the temp_audio_file_folder
         os.rmdir(temp_audio_file_folder)
+
+    def overwrite_audio_segment(self, audio_file_overwrite: str, audio_segment: AudioSegment, format: str) -> None:
+        """
+        ### overwrite_audio_segment
+        Overwrites the audio segment of the audio file.
+        
+        #### Args:
+            audio_file_overwrite ```str```: 
+                The audio file to overwrite.
+            audio_segment ```AudioSegment```: 
+                The audio segment to overwrite the audio file with.
+            format ```str```:
+                The format of the audio file.
+            
+        #### Returns:
+        - ```None```
+        """
+        audio_segment.export(audio_file_overwrite, format=format)
