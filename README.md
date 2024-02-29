@@ -147,17 +147,17 @@ _For more information and code examples, please refer to the [Documentation](doc
   - [x] Training
   - [x] Individual Testing
   - [ ] Integration + Testing over ElevenLabs TTS
-- [ ] Translated Speech Time Estimations
-  - [ ] Collecting Character Averages
-  - [ ] Code Implementation
+- [x] Translated Speech Time Estimations
+  - [x] Collecting Character Averages
+  - [x] Code Implementation
   - [ ] Adding Constants
-- [ ] GPT Adjustments
-  - [ ] Prompt Engineering
-  - [ ] Code Implementation
-- [ ] Aligning Translated Audio w/ Original Audio
-  - [ ] Pause Audios
-  - [ ] Speedups
-  - [ ] GPT Adjustments
+- [x] GPT Adjustments
+  - [x] Prompt Engineering
+  - [x] Code Implementation
+- [x] Aligning Translated Audio w/ Original Audio
+  - [x] Pause Audios
+  - [x] Speedups
+  - [x] GPT Adjustments
 - [ ] ElevenLabs Fully Automated Pipeline
   - [ ] Validating Translations
     - [ ] GPT Adjustments Integration
