@@ -126,24 +126,44 @@ elevenLabs.TTS_to_file("TTS_OUTPUT.mp3", text)
 infer("sample_rvc.pth", "TTS_OUTPUT.mp3", "SAMPLE.mp3", "logs/sample_rvc/rvc_idx.index", 0, -2, "rmvpe", 160, 3, 0, 1, 0.95, 0.33)
 ```
 
-_For more information and code examples, please refer to the [Documentation](docs/)_
+_For more information and code examples, please refer to the [Documentation](docs/). The documentation was last updated 2/24/2024._
 
 <!-- ROADMAP -->
 
-## Roadmap
+## Roadmap (as of 2/28)
 
-- [x] ElevenLabs TTS Wrapper
+- [x] TTS Testing
+- [x] ElevenLabs TTS
   - [x] Preprocessing
   - [x] ElevenLabs Model Development
   - [x] Wrapper
+- [ ] Azure TTS
+  - [ ] Data Collection
+  - [ ] Training
+  - [x] Code Implementation 
 - [ ] RVC
   - [x] RVC Wrapper
   - [x] Data Preprocessing
-  - [ ] Training
-- [ ] Automation
-  - [x] Audio Alignments
-  - [ ] ElevenLabs RVC Integration
-  - [ ] Testing
+  - [x] Training
+  - [x] Individual Testing
+  - [ ] Integration + Testing over ElevenLabs TTS
+- [x] Translated Speech Time Estimations
+  - [x] Collecting Character Averages
+  - [x] Code Implementation
+  - [ ] Adding Constants
+- [x] GPT Adjustments
+  - [x] Prompt Engineering
+  - [x] Code Implementation
+- [x] Aligning Translated Audio w/ Original Audio
+  - [x] Pause Audios
+  - [x] Speedups
+  - [x] GPT Adjustments
+- [ ] ElevenLabs Fully Automated Pipeline
+  - [ ] Validating Translations
+    - [ ] GPT Adjustments Integration
+  - [ ] Code Implementation
+    - [ ] RVC Integration
+    - [ ] Audio Synchronization Integration
 
 <!-- Shields and URLs -->
 [vscode-shield]: https://img.shields.io/badge/Open%20in%20VS%20Code-open-blue.svg?logo=visual-studio-code
