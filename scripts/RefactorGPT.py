@@ -116,9 +116,9 @@ class RefactorGPT:
                 adjusted_utterance["is_adjusted"] = True
                 adjusted_utterance["original"] = sentence
                 adjusted_utterance["adjusted"] = adjusted_sentence
-                adjusted_utterance["original_translated_length"] = duration
+                adjusted_utterance["target_length"] = duration
                 adjusted_utterance["adjusted_translated_length"] = adjusted_length
-                adjusted_utterance["target_length"] = length
+                adjusted_utterance["original_translated_length"] = length
 
                 # Append the adjusted_utterance to the adjusted_transcript list
                 adjusted_transcript.append(adjusted_utterance)

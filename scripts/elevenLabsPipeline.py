@@ -1,7 +1,7 @@
 from ElevenLabsAPI.elevenLabsAPI import elevenLabsAPI
 from Parser import Parser
 from AudioManipulation import AudioManipulation
-import dotenv
+from dotenv import load_dotenv
 import json
 import fnmatch
 import os
@@ -10,18 +10,19 @@ import string
 import pandas as pd
 from AzureTTS import AzureTTS
 
-class elevenLabsPipeline:
-    def __init__(self, path_to_transcripts: str, api_key: str = None, confirm_continuation: bool = True):
+class ElevenLabsPipeline:
+    def __init__(self, path_to_transcripts: str, api_key: str = None, confirm_continuation: bool = True, plan: str = "creator"):
         self.path_to_transcripts = path_to_transcripts
         self.confirm_continuation = confirm_continuation
         self.audio_manipulation = AudioManipulation()
         self.azureTTS = AzureTTS()
+        self.plan = plan
 
         if api_key:
             self.elevenLabsAPI = elevenLabsAPI(api_key=api_key)
         else:
-            dotenv.load_dotenv()
-            self.elevenLabsAPI = elevenLabsAPI(api_key=dotenv.get('ELEVEN_LABS_API_KEY'))
+            load_dotenv()
+            self.elevenLabsAPI = elevenLabsAPI(api_key=os.getenv("ELEVENLABS_API_KEY"))
     
     def full_pipeline(self, fulfillment_json_path: str, output_folder: str) -> None:
         """the full pipeline to process the fulfillment JSON"""
@@ -39,7 +40,7 @@ class elevenLabsPipeline:
         # Loop through each valid file path
         for path_to_transcript in valid_file_paths:
             # Generate the audio to file
-            audio_file_path, csv_file_path = self.generate_audio_to_file(path_to_transcript, output_folder)
+            audio_file_path, csv_file_path = self.generate_audio_to_file(path_to_transcript, output_folder, elevenLabs=False)
         
             # Add the file to the dictionary of information, alongside the path to the csv file
             file_info[audio_file_path] = {
@@ -90,10 +91,13 @@ class elevenLabsPipeline:
         # Get the price per character based on the plan
         price_per_character = self.__price_per_character()
 
+        # debug
+        print("full_data_characters: ", full_data_characters)
+
         # Return the price estimate
         return full_data_characters * price_per_character
     
-    def get_valid_file_paths(self, fulfillment_json_path: str) -> list[str]:
+    def get_valid_file_paths(self, fulfillment_json_path: str, json_target: str = "sentence_translations.json") -> list[str]:
         """gets the file paths to the valid audio files from the fulfillment JSON"""
         # Load the fulfillment JSON
         with open(fulfillment_json_path, 'r') as file:
@@ -107,7 +111,7 @@ class elevenLabsPipeline:
             for child, value in children.items():
                 # If the value is True, append the parent-child pair to the list
                 if value:
-                    valid_paths.append(f"{parent}/{child}")
+                    valid_paths.append(f"{parent}\\{child}\\{json_target}")
 
         # Initialize an empty list to store the matching paths
         matching_paths = []
@@ -120,12 +124,19 @@ class elevenLabsPipeline:
 
                 # If any valid path is a substring of the relative path, append it to the matching_paths list
                 if any(valid_path in rel_path for valid_path in valid_paths):
-                    matching_paths.append(rel_path)
+                    matching_paths.append(os.path.join(self.path_to_transcripts, rel_path))
 
         return matching_paths
     
-    def generate_audio_to_file(self, utterances_list: list[str], intervals: list[float], output_folder: str, transcript_file_path: str, elevenLabs: bool = True) -> list[str]:
+    def generate_audio_to_file(self, transcript_file_path: str, output_folder: str, elevenLabs: bool = True) -> list[str]:
         """creates the audio files from the fulfillment JSON"""
+        # Create Parser instance
+        parser = Parser(transcript_file_path)
+
+        # Extract basic information
+        utterances_list = parser.get_original_texts_list()
+        intervals = parser.get_interval_direct()
+
         # Create the output folder
         os.makedirs(output_folder, exist_ok=True)
 
@@ -142,6 +153,7 @@ class elevenLabsPipeline:
 
         # Generate the audio files to the temp_audio_file_folder
         if elevenLabs:
+            self.elevenLabsAPI.get_voice_id("Rachel", inPlace=True)
             self.elevenLabsAPI.get_audio_to_file(utterances_list, output_file_path)
         else:
             self.azureTTS.convert_text_to_speech_list(utterances_list, file_name=output_file_path)
@@ -179,10 +191,18 @@ class elevenLabsPipeline:
         for file in os.listdir(temp_audio_file_folder):
             # Initialize the series to store the information for the current temp audio file
             series = pd.Series()
+
+            # Get the full path to the temp audio file
+            file_path = os.path.join(temp_audio_file_folder, file)
+            
+            # Create instance of AudioManipulation
+            audio_manipulation = AudioManipulation()
+
+            print(file_path)
         
             # Get basic information for the series
             series["File Name"] = file
-            series["Duration"] = self.audio_manipulation.get_audio_duration(os.path.join(temp_audio_file_folder, file))
+            series["Duration"] = audio_manipulation.get_audio_duration(file_path)
             series["Difference"] = -1 * (intervals[file] - series["Duration"])
             series["Flag"] = False
             series["Severe Flag"] = False
@@ -231,8 +251,21 @@ class elevenLabsPipeline:
 
     def __price_per_character(self) -> float:
         """returns the price per character based on the plan"""
-        return 0.30
+        plan_prices = {
+            "creator": 0.0003,
+            "independent publisher": 0.00024,
+            "growing business": 0.00018
+        }
+
+        return plan_prices[self.plan]
 
     def __generate_random_string(self, length: int) -> str:
         """generates a random string of the specified length"""
         return ''.join(random.choice(string.ascii_lowercase) for i in range(length))
+
+""" TESTING """
+elevenLabsPipeline = ElevenLabsPipeline(r"C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\3b1bTranslations")
+
+# Check if get_valid_file_paths works
+# print(elevenLabsPipeline.get_valid_file_paths(r"C:\Users\sapat\Downloads\3b1b\API\is_fulfilled.json"))
+elevenLabsPipeline.full_pipeline(r"C:\Users\sapat\Downloads\3b1b\API\is_fulfilled.json", r"C:\Users\sapat\Downloads\3b1b\API\output_debug_full_pipeline")

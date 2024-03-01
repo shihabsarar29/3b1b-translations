@@ -72,7 +72,7 @@ class AudioManipulation:
 
 
     # @staticmethod
-    def get_audio_duration(audio_file: str, format: str="mp3") -> float:
+    def get_audio_duration(audio_file_path: str, format: str="mp3") -> float:
         """
         ### get_audio_duration
         Gets the duration of an audio file.
@@ -86,7 +86,8 @@ class AudioManipulation:
         """
 
         # Load the audio file
-        audio = AudioSegment.from_file(audio_file, format=format)
+        print("audio file type, " + str(type(audio_file_path)))
+        audio = AudioSegment.from_file(audio_file_path, format=format)
         return audio.duration_seconds
     
     def batch_pause_audios(self, pause_durations: list[float], output_folder: str) -> None:
@@ -99,7 +100,7 @@ class AudioManipulation:
                 The durations of the pause audio files.
             output_folder ```str```: 
                 The folder where the pause audio files will be saved.
-            
+                
         #### Returns:
         - ```None```
         """
@@ -140,6 +141,9 @@ class AudioManipulation:
 
         # Create folder for temporary audio files
         temp_audio_file_folder = os.path.join(os.getcwd(), ".temp_audio_files")
+
+        # Create the temporary audio file folder if it doesn't exist
+        os.makedirs(temp_audio_file_folder, exist_ok=True)
 
         # Copy the audio files to the output folder
         for audio_file, pause_audio_file in zip(audio_files, pause_audio_files):
