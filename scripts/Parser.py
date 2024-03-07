@@ -114,7 +114,7 @@ class Parser:
             list[int]: A list containing the start timestamps.
         '''
         try:
-            return [item['time_range'][0] for item in self.json_list]
+            return [item['start'] for item in self.json_list]
         except KeyError:
             raise KeyError('The provided JSON object does not contain a "start" attribute.')
         except IndexError:
@@ -146,7 +146,7 @@ class Parser:
             list[int]: A list containing the start timestamps.
         '''
         try:
-            return [item['time_range'][1] for item in self.json_list]
+            return [item['end'] for item in self.json_list]
         except KeyError:
             raise KeyError('The provided JSON object does not contain a "time_range" attribute.')
         except IndexError:

@@ -7,6 +7,56 @@ from pydub import AudioSegment
 
 
 class AzureTTS:
+    language_to_voice_map = {
+         "albanian": "sq-AL-IlirNeural2",
+        "arabic": "ar-SA-HamedNeural",
+        "bengali": "bn-IN-BashkarNeural2",
+        "bulgarian": "bg-BG-BorislavNeural",
+        "catalan": "ca-ES-EnricNeural",
+        "chinese": "zh-CN-YunxiNeural",
+        "croatian": "hr-HR-SreckoNeural",
+        "czech": "cs-CZ-AntoninNeural",
+        "danish": "da-DK-JeppeNeural",
+        "dutch": "nl-NL-MaartenNeural",
+        "estonian": "et-EE-KertNeural2",
+        "finnish": "fi-FI-HarriNeural",
+        "french": "fr-FR-HenriNeural",
+        "georgian": "ka-GE-GiorgiNeural2",
+        "german": "de-DE-ConradNeural1",
+        "greek": "el-GR-NestorasNeural",
+        "gujarati": "gu-IN-NiranjanNeural",
+        "hebrew": "he-IL-AvriNeural",
+        "hindi": "hi-IN-MadhurNeural",
+        "hungarian": "hu-HU-TamasNeural",
+        "indonesian": "id-ID-ArdiNeural",
+        "italian": "it-IT-DiegoNeural",
+        "japanese": "ja-JP-KeitaNeural",
+        "korean": "ko-KR-InJoonNeural",
+        "lithuanian": "lt-LT-LeonasNeural2",
+        "malay": "ms-MY-OsmanNeural",
+        "marathi": "mr-IN-ManoharNeural",
+        "norwegian": "nb-NO-FinnNeural",
+        "persian": "fa-IR-FaridNeural2",
+        "polish": "pl-PL-MarekNeural",
+        "portuguese": "pt-PT-DuarteNeural",
+        "romanian": "ro-RO-EmilNeural",
+        "russian": "ru-RU-DmitryNeural",
+        "serbian": "sr-Latn-RS-NicholasNeural2",
+        "slovak": "sk-SK-LukasNeural",
+        "slovenian": "sl-SI-RokNeural",
+        "spanish": "es-ES-AlvaroNeural",
+        "swedish": "sv-SE-MattiasNeural",
+        "tagalog": "fil-PH-AngeloNeural2",
+        "tamil": "ta-IN-ValluvarNeural",
+        "telugu": "te-IN-MohanNeural",
+        "thai": "th-TH-NiwatNeural",
+        "turkish": "tr-TR-AhmetNeural",
+        "ukrainian": "uk-UA-OstapNeural",
+        "urdu": "ur-PK-AsadNeural",
+        "vietnamese": "vi-VN-NamMinhNeural",
+        "english": "en-US-AndrewNeural"
+    }
+     
     def __init__(self):
         """
         The constructor for the AzureTTS class.
@@ -172,6 +222,23 @@ class AzureTTS:
             return {lang_code: lang_dict['name'] for lang_code, lang_dict in languages_dict.items()}
         except Exception as e:
             raise Exception(f"Exception occurred while fetching supported languages. Error: {e}")
+        
+
+    @staticmethod
+    def get_voice_name(language: str) -> str:
+        """
+        A static method to output the voice name taking language as input.
+
+        Inputs:
+            language (str): The language in English (e.g., "english", "french").
+
+        Outputs:
+            voice_name (str): The voice name corresponding to the input language.
+        """
+        voice_name = AzureTTS.language_to_voice_map.get(language.lower())
+        if not voice_name:
+            raise ValueError(f"Voice name for language '{language}' not found.")
+        return voice_name
 
 
 # Example usage:
