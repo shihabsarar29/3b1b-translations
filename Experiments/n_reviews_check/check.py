@@ -2,6 +2,7 @@
 import json
 import os
 import sys
+from typing import Union
 
 # Add parent directory to start of module search path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
@@ -37,9 +38,30 @@ class Validate:
         self.target_directory = target_directory
         self.json_filename = json_filename
 
-
         # Create Estimate object
         self.estimate = Estimate(language_averages_path)
+    
+    def check_fullfilment_full(self, root_directory: str, output_file: str) -> None:
+        """
+        """
+        json_files_list = []
+
+        json_files_list = self.get_all_fulfillment_jsons(root_directory)
+        print(json_files_list)
+
+        json_files_dict = {}
+
+        for json_file in json_files_list:
+            video_name = json_file.split("\\")[-3]
+            language_name = json_file.split("\\")[-2]
+            if video_name not in json_files_dict:
+                json_files_dict[video_name] = {}
+
+            json_files_dict[video_name][language_name] = json.load(open(json_file, "r"))["fulfilled"]
+        
+        # Save to output_file 
+        with open(output_file, "w") as f:
+            json.dump(json_files_dict, f, indent=4)
 
     def check_fulfillment(self, root_directory: str, output_file: str, inPlace: bool = False) -> None:
         """
@@ -96,23 +118,33 @@ class Validate:
                 continue
 
             # Attempt to get the language name from the parent directory
-            language_name = self.estimate._get_language(None, json_file)
+            try:
+                language_name = self.estimate._get_language(None, json_file)
 
-            # Write the results to the dictionary
-            fulfillment_dict[language_name] = {
-                "n_reviews_fulfilled": results[0],
-                "n_reviews_fulfilled_bool": results[1],
-                "similar_durations_fulfilled": results[2],
-                "similar_durations_fulfilled_bool": results[3],
-                "fulfilled": results[3] and results[1],
-                "n_total_utterances": results[4]
-            }
+                # Write the results to the dictionary
+                fulfillment_dict[language_name] = {
+                    "n_reviews_fulfilled": results[0],
+                    "n_reviews_fulfilled_bool": results[1],
+                    "similar_durations_fulfilled": results[2],
+                    "similar_durations_fulfilled_bool": results[3],
+                    "fulfilled": results[3] and results[1],
+                    "n_total_utterances": results[4]
+                }
+            except ValueError:
+                # If the language name is not found, write the results to the dictionary with the parent directory as the key
+                fulfillment_dict[self.estimate._get_language(None, json_file, in_keys=False)] = {
+                    "n_reviews_fulfilled": None,
+                    "n_reviews_fulfilled_bool": None,
+                    "similar_durations_fulfilled": None,
+                    "similar_durations_fulfilled_bool": None,
+                    "fulfilled": None,
+                    "n_total_utterances": None
+                }
 
             # Increment the counter if the conditions are fulfilled
             if results[3] and results[1]: n_fulfilled += 1
 
 
-        print(json_files)
         print(f"{n_fulfilled} out of {n_total} JSON files fulfill the conditions. ({n_fulfilled/n_total*100:.2f}%)")
 
         # Write the results to the output file if not InPlace
@@ -122,7 +154,7 @@ class Validate:
 
         return
     
-    def check_fulfillment_single_file(self, input_file: str, output_file: str = None, inPlace: bool = False) -> tuple[int, bool, int, bool, bool, int]:
+    def check_fulfillment_single_file(self, input_file: str, output_file: str = None, inPlace: bool = False) -> Union[tuple[int, bool, int, bool, bool, int], bool]:
         """
         ### check_fulfillment_single_file
         Check if a JSON file fulfills all conditions to be considered as fulfilled.
@@ -152,7 +184,25 @@ class Validate:
         """
 
         # Get JSON object from the file
-        parser = Parser(input_file)
+        try:
+            parser = Parser(input_file)
+        except ValueError:
+            print("Invalid file: ", input_file)
+
+            if inPlace:
+                with open(output_file, 'w') as f:
+                    json.dump({
+                        "n_reviews_fulfilled": None,
+                        "n_reviews_fulfilled_bool": None,
+                        "similar_durations_fulfilled": None,
+                        "similar_durations_fulfilled_bool": None,
+                        "fulfilled": None,
+                        "n_total_utterances": None
+                    }, f)
+
+                return False
+            else:
+                return 0, False, 0, False, False, 0
 
         # Get all translated texts as a list
         translated = parser.get_translated_texts_list()
@@ -170,12 +220,18 @@ class Validate:
         estimated_lengths = self.estimate.estimate_length_list(translated, input_file)
 
         # Check if atleast 80% of n_reviews > 0
-        n_reviews_fulfilled = sum([1 for review in n_reviews if review > 0])
-        n_reviews_fulfilled_bool = n_reviews_fulfilled/len(n_reviews) >= 0.8
+        try:
+            n_reviews_fulfilled = sum([1 for review in n_reviews if review > 0])
+            n_reviews_fulfilled_bool = n_reviews_fulfilled/len(n_reviews) >= 0.8
 
-        # Check if atleast 80% of translated sentences are estimated to have a translated duration that is similar to the original duration (within 1 second)
-        similar_durations_fulfilled = sum([1 for original, translated in zip(intervals, estimated_lengths) if abs(original - translated) <= 1])
-        similar_durations_fulfilled_bool = similar_durations_fulfilled/len(intervals) >= 0.5
+            # Check if atleast 80% of translated sentences are estimated to have a translated duration that is similar to the original duration (within 1 second)
+            similar_durations_fulfilled = sum([1 for original, translated in zip(intervals, estimated_lengths) if abs(original - translated) <= 1])
+            similar_durations_fulfilled_bool = similar_durations_fulfilled/len(intervals) >= 0.5
+        except ZeroDivisionError:
+            n_reviews_fulfilled = 0
+            n_reviews_fulfilled_bool = False
+            similar_durations_fulfilled = 0
+            similar_durations_fulfilled_bool = False
 
         # If InPlace, write the results to the output file
         if inPlace:
@@ -204,10 +260,31 @@ class Validate:
                     self.check_fulfillment_full_dir(subfolder_path, target_path=target_path)
         else:
             self.check_fulfillment(current_path, output_file="fulfillment.json", inPlace=True)
+    
+    def get_all_fulfillment_jsons(self, current_path: str, target_path: str = "chinese") -> list[str]:
+        """Output"""
+        lists = []
+
+        # For each subfolder, go down one level
+        if (not (target_path in os.listdir(current_path))):
+            for subfolder in os.listdir(current_path):
+                subfolder_path = os.path.join(current_path, subfolder)
+                if os.path.isdir(subfolder_path):
+                    lists += self.get_all_fulfillment_jsons(subfolder_path, target_path=target_path)
+        else:
+            # Loop through all directories and get the fulfillment.json file
+            for subfolder in os.listdir(current_path):
+                subfolder_path = os.path.join(current_path, subfolder)
+                if os.path.isdir(subfolder_path):
+                    json_file = os.path.join(subfolder_path, "fulfillment.json")
+                    if os.path.exists(json_file):
+                        lists.append(json_file)
+        
+        return lists
 
 # Usage:
-root_directory = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\barber-pole-1'
+root_directory = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\3b1bTranslationsP'
 language_averages_path = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json'
 validator = Validate(language_averages_path)
-#validator.check_fulfillment('fulfillment.json')
-validator.check_fulfillment_full_dir(r"C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\2024")
+validator.check_fulfillment(root_directory, 'fulfillment.json', inPlace=True)
+validator.check_fullfilment_full(root_directory, "fulfillment.json")

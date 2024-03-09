@@ -87,7 +87,7 @@ class RefactorGPT:
                 context = None
 
                 # Generate the prompt and request sentence adjustment from the model
-                prompt = f"Rewrite the following sentence to be around {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in {language}."
+                prompt = f"Rewrite the following sentence to be at most {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in {language}."
 
                 # Initialize sentence adjustment variable
                 adjusted_sentence = ""

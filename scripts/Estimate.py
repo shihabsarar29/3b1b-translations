@@ -83,11 +83,15 @@ class Estimate:
         """
 
         if not language: # If language is not provided, detect the language from the text. Saves processing time to do it once here.
-            language = self._get_language(" ".join(text_list), path)
+            try:
+                language = self._get_language(" ".join(text_list), path)
+            except ValueError:
+                print(len(text_list))
+                return [0 for _ in text_list]
 
         return [self.estimate_length(text, path, language) for text in text_list]
     
-    def _get_language(self, text: str, path: str = None) -> str:
+    def _get_language(self, text: str, path: str = None, in_keys: bool = True) -> str:
         '''
         ### _get_language
         A method to detect the language from the given text. Providing a path is more reliable and efficient than providing the text directly. Detecting a language directly from the text may be less accurate and not support all languages.
@@ -109,6 +113,9 @@ class Estimate:
             # Get the language from the directory name
             language = os.path.basename(directory)
 
+            if not in_keys and language:
+                return language
+
             if language in list(self.language_averages.keys()):
                 return language
             else:
@@ -117,7 +124,7 @@ class Estimate:
         # If text attribute not available, attempt to load the text from the path
         if not text:
             # Load the JSON file
-            with open(path, 'r') as f:
+            with open(path, 'r', encoding="utf-8") as f:
                 text = json.load(f)
             
             # Get the translated text from the JSON object
@@ -125,7 +132,10 @@ class Estimate:
 
         if text:
             # Use the text to detect the language
-            language = langdetect.detect(text)
+            try:
+                language = langdetect.detect(text)
+            except langdetect.lang_detect_exception.LangDetectException:
+                raise ValueError(f'Unable to detect a valid language from the text. Please provide a valid language code or language name. Path provided: {path} List of all supported languages: {list(self.language_averages.keys())}')
 
             # Load the language conversion file if available
             if self.language_conversion_path:

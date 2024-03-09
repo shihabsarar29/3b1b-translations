@@ -156,7 +156,7 @@ class ElevenLabsPipeline:
             self.elevenLabsAPI.get_voice_id("Rachel", inPlace=True)
             self.elevenLabsAPI.get_audio_to_file(utterances_list, output_file_path)
         else:
-            self.azureTTS.convert_text_to_speech_list(utterances_list, file_name=output_file_path)
+            self.azureTTS.convert_text_to_speech_list(utterances_list, filename=output_file_path)
 
         # Generate the pause files into the temp_pause_file_folder
         self.audio_manipulation.batch_pause_audios(intervals, temp_pause_file_folder)
@@ -199,10 +199,12 @@ class ElevenLabsPipeline:
             audio_manipulation = AudioManipulation()
 
             print(file_path)
+            print(type(file_path))
         
             # Get basic information for the series
             series["File Name"] = file
-            series["Duration"] = audio_manipulation.get_audio_duration(file_path)
+            print(type(file_path))
+            series["Duration"] = audio_manipulation.get_audio_duration(str(file_path))
             series["Difference"] = -1 * (intervals[file] - series["Duration"])
             series["Flag"] = False
             series["Severe Flag"] = False

@@ -72,7 +72,7 @@ class AudioManipulation:
 
 
     # @staticmethod
-    def get_audio_duration(audio_file_path: str, format: str="mp3") -> float:
+    def get_audio_duration(audio_file_path_232s: str, format: str="mp3") -> float:
         """
         ### get_audio_duration
         Gets the duration of an audio file.
@@ -86,8 +86,8 @@ class AudioManipulation:
         """
 
         # Load the audio file
-        print("audio file type, " + str(type(audio_file_path)))
-        audio = AudioSegment.from_file(audio_file_path, format=format)
+        print("audio file type, " + str(type(audio_file_path_232s)))
+        audio = AudioSegment.from_file(audio_file_path_232s, format=format)
         return audio.duration_seconds
     
     def batch_pause_audios(self, pause_durations: list[float], output_folder: str) -> None:
@@ -112,7 +112,7 @@ class AudioManipulation:
             output_file = os.path.join(output_folder, f"pause_{idx}.wav")
             self.create_single_pause_audio(duration, output_file)
     
-    def merge_audio_and_pause_audio_folders(self, audio_folder: str, pause_audio_folder: str, output_file: str) -> None:
+    def merge_audio_and_pause_audio_folders(self, audio_folder: str, pause_audio_folder: str, output_file: str, format: str = "wav") -> None:
         """
         ### merge_audio_and_pause_audio_folders
         Merges audio and pause audio files to create full audio clip.
@@ -158,14 +158,14 @@ class AudioManipulation:
             audio = audio + pause_audio
 
             # Save the audio file to the temporary folder
-            audio.export(os.path.join(temp_audio_file_folder, audio_file), format="mp3")
+            audio.export(os.path.join(temp_audio_file_folder, audio_file), format="wav")
         
         # Loop through temporary audio files and join them
         for idx, file in enumerate(os.listdir(temp_audio_file_folder)):
             if idx == 0:
-                final_audio = AudioSegment.from_file(os.path.join(temp_audio_file_folder, file))
+                final_audio = AudioSegment.from_file(os.path.join(temp_audio_file_folder, file), format=format)
             else:
-                final_audio += AudioSegment.from_file(os.path.join(temp_audio_file_folder, file))
+                final_audio += AudioSegment.from_file(os.path.join(temp_audio_file_folder, file), format=format)
         
         # Save the final audio file
         final_audio.export(output_file, format="wav")
