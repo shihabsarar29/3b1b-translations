@@ -60,7 +60,7 @@ class RefactorGPT:
             }
 
             # If the adjustment factor is less than the threshold, adjust the sentence
-            if (prompt_percentage > percent_threshold and not all) or (sentence == ""):
+            if (original_translated_length < original_duration and not all) or (sentence == ""):
                 # Set default values
                 adjusted_utterance["is_adjusted"] = False
                 adjusted_utterance["original"] = sentence

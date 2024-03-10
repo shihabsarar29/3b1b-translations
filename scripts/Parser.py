@@ -204,6 +204,36 @@ class Parser:
             raise ValueError("The number of start timestamps does not match the number of end timestamps.")
 
         durations = [end - start for start, end in zip(start_times, end_times)]
+
+        return durations
+    
+    def get_pause_direct(self, full: bool = True):
+        '''
+        A method to calculate the durations between start and end timestamps. Use this method if the JSON object does not contain a "time_range" attribute.
+
+        Inputs:
+            None
+
+        Outputs:
+            list[int]: A list containing the durations (in seconds).
+        '''
+        start_times = self.get_start_timestamps_direct()
+        end_times = self.get_end_timestamps_direct()
+
+        # Ensure there is a one-to-one correspondence between start and end times
+        if len(start_times) != len(end_times):
+            raise ValueError("The number of start timestamps does not match the number of end timestamps.")
+
+        # Get the pause durations
+        durations = [start - end for start, end in zip(start_times[1:], end_times[:-1])]
+
+        # Add the initial pause
+        if full:
+            try:
+                durations = [start_times[0] - 0] + durations
+            except IndexError:
+                print("no start times found. Unable to add initial pause")
+
         return durations
     
     def get_reviews(self):

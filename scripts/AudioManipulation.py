@@ -155,7 +155,7 @@ class AudioManipulation:
             pause_audio = AudioSegment.from_file(pause_audio_file_path)
 
             # Join the audio and pause audio files
-            audio = audio + pause_audio
+            audio = pause_audio + audio
 
             # Save the audio file to the temporary folder
             audio.export(os.path.join(temp_audio_file_folder, audio_file), format="wav")
