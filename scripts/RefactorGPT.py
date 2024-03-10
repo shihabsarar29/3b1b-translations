@@ -19,7 +19,7 @@ class RefactorGPT:
 
         self.client = client
         
-    def adjust_sentences_based_on_characters_speed(self, file_path, language_averages_path, output_file="adjusted_sentences.json", percent_threshold: int = 80, all = False, save=False, inPlace=False) -> Union[None, list]:
+    def adjust_sentences_based_on_characters_speed(self, file_path, language_averages_path, output_file="adjusted_sentences.json", percent_threshold: int = 95, all = False, save=False, inPlace=False) -> Union[None, list]:
         """
         Adjusts sentences based on the specified average speed count.
 
@@ -31,7 +31,10 @@ class RefactorGPT:
         parser = Parser(file_path)
 
         # Retrieve list of sentence durations from the Parser
+        #try:
         durations = parser.get_interval()
+        #except KeyError:
+        #    durations = parser.get_interval_direct()
 
         # Retrieve list of translated texts from the Parser
         translated_texts_list = parser.get_translated_texts_list()
@@ -43,12 +46,12 @@ class RefactorGPT:
         adjusted_transcript = []
 
         # Iterate through the translated texts and durations
-        for sentence, duration in zip(translated_texts_list, durations):
+        for sentence, original_duration in zip(translated_texts_list, durations):
             # Estimate the length of the sentence using character averages
-            length = estimate.estimate_length(sentence, path=file_path)
+            original_translated_length = estimate.estimate_length(sentence, path=file_path)
 
             # Calculate the adjustment factor and prompt percentage
-            adjustment_factor = length / duration
+            adjustment_factor = original_translated_length / original_duration
             prompt_percentage = int(adjustment_factor * 100)
 
             # Create adjusted_utterance dictionary for storing information
@@ -62,10 +65,11 @@ class RefactorGPT:
                 adjusted_utterance["is_adjusted"] = False
                 adjusted_utterance["original"] = sentence
                 adjusted_utterance["adjusted"] = None
-                adjusted_utterance["original_translated_length"] = duration
+                adjusted_utterance["translated_length"] = original_translated_length
                 adjusted_utterance["adjusted_translated_length"] = None
-                adjusted_utterance["target_length"] = length
+                adjusted_utterance["original_length"] = original_duration
                 adjusted_utterance["same_language"] = True
+                adjusted_utterance["flag"] = "Not Adjusted"
 
                 # Append the adjusted_utterance to the adjusted_transcript list
                 adjusted_transcript.append(adjusted_utterance)
@@ -76,60 +80,113 @@ class RefactorGPT:
                 print(f"PERCENT THRESHOLD: {percent_threshold}")
                 print(f"ALL: {all}")
 
-            try:
-                # Get the language of the sentence
-                language = estimate._get_language(sentence, path=file_path)
+            #try:
+            # Get the language of the sentence
+            language = estimate._get_language(sentence, path=file_path)
 
-                # Adjusted Language (placeholder)
-                adjusted_language = None
+            # Adjusted Language (placeholder)
+            adjusted_language = None
 
-                # Set the context to None
-                context = None
+            # Set the context to None
+            context = None
 
-                # Generate the prompt and request sentence adjustment from the model
-                prompt = f"Rewrite the following sentence to be at most {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in {language}."
+            # Generate the prompt and request sentence adjustment from the model
+            prompt = f"Rewrite the following sentence to be at most {prompt_percentage}% of its original length, while maintaining the same meaning of the sentence and prioritizing accuracy. The adjusted sentence should be in {language}."
 
-                # Initialize sentence adjustment variable
-                adjusted_sentence = ""
-                context = None
+            # Initialize sentence adjustment variable
+            adjusted_sentence = ""
+            context = None
 
-                for i in range(3):
-                    if sentence == "":
-                        break
+            # Keep track of the responses so the best one can be chosen
+            responses = []
 
-                    adjusted_sentence, is_same_language, is_less_length, context, prompt = self.adjust_GPT(prompt, sentence, context, estimate, language)       
+            for i in range(3):
+                if sentence == "":
+                    break
 
-                    if is_less_length and is_same_language:
-                        break            
+                adjusted_sentence, is_same_language, is_greater_length, is_same_length, within_threshold, context, new_prompt = self.adjust_GPT(prompt, sentence, context, estimate, language)    
+                ' '.join([new_prompt, prompt])
+                prompt = new_prompt 
 
+                if is_greater_length and is_same_language and not is_same_length and within_threshold:
+                    break           
+                else:
+                    responses.append({
+                        "adjusted_sentence": adjusted_sentence,
+                        "is_same_language": is_same_language,
+                        "is_greater_length": is_greater_length,
+                        "is_same_length": is_same_length,
+                        "within_threshold": within_threshold,
+                        "character_difference": abs(len(adjusted_sentence) - len(sentence))
+                    })
+            
+            best_response = { # Placeholder
+                "adjusted_sentence": "",
+                "is_same_language": False,
+                "is_greater_length": False,
+                "is_same_length": False,
+                "within_threshold": False,
+                "character_difference": 1000000
+            }
 
-                print(f"Original: {sentence}\nAdjusted: {adjusted_sentence}\n")
+            print(responses)
 
-                # Estimate the length of the adjusted sentence
-                adjusted_length = estimate.estimate_length(adjusted_sentence, path=file_path)
+            # Choose the best response
+            for response in responses:
+                if response["is_same_language"] and response["character_difference"] < best_response["character_difference"]:
+                    best_response = response
+                else:
+                    print(response)
+            
+            # Set empty flag
+            adjusted_utterance["flag"] = ""
+            
+            # Set the adjusted sentence
+            adjusted_sentence = best_response["adjusted_sentence"]
+            
+            # CHeck if the adjusted sentence is the placeholder
+            if adjusted_sentence == "":
+                adjusted_sentence = sentence
+                adjusted_utterance["flag"] += ".no_adjustment_made"
+            elif len(adjusted_sentence) > len(sentence):
+                adjusted_sentence = sentence
+                adjusted_utterance["flag"] += ".no_adjustment_made"
+            
+            # Set flag. Should be empty if nothing wrong
+            if not best_response["is_same_language"]:
+                adjusted_utterance["flag"] += ".language_mismatch"
+            if best_response["is_greater_length"]:
+                adjusted_utterance["flag"] += ".greater_length"
+            if best_response["is_same_length"]:
+                adjusted_utterance["flag"] += ".same_length"
+            if not best_response["within_threshold"]:
+                adjusted_utterance["flag"] += ".not_within_threshold"
 
-                # Print the results (TEMPORARY - for testing purposes only)
-                print(f"Original Length: {duration}")
-                print(f"Adjusted Length: {adjusted_length}")
+            print(f"Original: {sentence}\nAdjusted: {adjusted_sentence}\n")
 
-                # Add the original and adjusted sentences to the adjusted_transcript dictionary
-                adjusted_utterance["is_adjusted"] = True
-                adjusted_utterance["original"] = sentence
-                adjusted_utterance["adjusted"] = adjusted_sentence
-                adjusted_utterance["target_length"] = duration
-                adjusted_utterance["adjusted_translated_length"] = adjusted_length
-                adjusted_utterance["original_translated_length"] = length
+            # Estimate the length of the adjusted sentence
+            adjusted_length = estimate.estimate_length(adjusted_sentence, path=file_path)
 
-                # Append the adjusted_utterance to the adjusted_transcript list
-                adjusted_transcript.append(adjusted_utterance)
-            except Exception as e:
-                print(f"An error occurred while adjusting sentence: {e}")
+            # Print the results (TEMPORARY - for testing purposes only)
+            print(f"Original Translated Length: {original_translated_length}")
+            print(f"Adjusted Length: {adjusted_length}")
+
+            # Add the original and adjusted sentences to the adjusted_transcript dictionary
+            adjusted_utterance["is_adjusted"] = True
+            adjusted_utterance["original"] = sentence
+            adjusted_utterance["adjusted"] = adjusted_sentence
+            adjusted_utterance["translated_length"] = original_translated_length
+            adjusted_utterance["adjusted_translated_length"] = adjusted_length
+            adjusted_utterance["original_length"] = original_duration
+            adjusted_utterance["same_language"] = True
+
+            # Append the adjusted_utterance to the adjusted_transcript list
+            adjusted_transcript.append(adjusted_utterance)
+            #except Exception as e:
+            #    print(f"An error occurred while adjusting sentence: {e}")
             
             # TESTING ONLY (to save money and time):
             # break
-
-        print(adjusted_transcript)
-        print(prompt)
 
         # Write to json file (if save is True)
         if save:
@@ -180,18 +237,26 @@ class RefactorGPT:
         context = [{"role": "system", "content": prompt}, {"role": "user", "content": sentence}]
 
         # Return variable
-        is_same_language = adjusted_language is language
-        is_less_length = len(adjusted_sentence) > len(sentence)
+        is_same_language = adjusted_language == language
+        is_greater_length = len(adjusted_sentence) > len(sentence)
+        is_same_length = len(adjusted_sentence) == len(sentence)
+
+        # If the adjusted sentence is within 10% of the original sentence or there is less than a 7 character difference, then the adjusted sentence is within the threshold
+        within_threshold = len(adjusted_sentence) <= len(sentence) * 1.1 or len(adjusted_sentence) - len(sentence) < 7
 
         # Next prompt
         next_prompt = ""
 
         if not is_same_language:
-            next_prompt += "Please ensure the adjusted sentence is in the same language as the original sentence. If the language is already the same, please disregard this message and continue."
-        if is_less_length:
-            next_prompt += "The adjusted sentence is longer than the original sentence. Please ensure the adjusted sentence is shorter than the original sentence while maintaining the same meaning."
+            ' '.join([next_prompt, "Please ensure the adjusted sentence is in the same language as the original sentence. If the language is already the same, please disregard this message and continue."])
+        if is_greater_length:
+            ' '.join([next_prompt, "The adjusted sentence is longer than the original sentence. Please ensure the adjusted sentence is shorter than the original sentence while maintaining the same meaning."])
+        if is_same_length:
+            ' '.join([next_prompt, "The adjusted sentence is the same length as the original sentence. Please ensure the adjusted sentence is shorter than the original sentence while maintaining the same meaning."])
+        if not within_threshold and not is_same_length and not is_greater_length:
+            ' '.join([next_prompt, "The adjusted sentence is not short enough. Please ensure the adjusted sentence is shorter than the original sentence while maintaining the same meaning. If the adjusted sentence is already shorter than the original sentence, please disregard this message and continue."])
 
-        return adjusted_sentence, is_same_language, is_less_length, context, next_prompt      
+        return adjusted_sentence, is_same_language, is_greater_length, is_same_length, within_threshold, context, next_prompt
      
 
 # Example usage

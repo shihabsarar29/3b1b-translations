@@ -35,20 +35,19 @@ class ElevenLabsPipeline:
                 return
 
         # Dictonary containing information on each file saved
+            
+        print(valid_file_paths)
         file_info = {}
 
         # Loop through each valid file path
         for path_to_transcript in valid_file_paths:
             # Generate the audio to file
-            audio_file_path, csv_file_path = self.generate_audio_to_file(path_to_transcript, output_folder, elevenLabs=False)
+            audio_file_path, csv_file_path = self.generate_audio_to_file(path_to_transcript, output_folder)
         
             # Add the file to the dictionary of information, alongside the path to the csv file
             file_info[audio_file_path] = {
                 "csv_file_path": csv_file_path
             }
-        
-        # Sync the audio to the fulfillment JSON
-        self.sync_audio(fulfillment_json_path, file_info)
         
         # Return the dictionary of information
         return file_info
@@ -91,9 +90,6 @@ class ElevenLabsPipeline:
         # Get the price per character based on the plan
         price_per_character = self.__price_per_character()
 
-        # debug
-        print("full_data_characters: ", full_data_characters)
-
         # Return the price estimate
         return full_data_characters * price_per_character
     
@@ -128,7 +124,7 @@ class ElevenLabsPipeline:
 
         return matching_paths
     
-    def generate_audio_to_file(self, transcript_file_path: str, output_folder: str, elevenLabs: bool = True) -> list[str]:
+    def generate_audio_to_file(self, transcript_file_path: str, output_folder: str, elevenLabs: bool = True, output_csv_file: str = "output.csv") -> list[str]:
         """creates the audio files from the fulfillment JSON"""
         # Create Parser instance
         parser = Parser(transcript_file_path)
@@ -161,17 +157,22 @@ class ElevenLabsPipeline:
         # Generate the pause files into the temp_pause_file_folder
         self.audio_manipulation.batch_pause_audios(intervals, temp_pause_file_folder)
 
-        # Create the final output path
-        final_output_file_path = os.path.join(output_folder, "final_output.mp3")
+        # Get the final output file path name
+        output_name = transcript_file_path.split("\\")[-2] + "." + transcript_file_path.split("\\")[-3] + ".mp3"
 
-        # Merge the audio and pause audio files into the output_folder
-        self.audio_manipulation.merge_audio_and_pause_audio_folders(temp_audio_file_folder, temp_pause_file_folder, final_output_file_path)
+        # Create the final output path
+        final_output_file_path = os.path.join(output_folder, output_name)
 
         # Get the CSV file path
-        csv_file_path = os.path.join(output_folder, "audio_sync " + self.__generate_random_string(20) + ".csv")
+        csv_file_path = os.path.join(output_folder, output_csv_file)
 
         # Sync the audio files to the fulfillment JSON
         self.sync_audio(transcript_file_path, temp_audio_file_folder, csv_file_path)
+
+        # Merge the audio and pause audio files into the output_folder
+        self.audio_manipulation.merge_audio_and_pause_audio_folders(temp_audio_file_folder, temp_pause_file_folder, final_output_file_path)
+        # Sync the audio files to the fulfillment JSON
+        #self.sync_audio(transcript_file_path, temp_audio_file_folder, csv_file_path)
 
         return final_output_file_path, csv_file_path
     
@@ -182,13 +183,13 @@ class ElevenLabsPipeline:
         parser = Parser(transcript_file_path)
         
         # Get intervals for each utterance
-        intervals = Parser(transcript_file_path)
+        intervals = parser.get_interval_direct()
 
         # Dataframe to store information for each temp audio file
-        df = pd.DataFrame(columns=["File Name", "Duration", "Difference", "Flag", "Severe Flag"])
+        df = pd.DataFrame(columns=["File_Name", "Duration", "Difference", "Flag", "Severe_Flag"])
 
         # Loop through each temp audio file
-        for file in os.listdir(temp_audio_file_folder):
+        for idx, file in enumerate(os.listdir(temp_audio_file_folder)):
             # Initialize the series to store the information for the current temp audio file
             series = pd.Series()
 
@@ -197,17 +198,13 @@ class ElevenLabsPipeline:
             
             # Create instance of AudioManipulation
             audio_manipulation = AudioManipulation()
-
-            print(file_path)
-            print(type(file_path))
         
             # Get basic information for the series
-            series["File Name"] = file
-            print(type(file_path))
-            series["Duration"] = audio_manipulation.get_audio_duration(str(file_path))
-            series["Difference"] = -1 * (intervals[file] - series["Duration"])
+            series["File_Name"] = file
+            series["Duration"] = audio_manipulation.get_audio_duration(file_path)
+            series["Difference"] = abs(intervals[idx] - series["Duration"])
             series["Flag"] = False
-            series["Severe Flag"] = False
+            series["Severe_Flag"] = False
 
             # Get the duration of the audio file
             audio_duration = series["Duration"]
@@ -217,15 +214,15 @@ class ElevenLabsPipeline:
 
              # If the audio segment is shorter, add silence to the end
             if difference < 0:
-                self.audio_manipulation.add_silence_to_end(os.path.join(temp_audio_file_folder, file), audio_duration)
+                self.audio_manipulation.add_silence_to_end(os.path.join(temp_audio_file_folder, file), abs(difference))
 
             # If this is less than 10% shorter than the duration of the utterance, speed it up to match the duration of the utterance
             elif difference < 0.1 * audio_duration and difference > 0:
-                self.audio_manipulation.speed_up_audio(os.path.join(temp_audio_file_folder, file), audio_duration)
+                self.audio_manipulation.speed_up_audio(os.path.join(temp_audio_file_folder, file), 1 + (difference / audio_duration))
         
             # If this is 10-20% shorter than the duration of the utterance, speed it up and flag it
             elif difference < 0.2 * audio_duration and difference > 0:
-                self.audio_manipulation.speed_up_audio(os.path.join(temp_audio_file_folder, file), audio_duration)
+                self.audio_manipulation.speed_up_audio(os.path.join(temp_audio_file_folder, file), 1 + (difference / audio_duration))
                 series["Flag"] = True
         
             # If this is more than 20% shorter than the duration of the utterance, flag it and severely flag it
@@ -234,7 +231,11 @@ class ElevenLabsPipeline:
                 series["Severe Flag"] = True
         
             # Overwrite the temp audio file with the new audio segment
-            self.audio_manipulation.overwrite_audio_segment(os.path.join(temp_audio_file_folder, file), audio_duration)
+            self.audio_manipulation.overwrite_audio_segment(os.path.join(temp_audio_file_folder, file), file_path)
+
+            # Concatenate the series to the dataframe as a new row
+            df = pd.concat([df, pd.DataFrame(series).transpose()], axis=0)
+            df.reset_index()
 
         # Save the dataframe to a csv file
         df.to_csv(save_csv_to, index=False)

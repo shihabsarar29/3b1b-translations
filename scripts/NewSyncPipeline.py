@@ -27,8 +27,12 @@ class AudioSync:
             translator = Parser(self.json_path, json_encoding="utf-8")
             text_list = translator.get_translated_texts_list()
             original_text_list = translator.get_original_texts_list()
-            start_timestamps = translator.get_start_timestamps()
-            end_timestamps = translator.get_end_timestamps()
+            try:
+                start_timestamps = translator.get_start_timestamps()
+                end_timestamps = translator.get_end_timestamps()
+            except KeyError:
+                start_timestamps = translator.get_start_timestamps_direct()
+                end_timestamps = translator.get_end_timestamps_direct()
             print(text_list, "\n\n")
         except Exception as e:
             print(f"Failed to parse file: {e}")

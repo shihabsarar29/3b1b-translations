@@ -1,5 +1,6 @@
 import os
 from pydub import AudioSegment
+from typing import Union
 
 class AudioManipulation:
     """
@@ -71,8 +72,8 @@ class AudioManipulation:
         print(f"Final audio file created at {output_file_path}")
 
 
-    # @staticmethod
-    def get_audio_duration(audio_file_path_232s: str, format: str="mp3") -> float:
+    @staticmethod
+    def get_audio_duration(audio_file_path: str, format: str="mp3") -> float:
         """
         ### get_audio_duration
         Gets the duration of an audio file.
@@ -86,8 +87,7 @@ class AudioManipulation:
         """
 
         # Load the audio file
-        print("audio file type, " + str(type(audio_file_path_232s)))
-        audio = AudioSegment.from_file(audio_file_path_232s, format=format)
+        audio = AudioSegment.from_file(audio_file_path, format=format)
         return audio.duration_seconds
     
     def batch_pause_audios(self, pause_durations: list[float], output_folder: str) -> None:
@@ -177,7 +177,7 @@ class AudioManipulation:
         # Delete the temp_audio_file_folder
         os.rmdir(temp_audio_file_folder)
 
-    def overwrite_audio_segment(self, audio_file_overwrite: str, audio_segment: AudioSegment, format: str) -> None:
+    def overwrite_audio_segment(self, audio_file_overwrite: str, audio_segment: Union[str, AudioSegment], format: str = "mp3") -> None:
         """
         ### overwrite_audio_segment
         Overwrites the audio segment of the audio file.
@@ -193,4 +193,55 @@ class AudioManipulation:
         #### Returns:
         - ```None```
         """
+        if isinstance(audio_segment, str):
+            audio_segment = AudioSegment.from_file(audio_segment, format=format)
+        
+        # Save the audio segment to the audio file
         audio_segment.export(audio_file_overwrite, format=format)
+    
+    def add_silence_to_end(self, path: str, seconds: float, format: str = "mp3"):
+        """
+        ### add_silence_to_end
+        Adds silence to the end of the audio file.
+        
+        #### Args:
+            path ```str```: 
+                The path to the audio file.
+            seconds ```float```: 
+                The duration of the silence to add to the end of the audio file.
+            
+        #### Returns:
+        - ```None```
+        """
+        # Load the audio file
+        audio = AudioSegment.from_file(path, format=format)
+
+        # Add silence to the end of the audio file
+        silence = AudioSegment.silent(duration=seconds * 1000)
+        audio += silence
+
+        # Save the audio file
+        audio.export(path, format=format)
+    
+    def speed_up_audio(self, file_path: str, rate: float, format: str = "mp3"):
+        """
+        ### speed_up_audio
+        Speeds up the audio file.
+        
+        #### Args:
+            file_path ```str```: 
+                The path to the audio file.
+            rate ```float```: 
+                The rate to speed up the audio file by.
+            
+        #### Returns:
+        - ```None```
+        """
+        # Load the audio file
+        audio = AudioSegment.from_file(file_path, format=format)
+
+        # Speed up the audio file
+        audio = audio.speedup(playback_speed=rate)
+
+        # Save the audio file
+        audio.export(file_path, format=format)
