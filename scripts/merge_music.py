@@ -17,6 +17,9 @@ class MergeMusic:
         if len(music) < len(audio) and not crop: # fix to add silence to end of audio itself
             silence = AudioSegment.silent(duration=len(audio) - len(music))
             music = music + silence
+        elif len(audio) < len(music) and not crop:
+            silence = AudioSegment.silent(duration=len(music) - len(audio))
+            audio = audio + silence
         
         # Make music audio_volume_offset dB louder
         music = music.apply_gain(audio_volume_offset)

@@ -199,7 +199,9 @@ class ElevenLabsPipeline:
                 text = text_list[i]
                 output_file = os.path.join(temp_audio_file_folder, f'azure_{i+1000}.mp3')
                 print("passing in: ", output_file)
-                if elevenLabs:
+
+                """NEED TO FIX TO USE TARGET LENGTH COMPARED TO REAL LENGTH WITHIN FUNCTION"""
+                if elevenLabs: 
                     self.elevenLabsAPI.get_audio_to_file(text=text, output_file=output_file, speed_rate=speed_rate, voice_id=self.voice_name)
                 else:
                     self.azureTTS.convert_text_to_speech(text=text, filename=output_file, speed_rate=speed_rate, voice_name=self.voice_name)
