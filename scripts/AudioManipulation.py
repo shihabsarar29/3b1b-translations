@@ -4,28 +4,24 @@ from typing import Union
 
 class AudioManipulation:
     """
-    ## AudioManipulation
     AudioManipulation class provides methods for manipulating audio files. Useful when trying to match translated audio with visuals.
     
-    ### Methods:
-    - create_single_pause_audio
-    - join_audios
+    Methods:
+        create_single_pause_audio
+        join_audios
     """
     
     @staticmethod
     def create_single_pause_audio(duration: float, output_file: str) -> None:
         """
-        ### create_single_pause_audio
         Creates a single pause audio file based on the given duration.
         
-        #### Args:
-            duration ```float```: 
-                The duration of the pause.
-            output_file ```str```: 
-                The path where the pause audio file will be saved.
+        Args:
+            duration (float): The duration of the pause.
+            output_file (str): The path where the pause audio file will be saved.
             
-        #### Returns:
-        - ```None```
+        Returns:
+            (None)
         """
         # Create the pause audio file
         pause_audio = AudioSegment.silent(duration=duration * 1000)  
@@ -37,19 +33,15 @@ class AudioManipulation:
     @staticmethod
     def join_audios(pause_audio_folder: str, translated_audio_folder: str, output_file_path: str) -> None:
         """
-        ### join_audios
         Joins pause audio files and translated audio files together.
         
-        #### Args:
-            pause_audio_files ```str```: 
-                The folder to the pause audio files that will be joined with the translated audio files.
-            translated_audio_files ```str```: 
-                The folder to the translated audio files that will be joined with the pause audio files.
-            output_file_path ```str```: 
-                The path where the final audio file will be saved.
+        Args:
+            pause_audio_files (str): The folder to the pause audio files that will be joined with the translated audio files.
+            translated_audio_files (str): The folder to the translated audio files that will be joined with the pause audio files.
+            output_file_path (str): The path where the final audio file will be saved.
             
-        #### Returns:
-        - ```None```
+        Returns:
+            (None)
         """
         pause_audio_files = [filename for filename in os.listdir(pause_audio_folder)]
         translated_audio_files = [filename for filename in os.listdir(translated_audio_folder)]
@@ -75,15 +67,13 @@ class AudioManipulation:
     @staticmethod
     def get_audio_duration(audio_file_path: str, format: str="mp3") -> float:
         """
-        ### get_audio_duration
         Gets the duration of an audio file.
         
-        #### Args:
-            audio_file ```str```: 
-                The audio file to get the duration of.
+        Args:
+            audio_file (str): The audio file to get the duration of.
             
-        #### Returns:
-        - ```float```: The duration of the audio file in seconds.
+        Returns:
+            (float): The duration of the audio file in seconds.
         """
 
         # Load the audio file
@@ -92,17 +82,14 @@ class AudioManipulation:
     
     def batch_pause_audios(self, pause_durations: list[float], output_folder: str) -> None:
         """
-        ### batch_pause_audios
         Creates multiple pause audio files based on the given durations.
         
-        #### Args:
-            pause_durations ```list[float]```: 
-                The durations of the pause audio files.
-            output_folder ```str```: 
-                The folder where the pause audio files will be saved.
+        Args:
+            pause_durations (list[float]): The durations of the pause audio files.
+            output_folder (str): The folder where the pause audio files will be saved.
                 
-        #### Returns:
-        - ```None```
+        Returns:
+            (None)
         """
         # Create the output folder if it doesn't exist
         os.makedirs(output_folder, exist_ok=True)
@@ -114,18 +101,16 @@ class AudioManipulation:
     
     def merge_audio_and_pause_audio_folders(self, audio_folder: str, pause_audio_folder: str, output_file: str, format: str = "wav") -> None:
         """
-        ### merge_audio_and_pause_audio_folders
+        merge_audio_and_pause_audio_folders
         Merges audio and pause audio files to create full audio clip.
 
-        #### Args:
-            audio_folder ```str```: 
-                The folder to the audio files that will be merged with the pause audio files.
-            pause_audio_folder ```str```: 
-                The folder to the pause audio files that will be merged with the audio files.
-            output_file ```str```: 
-                The path where the final audio file will be saved.
-        #### Returns:
-        - ```None```
+        Args:
+            audio_folder (str): The folder to the audio files that will be merged with the pause audio files.
+            pause_audio_folder (str): The folder to the pause audio files that will be merged with the audio files.
+            output_file (str): The path where the final audio file will be saved.
+
+        Returns:
+            (None)
         """
 
         # Get the audio and pause audio files
@@ -179,19 +164,15 @@ class AudioManipulation:
 
     def overwrite_audio_segment(self, audio_file_overwrite: str, audio_segment: Union[str, AudioSegment], format: str = "mp3") -> None:
         """
-        ### overwrite_audio_segment
         Overwrites the audio segment of the audio file.
         
-        #### Args:
-            audio_file_overwrite ```str```: 
-                The audio file to overwrite.
-            audio_segment ```AudioSegment```: 
-                The audio segment to overwrite the audio file with.
-            format ```str```:
-                The format of the audio file.
+        Args:
+            audio_file_overwrite (str): The audio file to overwrite.
+            audio_segment (AudioSegment): The audio segment to overwrite the audio file with.
+            format (str): The format of the audio file.
             
-        #### Returns:
-        - ```None```
+        Returns:
+            (None)
         """
         if isinstance(audio_segment, str):
             audio_segment = AudioSegment.from_file(audio_segment, format=format)
@@ -201,17 +182,14 @@ class AudioManipulation:
     
     def add_silence_to_end(self, path: str, seconds: float, format: str = "mp3"):
         """
-        ### add_silence_to_end
         Adds silence to the end of the audio file.
         
-        #### Args:
-            path ```str```: 
-                The path to the audio file.
-            seconds ```float```: 
-                The duration of the silence to add to the end of the audio file.
+        Args:
+            path (str): The path to the audio file.
+            seconds (float): The duration of the silence to add to the end of the audio file.
             
-        #### Returns:
-        - ```None```
+        Returns:
+            (None)
         """
         # Load the audio file
         audio = AudioSegment.from_file(path, format=format)
@@ -225,17 +203,14 @@ class AudioManipulation:
     
     def speed_up_audio(self, file_path: str, rate: float, format: str = "mp3"):
         """
-        ### speed_up_audio
         Speeds up the audio file.
         
-        #### Args:
-            file_path ```str```: 
-                The path to the audio file.
-            rate ```float```: 
-                The rate to speed up the audio file by.
+        Args:
+            file_path (str): The path to the audio file.
+            rate (float): The rate to speed up the audio file by.
             
-        #### Returns:
-        - ```None```
+        Returns:
+            (None)
         """
         # Load the audio file
         audio = AudioSegment.from_file(file_path, format=format)

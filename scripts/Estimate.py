@@ -8,21 +8,17 @@ import warnings
 
 class Estimate:
     '''
-    ## Estimate
     A class to estimate the length of a translated text in a specific language.
 
-    ### Attributes:
-    language_averages_path: ```str```
-        The path to the JSON file containing the average character count per second for each language
-    language_averages: ```dict```
-        A dictionary containing the average character count per second for each language. This attribute is automatically set using the language_averages_path attribute.
-    language_conversion_path: ```str``` = ```None```
-        The path to the JSON file containing the language conversion from language code to language name. Only necessary if language code -> language name conversion is not same as [standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+    Attributes:
+        language_averages_path (str): The path to the JSON file containing the average character count per second for each language
+        language_averages (dict): A dictionary containing the average character count per second for each language. This attribute is automatically set using the language_averages_path attribute.
+        language_conversion_path (str): = (None) The path to the JSON file containing the language conversion from language code to language name. Only necessary if language code -> language name conversion is not same as [standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
         
-    ### Methods:
-    - _get_language: A method to detect the language from the given text.
-    - _get_conversions: A method to get the default language conversion dictionary if language_conversion_path is not provided.
-    - estimate_length: A method to estimate the length of a translated text. Can use a specific language or the language detected from the JSON object.
+    Methods:
+        _get_language: A method to detect the language from the given text.
+        _get_conversions: A method to get the default language conversion dictionary if language_conversion_path is not provided.
+        estimate_length: A method to estimate the length of a translated text. Can use a specific language or the language detected from the JSON object.
     '''
     def __init__(self, language_averages_path: str, language_conversion_path: str = None) -> None:
         self.language_averages_path = language_averages_path
@@ -34,19 +30,15 @@ class Estimate:
     
     def estimate_length(self, text: str, path: str = None, language: str = None) -> float:
         '''
-        ### estimate_length
         A method to estimate the length of a translated text. Can use a specific language or the language detected from the JSON object.
 
-        #### Parameters:
-        text: ```str``` = ```None```:
-            The text to estimate the length of
-        path: ```str``` = ```None```:
-            The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
-        language: ```str``` = ```None```:
-            The language to use for the estimation. If not provided, the language will be detected from the text or path.
+        Parameters:
+            text (str) = (None): The text to estimate the length of
+            path (str) = (None): The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
+            language (str) = (None): The language to use for the estimation. If not provided, the language will be detected from the text or path.
 
-        #### Returns:
-        - ```float```: The estimated length of the translated text
+        Returns:
+            (float): The estimated length of the translated text
         '''
 
         if not language:
@@ -67,19 +59,15 @@ class Estimate:
 
     def estimate_length_list(self, text_list: list, path: str = None, language: str = None) -> list[float]:
         """
-        ### estimate_length_list
         A method to estimate the length of a list of translated texts. Can use a specific language or the language detected from the JSON object.
 
-        #### Parameters:
-        text_list: ```list[str]```:
-            The list of texts to estimate the length of
-        path: ```str``` = ```None```:
-            The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
-        language: ```str``` = ```None```:
-            The language to use for the estimation. If not provided, the language will be detected from the text or path.
+        Parameters:
+            text_list (list[str]): The list of texts to estimate the length of
+            path (str) = (None): The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
+            language (str) = (None): The language to use for the estimation. If not provided, the language will be detected from the text or path.
         
-        #### Returns:
-        - ```list[float]```: The estimated length of the translated texts
+        Returns:
+            (list[float]): The estimated length of the translated texts
         """
 
         if not language: # If language is not provided, detect the language from the text. Saves processing time to do it once here.
@@ -93,17 +81,14 @@ class Estimate:
     
     def _get_language(self, text: str, path: str = None, in_keys: bool = True) -> str:
         '''
-        ### _get_language
         A method to detect the language from the given text. Providing a path is more reliable and efficient than providing the text directly. Detecting a language directly from the text may be less accurate and not support all languages.
 
-        #### Parameters:
-        text: ```str``` = ```None```:
-            The text to detect the language from
-        path: ```str``` = ```None```:
-            The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
+        Parameters:
+            text (str) = (None): The text to detect the language from
+            path (str) = (None): The path to the JSON file containing the text. If provided, the function will first attempt to detect the language from the path of the file before using the text parameter.
 
-        #### Returns:
-        - ```str```: The detected language
+        Returns:
+            (str): The detected language
         '''
 
         if path:

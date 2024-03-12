@@ -5,6 +5,7 @@ import dotenv
 from typing import Union
 import json
 import os
+import json
 
 class RefactorGPT:
     def __init__(self, api_key: str = None):
@@ -19,7 +20,7 @@ class RefactorGPT:
 
         self.client = client
         
-    def adjust_sentences_based_on_characters_speed(self, file_path, language_averages_path, output_file="adjusted_sentences.json", percent_threshold: int = 95, all = False, save=False, inPlace=False) -> Union[None, list]:
+    def adjust_sentences_based_on_characters_speed(self, file_path, language_averages_path, output_file="adjusted_sentences.json", percent_threshold: int = 95, all = False, save=False, inPlace=False, sentence_translations_output: bool = False) -> Union[None, list]:
         """
         Adjusts sentences based on the specified average speed count.
 
@@ -190,6 +191,30 @@ class RefactorGPT:
 
         # Write to json file (if save is True)
         if save:
+            if sentence_translations_output:
+                # Load json file from file_path
+                with open(file_path, "r", encoding="utf-8") as f:
+                    sentence_translations = json.load(f)
+                
+                output_sentence_translations = []
+
+                for utterance, adjusted_utterance_ in zip(sentence_translations, adjusted_transcript):
+                    new_utterance = {}
+
+                    new_utterance["input"] = utterance["input"]
+                    new_utterance["translatedText"] = utterance["translatedText"]
+                    new_utterance["model"] = utterance["model"]
+                    new_utterance["time_range"] = utterance["time_range"]
+                    new_utterance["adjusted"] = adjusted_utterance_["adjusted"]
+                    new_utterance["adjusted_flag"] = adjusted_utterance_["flag"]
+
+                    sentence_translations.append(new_utterance)
+                
+                with open(output_file, "w", encoding="utf-8") as f:
+                    json.dump(output_sentence_translations, f, indent=4, ensure_ascii=False)
+                
+                return
+
             if inPlace:
                 # Wtite to the same directory as the input file (inPlace)
                 output_path = os.path.join(os.path.dirname(file_path), output_file)
@@ -265,4 +290,4 @@ language_averages_path = r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average
 
 refactor = RefactorGPT()
 
-refactor.adjust_sentences_based_on_characters_speed(file_path, language_averages_path, save=True)
+refactor.adjust_sentences_based_on_characters_speed(file_path, language_averages_path, save=True, sentence_translations_output=True)

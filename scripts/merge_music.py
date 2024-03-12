@@ -14,7 +14,7 @@ class MergeMusic:
         music = AudioSegment.from_file(music_path)
 
         # If the music is shorter than the audio, append silence to the end of the music
-        if len(music) < len(audio) and not crop:
+        if len(music) < len(audio) and not crop: # fix to add silence to end of audio itself
             silence = AudioSegment.silent(duration=len(audio) - len(music))
             music = music + silence
         

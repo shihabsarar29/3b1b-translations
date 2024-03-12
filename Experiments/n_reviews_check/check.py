@@ -14,24 +14,17 @@ from scripts.Parser import Parser
 
 class Validate:
     """
-    ### Validate
     Class to validate the fulfillment of the conditions for JSON files in a directory.
 
-    #### Initialization Parameters:
-    root_directory: ```str```
-        The root directory to search for JSON files
-    language_averages_path: ```str```
-        The path to the JSON file containing the average character count per second for each language
-    json_filename: ```str``` = "sentence_translations.json"
-        The name of the JSON file to search for.
-    target_directory: ```str``` = ```None```
-        The target directory to search for JSON files. If not provided, all JSON files in the root_directory will be considered
+    Initialization Parameters:
+        root_directory (str): The root directory to search for JSON files
+        language_averages_path (str): The path to the JSON file containing the average character count per second for each language
+        json_filename (str) = "sentence_translations.json": The name of the JSON file to search for.
+        target_directory (str) = (None): The target directory to search for JSON files. If not provided, all JSON files in the root_directory will be considered
 
-    #### Attributes:
-    fileUtils: ```FileUtils```
-        An instance of the FileUtils class to use for file operations. Initialized with the root_directory, target_directory, and json_filename.
-    estimate: ```Estimate```
-        An instance of the Estimate class to use for estimating the length of translated texts. Initialized with the language_averages_path.
+    Attributes:
+        fileUtils (FileUtils): An instance of the FileUtils class to use for file operations. Initialized with the root_directory, target_directory, and json_filename.
+        estimate (Estimate): An instance of the Estimate class to use for estimating the length of translated texts. Initialized with the language_averages_path.
     """
 
     def __init__(self, language_averages_path: str, json_filename='sentence_translations.json', target_directory: str = None):
@@ -65,24 +58,21 @@ class Validate:
 
     def check_fulfillment(self, root_directory: str, output_file: str, inPlace: bool = False) -> None:
         """
-        ### check_fulfillment
         Check if all JSON files in the root_directory are fulfill all conditions to be considered as fulfilled.
 
-        #### Fulfilled conditions:
-        - The JSON file has atleast 80% n_reviews > 0
-        - Atleast 80% of translated sentences are estimated to have a translated duration that is similar to the original duration
+        Fulfilled conditions:
+            The JSON file has atleast 80% n_reviews > 0
+            Atleast 80% of translated sentences are estimated to have a translated duration that is similar to the original duration
 
-        #### Parameters:
-        output_file: ```str```
-            The relative path to the (JSON) output file to write the results to
-        inPlace: ```bool``` = ```False```
-            If True, the results will be written to a JSON file at `output_file` relative to the directory of `json_filename` passed in at initialization. If false, the results will be written to a single JSON file at `output_file`.
+        Parameters:
+            output_file (str): The relative path to the (JSON) output file to write the results to
+            inPlace (bool) = (False): If True, the results will be written to a JSON file at `output_file` relative to the directory of `json_filename` passed in at initialization. If false, the results will be written to a single JSON file at `output_file`.
 
-        #### Returns:
-        ```None```
+        Returns:
+            (None)
 
-        #### Note:
-        This function assumes that the parent directory of the JSON files is the language name. It uses this as the key when writing the results to the output file. If the parent directory is not a language name, the function will try to detect the language from the text itself. This may be less accurate. Refer to the [language detection documentation](https://github.com/shihabsarar29/3b1b-translations/blob/main/docs/Manipulation/Calculation/Estimate.md) for more information.
+        Note:
+            This function assumes that the parent directory of the JSON files is the language name. It uses this as the key when writing the results to the output file. If the parent directory is not a language name, the function will try to detect the language from the text itself. This may be less accurate. Refer to the [language detection documentation](https://github.com/shihabsarar29/3b1b-translations/blob/main/docs/Manipulation/Calculation/Estimate.md) for more information.
         """
 
         # test
@@ -156,31 +146,26 @@ class Validate:
     
     def check_fulfillment_single_file(self, input_file: str, output_file: str = None, inPlace: bool = False) -> Union[tuple[int, bool, int, bool, bool, int], bool]:
         """
-        ### check_fulfillment_single_file
         Check if a JSON file fulfills all conditions to be considered as fulfilled.
 
-        #### Fulfilled conditions:
-        - The JSON file has atleast 80% n_reviews > 0
-        - Atleast 80% of translated sentences are estimated to have a translated duration that is similar to the original duration
+        Fulfilled conditions:
+            The JSON file has atleast 80% n_reviews > 0
+            Atleast 80% of translated sentences are estimated to have a translated duration that is similar to the original duration
 
-        #### Parameters:
-        input_file: ```str```
-            The path to the JSON file to check
-        output_file: ```str``` = ```None```
-            The relative path to the (JSON) output file to write the results to. If InPlace is False, this parameter will be ignored.
-        inPlace: ```bool``` = ```False```
-            If True, the results will be written to a JSON file at `output_file` relative to the directory of `json_filename` passed in at initialization. If false, the results will be returned as a tuple.
+        Parameters:
+        input_file (str): The path to the JSON file to check
+        output_file (str) = (None): The relative path to the (JSON) output file to write the results to. If InPlace is False, this parameter will be ignored.
+        inPlace (bool) = (False): If True, the results will be written to a JSON file at `output_file` relative to the directory of `json_filename` passed in at initialization. If false, the results will be returned as a tuple.
 
-        #### Returns:
-        ```tuple[int, bool, int, bool, bool, int]```
-            The number of reviews that are fulfilled
-            A boolean indicating if the n_reviews condition is fulfilled
-            The number of similar durations that are fulfilled
-            A boolean indicating if the similar durations condition is fulfilled
-            Whether or not the conditions are fulfilled
-            The number of utterances in the JSON file
-        ```bool```
-            If InPlace is True, the function will return whether or not the conditions are fulfilled.
+        Returns:
+            (tuple[int, bool, int, bool, bool, int])
+                The number of reviews that are fulfilled
+                A boolean indicating if the n_reviews condition is fulfilled
+                The number of similar durations that are fulfilled
+                A boolean indicating if the similar durations condition is fulfilled
+                Whether or not the conditions are fulfilled
+                The number of utterances in the JSON file
+            (bool) If InPlace is True, the function will return whether or not the conditions are fulfilled.
         """
 
         # Get JSON object from the file

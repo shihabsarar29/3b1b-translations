@@ -227,18 +227,18 @@ class ElevenLabsPipeline:
             # If this is less than 10% shorter than the duration of the utterance, speed it up to match the duration of the utterance
             elif difference < 0.1 * audio_duration and difference > 0:
                 print("speeding up by: ", 1 + (original_length / audio_duration))
-                self.audio_manipulation.speed_up_audio(os.path.join(temp_audio_file_folder, file), 1 + (original_length / audio_duration))
+                self.elevenLabsAPI._speed_up(os.path.join(temp_audio_file_folder, file), 1 + (original_length / audio_duration))
         
             # If this is 10-20% shorter than the duration of the utterance, speed it up and flag it
             elif difference < 0.2 * audio_duration and difference > 0:
                 print("speeding up by: ", 1 + (original_length / audio_duration))
-                self.audio_manipulation.speed_up_audio(os.path.join(temp_audio_file_folder, file), 1 + (original_length / audio_duration))
+                self.elevenLabsAPI._speed_up(os.path.join(temp_audio_file_folder, file), 1 + (original_length / audio_duration))
                 series["Flag"] = True
         
             # If this is more than 20% shorter than the duration of the utterance, flag it and severely flag it
             elif difference > 0.2 * audio_duration and difference > 0:
                 print("speeding up by: ", 1 + (original_length / audio_duration))
-                self.audio_manipulation.speed_up_audio(os.path.join(temp_audio_file_folder, file), 1 + (original_length / audio_duration))
+                self.elevenLabsAPI._speed_up(os.path.join(temp_audio_file_folder, file), 1 + (original_length / audio_duration))
                 series["Flag"] = True
                 series["Severe_Flag"] = True
         

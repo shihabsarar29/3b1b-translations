@@ -29,8 +29,7 @@ class FileUtils:
         Get JSON files by iterating through folders directly in the root directory without discriminating by target_directory
 
         Returns:
-        json_files: ```list```
-            List of JSON files found in the root directory
+            json_files (list): List of JSON files found in the root directory
         """
 
         json_files = []
