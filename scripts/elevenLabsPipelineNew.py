@@ -46,6 +46,7 @@ class ElevenLabsPipeline:
             if not self.__confirm_continuation(valid_file_paths):
                 return
 
+        return
         # Dictonary containing information on each file saved
         file_info = {}
 
@@ -191,7 +192,6 @@ class ElevenLabsPipeline:
                 if speed_rate > 1.05:
                     print(f'Warning: Speed rate is greater than 1.05: {speed_rate}')
                     speed_rate = 1.05
-
                 elif speed_rate < 1:
                     speed_rate = 1
 
@@ -317,8 +317,8 @@ class ElevenLabsPipeline:
         """returns the price per character based on the plan"""
         plan_prices = {
             "creator": 0.0003,
-            "independent publisher": 0.00024,
-            "growing business": 0.00018
+            "pro": 0.00024,
+            "scale": 0.00018
         }
 
         return plan_prices[self.plan]
@@ -340,5 +340,5 @@ class ElevenLabsPipeline:
 #'''
 
 # Example usage
-elevenLabsPipeline = ElevenLabsPipeline(r"C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\3b1bTranslationsP", r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json")
+elevenLabsPipeline = ElevenLabsPipeline(r"C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\3b1bTranslationsP", r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json", plan="pro")
 elevenLabsPipeline.full_pipeline(r"C:\Users\sapat\Downloads\3b1b\API\is_fulfilled.json", r"C:\Users\sapat\Downloads\3b1b\API\output_debug_full_pipeline")
