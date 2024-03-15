@@ -6,6 +6,8 @@ from librosa.effects import time_stretch
 from librosa import load
 from soundfile import write
 import dotenv
+from pydub import AudioSegment
+from audiostretchy.stretch import stretch_audio
 
 class elevenLabsAPI:
     """
@@ -102,7 +104,7 @@ class elevenLabsAPI:
 
         return response
 
-    def get_audio_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None, similarity_boost: float = 0.55, stability: float = 0.45, style: float = 0.4, percentage = False, speed_rate: float = 1) -> Union[str, list[str]]:
+    def get_audio_to_file(self, text: Union[str, list[str]], output_file: str, CHUNK_SIZE: int = 1024, voice_id: str = None, similarity_boost: float = 0.55, stability: float = 0.45, style: float = 0.4, percentage = False, segment_duration: float = None) -> Union[str, list[str]]:
         """
         Get the audio from the ElevenLabs API and save it to a file(s), given the text(s) and output_file. [Reference](https://elevenlabs.io/docs/api-reference/text-to-speech)
 
@@ -162,10 +164,22 @@ class elevenLabsAPI:
                 for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
                     if chunk:
                         f.write(chunk)
+            
+            # Load the audio file using pydub to get the duration
+            if segment_duration:
+                audio = AudioSegment.from_file(output_file)
+                translated_length = len(audio)
 
-            self._speed_up(output_file, speed_rate) # Speed up the audio file
+                speed_rate = translated_length / segment_duration
+                if speed_rate > 1.05:
+                    print(f'Warning: Speed rate is greater than 1.05: {speed_rate}')
+                    speed_rate = 1.05
+                elif speed_rate < 1:
+                    speed_rate = 1
 
-            return output_file.replace(".mp3", ".wav") # Return the file path
+                self._speed_up(output_file, speed_rate=speed_rate) # Speed up the audio file
+
+            return output_file.replace(".mp3", ".wav"), speed_rate # Return the file path
         elif type(text) == list: # If text is a list, each element can be converted to a separate file
 
             for idx, t in enumerate(text): # Loop through each element in the list
@@ -184,7 +198,7 @@ class elevenLabsAPI:
                 if percentage:
                     print(f"Percentage done: {round((idx+1)/len(text)*100, 2)}%")
 
-            self._speed_up(f"{output_file}_{idx}.mp3", speed_rate) # Speed up the audio file
+            #self._speed_up(f"{output_file}_{idx}.mp3", speed_rate) # Speed up the audio file
             output_files = [f"{output_file}_{idx}.wav" for idx in range(len(text))] # Keep track of the file paths
 
             return output_files # Return the list of file paths written to
@@ -201,12 +215,12 @@ class elevenLabsAPI:
             speed_rate (float) = (1): The speed rate to increase the audio by. Default is 1
         """
 
-        y, sr = load(audio_file, sr=None) # Load the audio file
-        y_stretched = time_stretch(y, speed_rate)
-
-        # Write as a new .wav file
+        # Get new output file path
         new_output_file = audio_file.replace(".mp3", ".wav")
-        write(new_output_file, y_stretched, sr)
+
+        # Save the new audio file
+        stretch_audio(audio_file, new_output_file, ratio=0.5)
+
 
         # Delete the old .mp3 file
         if delete_old:

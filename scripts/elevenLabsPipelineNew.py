@@ -46,7 +46,7 @@ class ElevenLabsPipeline:
             if not self.__confirm_continuation(valid_file_paths):
                 return
 
-        return
+        
         # Dictonary containing information on each file saved
         file_info = {}
 
@@ -167,9 +167,7 @@ class ElevenLabsPipeline:
                 end_timestamps = translator.get_end_timestamps_direct()
             print(text_list, "\n\n")
         except Exception as e:
-            print(f"Failed to parse file: {e}")
-            return
-
+            raise Exception(f"Failed to parse translations: {e}")
         # Create pause audios and manipulate audio
         try:
             AudioManipulation.create_single_pause_audio(duration=start_timestamps[0], output_file=os.path.join(temp_pause_file_folder, "pause_1000.wav"))
@@ -186,15 +184,6 @@ class ElevenLabsPipeline:
 
                 segment_duration = end_timestamps[i] - start_timestamps[i]
 
-                # Estimated length of the translated text
-                estimated_length = self.estimate.estimate_length(text_list[i], path=transcript_file_path)
-                speed_rate = estimated_length / segment_duration
-                if speed_rate > 1.05:
-                    print(f'Warning: Speed rate is greater than 1.05: {speed_rate}')
-                    speed_rate = 1.05
-                elif speed_rate < 1:
-                    speed_rate = 1
-
                 # Convert text to speech with speed rate
                 text = text_list[i]
                 output_file = os.path.join(temp_audio_file_folder, f'azure_{i+1000}.mp3')
@@ -202,31 +191,32 @@ class ElevenLabsPipeline:
 
                 """NEED TO FIX TO USE TARGET LENGTH COMPARED TO REAL LENGTH WITHIN FUNCTION"""
                 if elevenLabs: 
-                    self.elevenLabsAPI.get_audio_to_file(text=text, output_file=output_file, speed_rate=speed_rate, voice_id=self.voice_name)
+                    __output_file, speed_rate = self.elevenLabsAPI.get_audio_to_file(text=text, output_file=output_file, voice_id=self.voice_name, segment_duration=segment_duration*1000)
                 else:
                     self.azureTTS.convert_text_to_speech(text=text, filename=output_file, speed_rate=speed_rate, voice_name=self.voice_name)
                 translated_audio_length = AudioManipulation.get_audio_duration(output_file.replace(".mp3", ".wav"))
 
 
                 # Create pause audio file
-                pause_duration = start_timestamps[i+1] - end_timestamps[i]
-                if segment_duration < translated_audio_length:
-                    accumulator += translated_audio_length - segment_duration
-                else:
-                    pause_duration += segment_duration - translated_audio_length
+                if i != len(start_timestamps) - 1:
+                    pause_duration = start_timestamps[i+1] - end_timestamps[i]
+                    if segment_duration < translated_audio_length:
+                        accumulator += translated_audio_length - segment_duration
+                    else:
+                        pause_duration += segment_duration - translated_audio_length
 
-                if pause_duration - accumulator > 0:
-                    pause_duration -= accumulator
-                    accumulator = 0
-                else:
-                    accumulator -= pause_duration
-                    pause_duration = 0
+                    if pause_duration - accumulator > 0:
+                        pause_duration -= accumulator
+                        accumulator = 0
+                    else:
+                        accumulator -= pause_duration
+                        pause_duration = 0
 
-                
-                AudioManipulation.create_single_pause_audio(
-                    duration=pause_duration,
-                    output_file=os.path.join(temp_pause_file_folder, "pause_" + str(i+1001) + ".wav"))
-                
+                    
+                    AudioManipulation.create_single_pause_audio(
+                        duration=pause_duration,
+                        output_file=os.path.join(temp_pause_file_folder, "pause_" + str(i+1001) + ".wav"))
+                    
                 # Get basic information for the series
                 series["File_Name"] = output_file
                 series["Duration"] = AudioManipulation.get_audio_duration(output_file.replace(".mp3", ".wav"))
@@ -238,18 +228,18 @@ class ElevenLabsPipeline:
                 df = pd.concat([df, pd.DataFrame(series).transpose()], axis=0)
                 df.reset_index()
                 
+            """
             # Add the last audio
             # Initialize the series to store the information for the current iteration
             series = pd.Series()
 
             segment_duration = end_timestamps[-1] - start_timestamps[-1]
-            estimated_length = self.estimate.estimate_length(text_list[-1], path=transcript_file_path)
-            speed_rate = estimated_length / segment_duration
-            if speed_rate > 1.05:
-                print(f'Warning: Speed rate is greater than 1.05: {speed_rate}')
-                speed_rate = 1.05
-            elif speed_rate < 1:
-                speed_rate = 1
+
+            # Convert text to speech with speed rate
+            text = text_list[-1]
+            output_file = os.path.join(temp_audio_file_folder, f'azure_{len(start_timestamps)+1000}.wav')
+            print(output_file)
+            __output_file, speed_rate = self.elevenLabsAPI.get_audio_to_file(text=text, output_file=output_file, segment_duration=segment_duration*1000, voice_id=self.voice_name)
 
             # Get basic information for the series
             series["File_Name"] = output_file
@@ -257,22 +247,18 @@ class ElevenLabsPipeline:
             series["Difference"] = abs(segment_duration - series["Duration"])
             series["Flag"] = speed_rate > 1.1
             series["Severe_Flag"] = speed_rate > 1.2
-
-            # Convert text to speech with speed rate
-            text = text_list[-1]
-            output_file = os.path.join(temp_audio_file_folder, f'azure_{len(start_timestamps)+1000}.wav')
-            self.elevenLabsAPI.get_audio_to_file(text=text, output_file=output_file, speed_rate=speed_rate, voice_id=self.voice_name)
             
             # Concatenate the series to the dataframe as a new row
             df = pd.concat([df, pd.DataFrame(series).transpose()], axis=0)
             df.reset_index()
+            """
         except Exception as e:
             print(traceback.format_exc())
-            print(f"Failed to create pause audio files: {e}")
-            return
+            raise Exception(f"Failed to create pause audios and manipulate audio: {e}")
         
         # Save the dataframe to a csv file
         #df.to_csv(save_csv_to, index=False)
+        
 
         # Get the final output file path name
         output_name = transcript_file_path.split("\\")[-2] + "." + transcript_file_path.split("\\")[-3] + ".mp3"
@@ -280,8 +266,7 @@ class ElevenLabsPipeline:
         # Create the final output path
         final_output_file_path = os.path.join(output_folder, output_name)
 
-        # Get the CSV file path
-        csv_file_path = os.path.join(output_folder, output_csv_file)
+        
 
         # Join audio
         try:
@@ -291,10 +276,13 @@ class ElevenLabsPipeline:
                 output_file_path=final_output_file_path)
         except Exception as e:
             print(f"Failed to join audios: {e}")
-            return
+            raise Exception(f"Failed to join audios: {e}")
         
         # Delete the temporary audio files
         self.garbage_disposal(temp_audio_file_folder, temp_pause_file_folder)
+            
+        # Get the CSV file path
+        csv_file_path = os.path.join(output_folder, output_csv_file)
 
         # Save the dataframe to a csv file
         df.to_csv(csv_file_path, index=False)
@@ -340,5 +328,5 @@ class ElevenLabsPipeline:
 #'''
 
 # Example usage
-elevenLabsPipeline = ElevenLabsPipeline(r"C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\3b1bTranslationsP", r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json", plan="pro")
+elevenLabsPipeline = ElevenLabsPipeline(r"C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\3b1bTranslationsP", r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json", plan="creator", voice_name="Grant")
 elevenLabsPipeline.full_pipeline(r"C:\Users\sapat\Downloads\3b1b\API\is_fulfilled.json", r"C:\Users\sapat\Downloads\3b1b\API\output_debug_full_pipeline")
