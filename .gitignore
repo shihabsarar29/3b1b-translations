@@ -1,13 +1,2 @@
 .env
 __pycache__
-myenv
-googleSheetsDF.py
-experiments_outputtemp_audios/
-experiments_outputtemp_pauses/
-256-bit-security/
-test.ipynb
-test.txt
-3b1bTranslations
-3b1bTranslationsP
-output_debug_full_pipeline
-experiments_output/
