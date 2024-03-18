@@ -1,4 +1,4 @@
-# Setting Up Conda Environment
+## Setting Up Conda Environment
 
 This guide assumes you have Conda installed on your system. If you do not have Conda installed, please visit [the official Conda installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) for instructions on installing Conda.
 
