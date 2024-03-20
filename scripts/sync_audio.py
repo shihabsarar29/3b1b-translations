@@ -1,5 +1,6 @@
 import os
 import sys
+import traceback
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from pathlib import Path
@@ -9,8 +10,8 @@ from rvc.rvc import infer
 
 if __name__ == "__main__":
     
-    translations_path = Path("/Users/shihab/Documents/3b1b/captions/2024/shorts/mandelbrot/spanish/sentence_translations.json")
-    music_path = Path("/Users/shihab/Downloads/only_music.mp3")
+    translations_path = Path(r"C:\Users\sapat\Downloads\3b1b\3b1bTranslationsFull\2024\shorts\mandelbrot\spanish\sentence_translations.json")
+    music_path = Path(r"C:\Users\sapat\Downloads\3b1b\API\scripts\foreground.mp3")
 
     files_to_delete = []
 
@@ -48,6 +49,7 @@ if __name__ == "__main__":
         )
 
     except Exception as e:
+        print(traceback.format_exc())
         print(f"Failed to process: {e}")
 
     for file_path in files_to_delete:

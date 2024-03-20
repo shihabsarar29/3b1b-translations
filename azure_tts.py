@@ -11,7 +11,7 @@ class AzureTTS:
     A class to convert text to speech using Azure Cognitive Services Speech Service.
     """
     
-      language_to_voice_map = {
+    language_to_voice_map = {
         "albanian": "sq-AL-IlirNeural2",
         "arabic": "ar-EG-ShakirNeural",
         "bengali": "bn-IN-BashkarNeural2",

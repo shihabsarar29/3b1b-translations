@@ -65,6 +65,8 @@ import sqlite3
 conn = sqlite3.connect('file:memdb1?mode=memory&cache=shared', uri=True, check_same_thread=False)
 cursor = conn.cursor()
 
+
+
 # Create necessary tables in the database
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS formant_data (
@@ -87,11 +89,15 @@ global DoFormant, Quefrency, Timbre
 hubert_model = None
 
 def clear_sql():
-    cursor.execute("DELETE FROM formant_data")
-    cursor.execute("DELETE FROM stop_train")
-    conn.commit()
-    conn.close()
-    print("Clearing SQL database...")
+    try:
+        cursor.execute("DELETE FROM formant_data")
+        cursor.execute("DELETE FROM stop_train")
+        conn.commit()
+        conn.close()
+        print("Clearing SQL database...")
+    except sqlite3.ProgrammingError:
+        print("SQLITE3 Programming Error occured. Non-fatal, ignoring")
+        return
 
 def load_hubert():
     """
@@ -365,6 +371,6 @@ def V2V_infer(com): # Inputs as list
 
         return conversion_data
     
-    clear_sql()
+    # clear_sql()
 
     return os.path.join(audio_output_folder, output_file_name)

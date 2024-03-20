@@ -5,7 +5,7 @@ os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = '1'
 Wrapper for MANGIO-RVC Library Inferencing
 """
 
-from infer import V2V_infer
+from rvc.infer import V2V_infer
 import os
 
 #NEED TO ADD "is_working_dir: bool" AS ARG
@@ -32,6 +32,8 @@ def infer(pth_file: str, input_file: str, output_file: str, feature_index: str, 
         (str): The path to the output file
     """
 
+    print("input_file: ", input_file)
+
     # Make list of all args, convert all args to strings
     args = [str(arg) for arg in [pth_file, input_file, output_file, feature_index, speaker_id, transpoition, f0_method, crepe_hop, harvest_median_filter, post_sample_rate, mix_vol_envelope, feature_index_ratio, VCP]]
 
@@ -52,4 +54,4 @@ def infer(pth_file: str, input_file: str, output_file: str, feature_index: str, 
         raise ValueError("UNIDENTIFIED ERROR occured while performing inference. Full traceback: " + str(inference_data))
     
 # EXAMPLE USAGE:
-infer("init-experiment-2.pth", "audios/someguy.mp3", "myTest.mp3", "logs/init-experiment-2/added_IVF4048_Flat_nprobe_1_init-experiment-2_v2.index", 0, -2, "rmvpe", 160, 3, 0, 1, 0.95, 0.33)
+# infer("init-experiment-2.pth", "audios/someguy.mp3", "myTest.mp3", "logs/init-experiment-2/added_IVF4048_Flat_nprobe_1_init-experiment-2_v2.index", 0, -2, "rmvpe", 160, 3, 0, 1, 0.95, 0.33)
