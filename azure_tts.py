@@ -11,17 +11,17 @@ class AzureTTS:
     A class to convert text to speech using Azure Cognitive Services Speech Service.
     """
     
-    language_to_voice_map = {
+      language_to_voice_map = {
         "albanian": "sq-AL-IlirNeural2",
-        "arabic": "ar-SA-HamedNeural",
+        "arabic": "ar-EG-ShakirNeural",
         "bengali": "bn-IN-BashkarNeural2",
         "bulgarian": "bg-BG-BorislavNeural",
         "catalan": "ca-ES-EnricNeural",
-        "chinese": "zh-CN-YunxiNeural",
+        "chinese": "zh-CN-YunfengNeural",
         "croatian": "hr-HR-SreckoNeural",
         "czech": "cs-CZ-AntoninNeural",
         "danish": "da-DK-JeppeNeural",
-        "dutch": "nl-NL-MaartenNeural",
+        "dutch": "nl-BE-ArnaudNeural",
         "estonian": "et-EE-KertNeural2",
         "finnish": "fi-FI-HarriNeural",
         "french": "fr-FR-HenriNeural",
@@ -33,32 +33,32 @@ class AzureTTS:
         "hindi": "hi-IN-MadhurNeural",
         "hungarian": "hu-HU-TamasNeural",
         "indonesian": "id-ID-ArdiNeural",
-        "italian": "it-IT-DiegoNeural",
-        "japanese": "ja-JP-KeitaNeural",
-        "korean": "ko-KR-InJoonNeural",
+        "italian": "it-IT-LisandroNeural",
+        "japanese": "ja-JP-NaokiNeural",
+        "korean": "ko-KR-BongJinNeural",
         "lithuanian": "lt-LT-LeonasNeural2",
         "malay": "ms-MY-OsmanNeural",
         "marathi": "mr-IN-ManoharNeural",
         "norwegian": "nb-NO-FinnNeural",
         "persian": "fa-IR-FaridNeural2",
         "polish": "pl-PL-MarekNeural",
-        "portuguese": "pt-PT-DuarteNeural",
+        "portuguese": "pt-BR-NicolauNeural",
         "romanian": "ro-RO-EmilNeural",
         "russian": "ru-RU-DmitryNeural",
         "serbian": "sr-Latn-RS-NicholasNeural2",
         "slovak": "sk-SK-LukasNeural",
         "slovenian": "sl-SI-RokNeural",
-        "spanish": "es-ES-AlvaroNeural",
+        "spanish": "es-MX-GerardoNeural",
         "swedish": "sv-SE-MattiasNeural",
         "tagalog": "fil-PH-AngeloNeural2",
-        "tamil": "ta-IN-ValluvarNeural",
+        "tamil": "ta-LK-KumarNeural",
         "telugu": "te-IN-MohanNeural",
         "thai": "th-TH-NiwatNeural",
         "turkish": "tr-TR-AhmetNeural",
         "ukrainian": "uk-UA-OstapNeural",
-        "urdu": "ur-PK-AsadNeural",
+        "urdu": "ur-IN-SalmanNeural",
         "vietnamese": "vi-VN-NamMinhNeural",
-        "english": "en-US-AndrewNeural"
+        "english": "en-US-TonyNeural"
     }
      
     def __init__(self):
