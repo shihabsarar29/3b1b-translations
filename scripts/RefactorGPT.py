@@ -32,10 +32,10 @@ class RefactorGPT:
         parser = Parser(file_path)
 
         # Retrieve list of sentence durations from the Parser
-        #try:
-        durations = parser.get_interval()
-        #except KeyError:
-        #    durations = parser.get_interval_direct()
+        try:
+            durations = parser.get_interval()
+        except KeyError:
+            durations = parser.get_interval_direct()
 
         # Retrieve list of translated texts from the Parser
         translated_texts_list = parser.get_translated_texts_list()
@@ -52,8 +52,12 @@ class RefactorGPT:
             original_translated_length = estimate.estimate_length(sentence, path=file_path)
 
             # Calculate the adjustment factor and prompt percentage
-            adjustment_factor = original_translated_length / original_duration
-            prompt_percentage = int(adjustment_factor * 100)
+            try:
+                adjustment_factor = original_translated_length / original_duration
+                prompt_percentage = int(adjustment_factor * 100)
+            except ZeroDivisionError:
+                adjustment_factor = 1
+                prompt_percentage = 100
 
             # Create adjusted_utterance dictionary for storing information
             adjusted_utterance = {
@@ -201,18 +205,52 @@ class RefactorGPT:
                 for utterance, adjusted_utterance_ in zip(sentence_translations, adjusted_transcript):
                     new_utterance = {}
 
-                    new_utterance["input"] = utterance["input"]
-                    new_utterance["translatedText"] = utterance["translatedText"]
-                    new_utterance["model"] = utterance["model"]
-                    new_utterance["time_range"] = utterance["time_range"]
-                    new_utterance["adjusted"] = adjusted_utterance_["adjusted"]
-                    new_utterance["adjusted_flag"] = adjusted_utterance_["flag"]
+                    try:
+                        new_utterance["input"] = utterance["input"]
+                    except KeyError:
+                        new_utterance["input"] = None
+                    
+                    try:
+                        new_utterance["translatedText"] = utterance["translatedText"]
+                    except KeyError:
+                        new_utterance["translatedText"] = None
 
-                    sentence_translations.append(new_utterance)
+                    try:
+                        new_utterance["model"] = utterance["model"]
+                    except KeyError:
+                        new_utterance["model"] = None
+
+                    try:
+                        new_utterance["time_range"] = utterance["time_range"]
+                    except KeyError:
+                        try:
+                            new_utterance["start"] = utterance["start"]
+                            new_utterance["end"] = utterance["end"]
+                        except:
+                            new_utterance["time_range"] = None
+                    
+                    try:
+                        new_utterance["adjusted"] = adjusted_utterance_["adjusted"]
+                    except KeyError:
+                        new_utterance["adjusted"] = None
+                    
+                    try:
+                        new_utterance["adjusted_flag"] = adjusted_utterance_["flag"]
+                    except KeyError:
+                        new_utterance["adjusted_flag"] = None
+
+                    try:
+                        new_utterance["adjusted_estimated_time"] = adjusted_utterance_["adjusted_translated_length"]
+                    except KeyError:
+                        new_utterance["adjusted_estimated_time"] = None
+
+                    output_sentence_translations.append(new_utterance)
                 
                 with open(output_file, "w", encoding="utf-8") as f:
                     json.dump(output_sentence_translations, f, indent=4, ensure_ascii=False)
                 
+                print("output_sentence_translations: ", output_sentence_translations)
+
                 return
 
             if inPlace:
@@ -222,6 +260,7 @@ class RefactorGPT:
                     json.dump(adjusted_transcript, f, indent=4, ensure_ascii=False)
             else:
                 # Write directly to the specified output file path (not inPlace)
+                print("dumping directly!")
                 with open(output_file, "w", encoding="utf-8") as f:
                     json.dump(adjusted_transcript, f, indent=4, ensure_ascii=False)
         else:
@@ -285,7 +324,7 @@ class RefactorGPT:
      
 
 # Example usage
-file_path = r'C:\Users\sapat\Downloads\3b1b\API\256-bit-security\bengali\sentence_translations.json' #File Path
+file_path = r'C:\Users\sapat\Downloads\3b1b\API\Experiments\n_reviews_check\3b1bTranslationsP\2019\clacks\chinese\sentence_translations.json' #File Path
 language_averages_path = r"C:\Users\sapat\Downloads\3b1b\API\Experiments\average_count\3b1b_languages.json"
 
 refactor = RefactorGPT()
